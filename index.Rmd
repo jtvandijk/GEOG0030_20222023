@@ -23,4 +23,4 @@ knitr::include_graphics('images/general/geocomputation_welcome.png')
 ## Welcome {-}
 Welcome to **Geocomputation**, a course that introduces you to both the principles of spatial analysis and the use of programming for data analysis.
 
-Content to be made available at the start of the academic year. The content for 2021-2022 has now been archived and can be found here: [[Link]](https://jtvandijk.github.io/GEOG0030)
+Content to be made available at the start of the academic year. The content for 2021-2022 has now been archived and can be found here: [[Link]](https://jtvandijk.github.io/GEOG0030_20212022)
