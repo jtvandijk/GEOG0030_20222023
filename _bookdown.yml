@@ -1,17 +1,6 @@
 book_filename: "GEOG0030"
 rmd_files:
 - index.Rmd
-- 01-introduction.Rmd
-- 02-GIScience.Rmd
-- 03-cartography.Rmd
-- 04-statistics.Rmd
-- 05-spatial.Rmd
-- 06-operations.Rmd
-- 07-autocorrelation.Rmd
-- 08-point-pattern.Rmd
-- 09-raster.Rmd
-- 10-network.Rmd
-- 11-data.Rmd
 language:
   ui:
     chapter_name: ""
