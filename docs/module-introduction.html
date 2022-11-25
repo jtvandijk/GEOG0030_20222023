@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module Introduction | GEOG0030: Geocomputation</title>
   <meta name="description" content="Module Introduction | GEOG0030: Geocomputation handbook." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module Introduction | GEOG0030: Geocomputation" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://jtvandijk.github.io/GEOG0030" />
   
   <meta property="og:description" content="Module Introduction | GEOG0030: Geocomputation handbook." />
   <meta name="github-repo" content="jtvandijk/GEOG0030" />
@@ -31,8 +30,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="additional-resources.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<link rel="next" href="foundational-concepts.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,10 +48,75 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="assets/custom.css" type="text/css" />
@@ -74,20 +137,35 @@
 </a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#module-overview" id="toc-module-overview">Module Overview</a></li>
-<li><a href="module-introduction.html#module-introduction" id="toc-module-introduction">Module Introduction</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Module Overview</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html"><i class="fa fa-check"></i>Module Introduction</a>
 <ul>
-<li><a href="module-introduction.html#welcome" id="toc-welcome">Welcome</a></li>
-<li><a href="module-introduction.html#moodle" id="toc-moodle">Moodle</a></li>
-<li><a href="module-introduction.html#module-overview-1" id="toc-module-overview-1">Module overview</a></li>
-<li><a href="module-introduction.html#troubleshooting" id="toc-troubleshooting">Troubleshooting</a></li>
-<li><a href="module-introduction.html#acknowledgements" id="toc-acknowledgements">Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#welcome"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#module-overview-1"><i class="fa fa-check"></i>Module overview</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
-<li><a href="additional-resources.html#additional-resources" id="toc-additional-resources">Additional Resources</a></li>
-<li><a href="data-sources.html#data-sources" id="toc-data-sources"><span class="toc-section-number">1</span> Data Sources</a>
+<li class="chapter" data-level="" data-path="foundational-concepts.html"><a href="foundational-concepts.html"><i class="fa fa-check"></i>Foundational Concepts</a></li>
+<li class="chapter" data-level="1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html"><i class="fa fa-check"></i><b>1</b> Geocomputation: An Introduction</a>
 <ul>
-<li><a href="data-sources.html#open-data" id="toc-open-data"><span class="toc-section-number">1.1</span> Open Data</a></li>
-<li><a href="data-sources.html#safeguarded-data" id="toc-safeguarded-data"><span class="toc-section-number">1.2</span> Safeguarded Data</a></li>
+<li class="chapter" data-level="1.1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#reading-w01"><i class="fa fa-check"></i><b>1.1</b> Reading list</a></li>
+<li class="chapter" data-level="1.2" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a></li>
+<li class="chapter" data-level="1.3" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#software"><i class="fa fa-check"></i><b>1.3</b> Software</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#qgis-installation"><i class="fa fa-check"></i><b>1.3.1</b> QGIS Installation</a></li>
+<li class="chapter" data-level="1.3.2" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#r-and-rstudio-installation"><i class="fa fa-check"></i><b>1.3.2</b> R and RStudio Installation</a></li>
+<li class="chapter" data-level="1.3.3" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#ucl"><i class="fa fa-check"></i><b>1.3.3</b> UCL Desktop and RStudio Server</a></li>
+<li class="chapter" data-level="1.3.4" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#r-package-installation"><i class="fa fa-check"></i><b>1.3.4</b> R package installation</a></li>
+<li class="chapter" data-level="1.3.5" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#a-note-on-arcgis"><i class="fa fa-check"></i><b>1.3.5</b> A note on ArcGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#byl-w01"><i class="fa fa-check"></i><b>1.4</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="additional-resources.html"><a href="additional-resources.html"><i class="fa fa-check"></i>Additional Resources</a></li>
+<li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data Sources</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#open-data"><i class="fa fa-check"></i><b>2.1</b> Open Data</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#safeguarded-data"><i class="fa fa-check"></i><b>2.2</b> Safeguarded Data</a></li>
 </ul></li>
 </ul>
 
@@ -106,19 +184,19 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="module-introduction" class="section level1 unnumbered">
-<h1>Module Introduction</h1>
+<div id="module-introduction" class="section level1 unnumbered hasAnchor">
+<h1>Module Introduction<a href="module-introduction.html#module-introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><img src="images/general/geocomputation_welcome.png" width="100%" style="display: block; margin: auto;" /></p>
-<div id="welcome" class="section level2 unnumbered">
-<h2>Welcome</h2>
+<div id="welcome" class="section level2 unnumbered hasAnchor">
+<h2>Welcome<a href="module-introduction.html#welcome" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Welcome to <strong>Geocomputation</strong>. This module will introduce you both to the principles of spatial analysis as well as provide you with a comprehensive introduction to the use of programming. Over the next ten weeks, you will learn about the theory, methods and tools of spatial analysis through relevant case studies. We will start by using QGIS before moving to the R programming language. You will learn how to find, manage and clean spatial, demographic and socioeconomic datasets, and then analyse them using core spatial and statistical analysis techniques.</p>
 </div>
-<div id="moodle" class="section level2 unnumbered">
-<h2>Moodle</h2>
+<div id="moodle" class="section level2 unnumbered hasAnchor">
+<h2>Moodle<a href="module-introduction.html#moodle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://moodle.ucl.ac.uk/">Moodle</a> is the central point of contact for GEOG0030 and it is where all important information will be communicated such as key module and assessment information. This workbook contains links to all reading material as well as the content of all computer tutorials</p>
 </div>
-<div id="module-overview-1" class="section level2 unnumbered">
-<h2>Module overview</h2>
+<div id="module-overview-1" class="section level2 unnumbered hasAnchor">
+<h2>Module overview<a href="module-introduction.html#module-overview-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The topics covered over the next ten weeks are:</p>
 <table>
 <colgroup>
@@ -192,8 +270,8 @@
 </tbody>
 </table>
 </div>
-<div id="troubleshooting" class="section level2 unnumbered">
-<h2>Troubleshooting</h2>
+<div id="troubleshooting" class="section level2 unnumbered hasAnchor">
+<h2>Troubleshooting<a href="module-introduction.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Spatial analysis can yield fascinating insights into geographical relationships, albeit at times it can be challenging, particularly when we combine this with learning how to program at the same time. You will most likely encounter many error messages, experience software crashes, and spend hours to identify bugs in your code. However, the rewards of learning how to programmatically solve complex spatial problems will be very much worth it in the end.</p>
 <p>If you need specific assistance with this course please:</p>
 <ul>
@@ -203,8 +281,8 @@
 </ul>
 <p>If after pursuing all these avenues you still need help, you can book into our office hours. You can use an office hour to discuss a geographical concept in relation to the material, assessment or for any personal matters relevant to the completion of the module.</p>
 </div>
-<div id="acknowledgements" class="section level2 unnumbered">
-<h2>Acknowledgements</h2>
+<div id="acknowledgements" class="section level2 unnumbered hasAnchor">
+<h2>Acknowledgements<a href="module-introduction.html#acknowledgements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This year’s workbook is updated and compiled using:</p>
 <ul>
 <li>The <a href="https://jo-wilkin.github.io/GEOG0030/coursebook/index.html">GEOG0030: Geocomputation 2021-2021</a> workbook as created and compiled by Dr Jo Wilkin.</li>
@@ -212,10 +290,10 @@
 </ul>
 <p>The datasets used in this workbook contain:</p>
 <ul>
+<li>Crime data obtained from <a href="https://data.police.uk/">data.police.uk</a> (Open Government Licence)</li>
 <li>National Statistics data © Crown copyright and database right [2015] (Open Government Licence)</li>
 <li>Ordnance Survey data © Crown copyright and database right [2015]</li>
 <li>Public Health England © Crown copyright 2021</li>
-<li>Crime data obtained from <a href="https://data.police.uk/">data.police.uk</a> (Open Government Licence)</li>
 </ul>
 
 </div>
@@ -226,7 +304,7 @@
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="additional-resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="foundational-concepts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

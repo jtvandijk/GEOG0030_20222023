@@ -1,5 +1,14 @@
+fig:01-rstudio-interface
+geocomputation-an-introduction
+reading-w01
+getting-started
+software
+qgis-installation
+r-and-rstudio-installation
+ucl
+r-package-installation
+a-note-on-arcgis
+byl-w01
 data-sources
 open-data
-cdrc-data
-other-data
 safeguarded-data

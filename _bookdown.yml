@@ -1,6 +1,7 @@
 book_filename: "GEOG0030"
 rmd_files:
 - index.Rmd
+- 01-introduction.Rmd
 - 11-data.Rmd
 language:
   ui:

@@ -33,6 +33,46 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -188,14 +228,332 @@ The datasets used in this workbook contain:
 \begin{itemize}
 \tightlist
 \item
+  Crime data obtained from \href{https://data.police.uk/}{data.police.uk} (Open Government Licence)
+\item
   National Statistics data © Crown copyright and database right {[}2015{]} (Open Government Licence)
 \item
   Ordnance Survey data © Crown copyright and database right {[}2015{]}
 \item
   Public Health England © Crown copyright 2021
-\item
-  Crime data obtained from \href{https://data.police.uk/}{data.police.uk} (Open Government Licence)
 \end{itemize}
+
+\hypertarget{foundational-concepts}{%
+\chapter*{Foundational Concepts}\label{foundational-concepts}}
+\addcontentsline{toc}{chapter}{Foundational Concepts}
+
+\hypertarget{geocomputation-an-introduction}{%
+\chapter{Geocomputation: An Introduction}\label{geocomputation-an-introduction}}
+
+This week's lecture provided you with a thorough introduction on Geocomputation, outlining how and why it is different to a traditional GIScience course. We set the scene for the remainder of the module and explained how the foundational concepts that you will learn in the first half of term sit within the overall module. This week we start easy by setting up our work environment and set up the software that we will need over the coming weeks.
+
+\hypertarget{reading-w01}{%
+\section{Reading list}\label{reading-w01}}
+
+\hypertarget{essential-readings}{%
+\subsubsection*{Essential readings}\label{essential-readings}}
+\addcontentsline{toc}{subsubsection}{Essential readings}
+
+\begin{itemize}
+\tightlist
+\item
+  Brundson, C. and Comber, A. 2020. Opening practice: Supporting reproducibility and critical spatial data science. \emph{Journal of Geographical Systems} 23: 477--496. \href{https://doi.org/10.1007/s10109-020-00334-2}{{[}Link{]}}
+\item
+  Longley, P. \emph{et al.} 2015. Geographic Information Science \& Systems, \textbf{Chapter 1}: \emph{Geographic Information: Science, Systems, and Society}. \href{https://ucl.rl.talis.com/link?url=https\%3A\%2F\%2Fapp.knovel.com\%2Fhotlink\%2Ftoc\%2Fid\%3AkpGISSE001\%2Fgeographic-information-science\%3Fkpromoter\%3Dmarc\&sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a}{{[}Link{]}}
+\item
+  Singleton, A. and Arribas-Bel, D. 2019. Geographic Data Science. \emph{Geographical Analysis}. \href{https://doi.org/10.1111/gean.12194}{{[}Link{]}}
+\end{itemize}
+
+\hypertarget{suggested-readings}{%
+\subsubsection*{Suggested readings}\label{suggested-readings}}
+\addcontentsline{toc}{subsubsection}{Suggested readings}
+
+\begin{itemize}
+\tightlist
+\item
+  Miller, H. and Goodchild, M. 2015. Data-driven geography. \emph{GeoJournal} 80: 449--461. \href{https://doi.org/10.1007/s10708-014-9602-6}{{[}Link{]}}
+\item
+  Goodchild, M. 2009. Geographic information systems and science: Today and tomorrow. \emph{Annals of GIS} 15(1): 3-9. \href{https://doi.org/10.1080/19475680903250715}{{[}Link{]}}
+\end{itemize}
+
+\hypertarget{getting-started}{%
+\section{Getting started}\label{getting-started}}
+
+Over the next few weeks, we will be taking a closer look at many of the foundational concepts that will ultimately enable you to confidently and competently analyse spatial data using both programming and GIS software. You will further learn how to plan, structure and conduct your own spatial analysis using programming -- whilst making decisions on how to best present your work, which is a crucial aspect of any type of investigation but of particular relevance to your dissertation.
+
+To help with this, we highly recommend that you try to stay organised with your work, including taking notes and making yourself a coding handbook. We would also suggest to list the different datasets you come across - and importantly, the scales and different projections you use them at - more on this over the next weeks. Finally, you should also make notes about the different spatial analysis techniques you come across, including the different properties they assess and parameters they require to run.
+
+\hypertarget{software}{%
+\section{Software}\label{software}}
+
+This course primarily uses the \href{https://www.r-project.org/}{R} programming language, although we start by using \href{https://qgis.org/en/site/}{QGIS} in the next two weeks to give you a basic foundation in the principles of spatial analysis.
+
+\textbf{Note}
+Please follow the instructions below to install both \href{https://www.r-project.org/}{R} and \href{https://qgis.org/en/site/}{QGIS} onto your own personal computer. If you cannot install the software on your personal computer or you are not planning to bring your own laptop to the computer practicals, please refer to the \protect\hyperlink{ucl}{UCL Desktop and RStudio Server} section below. Please make sure that you have access to a working installation of QGIS and R (including relevant packages) \textbf{before} the first hands-on practical session next week.
+
+\hypertarget{qgis-installation}{%
+\subsection{QGIS Installation}\label{qgis-installation}}
+
+QGIS is an open-source graphic user interface GIS with many community developed add-on packages (or plugins) that provide additional functionality to the software. You can download and install QGIS on your personal machine by going to the QGIS website: \href{https://qgis.org/en/site/forusers/download.html}{{[}Link{]}}.
+
+\textbf{Note}
+We recommend installing the \textbf{Long Term Release} (\emph{QGIS 3.22 LTR}) as this version should be the most stable version. For Windows users: the QGIS installation may be a little slow.
+
+After installation, start QGIS to see if the installation was successful and no errors are shown after start up.
+
+\hypertarget{r-and-rstudio-installation}{%
+\subsection{R and RStudio Installation}\label{r-and-rstudio-installation}}
+
+R is both a programming language and software environment - in the form of RStudio- originally designed for statistical computing and graphics. R's great strength is that it is open-source, can be used on any computer operating system, and is free for anyone to use and contribute to. Because of this, it is rapidly becoming the statistical language of choice for many academics and has a very large user community with people constantly contributing new packages to carry out all manner of statistical, graphical, and importantly for us, geographical tasks.
+
+Installing R takes a few relatively simple steps involving two programmes. First there is the R programme itself. Follow these steps to get it installed on your computer:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Navigate in your browser to your nearest CRAN mirror: \href{https://cran.ma.imperial.ac.uk/}{{[}Link{]}}
+\item
+  If you use a Windows computer, click on \emph{Download R for Windows}. Then click on \emph{base}. Download and install \textbf{R 4.2.x for Windows}. If you use a Mac computer, click on \emph{Download R for macOS} and download and install \textbf{R-4.2.x.pkg}
+\end{enumerate}
+
+That is it! You now have installed the latest version of R on your own machine. However, to make working with R a little bit easier we also need to install something called an Integrated Development Environment (IDE). We will use RStudio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Navigate to the official webpage of RStudio: \href{https://posit.co/download/rstudio-desktop/\#download}{{[}Link{]}}
+\item
+  Download and install RStudio Desktop on your computer (\textbf{free version!})
+\end{enumerate}
+
+After this, start RStudio to see if the installation was successful and no errors are shown after start up.
+
+\hypertarget{ucl}{%
+\subsection{UCL Desktop and RStudio Server}\label{ucl}}
+
+As an alternative to installing QGIS and R with RStudio onto your personal device, there are some other options. Firstly, both programmes are available through \href{https://www.ucl.ac.uk/isd/services/computers/remote-access/desktopucl-anywhere}{Desktop@UCL Anywhere} as well as all UCL computers on campus. In case of R, there is also an RStudio server version available which you can access through your web browser: \href{https://rstudio.data-science.rc.ucl.ac.uk/}{{[}Link{]}}
+
+You should be able to log in with your normal UCL username and password. After logging in, you should see the RStudio interface appear.
+
+\begin{figure}
+
+{\centering \includegraphics[width=30.26in]{images/w01/rstudio_interface} 
+
+}
+
+\caption{The RStudio Server interface.}\label{fig:01-rstudio-interface}
+\end{figure}
+
+\textbf{Note}
+If it is the first time you log on to RStudio server you may only see the RStudio interface appear once you have clicked on the \emph{start a new session} button. More importantly: if you are not on campus, RStudio server will only work with an active Virtual Private Network (VPN) connection that links your personal computer into UCL's network. Details on setting up a VPN connection can be found in UCL's VPN connection guides: \href{https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn}{{[}Link{]}}
+
+\hypertarget{r-package-installation}{%
+\subsection{R package installation}\label{r-package-installation}}
+
+Now we have installed or have access to QGIS and R, we need to customise R. Many useful R function come in packages, these are free libraries of code written and made available by other by R users. This includes packages specifically developed for data cleaning, data wrangling, visualisation, mapping, and spatial analysis. To save us some time, we will install all R packages that we will need over the next ten weeks in one go. Without going into detail on the RStudio (Server) interface, copy and paste the following code into the \textbf{console}. You can execute the code by hitting \textbf{Enter}. This may take a while.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# install all packages that we need}
+\FunctionTok{install.packages}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{, }\StringTok{"sf"}\NormalTok{, }\StringTok{"tmap"}\NormalTok{, }\StringTok{"osmdata"}\NormalTok{, }\StringTok{"RColorBrewer"}\NormalTok{, }\StringTok{"janitor"}\NormalTok{,}
+    \StringTok{"spdep"}\NormalTok{, }\StringTok{"dbscan"}\NormalTok{, }\StringTok{"raster"}\NormalTok{, }\StringTok{"spatstat"}\NormalTok{, }\StringTok{"gstat"}\NormalTok{, }\StringTok{"dodgr"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Once you have installed the packages, we need to check whether we can in fact load them into our R session. Copy and paste the following code into the \textbf{console}, and executed by hitting \textbf{Enter} again.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# load all packages}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages ----------------------------------------------------------------------------------- tidyverse 1.3.2 --
+## v ggplot2 3.4.0      v purrr   0.3.5 
+## v tibble  3.1.8      v dplyr   1.0.10
+## v tidyr   1.2.1      v stringr 1.4.1 
+## v readr   2.1.3      v forcats 0.5.2 
+## -- Conflicts -------------------------------------------------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(sf)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ 8.2.1; sf_use_s2() is TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tmap)}
+\FunctionTok{library}\NormalTok{(osmdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(RColorBrewer)}
+\FunctionTok{library}\NormalTok{(janitor)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'janitor'
+## 
+## The following objects are masked from 'package:stats':
+## 
+##     chisq.test, fisher.test
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(spdep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: sp
+## Loading required package: spData
+## To access larger datasets in this package, install the spDataLarge
+## package with: `install.packages('spDataLarge',
+## repos='https://nowosad.github.io/drat/', type='source')`
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dbscan)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dbscan'
+## 
+## The following object is masked from 'package:stats':
+## 
+##     as.dendrogram
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(raster)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'raster'
+## 
+## The following object is masked from 'package:dplyr':
+## 
+##     select
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(spatstat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: spatstat.data
+## Loading required package: spatstat.geom
+## spatstat.geom 3.0-3
+## 
+## Attaching package: 'spatstat.geom'
+## 
+## The following objects are masked from 'package:raster':
+## 
+##     area, rotate, shift
+## 
+## Loading required package: spatstat.random
+## spatstat.random 3.0-1
+## Loading required package: spatstat.explore
+## Loading required package: nlme
+## 
+## Attaching package: 'nlme'
+## 
+## The following object is masked from 'package:raster':
+## 
+##     getData
+## 
+## The following object is masked from 'package:dplyr':
+## 
+##     collapse
+## 
+## spatstat.explore 3.0-5
+## Loading required package: spatstat.model
+## Loading required package: rpart
+## spatstat.model 3.0-2
+## Loading required package: spatstat.linnet
+## spatstat.linnet 3.0-3
+## 
+## spatstat 3.0-2 
+## For an introduction to spatstat, type 'beginner'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(gstat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'gstat'
+## 
+## The following object is masked from 'package:spatstat.explore':
+## 
+##     idw
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dodgr)}
+\end{Highlighting}
+\end{Shaded}
+
+You will see some information printed to your console but as long as you do not get a message that is similar to \texttt{Error:\ package\ or\ namespace\ load\ failed\ for\ \textless{}packagename\textgreater{}} or \texttt{Error:\ package\ \textquotesingle{}\textless{}packagename\textquotesingle{}\ could\ not\ be\ loaded} all should be fine.
+
+\textbf{Note}
+Even if you have used R or RStudio Server before and already installed some of the packages in the above list, do re-install all packages to make sure you have the latest versions. Legacy installations that have not been updated may lay lead to problems when going through the tutorials.
+
+\hypertarget{a-note-on-arcgis}{%
+\subsection{A note on ArcGIS}\label{a-note-on-arcgis}}
+
+\href{https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview}{ArcGIS Pro} (previously ArcMap) is the main commercial GIS software that you may have already used - or seen/heard about through other modules or even job adverts. We do not use ArcGIS Pro in our Practicals for several reasons:
+
+\begin{itemize}
+\tightlist
+\item
+  Computing requirements for ArcGIS Pro are substantial and it \textbf{only} operates on the Windows Operating System. For Mac users, using ArcGIS Pro (and ArcMap) would require using either a Virtual Machine or running a copy of Windows OS on a separate partition of your hard drive.
+\item
+  It is \textbf{proprietary} software, which means you need a license to use the software. For those of us in education, the University covers the cost of this license, but when you leave, you will need to pay for a personal license (around £100 for non-commercial use) to continue using the software and repeat any analysis you have used the software for.
+\item
+  Whilst ArcPro can use pure \href{https://www.python.org/}{Python} (and even R) as a programming language within it through scripts and notebooks, it primarily relies on its own \textbf{ArcPy} and \textbf{ArcGIS API for Python} packages to run the in-built tools and analytical functions. To use these packages, you still need a license which makes it difficult to share your code with others \emph{if} they do not have their own ArcGIS license.
+\end{itemize}
+
+Recent developments in the ArcPro software, however, does make it an attractive tool for spatial data science and quantitative geography - it has cross-user functionality, from data analysts who like to use a tool called Notebooks for their code development, to those focused more on cartography and visualisation with in-built bridges to Adobe's Creative Suite. We therefore do not want to put you off looking into ArcGIS in the future, but for this course, we want to ensure the reproducibility of your work.
+
+\textbf{Note} This also means that the analysis you will be doing for your coursework assignment must be completed in R and QGIS. Specific guidance on the coursework assignment and permitted software will be made available at the end of Reading Week.
+
+\hypertarget{byl-w01}{%
+\section{Before you leave}\label{byl-w01}}
+
+You should now be all ready to go with the computer practicals the coming week. \href{https://www.youtube.com/watch?v=d8Fmu3RLEOY}{That is it for this week}!
 
 \hypertarget{additional-resources}{%
 \chapter*{Additional Resources}\label{additional-resources}}
