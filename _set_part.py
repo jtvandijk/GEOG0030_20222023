@@ -21,7 +21,7 @@ for htmlf in html_files:
       html_content = file.read()
 
     # update
-    html_content = html_content.replace('<li class="chapter" data-level="" data-path="module-overview.html"><a href="module-overview.html"><i class="fa fa-check"></i>Module Overview</a></li>', \
+    html_content = html_content.replace('<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Module Overview</a></li>', \
                                         '<li class="part"><span><b>Module Overview</b></span></li>')
     html_content = html_content.replace('<li class="chapter" data-level="" data-path="foundational-concepts.html"><a href="foundational-concepts.html"><i class="fa fa-check"></i>Foundational Concepts</a></li>', \
                                         '<li class="part"><span><b>Foundational Concepts</b></span></li>')
