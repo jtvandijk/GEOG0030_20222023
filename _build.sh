@@ -4,7 +4,11 @@
 set -ev
 
 # render gitbook
-Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+Rscript -e "bookdown::render_book('00-index.Rmd', 'bookdown::gitbook')"
 
 # render pdf
-Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
+Rscript -e "bookdown::render_book('00-index.Rmd', 'bookdown::pdf_book')"
+
+# pretty fix HTML
+source activate html
+python _set_part.py
