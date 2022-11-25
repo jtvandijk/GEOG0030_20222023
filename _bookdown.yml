@@ -1,6 +1,6 @@
 book_filename: "GEOG0030"
 rmd_files:
-- 00-index.Rmd
+- index.Rmd
 - 01-introduction.Rmd
 - 02-GIScience.Rmd
 - 11-data.Rmd
