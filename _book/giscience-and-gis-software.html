@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 GIScience and GIS software | GEOG0030: Geocomputation</title>
+  <meta name="description" content="1 GIScience and GIS software | GEOG0030: Geocomputation handbook." />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 GIScience and GIS software | GEOG0030: Geocomputation" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="1 GIScience and GIS software | GEOG0030: Geocomputation handbook." />
+  <meta name="github-repo" content="jtvandijk/GEOG0030" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 GIScience and GIS software | GEOG0030: Geocomputation" />
+  
+  <meta name="twitter:description" content="1 GIScience and GIS software | GEOG0030: Geocomputation handbook." />
+  
+
+<meta name="author" content="Justin van Dijk" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="foundational-concepts.html"/>
+<link rel="next" href="additional-resources.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="assets/custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo">
+<a href="https://www.ucl.ac.uk/module-catalogue/modules/geocomputation-GEOG0030"><img src="images/general/ucl_logo.png">
+</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Module Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#welcome"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#module-overview-1"><i class="fa fa-check"></i>Module overview</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="foundational-concepts.html"><a href="foundational-concepts.html"><i class="fa fa-check"></i>Foundational Concepts</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="foundational-concepts.html"><a href="foundational-concepts.html#reading-w01"><i class="fa fa-check"></i><b>0.1</b> Reading list</a></li>
+<li class="chapter" data-level="0.2" data-path="foundational-concepts.html"><a href="foundational-concepts.html#getting-started"><i class="fa fa-check"></i><b>0.2</b> Getting started</a></li>
+<li class="chapter" data-level="0.3" data-path="foundational-concepts.html"><a href="foundational-concepts.html#software"><i class="fa fa-check"></i><b>0.3</b> Software</a>
+<ul>
+<li class="chapter" data-level="0.3.1" data-path="foundational-concepts.html"><a href="foundational-concepts.html#qgis-installation"><i class="fa fa-check"></i><b>0.3.1</b> QGIS Installation</a></li>
+<li class="chapter" data-level="0.3.2" data-path="foundational-concepts.html"><a href="foundational-concepts.html#r-and-rstudio-installation"><i class="fa fa-check"></i><b>0.3.2</b> R and RStudio Installation</a></li>
+<li class="chapter" data-level="0.3.3" data-path="foundational-concepts.html"><a href="foundational-concepts.html#ucl"><i class="fa fa-check"></i><b>0.3.3</b> UCL Desktop and RStudio Server</a></li>
+<li class="chapter" data-level="0.3.4" data-path="foundational-concepts.html"><a href="foundational-concepts.html#r-package-installation"><i class="fa fa-check"></i><b>0.3.4</b> R package installation</a></li>
+<li class="chapter" data-level="0.3.5" data-path="foundational-concepts.html"><a href="foundational-concepts.html#a-note-on-arcgis"><i class="fa fa-check"></i><b>0.3.5</b> A note on ArcGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="0.4" data-path="foundational-concepts.html"><a href="foundational-concepts.html#byl-w01"><i class="fa fa-check"></i><b>0.4</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html"><i class="fa fa-check"></i><b>1</b> GIScience and GIS software</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#reading-w02"><i class="fa fa-check"></i><b>1.1</b> Reading list</a></li>
+<li class="chapter" data-level="1.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#simple-digitisation-of-spatial-features"><i class="fa fa-check"></i><b>1.2</b> Simple digitisation of spatial features</a></li>
+<li class="chapter" data-level="1.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#population-change-in-london"><i class="fa fa-check"></i><b>1.3</b> Population change in London</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-scene"><i class="fa fa-check"></i><b>1.3.1</b> Setting the scene</a></li>
+<li class="chapter" data-level="1.3.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-finding"><i class="fa fa-check"></i><b>1.3.2</b> Finding data</a></li>
+<li class="chapter" data-level="1.3.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w01-housekeeping"><i class="fa fa-check"></i><b>1.3.3</b> Housekeeping</a></li>
+<li class="chapter" data-level="1.3.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-downloading"><i class="fa fa-check"></i><b>1.3.4</b> Downloading data</a></li>
+<li class="chapter" data-level="1.3.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-cleaning"><i class="fa fa-check"></i><b>1.3.5</b> Cleaning data</a></li>
+<li class="chapter" data-level="1.3.6" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#using-qgis-to-map-our-population-data"><i class="fa fa-check"></i><b>1.3.6</b> Using QGIS to map our population data</a></li>
+<li class="chapter" data-level="1.3.7" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#exporting-map-for-visual-analysis"><i class="fa fa-check"></i><b>1.3.7</b> Exporting map for visual analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#assignment-w02"><i class="fa fa-check"></i><b>1.4</b> Assignment</a></li>
+<li class="chapter" data-level="1.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#byl-w02"><i class="fa fa-check"></i><b>1.5</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="additional-resources.html"><a href="additional-resources.html"><i class="fa fa-check"></i>Additional Resources</a>
+<ul>
+<li class="chapter" data-level="1.6" data-path="additional-resources.html"><a href="additional-resources.html#open-data"><i class="fa fa-check"></i><b>1.6</b> Open Data</a></li>
+<li class="chapter" data-level="1.7" data-path="additional-resources.html"><a href="additional-resources.html#safeguarded-data"><i class="fa fa-check"></i><b>1.7</b> Safeguarded Data</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GEOG0030: Geocomputation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="giscience-and-gis-software" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> GIScience and GIS software<a href="giscience-and-gis-software.html#giscience-and-gis-software" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This week’s lecture introduced you to foundational concepts associated with GIScience and GIS software, with particular emphasis on the representation of spatial data and sample design. Out of all our foundational concepts you will come across in the next four weeks, this is probably the most substantial to get to grips with and has both significant theoretical and practical aspects to its learning. The practical component of the week puts some of these learnings into practice, starting with a short digitisation excercise followed by a simple visualisation of London’s population over time.</p>
+<!-- ## Lecture slides {#slides-w02} -->
+<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w02_geo.pdf). -->
+<div id="reading-w02" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Reading list<a href="giscience-and-gis-software.html#reading-w02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="essential-readings-1" class="section level4 unnumbered hasAnchor">
+<h4>Essential readings<a href="giscience-and-gis-software.html#essential-readings-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Longley, P. <em>et al.</em> 2015. Geographic Information Science &amp; Systems, <strong>Chapter 2</strong>: <em>The Nature of Geographic Data</em>. <a href="https://ucl.rl.talis.com/link?url=https%3A%2F%2Fapp.knovel.com%2Fhotlink%2Ftoc%2Fid%3AkpGISSE001%2Fgeographic-information-science%3Fkpromoter%3Dmarc&amp;sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a">[Link]</a></li>
+<li>Longley, P. <em>et al.</em> 2015. Geographic Information Science &amp; Systems, <strong>Chapter 3</strong>: <em>Representing Geography</em>. <a href="https://ucl.rl.talis.com/link?url=https%3A%2F%2Fapp.knovel.com%2Fhotlink%2Ftoc%2Fid%3AkpGISSE001%2Fgeographic-information-science%3Fkpromoter%3Dmarc&amp;sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a">[Link]</a></li>
+<li>Longley, P. <em>et al.</em> 2015. Geographic Information Science &amp; Systems, <strong>Chapter 7</strong>: <em>Geographic Data Modeling</em>. <a href="https://ucl.rl.talis.com/link?url=https%3A%2F%2Fapp.knovel.com%2Fhotlink%2Ftoc%2Fid%3AkpGISSE001%2Fgeographic-information-science%3Fkpromoter%3Dmarc&amp;sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a">[Link]</a></li>
+</ul>
+</div>
+<div id="suggested-readings-1" class="section level4 unnumbered hasAnchor">
+<h4>Suggested readings<a href="giscience-and-gis-software.html#suggested-readings-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Goodchild, M. and Haining, R. 2005. GIS and spatial data analysis: Converging perspectives. <em>Papers in Regional Science</em> 83(1): 363–385. <a href="https://doi.org/10.1007/s10110-003-0190-y">[Link]</a></li>
+<li>Schurr, C., Müller, M. and Imhof, N. 2020. Who makes geographical knowledge? The gender of Geography’s gatekeepers. <em>The Professional Geographer</em> 72(3): 317-331. <a href="https://doi.org/10.1080/00330124.2020.1744169">[Link]</a></li>
+<li>Yuan, M. 2001. Representing complex geographic phenomena in GIS. <em>Cartography and Geographic Information Science</em> 28(2): 83-96. <a href="https://doi.org/10.1559/152304001782173718">[Link]</a></li>
+</ul>
+</div>
+</div>
+<div id="simple-digitisation-of-spatial-features" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Simple digitisation of spatial features<a href="giscience-and-gis-software.html#simple-digitisation-of-spatial-features" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To get spatial features in a digital form, they need to be digitised. Let’s take what should be a straight-forward example of digitising the River Thames in London.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:02-digitise"></span>
+<img src="images/w02/river_thames.png" alt="The Thames." width="90%" />
+<p class="caption">
+Figure 1.1: The Thames.
+</p>
+</div>
+<p>We are going to use a very simple online tool that allows us to create digital data and export the data we create as raw files.</p>
+<ol style="list-style-type: decimal">
+<li>Head to <a href="http://geojson.io/#map=12/51.5170/-0.1030">geojson.io</a>.</li>
+<li>In the bottom left-hand corner, select <em>Satellite Streets</em> as your map option.</li>
+<li>Next, click on the <code>Draw Linestring</code> tool which you can find on the right hand side of the screen. You can hover over the icons to get the names of each tool.</li>
+<li>Now digitise the river Thames. Simply click from a starting point on the left- or right-hand side of the map, and digitise the river.</li>
+<li>Once you are done, double-click your final point to end your line.</li>
+<li>You can click on the line and select <em>Info</em> in the pop-up screen to find out how long the line is.</li>
+<li>You can export your data using the <em>Save</em> menu.</li>
+</ol>
+<div id="questions" class="section level4 unnumbered hasAnchor">
+<h4>Questions<a href="giscience-and-gis-software.html#questions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>How easy did you find it to digitise the data and what decisions did you make in your own “sample scheme”?</li>
+<li>How close together are your clicks between lines?</li>
+<li>Did you sacrifice detail over expediency or did you spend perhaps a little too long trying to capture ever small bend in the river?</li>
+<li>How well do you think your line represents the River Thames?</li>
+</ul>
+</div>
+</div>
+<div id="population-change-in-london" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Population change in London<a href="giscience-and-gis-software.html#population-change-in-london" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The second part of this practical will introduces you to <strong>attribute joins</strong> followed by creating a <a href="https://en.wikipedia.org/wiki/Choropleth_map">choropleth map</a>. You will be using different types of <em>joins</em> throughout this module, and probably the rest of your career, so it is incredibly important that you understand how they work.</p>
+<div class="note">
+<p><strong>Note</strong><br/>
+The datasets you will create in this practical will be used in next week’s practical, so make sure to follow every step and save your data carefully.</p>
+</div>
+<p>When using spatial data, there is generally a very specific workflow that you will need to go through and, believe it or not, the majority of this is not actually focused on analysing your data. Along with the idea that 80% of data is geographic data, the second most often-quoted GIS-related unreferenced ‘fact’ is that anyone working with spatial data will spend 80% of their time simply finding, retrieving, managing and processing the data before any analysis can be done.</p>
+<p>One of the reasons behind this need for a substantial amount of processing is that the data you often need to use is almost never in the format that you require for analysis. For example, for our investigation, there is not a ‘ready-made’ spatial population dataset (i.e. population <code>shapefile</code>) we can download to explore population change across England:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:02-google-shp"></span>
+<img src="images/w02/datasearch.png" alt="Alas a quick Google search shows that finding a shapefile of England's population is not straightforward." width="90%" />
+<p class="caption">
+Figure 1.2: Alas a quick Google search shows that finding a shapefile of England’s population is not straightforward.
+</p>
+</div>
+<p>Instead, we need to go and find the raw datasets and create the data layers that we want. As a result, before beginning any spatial analysis project, it is best-practice to think through what end product you will ultimately need for your analysis.</p>
+<p>A typical spatial analysis workflow usually looks something like this:</p>
+<ul>
+<li><strong>Identify</strong> the data you need to complete your analysis i.e. answer your research questions. This includes thinking through the scale, coverage and currency of your dataset.</li>
+<li><strong>Find</strong> the data that matches your requirements, e.g. is it openly and easily available?</li>
+<li><strong>Download</strong> the data and store it in the correct location.</li>
+<li><strong>Clean</strong> the data. This may be done before or after ingesting your data into your chosen software programme.</li>
+<li><strong>Load</strong> the data into your chosen software programme.</li>
+<li><strong>Transform and process</strong> the data. This may require re-projection, creating joins between datasets, calculating new fields and applying selections.</li>
+<li><strong>Analyse</strong> your data using appropriate methods.</li>
+<li><strong>Visualise</strong> your data and results with graphs and maps.</li>
+<li><strong>Communicate</strong> your results.</li>
+</ul>
+<p>As you can see, the analysis and visualisation part comes quite late in the overall spatial analysis workflow - and instead, the workflow is very top-heavy with data management. However, very often in GIS-related courses you will be given pre-processed datasets. Because data management is an essential part of your workflow, we are clean (the majority of) our data from the get-go. This will help you understand the processes that you will need to go through in the future as you search for and download your own data, as well as deal with the data first-hand before loading it into our GIS software.</p>
+<div id="w02-scene" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Setting the scene<a href="giscience-and-gis-software.html#w02-scene" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For this practical, we will investigate how the population in London has changed over time. Understanding population change - over time and space - is spatial analysis at its most fundamental. We can understand a lot just from where population is growing or decreasing, including thinking through the impacts of these changes on the provision of housing, education, health and transport infrastructure.</p>
+<p>We can also see first-hand the impact of wider socio-economic processes, such as urbanisation. Today we will look at population in London in 2011, 2015, and 2019 at the <em>ward</em> scale that we can use within our future analysis projects, starting next week.</p>
+<div class="note">
+<p><strong>Note</strong><br/>
+We will use the population dataset to <em>normalise</em> other datasets. Why? When we record events created by humans, there is often a population bias: simply, more people in an area will by probability lead to a higher occurrence of said event, such as crime. We will look at this in greater detail next week.</p>
+</div>
+</div>
+<div id="w02-finding" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Finding data<a href="giscience-and-gis-software.html#w02-finding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the UK, finding authoritative data on population and <em>Administrative Geography</em> boundaries is increasingly straight-forward. Over the last decade, the UK government has opened up many of its datasets as part of an <strong>Open Data</strong> precedent that began in 2010 with the creation of <a href="data.gov.uk">data.gov.uk</a> and the Open Government Licence (the terms and conditions for using data).</p>
+<p><a href="www.data.gov.uk">Data.gov.uk</a> is the UK government’s central database that contains open data that the central government, local authorities and public bodies publish. This includes, for example, aggregated census and health data – and even government spending. In addition to this central database, there are other authoritative databases run by the government and/or respective public bodies that contain either a specific type of data (e.g. census data, crime data) or a specific collection of datasets (e.g. health data from the NHS, data about London). Some portals are less up-to-date than others, so it is wise to double-check with the ‘originators’ of the data to see if there are more recent versions.</p>
+<p>For our practical, we will access data from two portals:</p>
+<ol style="list-style-type: decimal">
+<li>For our administrative boundaries, we will download the <strong>spatial</strong> data from the <em>London Datastore</em> (which is exactly what it sounds like).</li>
+<li>For population, we will download <strong>attribute</strong> data from the <em>Office of National Statistics (ONS)</em>.</li>
+</ol>
+</div>
+<div id="w01-housekeeping" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Housekeeping<a href="giscience-and-gis-software.html#w01-housekeeping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before we download our data, it is important to establish an organised file systems that we will use throughout the module:</p>
+<ol style="list-style-type: decimal">
+<li>Create a <code>GEOG0030</code> folder in your <code>Documents</code> folder on your computer.</li>
+<li>Within your <code>GEOG0030</code> folder, create the following subfolders:</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Folder name</th>
+<th align="left">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>data</code></td>
+<td align="left">To store both raw data sets and final outputs.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>maps</code></td>
+<td align="left">To save the maps you produce during your tutorials.</td>
+</tr>
+</tbody>
+</table>
+<ol start="3" style="list-style-type: decimal">
+<li>Within your <code>data</code> folder, create the following subfolders:</li>
+</ol>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Folder name</th>
+<th align="left">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>raw</code></td>
+<td align="left">To store all your raw data files that have not yet been processed.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>output</code></td>
+<td align="left">To store all your final data files that have been processed and analysed, potentially ready to be mapped.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="w02-downloading" class="section level3 hasAnchor" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Downloading data<a href="giscience-and-gis-software.html#w02-downloading" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We will start by downloading the administrative geography boundaries:</p>
+<ol style="list-style-type: decimal">
+<li>Navigate to the relevant page on the London Datastore: <a href="https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london">[Link]</a>.</li>
+<li>Download all three zipfiles to your computer: <code>statistical-gis-boundaries-london.zip</code>, <code>London-wards-2014.zip</code> and <code>London-wards-2018.zip</code>.</li>
+</ol>
+<p>The first dataset contains all levels of London’s administrative boundaries. In descending size order: borough, Ward, Middle layer Super Output Area (MSOA), Lower layer Super Output Area (LSOA), and Output Area (OA) based on the 2011 Census. The second dataset contains an <em>updated</em> version of the Ward boundaries, as of 2014. The third dataset contains yet another <em>updated</em> version of the Ward boundaries, as of 2018. As we will be looking at population data for 2015 and 2019, it is best practice to use those boundaries that are most reflective of the ‘geography’ at the time; therefore, we will use these 2014 / 2018 ward boundaries for our 2015 / 2019 population dataset, respectively.</p>
+<div class="note">
+<p><strong>Note</strong> <br/>
+Once downloaded, you will need to unzip all files before you can use them. To unzip the file, you can use the built-in functionality of your computer’s operating system. For Windows: right click on the zip file, select <strong>Extract All</strong>, and then follow the instructions. For Mac OS: double-click on the the zip file and it should unzip automatically.</p>
+</div>
+<p>Once unzipped, you will find two folders: <em>Esri</em> and <em>MapInfo.</em> These folders contain the same data but in different data formats: <strong>Esri shapefile</strong> and <strong>MapInfo TAB</strong>.</p>
+<div class="note">
+<p><strong>Note</strong> <br/>
+MapInfo is another proprietary GIS software, which has historically been used in public sectors services in the UK and abroad, although has generally been replaced by either Esri’s ecosystem or open-source software GIS.</p>
+</div>
+<p>Now open your <code>GEOG0030/data/raw/</code> folder and create a new folder called <code>boundaries</code>. Within this folder, create three new folders: <code>2011</code>, <code>2014</code> and <code>2018</code>. Copy the entire contents of <code>Esri</code> folder of each year into their respective year folder.</p>
+<p>We do not want to add the additional <code>Esri</code> folder as a step in our filesystem, i.e. your file paths should read: <code>GEOG0030/data/raw/boundaries/2011</code> for the 2011 boundaries, <code>GEOG0030/data/raw/boundaries/2014</code> for the 2014 boundaries, and <code>GEOG0030/data/raw/boundaries/2018</code> for the 2018 boundaries.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:02-setup"></span>
+<img src="images/w02/file_management.png" alt="Your setup should look something like this." width="90%" />
+<p class="caption">
+Figure 1.3: Your setup should look something like this.
+</p>
+</div>
+<p>We now have our administrative geography files ready for use.</p>
+<div class="note">
+<p><strong>Note</strong> <br/>
+Administrative geographies are a way of dividing the country into smaller sub-divisions or areas that correspond with the area of responsibility of local authorities and government bodies. These administrative sub-divisions and their associated geography have several important uses, including assigning electoral constituencies, defining jurisdiction of courts, planning public healthcare provision, as well as what we are concerned with: used as a mechanism for collecting census data and assigning the resulting datasets to a specific administrative unit. These geographies are updated as populations evolve and as a result, the boundaries of the administrative geographies are subject to either periodic or occasional change. The UK has quite a complex administrative geography, particularly due to having several countries within one overriding administration and then multiple ways of dividing the countries according to specific applications. More details on the administrative geographies of the UK can be found on the website of the <a href="https://www.ons.gov.uk/methodology/geography/ukgeographies/administrativegeography">Office for National Statistics</a>.</p>
+</div>
+<p>For our population datasets, we will use the ONS mid-year estimates (MYE). These population datasets are estimates that are based on the 2011 census count and then updated with estimated population growth. They are released once a year, with a delay of a year. Today we will use the data for 2011, 2015, and 2019.</p>
+<ol style="list-style-type: decimal">
+<li>Navigate to the <em>ward</em> level datasets: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/wardlevelmidyearpopulationestimatesexperimental">[Link]</a></li>
+<li>When you navigate to this page, you will find multiple choices of data to download. We will need to download the estimates for <strong>2011, 2015</strong> and <strong>2019</strong>. Click to download each of the zipfiles. Choose the <strong>revised</strong> versions for 2015 and the (Census-based) 2011 wards edition for 2011.</li>
+<li>In your <code>GEOG0030/data/raw/</code> folder, create a new folder called <code>population</code>, unzip your downloaded files, and copy the three spreadsheets to the newly created <code>population</code> folder.</li>
+<li>Rename the files you donwloaded to: <code>MYE_ward_2011.xls</code>, <code>MYE_ward_2015.xls</code>, and <code>MYE_ward_2019.xlsx</code>.</li>
+</ol>
+<p>Now it is time to do some quite extensive data cleaning and preparation.</p>
+</div>
+<div id="w02-cleaning" class="section level3 hasAnchor" number="1.3.5">
+<h3><span class="header-section-number">1.3.5</span> Cleaning data<a href="giscience-and-gis-software.html#w02-cleaning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When you open up any of the ward spreadsheets in Excel =, you will notice that there are several worksheets contained in this workbook. However, we are only interested in the total population tab. We therefore need to copy over the data from the 2011, 2015 and 2019 datasets into separate <code>csv</code> files.</p>
+<div id="london-population-in-2011" class="section level4 hasAnchor" number="1.3.5.1">
+<h4><span class="header-section-number">1.3.5.1</span> London population in 2011<a href="giscience-and-gis-software.html#london-population-in-2011" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Open the 2011 ward spreadsheet in Excel.</li>
+<li>Click on the <code>Mid-2011 Persons</code> tab and have a look at the data. As you should be able to see, we have a set of different fields (e.g. <code>Ward Code</code>, <code>Ward Name</code>), including population counts. Because we do not need all the data in the spreadsheet, we will extract only the data we need for our analysis. This means we need the total population (<code>All Ages</code>) data, alongside some identifying information that distinguishes each record from one another. Here we can see that both <code>Ward Code</code> and <code>Ward Name</code> suit this requirement. We can also think that the <code>Local Authority</code> column might be of use, so we also keep this information.</li>
+<li>Create a new Excel spreadsheet Excel and from the <code>Mid-2011 Persons</code> spreadsheet, copy over all cells from columns <strong>A</strong> to <strong>D</strong> and rows <strong>4 to 636</strong> into this new spreadsheet. Row 636 denotes the end of the <em>Greater London</em> wards (i.e. the end of the <em>Westminster Local Authority</em>) which are kept (in most scenarios) at the top of the spreadsheet as their <strong>Ward Codes</strong> are the first in sequential order.</li>
+<li>Before we go any further, we need to format our data. First, we want to rename our fields to remove the spaces and superscript formatting. Re-title the fields as follows: <code>ward_code</code>, <code>ward_name</code>, <code>local_authority</code> and <code>pop2011</code>.</li>
+<li>One further bit of formatting that you must do before saving your data is to format our population field. At the moment, you will see that there are commas separating the thousands within our values. If we leave these commas in our values, QGIS will read them as decimal points, creating decimal values of our population. There are many points at which we could solve this issue, but the easiest point is now - we will strip our population values of the commas and set them to integer (whole numbers) values. To format the <code>pop2011</code> column, select the entire column and right-click on the <code>D</code> cell. Click on <strong>Format Cells</strong> and set the Cells to <strong>Number</strong> with <strong>0</strong> decimal places. You should see that the commas are now removed from your population values.</li>
+<li>Save your spreadsheet into your <code>output</code> folder as <code>ward_population_2011.csv</code>.</li>
+</ol>
+</div>
+<div id="london-population-in-2015" class="section level4 hasAnchor" number="1.3.5.2">
+<h4><span class="header-section-number">1.3.5.2</span> London population in 2015<a href="giscience-and-gis-software.html#london-population-in-2015" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Open the 2015 ward spreadsheet in Excel.</li>
+<li>As you will see again, there are plenty of worksheets available and we want to select the <code>Mid-2015 Persons</code> tab. We now need to copy over the data from our 2015 dataset to a new spreadsheet again. However, at first instance, you will notice that the City of London (CoL) wards are missing from this dataset. Then if you scroll to the end of the London Local Authorities, i.e. to the bottom of Westminster, what you should notice is that the final row for the Westminster data is in fact row 575 - this suggests we are missing the data fror some Local Authorities (LAs). We need to determine which ones are missing and try to find them in the 2015 spreadsheet. With this in mind, start by copying over all cells from columns <strong>A</strong> to <strong>D</strong> and rows <strong>5 to 575</strong> into a new spreadsheet.</li>
+<li>If you were to compare the names of the London Boroughs that we have now copied with the full list, you would notice that we are missing <em>City of London</em>, <em>Hackney</em>, <em>Kensington and Chelsea</em>, and <em>Tower Hamlets</em>. If we head back to the original 2015 raw dataset, we can actually find this data (as well as the City of London) further down in the spreadsheet. It seems like these LAs had their codes revised in the 2014 revision and are no longer in the same order as the 2011 dataset.</li>
+<li>Locate the data for the <em>City of London</em>, <em>Hackney</em>, <em>Kensington and Chelsea</em> and <em>Tower Hamlets</em> and copy this over into our new spreadsheet. Double-check that you now have in total <strong>637</strong> wards within your dataset.</li>
+<li>Remember to rename the fields as above, but change your population field to <strong>pop2015</strong>. Also, remember to reformat the values in your <code>pop2015</code> column.</li>
+<li>Once complete, save your spreadsheet into your <code>output</code> folder as <code>ward_population_2015.csv</code>.</li>
+</ol>
+</div>
+<div id="london-population-in-2019" class="section level4 hasAnchor" number="1.3.5.3">
+<h4><span class="header-section-number">1.3.5.3</span> London population in 2019<a href="giscience-and-gis-software.html#london-population-in-2019" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Open the 2019 ward spreadsheet in Excel. This time we are interested in the <code>Mid-2019 Persons</code> tab.</li>
+<li>This time the data that we are interested in can be found in columns <code>A</code>, <code>B</code>, <code>D</code> and <code>G</code>. Because the columns that we want are not positioned next to one antoher, start by hiding columns <code>C</code>, <code>E</code> and <code>F</code>. You can do this by right-clicking on the colums you want to hide and selecting <strong>Hide</strong>.</li>
+<li>Next, copy the data from <strong>row 5 to the final row for the Westminster data</strong> for columns <code>A</code>, <code>B</code>, <code>D</code> and <code>G</code> over into a new spreadsheet.</li>
+<li>If you look at the total rows that we have copied over, we have even fewer wards than the 2015 dataset. This time we are not only missing data for <em>City of London</em>, <em>Hackney</em>, <em>Kensington and Chelsea</em>, <em>Tower Hamlets</em> but also for <em>Bexley</em>, <em>Croydon</em>, <em>Redbridge</em>, and <em>Southwark</em>.</li>
+<li>Copy over the remaining wards for these Local Authorities/boroughs.</li>
+<li>Once you’ve copied them over - you should now have <strong>640</strong> wards. Delete columns <code>C</code>, <code>E</code> and <code>F</code> and rename the remaining fields as you have done previously. Also, remember to <strong>reformat</strong> your population values.</li>
+<li>Once complete, save your spreadsheet into your <code>output</code> folder as <code>ward_population_2019.csv</code>.</li>
+</ol>
+<p>You should now have your three population <code>csv</code> datasets in your <code>output</code> folder. We are now (finally) ready to start using our data within QGIS.</p>
+</div>
+</div>
+<div id="using-qgis-to-map-our-population-data" class="section level3 hasAnchor" number="1.3.6">
+<h3><span class="header-section-number">1.3.6</span> Using QGIS to map our population data<a href="giscience-and-gis-software.html#using-qgis-to-map-our-population-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="setting-up-the-project" class="section level4 hasAnchor" number="1.3.6.1">
+<h4><span class="header-section-number">1.3.6.1</span> Setting up the project<a href="giscience-and-gis-software.html#setting-up-the-project" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We will now use QGIS to create population maps for the wards in London across our three time periods. To achieve this, we need to <strong>join our table data to our spatial datasets</strong> and then map our populations for our visual analysis.</p>
+<p>Because, as we have seen above, we have issues with the number of wards and changes in boundaries across our three years, we will not (for now) complete any quantitative analysis of these population changes - this would require significant additional processing that we do not have time for today.</p>
+<div class="note">
+<p><strong>Note</strong> <br/>
+Data interoperability is a key issue that you will face in spatial analysis, particularly when it comes to Administrative Geographies.</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>Start <strong>QGIS</strong>.
+Let’s start a new project.</li>
+<li>Click on <strong>Project</strong> -&gt; <strong>New</strong>. Save your project into your <code>qgis</code> folder as <code>w2-pop-analysis</code>. Remember to save your work throughout the practical.</li>
+<li>Before we get started with adding data, we will first set the Coordinate Reference System of our Project. Click on <strong>Project</strong> -&gt; <strong>Properties – CRS</strong>. In the Filter box, type <strong>British National Grid</strong>. Select <strong>OSGB 1936 / British National Grid - EPSG:27700</strong> and click Apply. Click <strong>OK</strong>.</li>
+</ol>
+<div class="note">
+<p><strong>Note</strong><br/>
+We will explain CRSs and using CRSs in GIS software in more detail next week.</p>
+</div>
+</div>
+<div id="adding-layers" class="section level4 hasAnchor" number="1.3.6.2">
+<h4><span class="header-section-number">1.3.6.2</span> Adding layers<a href="giscience-and-gis-software.html#adding-layers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We will first focus on loading and joining the 2011 datasets.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Click on <strong>Layer</strong> -&gt; <strong>Add Layer</strong> -&gt; <strong>Add Vector Layer</strong>.</p></li>
+<li><p>With <strong>File</strong> select as your source type, click on the small three dots button and navigate to your 2011 boundary files.</p></li>
+<li><p>Here, we will select the <code>London_Ward.shp</code> dataset. Click on the <code>.shp</code> file of this dataset and click <strong>Open</strong>. Then click <strong>Add</strong>. You may need to close the box after adding the layer.</p></li>
+</ol>
+<p>We can take a moment just to look at our ward data - and recognise the shape of London. Can you see the City of London in the dataset? It has the smallest wards in the entire London area. With the dataset loaded, we can now explore it in a little more detail. We want to check out two things about our data: first, its <strong>Properties</strong> and secondly, its <strong>Attribute Table</strong>.</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Right-click on the <code>London_Ward</code> layer and open the <strong>Attribute Table</strong> and look at how the attributes are stored and presented in the table. Explore the different buttons in the Attribute Table and see if you can figure out what they mean. Once done, close the Attribute Table.</li>
+<li>Right-click on the <code>London_Ward</code> layer and select <strong>Properties</strong>. Click through the different tabs and see what they contain. Keep the <strong>Properties</strong> box open.</li>
+</ol>
+<p>Before adding our population data, we can make a quick map of the wards in London - we can add labels and change the <em>symbolisation</em> of our wards.</p>
+<ol start="10" style="list-style-type: decimal">
+<li><p>In the <strong>Properties</strong> box, click on the <strong>Symbology</strong> tab - this is where we can change how our data layer looks. For example, here we can change the line and fill colour of our wards utilising either the default options available or clicking on <strong>Simple Fill</strong> and changing these properties directly. Keep the overall <strong>styling</strong> to a <strong>Single Symbol</strong> for now - we will get back to this once we have added the population data. You can also click on the <strong>Labels</strong> tab - and set the Labels option to <strong>Single labels</strong>.</p></li>
+<li><p>QGIS will default to the <strong>NAME</strong> column within our data. You can change the properties of these labels using the options available. Change the font to <strong>Futura</strong> and size <strong>8</strong> and under the add a small buffer to the labels by selecting <strong>Draw text bufer</strong> under the <strong>Buffer</strong> tab. You can click <strong>Apply</strong> to see what your labels look like. Please note that the background colour may differ.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:02-busy-labels"></span>
+<img src="images/w02/wardlabels.png" alt="It looks incredibly busy." width="1127" />
+<p class="caption">
+Figure 1.4: It looks incredibly busy.
+</p>
+</div>
+<ol start="12" style="list-style-type: decimal">
+<li>Click <strong>OK</strong> once you are done changing the Symbology and Label style of your data to return to the main window.</li>
+</ol>
+<div class="note">
+<p><strong>Note</strong><br/>
+The main strength of a GUI GIS system is that is really helps us understand how we can visualise spatial data. Even with just these two shapefiles loaded, we can understand two key concepts of using spatial data within GIS.</p>
+<p>The first, and this is only really relevant to GUI GIS systems, is that each layer can either be turned on or off, to make it visible or not (try clicking the tick box to the left of each layer). This is probably a feature you are used to working with if you have played with interactive web mapping applications before!</p>
+<p>The second concept is the order in which your layers are drawn – and this is relevant for both GUI GIS and when using plotting libraries such as <code>ggplot2</code> or <code>tmap</code> in RStudio. Your layers will be drawn depending on the order in which your layers are either tabled (as in a GUI GIS) or ‘called’ in your function in code.</p>
+<p>Being aware of this need for ‘order’ is important when we shift to using RStudio and <code>tmap</code> to plot our maps, as if you do not layer your data correctly in your code, your map will end up not looking as you hoped!</p>
+<p>For us using QGIS right now, the layers will be drawn from bottom to top. At the moment, we only have one layer loaded, so we do not need to worry about our order right now - but as we add in our 2015 and 2018 ward files, it is useful to know about this order as we will need to display them individually to export them at the end.</p>
+</div>
+</div>
+<div id="conducting-an-attribute-join" class="section level4 hasAnchor" number="1.3.6.3">
+<h4><span class="header-section-number">1.3.6.3</span> Conducting an attribute join<a href="giscience-and-gis-software.html#conducting-an-attribute-join" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We are now going to join our 2011 population data to our 2011 shapefile. First, we need to add the 2011 population data to our project.</p>
+<ol start="13" style="list-style-type: decimal">
+<li><p>Click on <strong>Layer</strong> -&gt; <strong>Add Layer</strong> -&gt; <strong>Add Delimited Text Layer</strong>.</p></li>
+<li><p>Click on the three dots button again and navigate to your <strong>2011 population data</strong> in your <code>working</code> folder. Your file format should be set to <code>csv</code>. You should have the following boxes clicked under the <strong>Record and Field options</strong> menu: <em>Decimal separator is comma; First record has field names; Detect field types; Discard empty fields</em>. QGIS does many of these by default, but do double-check!</p></li>
+<li><p>Set the Geometry to <em>No geometry (attribute only table)</em> under the <strong>Geometry Definition</strong> menu. Then click <strong>Add</strong> and <strong>Close</strong>. You should now see a table added to your <code>Layers</code> box.</p></li>
+</ol>
+<p>We can now join this table data to our spatial data using an <strong>Attribute Join</strong>.</p>
+<div class="note">
+<p><strong>Note</strong><br>
+An attribute join is one of two types of data joins you will use in spatial analysis (the other is a spatial join, which we will look at later on in the module). An attribute join essentially allows you to join two datasets together, as long as they share a common attribute to facilitate the ‘matching’ of rows:</p>
+<p><img src="images/w02/attribute_joins.png" width="435" style="display: block; margin: auto;" /></p>
+<p>Essentially you need a <strong>single identifying ID</strong> field for your records within both datasets: this can be a code, a name or any other string of information. In spatial analysis, we always <strong>join our table data to our shape data</strong> (One way to think about it as attaching the table data to each shape).</p>
+<p>As a result, your target layer is always the shapefile (or spatial data) whereas your join layer is the table data. These are known as the left- and right-side tables when working with code.</p>
+<p><strong>To make a join work, you need to make sure your ID field is correct across both datasets</strong>, i.e. no typos or spelling mistakes. Computers can only follow instructions, so they do not know that <em>St. Thomas</em> in one dataset is that same as <em>St Thomas</em> in another, or even <em>Saint Thomas</em>! It will be looking for an exact match!</p>
+<p>As a result, whilst in our datasets we have kept both the name and code for both the boundary data and the population data, <strong>when creating the join, we will always prefer to use the CODE over their names</strong>. Unlike names, codes reduce the likelihood of error and mismatch because they do not rely on understanding spelling!</p>
+<p>Common errors, such as adding in spaces or using <code>0</code> instead <code>O</code> (and vice versa) can still happen – but it is less likely.</p>
+</div>
+<p>To make our join work, we need to check that we have a matching <strong>UID</strong> across both our datasets. We therefore need to look at the tables of both datasets and check what attributes we have that could be used for this possible match.</p>
+<ol start="16" style="list-style-type: decimal">
+<li><p>Open up the Attribute Tables of each layer and check what fields we have that could be used for the join. We can see that both our respective “code” fields have the same codes (<code>ward_code</code> and <code>GSS_code</code>) so we can use these to create our joins.</p></li>
+<li><p>Right-click on your <code>London_Ward</code> layer -&gt; <strong>Properties</strong> and then click on the <strong>Joins</strong> tab.</p></li>
+</ol>
+<ul>
+<li>Click on the <strong>+</strong> button. Make sure the <strong>Join Layer</strong> is set to <code>ward_population_2011</code>.</li>
+<li>Set the <strong>Join field</strong> to <code>ward_code</code>.</li>
+<li>Set the <strong>Target field</strong> to <code>GSS_code</code>.</li>
+<li>Click the <strong>Joined Fields</strong> box and click to only select the <code>pop2011</code> field.</li>
+<li>Click on the <strong>Custom Field Name Prefix</strong> and <strong>remove</strong> the pre-entered text to leave it blank.</li>
+<li>Click on <strong>OK</strong>.</li>
+<li>Click on <strong>Apply</strong> in the main Join tab and then click <strong>OK</strong> to return to the main QGIS window.</li>
+</ul>
+<p>We can now check to see if our join has worked by opening up our <code>London_Ward</code> <strong>Attribute Table</strong> and looking to see if our wards now have a <strong>Population</strong> field attached to it.</p>
+<ol start="18" style="list-style-type: decimal">
+<li>Right-click on the <code>London_Ward</code> layer and open the <strong>Attribute Table</strong> and check that the population data column has been added to the table.</li>
+</ol>
+<p>As long as it has joined, you can move forward with the next steps. If your join has not worked, try the steps again - and if you are still struggling, do let us know.</p>
+<div class="note">
+<p><strong>Note</strong><br />
+Now, the join that you have created between your ward and population datasets in only held in QGIS’s memory. If you were to close the programme now, you would lose this join and have to repeat it the next time you opened QGIS. To prevent this from happening, we need to export our dataset to a new shapefile - and then re-add this to the map.</p>
+</div>
+<p>Let’s do this now:</p>
+<ol start="19" style="list-style-type: decimal">
+<li>Right-click on your <code>London_Ward</code> shapefile and click <strong>Export</strong> -&gt; <strong>Save Features As…</strong>. The format should be set to an ESRI shapefile.</li>
+</ol>
+<ul>
+<li>Then click on the three dots buttons and navigate to your <code>final</code> folder and enter: <code>ward_population_2011</code> as your file name.</li>
+<li>Check that the <strong>CRS</strong> is <strong>British National Grid</strong>.</li>
+<li>Leave the remaining fields as selected, but check that the <strong>Add saved file to map</strong> is checked. Click <strong>OK</strong>.</li>
+</ul>
+<p>You should now see our new shapefile add itself to our map. You can now remove the original <code>London_Ward</code> and <code>ward_population_2011</code> datasets from our Layers box (Right-click on the layers and opt for <strong>Remove Layer…</strong>).</p>
+<p>The final thing we would like to do with this dataset is to style our dataset by our newly added population field to show population distribution around London.</p>
+<ol start="20" style="list-style-type: decimal">
+<li>To do this, again right-click on the <strong>Layer</strong> -&gt; <strong>Properties</strong> -&gt; <strong>Symbology</strong>.</li>
+</ol>
+<ul>
+<li>This time, we want to style our data using a <strong>Graduated</strong> symbology.</li>
+<li>Change this option in the tab and then choose <code>pop2011</code> as your column.</li>
+<li>We can then change the color ramp to suit our aesthetic preferences - <em>Viridis</em> seems to be the cool colour scheme at the moment, and we will choose to invert our ramp as well.</li>
+<li>The final thing we need to do is <strong>classify</strong> our data - what this simply means is to decide how to group the values in our dataset together to create the graduated representation.</li>
+<li>We will be looking at this in later weeks, but for now, we will use the <strong>Natural Breaks</strong> option.</li>
+<li>Click on the drop-down next to Mode, select <strong>Natural Breaks</strong>, change it to <strong>7</strong> classes and then click <strong>Classify</strong>.</li>
+<li>Finally click <strong>Apply</strong> to style your dataset.</li>
+</ul>
+<div class="note">
+<p><strong>Note</strong><br/>
+Understanding what classification is appropriate to visualise your data is an important step within spatial analysis and visualisation, and something you will learn more about in the following weeks. Overall, they should be determined by understanding your data’s distribution and match your visualisation accordingly.</p>
+<p>Feel free to explore using the different options with your dataset at the moment – the results are almost instantaneous using QGIS, which makes it a good playground to see how certain parameters or settings can change your output.</p>
+</div>
+<p>You should now be looking at something like this:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:02-ward-result"></span>
+<img src="images/w02/ward_2011.png" alt="Your result." width="1436" />
+<p class="caption">
+Figure 1.5: Your result.
+</p>
+</div>
+<p>You will be able to see that we have <strong>some</strong> missing data - and this is for several wards within the City of London. This is because census data is <strong>only recorded for 8 out of the 25 wards</strong> and therefore we have no data for the remaining wards. As a result, these wards are left blank, i.e. white, to represent a <code>NODATA</code> value.</p>
+<p>One thing to flag is that <code>NODATA</code> means no data - whereas <code>0</code>, particularly in a scenario like this, would be an actual numeric value. It is important to remember this when processing and visualising data, to make sure you do not represent a <code>NODATA</code> value incorrectly.</p>
+</div>
+</div>
+<div id="exporting-map-for-visual-analysis" class="section level3 hasAnchor" number="1.3.7">
+<h3><span class="header-section-number">1.3.7</span> Exporting map for visual analysis<a href="giscience-and-gis-software.html#exporting-map-for-visual-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To export your map (as is):
+- Select only the map layers you want to export and then opt for <strong>Project</strong> -&gt; <strong>Import/Export</strong> -&gt; <strong>Export to Image</strong> and save your final map in your <code>maps</code> folder. You may want to create a folder for these maps titled <code>w02</code>.</p>
+<p>Next week, we will look at how to style our maps using the main map conventions (adding North Arrows, Scale Bars and Legends) but for now a simple picture will do.</p>
+</div>
+</div>
+<div id="assignment-w02" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Assignment<a href="giscience-and-gis-software.html#assignment-w02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You now need to <strong>repeat this whole process</strong> for your 2015 and 2019 datasets. Remember, you need to:</p>
+<ul>
+<li>Load the respective Ward dataset as a Vector Layer.</li>
+<li>Load the respective Population dataset as a Delimited Text File Layer (remember the settings!).</li>
+<li>Join the two datasets together using the Join tool in the Ward dataset Properties box.</li>
+<li>Export your joined dataset into a new dataset within your <code>final</code> folder.</li>
+<li>Style your data appropriately.</li>
+<li>Export your maps as an image to your <code>maps</code> folder.</li>
+</ul>
+<p>To make visual comparisons against our three datasets, theoretically we would need to standardise the breaks at which our classification schemes are set at. To set all three datasets to the same breaks, you can do the following:</p>
+<ul>
+<li>Right-click on the <code>ward_population_2019</code> dataset and navigate to the <code>Symbology</code> tab. Double-click on the Values for the smallest classification group and set the Lower value to 141 (this is the lowest figure across our datasets, found in the 2015 data). Click <strong>OK</strong>, then click <strong>Apply</strong>, then click <strong>OK</strong> to return to the main QGIS screen.</li>
+<li>Right-click again on the <code>ward_population_2019</code> dataset but this time, click on <strong>Styles</strong> -&gt; <strong>Copy Styles</strong> -&gt; <strong>Symbology</strong>.</li>
+<li>Now right-click on the <code>ward_population_2015</code> file, but this time after clicking on <strong>Styles</strong> -&gt; <strong>Paste Style</strong> -&gt; <strong>Symbology</strong>. You should now see the classification breaks in the 2015 dataset change to match those in the 2019 data.</li>
+<li>Repeat this for the 2011 dataset as well.</li>
+<li>The final thing you need to do is to now change the classification column in the <code>Symbology</code> tab for the 2015 and 2011 datasets back to their original columns and press <strong>Apply</strong>. You will see when you first load up their Symbology options this is set to <em>pop2019</em>, which of course does not exist within this dataset.</li>
+</ul>
+</div>
+<div id="byl-w02" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Before you leave<a href="giscience-and-gis-software.html#byl-w02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Finally, <a href="https://www.youtube.com/watch?v=Wmc8bQoL-J0">that is it for this week</a>! Remember to save your project!</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="foundational-concepts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="additional-resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jtvandijk/GEOG0030/edit/master/02-GIScience.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["GEOG0030.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
