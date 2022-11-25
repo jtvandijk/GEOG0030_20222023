@@ -361,4 +361,4 @@ To make visual comparisons against our three datasets, theoretically we would ne
 - The final thing you need to do is to now change the classification column in the `Symbology` tab for the 2015 and 2011 datasets back to their original columns and press **Apply**. You will see when you first load up their Symbology options this is set to *pop2019*, which of course does not exist within this dataset.
 
 ## Before you leave {#byl-w02}
-Finally, [that is it for this week](https://www.youtube.com/watch?v=Wmc8bQoL-J0)! Remember to save your project!
+Save your project so you can go back to it if you need to, other than that [that is it for this week](https://www.youtube.com/watch?v=Wmc8bQoL-J0)!
