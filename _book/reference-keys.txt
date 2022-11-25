@@ -23,11 +23,11 @@ w02-finding
 w01-housekeeping
 w02-downloading
 w02-cleaning
-london-population
-london-population-1
-london-population-2
+london-population-in-2011
+london-population-in-2015
+london-population-in-2019
 using-qgis-to-map-our-population-data
-setting-up-the-project
+setting-up-a-project
 adding-layers
 conducting-an-attribute-join
 exporting-map-for-visual-analysis
@@ -36,7 +36,3 @@ byl-w02
 data-sources
 open-data
 safeguarded-data
-london-population-in-2011
-london-population-in-2015
-london-population-in-2019
-setting-up-a-project
