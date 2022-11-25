@@ -8,19 +8,59 @@ documentclass: book
 link-citations: yes
 github-repo: "jtvandijk/GEOG0030"
 description: "GEOG0030: Geocomputation handbook."
-url: 'https\://jtvandijk.github.io/GEOG0030/'
+url: 'https\://jtvandijk.github.io/GEOG0030'
 ---
-# (PART\*) Module overview {-}
+# Module Overview {-}
 
 # Module Introduction {-}
 
-```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+```{r 00-welcome, echo=FALSE, out.width = '100%', fig.align='center', cache=TRUE}
 knitr::include_graphics('images/general/geocomputation_welcome.png') 
 ```
 
-<br />
-
 ## Welcome {-}
-Welcome to **Geocomputation**, a course that introduces you to both the principles of spatial analysis and the use of programming for data analysis.
+Welcome to **Geocomputation**. This module will introduce you both to the principles of spatial analysis as well as provide you with a comprehensive introduction to the use of programming. Over the next ten weeks, you will learn about the theory, methods and tools of spatial analysis through relevant case studies. We will start by using QGIS before moving to the R programming language. You will learn how to find, manage and clean spatial, demographic and socioeconomic datasets, and then analyse them using core spatial and statistical analysis techniques. 
 
-Content to be made available at the start of the academic year. The content for 2021-2022 has now been archived and can be found here: [[Link]](https://jtvandijk.github.io/GEOG0030_20212022)
+## Moodle {-}
+[Moodle](https://moodle.ucl.ac.uk/) is the central point of contact for GEOG0030 and it is where all important information will be communicated such as key module and assessment information. This workbook contains links to all reading material as well as the content of all computer tutorials
+
+## Module overview {-}
+The topics covered over the next ten weeks are:
+
+| Week          | Section          | Topic |
+| :---          |:---------        |:------------------ |
+| 1             | Foundational Concepts | [Geocomputation: An Introduction](geocomputation-an-introduction.html) |
+| 2             | Foundational Concepts | [GIScience and GIS software](giscience-and-gis-software.html) | 
+| 3             | Foundational Concepts | [Cartography and Visualisation](cartography-and-visualisation.html) | 
+| 4             | Foundational Concepts | [Programming for Data Analysis](programming-for-data-analysis.html) |
+| 5             | Foundational Concepts | [Programming for Spatial Analysis](programming-for-spatial-analysis.html) |
+|               | **Reading week** | **Reading week** |
+| 6             | Core Spatial Analysis | [Analysing Spatial Patterns I: Geometric Operations and Spatial Queries](analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html) |
+| 7             | Core Spatial Analysis | [Analysing Spatial Patterns II: Spatial Autocorrelation](analysing-spatial-patterns-ii-spatial-autocorrelation.html) |
+| 8             | Core Spatial Analysis | [Analysing Spatial Patterns III: Point Pattern Analysis](analysing-spatial-patterns-iii-point-pattern-analysis.html) |
+| 9             | Advanced Spatial Analysis | [Rasters, Zonal Statistics and Interpolation](rasters-zonal-statistics-and-interpolation.html) | 
+| 10            | Advanced Spatial Analysis | [Transport Network Analysis](transport-network-analysis.html) | 
+
+## Troubleshooting {-}
+Spatial analysis can yield fascinating insights into geographical relationships, albeit at times it can be challenging, particularly when we combine this with learning how to program at the same time. You will most likely encounter many error messages, experience software crashes, and spend hours to identify bugs in your code. However, the rewards of learning how to programmatically solve complex spatial problems will be very much worth it in the end.
+
+If you need specific assistance with this course please:
+
+- Ask a question at the end of a lecture or during the computer practical.
+- Attend the Department's **Coding Therapy sessions** that are run on a weekly basis.
+- Check the [Moodle](https://moodle.ucl.ac.uk/) assessment tab for queries relating to this module's assessment.
+
+If after pursuing all these avenues you still need help, you can book into our office hours. You can use an office hour to discuss a geographical concept in relation to the material, assessment or for any personal matters relevant to the completion of the module.
+
+## Acknowledgements {-}
+This year's workbook is updated and compiled using:
+
+* The [GEOG0030: Geocomputation 2021-2021](https://jo-wilkin.github.io/GEOG0030/coursebook/index.html) workbook as created and compiled by Dr Jo Wilkin.
+* The [GEOG0030: Geocomputation 2021-2022](https://jtvandijk.github.io/GEOG0030_20212022/) workbook.
+
+The datasets used in this workbook contain:
+
+* National Statistics data © Crown copyright and database right [2015] (Open Government Licence) 
+* Ordnance Survey data © Crown copyright and database right [2015]
+* Public Health England © Crown copyright 2021
+* Crime data obtained from [data.police.uk](https://data.police.uk/) (Open Government Licence)

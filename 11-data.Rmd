@@ -1,0 +1,73 @@
+# Additional Resources {-}
+
+# Data Sources
+Below you will find a list of resources that you might want to explore when sourcing data for your coursework assignment or your dissertation. This is by no means an exhaustive list, but simply contains some suggestions of websites that you may want to use.
+
+:::note
+**Note**<br/>
+You are **not limited** to using these datasets for your coursework assignment or your dissertation.
+:::
+
+## Open Data
+The following websites contain Open Data or link to Open Data from several respectable data providers:
+
+* [AirBnB Data](http://insideairbnb.com/get-the-data.html)
+* [Bike Docking Data (ready for R)](https://docs.ropensci.org/bikedata/)
+* [Camden Air Action](https://camdenairaction.wordpress.com/2017/02/20/schools-monitoring-project-spring-2017/)
+* [Consumer Data Research Centre](https://data.cdrc.ac.uk/)
+* [DEFRA](https://environment.data.gov.uk/)
+* [DIVA-GIS](https://www.diva-gis.org/)
+* [Edina (e.g. OS mastermap)](https://digimap.edina.ac.uk/)
+* [EU Tourism Data](https://ec.europa.eu/eurostat/statistics-explained/index.php/Tourism_statistics)
+* [Eurostat](https://ec.europa.eu/eurostat)
+* [Geofabrik (OSM data)](https://www.geofabrik.de/)
+* [Global Weather Data](https://rp5.ru/Weather_in_the_world)
+* [Google Dataset Search](https://datasetsearch.research.google.com/)
+* [Johns Hopkins COVID19 Data (ready for R](https://github.com/RamiKrispin/coronavirus)
+* [King's College Data on Air Pollution](https://www.londonair.org.uk/LondonAir/Default.aspx)
+* [London Data Store](https://data.london.gov.uk/)
+* [London Tube PM2.5 Levels](https://www.ft.com/content/6f381ad4-fef7-11e9-be59-e49b2a136b8d)
+* [NASA EARTHDATA](https://earthdata.nasa.gov/)
+* [NASA SocioEconomic Data and Applications Center (SEDAC)](https://sedac.ciesin.columbia.edu/)
+* [NHS Data (ready for R)](https://nhs-r-community.github.io/NHSRdatasets/)
+* [nomis Official Census and Labour Market Statistics](https://www.nomisweb.co.uk/)
+* [Office for National Statistics Geoportal](https://geoportal.statistics.gov.uk/)
+* [Office for National Statistics](https://www.ons.gov.uk/)
+* [Open Topography](https://opentopography.org/)
+* [Tesco Store Data (London)](https://www.nature.com/articles/s41597-020-0397-7)
+* [TfL Cycling Data](https://cycling.data.tfl.gov.uk/)
+* [TfL Open Data](https://tfl.gov.uk/info-for/open-data-users/our-open-data?intcmp=3671#on-this-page-2)
+* [Tidy Tuesday Data (not exclusively spatial data)](https://github.com/rfordatascience/tidytuesday)
+* [Uber Travel Time Data](https://movement.uber.com/?lang=en-GB)
+* [UK COVID19 Data](https://coronavirus.data.gov.uk/)
+* [UK Data Service](https://ukdataservice.ac.uk/)
+* [US Census Data](https://www.census.gov/data.html)
+* [US City Open Data Census](http://us-cities.survey.okfn.org/)
+* [USGS Earth Explorer](https://earthexplorer.usgs.gov/)
+* [WorldPop GitHub](https://github.com/wpgp)
+* [WorldPop](https://www.worldpop.org/)
+
+Some other websites that could be helpful:
+
+* [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets); general collection of datasets, although not limited to spatial data.
+* [Free GIS data](https://freegisdata.rtwilson.com/); long list with lots of GIS datasets on many different topics and covering many different areas.
+
+## Safeguarded Data
+Undergraduate students can also apply for a **Safeguarded** dataset held by the [Consumer Data Research Centre](https://www.cdrc.ac.uk/). There is a process to access these **Safeguarded** datasets, which is detailed on the [CDRC website](https://data.cdrc.ac.uk/using-our-data-services). Please be aware that it normally takes 4-5 weeks for your application to be processed.
+
+As part of the process, you will need to say in your application why you want that specific dataset and what you are planning to do with it. You will also need to have at least thought about the ethical implications of using that data and provide this with your data application (alongside your standard ethics application).
+
+Some of the datasets held by the CDRC that you can apply for are: 
+
+* [Bicycle Sharing System Docking Station Observations](https://data.cdrc.ac.uk/dataset/bicycle-sharing-system-docking-station-observations)
+* [CDRC Modelled Ethnicity Proportions - LSOA Geography]( https://data.cdrc.ac.uk/dataset/cdrc-modelled-ethnicity-proportions-lsoa-geography)
+* [FCA Financial Lives Survey](https://data.cdrc.ac.uk/dataset/fca-financial-lives-survey)
+* [Local Data Company - SmartStreetSensor Footfall Data – Research Aggregated data](https://data.cdrc.ac.uk/dataset/local-data-company-smartstreetsensor-footfall-data-%E2%80%93-research-aggregated-data)
+* [NHS Hospital Admission Rates by Ethnic Group and other Characteristics]( https://data.cdrc.ac.uk/dataset/nhs-hospital-admission-rates-ethnic-group-and-other-characteristics)
+* [Speedchecker Broadband Internet Speed Tests](https://data.cdrc.ac.uk/dataset/speedchecker-broadband-internet-speed-tests)
+
+:::note
+**Note**<br />
+Given that the application can take several weeks, the Safeguarded CDRC datasets may be useful for your dissertation work but probably not for the GEOG0030 coursework assignment. However, any of the CDRC datasets that are marked as **Open Data** do not require this application process and you can download these datasets directly after registering on the website.
+:::
+
