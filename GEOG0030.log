@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  2 DEC 2022 14:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  2 DEC 2022 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -856,84 +856,68 @@ Overfull \hbox (5.84502pt too wide) in paragraph at lines 1220--1222
 [45] [46]
 File: images/w03/crime_unproj.png Graphic file (type bmp)
 <images/w03/crime_unproj.png>
-
-Overfull \hbox (339.33025pt too wide) in paragraph at lines 1258--1259
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 24.0615pt on input line 1263.
-
-[47] [48] [49]
-Underfull \hbox (badness 3343) in paragraph at lines 1387--1388
+[47] [48]
+Underfull \hbox (badness 3343) in paragraph at lines 1372--1373
 []\TU/lmr/m/n/10 Whilst in the Editing mode, click on \TU/lmr/bx/n/10 New Field \TU/lmr/m/n/10 button (or
  []
 
-[50] [51] [52]
+[49] [50] [51]
 File: images/w03/map_layout.png Graphic file (type bmp)
 <images/w03/map_layout.png>
-
-Overfull \hbox (547.16115pt too wide) in paragraph at lines 1518--1519
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 24.05898pt on input line 1523.
-
-[53] [54]
+[52]
 File: images/w03/autolegend.png Graphic file (type bmp)
 <images/w03/autolegend.png>
-[55] [56]
-Underfull \hbox (badness 1354) in paragraph at lines 1687--1689
+[53] [54]
+Underfull \hbox (badness 1354) in paragraph at lines 1649--1651
 []\TU/lmr/m/n/10 Finally add a box detailing our data sources, you can copy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1687--1689
+Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
 \TU/lmr/m/n/10 and paste the following: \TU/lmtt/m/n/10 Contains National Statistics
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1687--1689
+Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
 \TU/lmtt/m/n/10 data © Crown copyright and database right [2015] (Open
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1687--1689
+Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
 \TU/lmtt/m/n/10 Government Licence). Contains Ordnance Survey data ©
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1687--1689
+Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
 \TU/lmtt/m/n/10 Crown copyright and database right [2015]. Crime data
  []
 
 File: images/w03/london_crime_rate.png Graphic file (type bmp)
 <images/w03/london_crime_rate.png>
 
-Overfull \hbox (432.80463pt too wide) in paragraph at lines 1696--1697
+Overfull \hbox (432.80463pt too wide) in paragraph at lines 1658--1659
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 36.09004pt on input line 1701.
+LaTeX Warning: Float too large for page by 36.09004pt on input line 1663.
 
 
-Underfull \hbox (badness 1314) in paragraph at lines 1703--1704
+Underfull \hbox (badness 1314) in paragraph at lines 1665--1666
 \TU/lmr/bx/n/10 out \TU/lmr/m/n/10 -> \TU/lmr/bx/n/10 Export as Image \TU/lmr/m/n/10 and then save it in your maps folder as
  []
 
-[57] [58] [59] (./GEOG0030.aux)
+[55] [56] [57] (./GEOG0030.aux)
 Package rerunfilecheck Info: File `GEOG0030.out' has not changed.
 (rerunfilecheck)             Checksum: 34945582ED46F31BEAE8E95FD2EFDC16;3378.
  ) 
 Here is how much of TeX's memory you used:
- 17754 strings out of 478189
- 328751 string characters out of 5853293
- 771313 words of memory out of 5000000
- 38103 multiletter control sequences out of 15000+600000
+ 17753 strings out of 478189
+ 328743 string characters out of 5853293
+ 770281 words of memory out of 5000000
+ 38102 multiletter control sequences out of 15000+600000
  475726 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,7n,121p,1241b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,7n,121p,1250b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on GEOG0030.pdf (59 pages).
+Output written on GEOG0030.pdf (57 pages).
