@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  2 DEC 2022 14:33
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  2 DEC 2022 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -750,33 +750,25 @@ Chapter 1.
 [13] [14] [15]
 File: images/w01/rstudio_interface.png Graphic file (type bmp)
 <images/w01/rstudio_interface.png>
-
-Overfull \hbox (482.66284pt too wide) in paragraph at lines 343--344
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 24.06268pt on input line 348.
-
-[16] [17] [18] [19] [20
+[16] [17] [18]
+Chapter 2.
+[19
 
 ]
-Chapter 2.
-[21]
 File: images/w02/river_thames.png Graphic file (type bmp)
 <images/w02/river_thames.png>
-[22]
+[20]
 File: images/w02/datasearch.png Graphic file (type bmp)
 <images/w02/datasearch.png>
-[23] [24] [25]
+[21] [22] [23]
 Overfull \hbox (72.315pt too wide) in paragraph at lines 638--639
 []\TU/lmr/m/n/10 Download all three zipfiles to your computer: \TU/lmtt/m/n/10 statistical-gis-boundaries-london.zip\TU/lmr/m/n/10 ,
  []
 
-[26]
+[24]
 File: images/w02/file_management.png Graphic file (type bmp)
 <images/w02/file_management.png>
-[27]
+[25]
 Underfull \hbox (badness 3407) in paragraph at lines 679--681
 []\TU/lmr/m/n/10 In your \TU/lmtt/m/n/10 GEOG0030/data/raw/ \TU/lmr/m/n/10 folder, create a new folder called
  []
@@ -786,7 +778,7 @@ Overfull \hbox (25.85703pt too wide) in paragraph at lines 681--682
 []\TU/lmr/m/n/10 Rename the files you donwloaded to: \TU/lmtt/m/n/10 MYE_ward_2011.xls\TU/lmr/m/n/10 , \TU/lmtt/m/n/10 MYE_ward_2015.xls\TU/lmr/m/n/10 ,
  []
 
-[28]
+[26]
 Overfull \hbox (18.06pt too wide) in paragraph at lines 708--709
 []\TU/lmr/m/n/10 Save your spreadsheet into your \TU/lmtt/m/n/10 output \TU/lmr/m/n/10 folder as \TU/lmtt/m/n/10 ward_population_2011.csv\TU/lmr/m/n/10 . 
  []
@@ -799,12 +791,12 @@ Underfull \hbox (badness 1303) in paragraph at lines 728--729
 
 Underfull \vbox (badness 7981) has occurred while \output is active []
 
-[29]
+[27]
 Underfull \hbox (badness 1303) in paragraph at lines 750--751
 []\TU/lmr/m/n/10 Once complete, save your spreadsheet into your \TU/lmtt/m/n/10 output \TU/lmr/m/n/10 folder as
  []
 
-[30] [31]
+[28] [29]
 File: images/w02/wardlabels.png Graphic file (type bmp)
 <images/w02/wardlabels.png>
 
@@ -815,7 +807,7 @@ Overfull \hbox (553.40018pt too wide) in paragraph at lines 823--824
 
 LaTeX Warning: Float too large for page by 24.10089pt on input line 828.
 
-[32] [33]
+[30] [31]
 File: images/w02/attribute_joins.png Graphic file (type bmp)
 <images/w02/attribute_joins.png>
 
@@ -823,12 +815,12 @@ Overfull \hbox (74.1431pt too wide) in paragraph at lines 869--869
  [] 
  []
 
-[34]
+[32]
 Underfull \hbox (badness 1496) in paragraph at lines 895--897
 []\TU/lmr/m/n/10 Click on the \TU/lmr/bx/n/10 + \TU/lmr/m/n/10 button. Make sure the \TU/lmr/bx/n/10 Join Layer \TU/lmr/m/n/10 is set to
  []
 
-[35]
+[33]
 File: images/w02/ward_2011.png Graphic file (type bmp)
 <images/w02/ward_2011.png>
 
@@ -839,75 +831,75 @@ Overfull \hbox (560.72662pt too wide) in paragraph at lines 984--985
 
 LaTeX Warning: Float too large for page by 24.05553pt on input line 989.
 
-[36] [37] [38] [39] [40
+[34] [35] [36] [37] [38
 
 ]
 Chapter 3.
-[41] [42]
+[39] [40]
 Underfull \hbox (badness 1215) in paragraph at lines 1120--1121
 \TU/lmr/m/n/10 Luckily, we already sorted out our Ward population dataset last week
  []
 
-[43] [44]
+[41] [42]
 Overfull \hbox (5.84502pt too wide) in paragraph at lines 1220--1222
 \TU/lmtt/m/n/10 raw/boundaries/2011 \TU/lmr/m/n/10 data folder: \TU/lmtt/m/n/10 London_Borough_Excluding_MHW.shp\TU/lmr/m/n/10 . 
  []
 
-[45] [46]
+[43] [44]
 File: images/w03/crime_unproj.png Graphic file (type bmp)
 <images/w03/crime_unproj.png>
-[47] [48]
+[45] [46]
 Underfull \hbox (badness 3343) in paragraph at lines 1372--1373
 []\TU/lmr/m/n/10 Whilst in the Editing mode, click on \TU/lmr/bx/n/10 New Field \TU/lmr/m/n/10 button (or
  []
 
-[49] [50] [51]
+[47] [48] [49]
 File: images/w03/map_layout.png Graphic file (type bmp)
 <images/w03/map_layout.png>
-[52]
+[50]
 File: images/w03/autolegend.png Graphic file (type bmp)
 <images/w03/autolegend.png>
-[53] [54]
-Underfull \hbox (badness 1354) in paragraph at lines 1649--1651
+[51] [52]
+Underfull \hbox (badness 1354) in paragraph at lines 1650--1652
 []\TU/lmr/m/n/10 Finally add a box detailing our data sources, you can copy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
+Underfull \hbox (badness 10000) in paragraph at lines 1650--1652
 \TU/lmr/m/n/10 and paste the following: \TU/lmtt/m/n/10 Contains National Statistics
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
+Underfull \hbox (badness 10000) in paragraph at lines 1650--1652
 \TU/lmtt/m/n/10 data © Crown copyright and database right [2015] (Open
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
+Underfull \hbox (badness 10000) in paragraph at lines 1650--1652
 \TU/lmtt/m/n/10 Government Licence). Contains Ordnance Survey data ©
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1649--1651
+Underfull \hbox (badness 10000) in paragraph at lines 1650--1652
 \TU/lmtt/m/n/10 Crown copyright and database right [2015]. Crime data
  []
 
 File: images/w03/london_crime_rate.png Graphic file (type bmp)
 <images/w03/london_crime_rate.png>
 
-Overfull \hbox (432.80463pt too wide) in paragraph at lines 1658--1659
+Overfull \hbox (432.80463pt too wide) in paragraph at lines 1659--1660
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 36.09004pt on input line 1663.
+LaTeX Warning: Float too large for page by 36.09004pt on input line 1664.
 
 
-Underfull \hbox (badness 1314) in paragraph at lines 1665--1666
+Underfull \hbox (badness 1314) in paragraph at lines 1666--1667
 \TU/lmr/bx/n/10 out \TU/lmr/m/n/10 -> \TU/lmr/bx/n/10 Export as Image \TU/lmr/m/n/10 and then save it in your maps folder as
  []
 
-[55] [56] [57] (./GEOG0030.aux)
+[53] [54] [55] (./GEOG0030.aux)
 Package rerunfilecheck Info: File `GEOG0030.out' has not changed.
 (rerunfilecheck)             Checksum: 34945582ED46F31BEAE8E95FD2EFDC16;3378.
  ) 
@@ -920,4 +912,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  86i,7n,121p,1250b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on GEOG0030.pdf (57 pages).
+Output written on GEOG0030.pdf (55 pages).

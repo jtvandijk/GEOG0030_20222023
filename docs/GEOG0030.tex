@@ -340,7 +340,7 @@ You should be able to log in with your normal UCL username and password. After l
 
 \begin{figure}
 
-{\centering \includegraphics[width=30.26in]{images/w01/rstudio_interface} 
+{\centering \includegraphics[width=0.9\linewidth]{images/w01/rstudio_interface} 
 
 }
 
@@ -353,7 +353,7 @@ If it is the first time you log on to RStudio server you may only see the RStudi
 \hypertarget{r-package-installation}{%
 \subsection{R package installation}\label{r-package-installation}}
 
-Now we have installed or have access to QGIS and R, we need to customise R. Many useful R function come in packages, these are free libraries of code written and made available by other by R users. This includes packages specifically developed for data cleaning, data wrangling, visualisation, mapping, and spatial analysis. To save us some time, we will install all R packages that we will need over the next ten weeks in one go. Without going into detail on the RStudio (Server) interface, copy and paste the following code into the \emph{console}. You can execute the code by hitting \textbf{Enter}. This may take a while.
+Now we have installed or have access to QGIS and R, we need to customise R. Many useful R function come in packages, these are free libraries of code written and made available by other by R users. This includes packages specifically developed for data cleaning, data wrangling, visualisation, mapping, and spatial analysis. To save us some time, we will install all R packages that we will need over the next ten weeks in one go. Now copy and paste the following code into the \textbf{console}. You can execute the code by hitting \textbf{Enter}. This may take a while.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1085,7 +1085,7 @@ Over the next few weeks, we will look to model driving factors behind crime acro
 Spatial analysis can be employed in both an exploratory and well as a more confirmatory manner with the primary purpose of identifying how certain community or ecological factors (such as population characteristics or the built environment) influence the spatial patterns of crime.
 \end{quote}
 
-Against this background, we are actually going to answer a very simple question today: does our perception of crime (and its distribution) in London vary at different scales? Here we are looking to test whether we would make the \textbf{ecological fallacy} mistake of assuming patterns at the Ward level are the same at the Borough level by looking to directly account for the impact of the Modifiable Area Unit Problem within our results. To test this, we will use these two administrative geographies (\textbf{Borough} and \textbf{Ward}) to aggregate crime data for London in 2020. Here we will be looking specifically at a specific type of crime: \emph{Theft from a person}.
+Against this background, we are actually going to answer a very simple question today: does our perception of crime (and its distribution) in London vary at different scales? Here we are looking to test whether we would make the \textbf{ecological fallacy} mistake of assuming patterns at the Ward level are the same at the Borough level by looking to directly account for the impact of the Modifiable Area Unit Problem within our results. To test this, we will use these two administrative geographies to aggregate crime data for London in 2020. Here we will be looking specifically at a specific type of crime: \emph{Theft from a person}.
 
 \hypertarget{w03-finding}{%
 \subsection{Finding our datasets}\label{w03-finding}}
@@ -1152,7 +1152,7 @@ Through a quick search, we can find our Borough population table data pretty muc
 \hypertarget{ward-population}{%
 \subsubsection{Ward population}\label{ward-population}}
 
-As mentioned above, you should have a \texttt{ward\_population\_2019.shp} file within your \texttt{output} data folder.
+As mentioned above, you should already have a \texttt{ward\_population\_2019.shp} file within your \texttt{output} data folder.
 
 \hypertarget{crime-data-1}{%
 \subsubsection{Crime data}\label{crime-data-1}}
@@ -1359,8 +1359,8 @@ Whilst it is great that we have ve got our \texttt{crimecount}, as we know, what
   With the \textbf{Attribute Table} of your \texttt{Count} layer still open, click on the \textbf{pencil} icon at the top left corner. This pencil switches on the \textbf{Editing} mode.
 \end{enumerate}
 
-The Editing mode allows you to edit both the \textbf{Attribute Table} values \textbf{and} the \textbf{geometry} of your data. When it comes to the \textbf{Attribute Table}, it means you can directly edit existing values in the table \textbf{or} create and add new fields to the table. Whilst you can actually do the latter outside of the Editing mode, this Editing mode means you can reverse any edits you make and they are not permanent just in case you make a mistake.
-Using the Editing mode is the \textbf{safest} approach to editing your table, however, it might not always be the approach you use when generating new fields.
+The Editing mode allows you to edit both the \textbf{Attribute Table} values and the \textbf{geometry} of your data. When it comes to the \textbf{Attribute Table}, it means you can directly edit existing values in the table \textbf{or} create and add new fields to the table. Whilst you can actually do the latter outside of the Editing mode, this Editing mode means you can reverse any edits you make and they are not permanent just in case you make a mistake.
+Using the Editing mode is the safest approach to editing your table, however, it might not always be the approach you use when generating new fields.
 
 Let us go ahead and add a new field to contain our \textbf{Crime Rate}.
 
@@ -1460,11 +1460,12 @@ On the \textbf{left-hand} side of the window, you will find buttons beside the c
 
 On the \textbf{right-hand} side of the window, you will find two set of panels. The upper one holds the panels Items and Undo History and the lower holds the panels Layout, Item properties and Atlas generation. For our practical today, we're most interested in the bottom panel as \textbf{Layout} will control the overall look of our map, whilst \textbf{Item properties} will allow us to customise the elements, such as Title or Legend, that we may add to our map.
 
-In the \textbf{bottom part} of the window, you can find a status bar with mouse position, current page number, a combo box to set the zoom level, the number of selected items if applicable and, in the case of atlas generation, the number of features.
+In the \textbf{bottom part} of the window, you can find a status bar with mouse position, current page number, a combo box to set the zoom level and the number of selected items if applicable.
 
 In the \textbf{upper part} of the window, you can find menus and other toolbars. All print layout tools are available in menus and as icons in a toolbar.
 
-Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items.
+\textbf{Note}
+Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items. If you get stuck, have a look at the excellent and detailed documentation: \href{https://docs.qgis.org/3.22/en/docs/user_manual/print_composer/index.html}{{[}Link{]}}
 
 To start with creating a map, you use the \textbf{Add Map} tool to draw a box in which a snapshot of the \textbf{current active} map you have displayed in your QGIS main window will be loaded.
 

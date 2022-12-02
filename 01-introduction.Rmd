@@ -58,7 +58,7 @@ As an alternative to installing QGIS and R with RStudio onto your personal devic
 
 You should be able to log in with your normal UCL username and password. After logging in, you should see the RStudio interface appear. 
 
-```{r 01-rstudio-interface, echo=FALSE, fig.align='center', fig.cap='The RStudio Server interface.'}
+```{r 01-rstudio-interface, echo=FALSE, fig.align='center', out.width="90%", fig.cap='The RStudio Server interface.'}
 knitr::include_graphics('images/w01/rstudio_interface.png')
 ```
 
@@ -68,7 +68,7 @@ If it is the first time you log on to RStudio server you may only see the RStudi
 :::
 
 ### R package installation 
-Now we have installed or have access to QGIS and R, we need to customise R. Many useful R function come in packages, these are free libraries of code written and made available by other by R users. This includes packages specifically developed for data cleaning, data wrangling, visualisation, mapping, and spatial analysis. To save us some time, we will install all R packages that we will need over the next ten weeks in one go. Without going into detail on the RStudio (Server) interface, copy and paste the following code into the *console*. You can execute the code by hitting **Enter**. This may take a while.
+Now we have installed or have access to QGIS and R, we need to customise R. Many useful R function come in packages, these are free libraries of code written and made available by other by R users. This includes packages specifically developed for data cleaning, data wrangling, visualisation, mapping, and spatial analysis. To save us some time, we will install all R packages that we will need over the next ten weeks in one go. Now copy and paste the following code into the **console**. You can execute the code by hitting **Enter**. This may take a while.
 
 ```{r 01-install-libaries, echo=TRUE, warnings=TRUE, message=TRUE, eval=FALSE, tidy=TRUE}
 # install all packages that we need

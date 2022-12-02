@@ -236,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Spatial analysis can be employed in both an exploratory and well as a more confirmatory manner with the primary purpose of identifying how certain community or ecological factors (such as population characteristics or the built environment) influence the spatial patterns of crime.</p>
 </blockquote>
-<p>Against this background, we are actually going to answer a very simple question today: does our perception of crime (and its distribution) in London vary at different scales? Here we are looking to test whether we would make the <strong>ecological fallacy</strong> mistake of assuming patterns at the Ward level are the same at the Borough level by looking to directly account for the impact of the Modifiable Area Unit Problem within our results. To test this, we will use these two administrative geographies (<strong>Borough</strong> and <strong>Ward</strong>) to aggregate crime data for London in 2020. Here we will be looking specifically at a specific type of crime: <em>Theft from a person</em>.</p>
+<p>Against this background, we are actually going to answer a very simple question today: does our perception of crime (and its distribution) in London vary at different scales? Here we are looking to test whether we would make the <strong>ecological fallacy</strong> mistake of assuming patterns at the Ward level are the same at the Borough level by looking to directly account for the impact of the Modifiable Area Unit Problem within our results. To test this, we will use these two administrative geographies to aggregate crime data for London in 2020. Here we will be looking specifically at a specific type of crime: <em>Theft from a person</em>.</p>
 <div id="w03-finding" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Finding our datasets<a href="cartography-and-visualisation.html#w03-finding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As we saw last week, accessing data within the UK, and specifically for London, is relatively straight-forward - you simply need to know which data portal contains the dataset you want!</p>
@@ -282,7 +282,7 @@ You should have a total of <strong>33</strong> Boroughs.</p></li>
 </div>
 <div id="ward-population" class="section level4 hasAnchor" number="3.2.2.2">
 <h4><span class="header-section-number">3.2.2.2</span> Ward population<a href="cartography-and-visualisation.html#ward-population" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>As mentioned above, you should have a <code>ward_population_2019.shp</code> file within your <code>output</code> data folder.</p>
+<p>As mentioned above, you should already have a <code>ward_population_2019.shp</code> file within your <code>output</code> data folder.</p>
 </div>
 <div id="crime-data-1" class="section level4 hasAnchor" number="3.2.2.3">
 <h4><span class="header-section-number">3.2.2.3</span> Crime data<a href="cartography-and-visualisation.html#crime-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -411,8 +411,8 @@ QGIS can at times be a little bit buggy so when it creates new data layers in yo
 <ol start="6" style="list-style-type: decimal">
 <li>With the <strong>Attribute Table</strong> of your <code>Count</code> layer still open, click on the <strong>pencil</strong> icon at the top left corner. This pencil switches on the <strong>Editing</strong> mode.</li>
 </ol>
-<p>The Editing mode allows you to edit both the <strong>Attribute Table</strong> values <strong>and</strong> the <strong>geometry</strong> of your data. When it comes to the <strong>Attribute Table</strong>, it means you can directly edit existing values in the table <strong>or</strong> create and add new fields to the table. Whilst you can actually do the latter outside of the Editing mode, this Editing mode means you can reverse any edits you make and they are not permanent just in case you make a mistake.
-Using the Editing mode is the <strong>safest</strong> approach to editing your table, however, it might not always be the approach you use when generating new fields.</p>
+<p>The Editing mode allows you to edit both the <strong>Attribute Table</strong> values and the <strong>geometry</strong> of your data. When it comes to the <strong>Attribute Table</strong>, it means you can directly edit existing values in the table <strong>or</strong> create and add new fields to the table. Whilst you can actually do the latter outside of the Editing mode, this Editing mode means you can reverse any edits you make and they are not permanent just in case you make a mistake.
+Using the Editing mode is the safest approach to editing your table, however, it might not always be the approach you use when generating new fields.</p>
 <p>Let us go ahead and add a new field to contain our <strong>Crime Rate</strong>.</p>
 <ol start="7" style="list-style-type: decimal">
 <li>Whilst in the Editing mode, click on <strong>New Field</strong> button (or Ctrl+W/CMD+W) and fill in the <strong>Field Parameters</strong> as follows:
@@ -465,9 +465,12 @@ On some computers and installations the numbers do not get changed to an <code>i
 <p>Initially, when opening the print layout provides you with a blank canvas that represents the paper surface when using the print option.</p>
 <p>On the <strong>left-hand</strong> side of the window, you will find buttons beside the canvas to add print layout items: the current QGIS map canvas, text labels, images, legends, scale bars, basic shapes, arrows, attribute tables and HTML frames. In this toolbar you also find buttons to navigate, zoom in on an area and pan the view on the layout a well as buttons to select any layout item and to move the contents of the map item.</p>
 <p>On the <strong>right-hand</strong> side of the window, you will find two set of panels. The upper one holds the panels Items and Undo History and the lower holds the panels Layout, Item properties and Atlas generation. For our practical today, we’re most interested in the bottom panel as <strong>Layout</strong> will control the overall look of our map, whilst <strong>Item properties</strong> will allow us to customise the elements, such as Title or Legend, that we may add to our map.</p>
-<p>In the <strong>bottom part</strong> of the window, you can find a status bar with mouse position, current page number, a combo box to set the zoom level, the number of selected items if applicable and, in the case of atlas generation, the number of features.</p>
+<p>In the <strong>bottom part</strong> of the window, you can find a status bar with mouse position, current page number, a combo box to set the zoom level and the number of selected items if applicable.</p>
 <p>In the <strong>upper part</strong> of the window, you can find menus and other toolbars. All print layout tools are available in menus and as icons in a toolbar.</p>
-<p>Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items.</p>
+<div class="note">
+<p><strong>Note</strong> <br/>
+Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items. If you get stuck, have a look at the excellent and detailed documentation: <a href="https://docs.qgis.org/3.22/en/docs/user_manual/print_composer/index.html">[Link]</a></p>
+</div>
 <p>To start with creating a map, you use the <strong>Add Map</strong> tool to draw a box in which a snapshot of the <strong>current active</strong> map you have displayed in your QGIS main window will be loaded.</p>
 <ol style="list-style-type: decimal">
 <li>Click on the <strong>Add Map</strong> tool and draw a box in the first half of our map to load our current map. Note, you can move your map around and resize the box simply by clicking on it as you would in Word etc.</li>

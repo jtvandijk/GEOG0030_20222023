@@ -20,7 +20,7 @@ Over the next few weeks, we will look to model driving factors behind crime acro
 
 > Spatial analysis can be employed in both an exploratory and well as a more confirmatory manner with the primary purpose of identifying how certain community or ecological factors (such as population characteristics or the built environment) influence the spatial patterns of crime. 
 
-Against this background, we are actually going to answer a very simple question today: does our perception of crime (and its distribution) in London vary at different scales? Here we are looking to test whether we would make the **ecological fallacy** mistake of assuming patterns at the Ward level are the same at the Borough level by looking to directly account for the impact of the Modifiable Area Unit Problem within our results. To test this, we will use these two administrative geographies (**Borough** and **Ward**) to aggregate crime data for London in 2020. Here we will be looking specifically at a specific type of crime: *Theft from a person*.
+Against this background, we are actually going to answer a very simple question today: does our perception of crime (and its distribution) in London vary at different scales? Here we are looking to test whether we would make the **ecological fallacy** mistake of assuming patterns at the Ward level are the same at the Borough level by looking to directly account for the impact of the Modifiable Area Unit Problem within our results. To test this, we will use these two administrative geographies to aggregate crime data for London in 2020. Here we will be looking specifically at a specific type of crime: *Theft from a person*.
 
 ### Finding our datasets {#w03-finding} 
 As we saw last week, accessing data within the UK, and specifically for London, is relatively straight-forward - you simply need to know which data portal contains the dataset you want!    
@@ -71,7 +71,7 @@ You should have a total of **33** Boroughs.
 5. Remember to format the **field names**. Like last week, also remember to make sure that the `All ages` field is recognised as a **numeric** field. Save as a new `csv` in your `output` folder: `borough_population_2019.csv`.
 
 #### Ward population
-As mentioned above, you should have a `ward_population_2019.shp` file within your `output` data folder. 
+As mentioned above, you should already have a `ward_population_2019.shp` file within your `output` data folder. 
 
 #### Crime data
 Normally, we would now head to the Police Data Portal and download our crime data. However, the manual processing that is required is too exhaustive to do manually - and far (far!) easier to do using programming. As such you can download a pre-filtered spreadsheet instead. Unzip the download and copy the `csv` into a **new** folder in your `raw` data folder called: `crime`.
@@ -187,8 +187,8 @@ Whilst it is great that we have ve got our `crimecount`, as we know, what we act
      
 6. With the **Attribute Table** of your `Count` layer still open, click on the **pencil** icon at the top left corner. This pencil switches on the **Editing** mode. 
 
-The Editing mode allows you to edit both the **Attribute Table** values **and** the **geometry** of your data. When it comes to the **Attribute Table**, it means you can directly edit existing values in the table **or** create and add new fields to the table. Whilst you can actually do the latter outside of the Editing mode, this Editing mode means you can reverse any edits you make and they are not permanent just in case you make a mistake.
-Using the Editing mode is the **safest** approach to editing your table, however, it might not always be the approach you use when generating new fields.
+The Editing mode allows you to edit both the **Attribute Table** values and the **geometry** of your data. When it comes to the **Attribute Table**, it means you can directly edit existing values in the table **or** create and add new fields to the table. Whilst you can actually do the latter outside of the Editing mode, this Editing mode means you can reverse any edits you make and they are not permanent just in case you make a mistake.
+Using the Editing mode is the safest approach to editing your table, however, it might not always be the approach you use when generating new fields.
   
 Let us go ahead and add a new field to contain our **Crime Rate**.   
 
@@ -245,11 +245,14 @@ On the **left-hand** side of the window, you will find buttons beside the canvas
 
 On the **right-hand** side of the window, you will find two set of panels. The upper one holds the panels Items and Undo History and the lower holds the panels Layout, Item properties and Atlas generation. For our practical today, we're most interested in the bottom panel as **Layout** will control the overall look of our map, whilst **Item properties** will allow us to customise the elements, such as Title or Legend, that we may add to our map.
 
-In the **bottom part** of the window, you can find a status bar with mouse position, current page number, a combo box to set the zoom level, the number of selected items if applicable and, in the case of atlas generation, the number of features.
+In the **bottom part** of the window, you can find a status bar with mouse position, current page number, a combo box to set the zoom level and the number of selected items if applicable.
 
 In the **upper part** of the  window, you can find menus and other toolbars. All print layout tools are available in menus and as icons in a toolbar.
 
-Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items.
+:::note
+**Note** <br/>
+Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items. If you get stuck, have a look at the excellent and detailed documentation: [[Link]](https://docs.qgis.org/3.22/en/docs/user_manual/print_composer/index.html)
+:::
 
 To start with creating a map, you use the **Add Map** tool to draw a box in which a snapshot of the **current active** map you have displayed in your QGIS main window will be loaded.
 
