@@ -251,7 +251,7 @@ In the **upper part** of the  window, you can find menus and other toolbars. All
 
 :::note
 **Note** <br/>
-Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items. If you get stuck, have a look at the excellent and detailed documentation: [[Link]](https://docs.qgis.org/3.22/en/docs/user_manual/print_composer/index.html)
+Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items. If you get stuck, have a look at the [training manual](https://docs.qgis.org/3.22/en/docs/training_manual/map_composer/map_composer.html) or the detailed [documentation](https://docs.qgis.org/3.22/en/docs/user_manual/print_composer/index.html). 
 :::
 
 To start with creating a map, you use the **Add Map** tool to draw a box in which a snapshot of the **current active** map you have displayed in your QGIS main window will be loaded.

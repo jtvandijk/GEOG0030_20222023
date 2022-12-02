@@ -1,0 +1,641 @@
+ward_code,ward_name,local_authorithy,pop2019,pop2019_n
+E05000026,Abbey,Barking and Dagenham,"15770",15770.000
+E05000027,Alibon,Barking and Dagenham,"10948",10948.000
+E05000028,Becontree,Barking and Dagenham,"15261",15261.000
+E05000029,Chadwell Heath,Barking and Dagenham,"11424",11424.000
+E05000030,Eastbrook,Barking and Dagenham,"11584",11584.000
+E05000031,Eastbury,Barking and Dagenham,"12824",12824.000
+E05000032,Gascoigne,Barking and Dagenham,"12407",12407.000
+E05000033,Goresbrook,Barking and Dagenham,"12112",12112.000
+E05000034,Heath,Barking and Dagenham,"12072",12072.000
+E05000035,Longbridge,Barking and Dagenham,"12825",12825.000
+E05000036,Mayesbrook,Barking and Dagenham,"11105",11105.000
+E05000037,Parsloes,Barking and Dagenham,"11138",11138.000
+E05000038,River,Barking and Dagenham,"12124",12124.000
+E05000039,Thames,Barking and Dagenham,"15695",15695.000
+E05000040,Valence,Barking and Dagenham,"11042",11042.000
+E05000041,Village,Barking and Dagenham,"11885",11885.000
+E05000042,Whalebone,Barking and Dagenham,"12690",12690.000
+E05000043,Brunswick Park,Barnet,"16674",16674.000
+E05000044,Burnt Oak,Barnet,"19755",19755.000
+E05000045,Childs Hill,Barnet,"22502",22502.000
+E05000046,Colindale,Barnet,"26162",26162.000
+E05000047,Coppetts,Barnet,"18837",18837.000
+E05000048,East Barnet,Barnet,"17367",17367.000
+E05000049,East Finchley,Barnet,"17591",17591.000
+E05000050,Edgware,Barnet,"18816",18816.000
+E05000051,Finchley Church End,Barnet,"17571",17571.000
+E05000052,Garden Suburb,Barnet,"16784",16784.000
+E05000053,Golders Green,Barnet,"21312",21312.000
+E05000054,Hale,Barnet,"18729",18729.000
+E05000055,Hendon,Barnet,"19650",19650.000
+E05000056,High Barnet,Barnet,"16394",16394.000
+E05000057,Mill Hill,Barnet,"20694",20694.000
+E05000058,Oakleigh,Barnet,"17013",17013.000
+E05000059,Totteridge,Barnet,"16315",16315.000
+E05000060,Underhill,Barnet,"16301",16301.000
+E05000061,West Finchley,Barnet,"18340",18340.000
+E05000062,West Hendon,Barnet,"19484",19484.000
+E05000063,Woodhouse,Barnet,"19578",19578.000
+E05000085,Alperton,Brent,"16144",16144.000
+E05000086,Barnhill,Brent,"16318",16318.000
+E05000087,Brondesbury Park,Brent,"13120",13120.000
+E05000088,Dollis Hill,Brent,"13710",13710.000
+E05000089,Dudden Hill,Brent,"16091",16091.000
+E05000090,Fryent,Brent,"13677",13677.000
+E05000091,Harlesden,Brent,"18075",18075.000
+E05000092,Kensal Green,Brent,"14938",14938.000
+E05000093,Kenton,Brent,"11779",11779.000
+E05000094,Kilburn,Brent,"17007",17007.000
+E05000095,Mapesbury,Brent,"16594",16594.000
+E05000096,Northwick Park,Brent,"13341",13341.000
+E05000097,Preston,Brent,"16127",16127.000
+E05000098,Queens Park,Brent,"14762",14762.000
+E05000099,Queensbury,Brent,"15745",15745.000
+E05000100,Stonebridge,Brent,"18706",18706.000
+E05000101,Sudbury,Brent,"15462",15462.000
+E05000102,Tokyngton,Brent,"18790",18790.000
+E05000103,Welsh Harp,Brent,"14127",14127.000
+E05000104,Wembley Central,Brent,"17496",17496.000
+E05000105,Willesden Green,Brent,"17762",17762.000
+E05000106,Bickley,Bromley,"15604",15604.000
+E05000107,Biggin Hill,Bromley,"9841",9841.000
+E05000108,Bromley Common and Keston,Bromley,"17115",17115.000
+E05000109,Bromley Town,Bromley,"19801",19801.000
+E05000110,Chelsfield and Pratts Bottom,Bromley,"14931",14931.000
+E05000111,Chislehurst,Bromley,"16064",16064.000
+E05000112,Clock House,Bromley,"16754",16754.000
+E05000113,Copers Cope,Bromley,"17760",17760.000
+E05000114,Cray Valley East,Bromley,"16913",16913.000
+E05000115,Cray Valley West,Bromley,"17855",17855.000
+E05000116,Crystal Palace,Bromley,"14281",14281.000
+E05000117,Darwin,Bromley,"5363",5363.000
+E05000118,Farnborough and Crofton,Bromley,"15106",15106.000
+E05000119,Hayes and Coney Hall,Bromley,"16218",16218.000
+E05000120,Kelsey and Eden Park,Bromley,"16637",16637.000
+E05000121,Mottingham and Chislehurst North,Bromley,"11012",11012.000
+E05000122,Orpington,Bromley,"16277",16277.000
+E05000123,Penge and Cator,Bromley,"19220",19220.000
+E05000124,Petts Wood and Knoll,Bromley,"13862",13862.000
+E05000125,Plaistow and Sundridge,Bromley,"16205",16205.000
+E05000126,Shortlands,Bromley,"10557",10557.000
+E05000127,West Wickham,Bromley,"14960",14960.000
+E05000128,Belsize,Camden,"15536",15536.000
+E05000129,Bloomsbury,Camden,"12399",12399.000
+E05000130,Camden Town with Primrose Hill,Camden,"14457",14457.000
+E05000131,Cantelowes,Camden,"14874",14874.000
+E05000132,Fortune Green,Camden,"14161",14161.000
+E05000133,Frognal and Fitzjohns,Camden,"15742",15742.000
+E05000134,Gospel Oak,Camden,"13390",13390.000
+E05000135,Hampstead Town,Camden,"13943",13943.000
+E05000136,Haverstock,Camden,"14920",14920.000
+E05000137,Highgate,Camden,"12879",12879.000
+E05000138,Holborn and Covent Garden,Camden,"15987",15987.000
+E05000139,Kentish Town,Camden,"15945",15945.000
+E05000140,Kilburn,Camden,"14649",14649.000
+E05000141,King's Cross,Camden,"14434",14434.000
+E05000142,Regent's Park,Camden,"15643",15643.000
+E05000143,St Pancras and Somers Town,Camden,"18762",18762.000
+E05000144,Swiss Cottage,Camden,"16767",16767.000
+E05000145,West Hampstead,Camden,"15541",15541.000
+E05000170,Acton Central,Ealing,"15712",15712.000
+E05000171,Cleveland,Ealing,"14122",14122.000
+E05000172,Dormers Wells,Ealing,"13727",13727.000
+E05000173,Ealing Broadway,Ealing,"14848",14848.000
+E05000174,Ealing Common,Ealing,"13664",13664.000
+E05000175,East Acton,Ealing,"22007",22007.000
+E05000176,Elthorne,Ealing,"14524",14524.000
+E05000177,Greenford Broadway,Ealing,"17574",17574.000
+E05000178,Greenford Green,Ealing,"14021",14021.000
+E05000179,Hanger Hill,Ealing,"16193",16193.000
+E05000180,Hobbayne,Ealing,"13524",13524.000
+E05000181,Lady Margaret,Ealing,"12951",12951.000
+E05000182,Northfield,Ealing,"13071",13071.000
+E05000183,North Greenford,Ealing,"14370",14370.000
+E05000184,Northolt Mandeville,Ealing,"15124",15124.000
+E05000185,Northolt West End,Ealing,"15180",15180.000
+E05000186,Norwood Green,Ealing,"13846",13846.000
+E05000187,Perivale,Ealing,"15736",15736.000
+E05000188,South Acton,Ealing,"14889",14889.000
+E05000189,Southall Broadway,Ealing,"14249",14249.000
+E05000190,Southall Green,Ealing,"16166",16166.000
+E05000191,Southfield,Ealing,"13679",13679.000
+E05000192,Walpole,Ealing,"12629",12629.000
+E05000193,Bowes,Enfield,"15678",15678.000
+E05000194,Bush Hill Park,Enfield,"14520",14520.000
+E05000195,Chase,Enfield,"14063",14063.000
+E05000196,Cockfosters,Enfield,"14373",14373.000
+E05000197,Edmonton Green,Enfield,"19207",19207.000
+E05000198,Enfield Highway,Enfield,"17161",17161.000
+E05000199,Enfield Lock,Enfield,"18629",18629.000
+E05000200,Grange,Enfield,"13533",13533.000
+E05000201,Haselbury,Enfield,"17436",17436.000
+E05000202,Highlands,Enfield,"13342",13342.000
+E05000203,Jubilee,Enfield,"15450",15450.000
+E05000204,Lower Edmonton,Enfield,"17958",17958.000
+E05000205,Palmers Green,Enfield,"15837",15837.000
+E05000206,Ponders End,Enfield,"15869",15869.000
+E05000207,Southbury,Enfield,"15659",15659.000
+E05000208,Southgate,Enfield,"16067",16067.000
+E05000209,Southgate Green,Enfield,"14358",14358.000
+E05000210,Town,Enfield,"15158",15158.000
+E05000211,Turkey Street,Enfield,"15737",15737.000
+E05000212,Upper Edmonton,Enfield,"20074",20074.000
+E05000213,Winchmore Hill,Enfield,"13685",13685.000
+E05000214,Abbey Wood,Greenwich,"16979",16979.000
+E05000215,Blackheath Westcombe,Greenwich,"13354",13354.000
+E05000216,Charlton,Greenwich,"15391",15391.000
+E05000217,Coldharbour and New Eltham,Greenwich,"13463",13463.000
+E05000218,Eltham North,Greenwich,"13139",13139.000
+E05000219,Eltham South,Greenwich,"12875",12875.000
+E05000220,Eltham West,Greenwich,"12273",12273.000
+E05000221,Glyndon,Greenwich,"19404",19404.000
+E05000222,Greenwich West,Greenwich,"21945",21945.000
+E05000223,Kidbrooke with Hornfair,Greenwich,"14983",14983.000
+E05000224,Middle Park and Sutcliffe,Greenwich,"14672",14672.000
+E05000225,Peninsula,Greenwich,"22146",22146.000
+E05000226,Plumstead,Greenwich,"17979",17979.000
+E05000227,Shooters Hill,Greenwich,"14040",14040.000
+E05000228,Thamesmead Moorings,Greenwich,"23544",23544.000
+E05000229,Woolwich Common,Greenwich,"18460",18460.000
+E05000230,Woolwich Riverside,Greenwich,"23295",23295.000
+E05000250,Addison,Hammersmith and Fulham,"11252",11252.000
+E05000251,Askew,Hammersmith and Fulham,"14548",14548.000
+E05000252,Avonmore and Brook Green,Hammersmith and Fulham,"12007",12007.000
+E05000253,College Park and Old Oak,Hammersmith and Fulham,"9789",9789.000
+E05000254,Fulham Broadway,Hammersmith and Fulham,"11377",11377.000
+E05000255,Fulham Reach,Hammersmith and Fulham,"11355",11355.000
+E05000256,Hammersmith Broadway,Hammersmith and Fulham,"11900",11900.000
+E05000257,Munster,Hammersmith and Fulham,"10779",10779.000
+E05000258,North End,Hammersmith and Fulham,"11331",11331.000
+E05000259,Palace Riverside,Hammersmith and Fulham,"7574",7574.000
+E05000260,Parsons Green and Walham,Hammersmith and Fulham,"11350",11350.000
+E05000261,Ravenscourt Park,Hammersmith and Fulham,"10571",10571.000
+E05000262,Sands End,Hammersmith and Fulham,"14609",14609.000
+E05000263,Shepherd's Bush Green,Hammersmith and Fulham,"12177",12177.000
+E05000264,Town,Hammersmith and Fulham,"11129",11129.000
+E05000265,Wormholt and White City,Hammersmith and Fulham,"13395",13395.000
+E05000266,Alexandra,Haringey,"11457",11457.000
+E05000267,Bounds Green,Haringey,"14901",14901.000
+E05000268,Bruce Grove,Haringey,"14697",14697.000
+E05000269,Crouch End,Haringey,"12064",12064.000
+E05000270,Fortis Green,Haringey,"12535",12535.000
+E05000271,Harringay,Haringey,"14223",14223.000
+E05000272,Highgate,Haringey,"10565",10565.000
+E05000273,Hornsey,Haringey,"13069",13069.000
+E05000274,Muswell Hill,Haringey,"10563",10563.000
+E05000275,Noel Park,Haringey,"14947",14947.000
+E05000276,Northumberland Park,Haringey,"16441",16441.000
+E05000277,St Ann's,Haringey,"15837",15837.000
+E05000278,Seven Sisters,Haringey,"17792",17792.000
+E05000279,Stroud Green,Haringey,"11199",11199.000
+E05000280,Tottenham Green,Haringey,"16509",16509.000
+E05000281,Tottenham Hale,Haringey,"19235",19235.000
+E05000282,West Green,Haringey,"13442",13442.000
+E05000283,White Hart Lane,Haringey,"13216",13216.000
+E05000284,Woodside,Haringey,"15955",15955.000
+E05000285,Belmont,Harrow,"11412",11412.000
+E05000286,Canons,Harrow,"13735",13735.000
+E05000287,Edgware,Harrow,"12589",12589.000
+E05000288,Greenhill,Harrow,"14886",14886.000
+E05000289,Harrow on the Hill,Harrow,"13169",13169.000
+E05000290,Harrow Weald,Harrow,"11502",11502.000
+E05000291,Hatch End,Harrow,"10498",10498.000
+E05000292,Headstone North,Harrow,"10275",10275.000
+E05000293,Headstone South,Harrow,"11807",11807.000
+E05000294,Kenton East,Harrow,"11415",11415.000
+E05000295,Kenton West,Harrow,"11150",11150.000
+E05000296,Marlborough,Harrow,"13381",13381.000
+E05000297,Pinner,Harrow,"10453",10453.000
+E05000298,Pinner South,Harrow,"10590",10590.000
+E05000299,Queensbury,Harrow,"12547",12547.000
+E05000300,Rayners Lane,Harrow,"11019",11019.000
+E05000301,Roxbourne,Harrow,"14116",14116.000
+E05000302,Roxeth,Harrow,"11573",11573.000
+E05000303,Stanmore Park,Harrow,"11877",11877.000
+E05000304,Wealdstone,Harrow,"12284",12284.000
+E05000305,West Harrow,Harrow,"10882",10882.000
+E05000306,Brooklands,Havering,"18773",18773.000
+E05000307,Cranham,Havering,"12971",12971.000
+E05000308,Elm Park,Havering,"13107",13107.000
+E05000309,Emerson Park,Havering,"11953",11953.000
+E05000310,Gooshays,Havering,"17284",17284.000
+E05000311,Hacton,Havering,"12434",12434.000
+E05000312,Harold Wood,Havering,"14908",14908.000
+E05000313,Havering Park,Havering,"14156",14156.000
+E05000314,Heaton,Havering,"15037",15037.000
+E05000315,Hylands,Havering,"13294",13294.000
+E05000316,Mawneys,Havering,"13863",13863.000
+E05000317,Pettits,Havering,"13313",13313.000
+E05000318,Rainham and Wennington,Havering,"13309",13309.000
+E05000319,Romford Town,Havering,"18998",18998.000
+E05000320,St Andrew's,Havering,"13875",13875.000
+E05000321,South Hornchurch,Havering,"14839",14839.000
+E05000322,Squirrel's Heath,Havering,"14260",14260.000
+E05000323,Upminster,Havering,"13178",13178.000
+E05000324,Barnhill,Hillingdon,"14733",14733.000
+E05000325,Botwell,Hillingdon,"18885",18885.000
+E05000326,Brunel,Hillingdon,"15604",15604.000
+E05000327,Cavendish,Hillingdon,"11752",11752.000
+E05000328,Charville,Hillingdon,"13439",13439.000
+E05000329,Eastcote and East Ruislip,Hillingdon,"12667",12667.000
+E05000330,Harefield,Hillingdon,"7696",7696.000
+E05000331,Heathrow Villages,Hillingdon,"15159",15159.000
+E05000332,Hillingdon East,Hillingdon,"13660",13660.000
+E05000333,Ickenham,Hillingdon,"10475",10475.000
+E05000334,Manor,Hillingdon,"11738",11738.000
+E05000335,Northwood,Hillingdon,"11132",11132.000
+E05000336,Northwood Hills,Hillingdon,"11996",11996.000
+E05000337,Pinkwell,Hillingdon,"16262",16262.000
+E05000338,South Ruislip,Hillingdon,"13338",13338.000
+E05000339,Townfield,Hillingdon,"16575",16575.000
+E05000340,Uxbridge North,Hillingdon,"14623",14623.000
+E05000341,Uxbridge South,Hillingdon,"16544",16544.000
+E05000342,West Drayton,Hillingdon,"18837",18837.000
+E05000343,West Ruislip,Hillingdon,"12186",12186.000
+E05000344,Yeading,Hillingdon,"15120",15120.000
+E05000345,Yiewsley,Hillingdon,"14449",14449.000
+E05000346,Bedfont,Hounslow,"13597",13597.000
+E05000347,Brentford,Hounslow,"16067",16067.000
+E05000348,Chiswick Homefields,Hounslow,"11382",11382.000
+E05000349,Chiswick Riverside,Hounslow,"11380",11380.000
+E05000350,Cranford,Hounslow,"13868",13868.000
+E05000351,Feltham North,Hounslow,"12298",12298.000
+E05000352,Feltham West,Hounslow,"16290",16290.000
+E05000353,Hanworth,Hounslow,"12986",12986.000
+E05000354,Hanworth Park,Hounslow,"12312",12312.000
+E05000355,Heston Central,Hounslow,"13001",13001.000
+E05000356,Heston East,Hounslow,"12608",12608.000
+E05000357,Heston West,Hounslow,"12979",12979.000
+E05000358,Hounslow Central,Hounslow,"18679",18679.000
+E05000359,Hounslow Heath,Hounslow,"15585",15585.000
+E05000360,Hounslow South,Hounslow,"11292",11292.000
+E05000361,Hounslow West,Hounslow,"15062",15062.000
+E05000362,Isleworth,Hounslow,"12457",12457.000
+E05000363,Osterley and Spring Grove,Hounslow,"13346",13346.000
+E05000364,Syon,Hounslow,"14311",14311.000
+E05000365,Turnham Green,Hounslow,"12023",12023.000
+E05000366,Barnsbury,Islington,"13836",13836.000
+E05000367,Bunhill,Islington,"19660",19660.000
+E05000368,Caledonian,Islington,"16390",16390.000
+E05000369,Canonbury,Islington,"13064",13064.000
+E05000370,Clerkenwell,Islington,"13386",13386.000
+E05000371,Finsbury Park,Islington,"18208",18208.000
+E05000372,Highbury East,Islington,"13646",13646.000
+E05000373,Highbury West,Islington,"19041",19041.000
+E05000374,Hillrise,Islington,"12570",12570.000
+E05000375,Holloway,Islington,"19787",19787.000
+E05000376,Junction,Islington,"13150",13150.000
+E05000377,Mildmay,Islington,"14476",14476.000
+E05000378,St George's,Islington,"12980",12980.000
+E05000379,St Mary's,Islington,"13553",13553.000
+E05000380,St Peter's,Islington,"14298",14298.000
+E05000381,Tollington,Islington,"14422",14422.000
+E05000400,Alexandra,Kingston upon Thames,"9899",9899.000
+E05000401,Berrylands,Kingston upon Thames,"9830",9830.000
+E05000402,Beverley,Kingston upon Thames,"11177",11177.000
+E05000403,Canbury,Kingston upon Thames,"16048",16048.000
+E05000404,Chessington North and Hook,Kingston upon Thames,"9167",9167.000
+E05000405,Chessington South,Kingston upon Thames,"10409",10409.000
+E05000406,Coombe Hill,Kingston upon Thames,"12389",12389.000
+E05000407,Coombe Vale,Kingston upon Thames,"10372",10372.000
+E05000408,Grove,Kingston upon Thames,"13482",13482.000
+E05000409,Norbiton,Kingston upon Thames,"11732",11732.000
+E05000410,Old Malden,Kingston upon Thames,"9831",9831.000
+E05000411,St James,Kingston upon Thames,"9329",9329.000
+E05000412,St Mark's,Kingston upon Thames,"12056",12056.000
+E05000413,Surbiton Hill,Kingston upon Thames,"11131",11131.000
+E05000414,Tolworth and Hook Rise,Kingston upon Thames,"10522",10522.000
+E05000415,Tudor,Kingston upon Thames,"10133",10133.000
+E05000416,Bishop's,Lambeth,"13067",13067.000
+E05000417,Brixton Hill,Lambeth,"16787",16787.000
+E05000418,Clapham Common,Lambeth,"13485",13485.000
+E05000419,Clapham Town,Lambeth,"14526",14526.000
+E05000420,Coldharbour,Lambeth,"17023",17023.000
+E05000421,Ferndale,Lambeth,"14764",14764.000
+E05000422,Gipsy Hill,Lambeth,"14396",14396.000
+E05000423,Herne Hill,Lambeth,"15896",15896.000
+E05000424,Knight's Hill,Lambeth,"16027",16027.000
+E05000425,Larkhall,Lambeth,"17638",17638.000
+E05000426,Oval,Lambeth,"17098",17098.000
+E05000427,Prince's,Lambeth,"16425",16425.000
+E05000428,St Leonard's,Lambeth,"17249",17249.000
+E05000429,Stockwell,Lambeth,"15246",15246.000
+E05000430,Streatham Hill,Lambeth,"15871",15871.000
+E05000431,Streatham South,Lambeth,"15295",15295.000
+E05000432,Streatham Wells,Lambeth,"16609",16609.000
+E05000433,Thornton,Lambeth,"12876",12876.000
+E05000434,Thurlow Park,Lambeth,"14177",14177.000
+E05000435,Tulse Hill,Lambeth,"15882",15882.000
+E05000436,Vassall,Lambeth,"15697",15697.000
+E05000437,Bellingham,Lewisham,"16242",16242.000
+E05000438,Blackheath,Lewisham,"15183",15183.000
+E05000439,Brockley,Lewisham,"18626",18626.000
+E05000440,Catford South,Lewisham,"16167",16167.000
+E05000441,Crofton Park,Lewisham,"15700",15700.000
+E05000442,Downham,Lewisham,"15748",15748.000
+E05000443,Evelyn,Lewisham,"20578",20578.000
+E05000444,Forest Hill,Lewisham,"16421",16421.000
+E05000445,Grove Park,Lewisham,"15426",15426.000
+E05000446,Ladywell,Lewisham,"14827",14827.000
+E05000447,Lee Green,Lewisham,"16332",16332.000
+E05000448,Lewisham Central,Lewisham,"23016",23016.000
+E05000449,New Cross,Lewisham,"17629",17629.000
+E05000450,Perry Vale,Lewisham,"16663",16663.000
+E05000451,Rushey Green,Lewisham,"16923",16923.000
+E05000452,Sydenham,Lewisham,"16899",16899.000
+E05000453,Telegraph Hill,Lewisham,"17504",17504.000
+E05000454,Whitefoot,Lewisham,"15958",15958.000
+E05000455,Abbey,Merton,"11057",11057.000
+E05000456,Cannon Hill,Merton,"9402",9402.000
+E05000457,Colliers Wood,Merton,"10855",10855.000
+E05000458,Cricket Green,Merton,"11881",11881.000
+E05000459,Dundonald,Merton,"10136",10136.000
+E05000460,Figge's Marsh,Merton,"11690",11690.000
+E05000461,Graveney,Merton,"9991",9991.000
+E05000462,Hillside,Merton,"9314",9314.000
+E05000463,Lavender Fields,Merton,"10934",10934.000
+E05000464,Longthornton,Merton,"10543",10543.000
+E05000465,Lower Morden,Merton,"8935",8935.000
+E05000466,Merton Park,Merton,"9920",9920.000
+E05000467,Pollards Hill,Merton,"10933",10933.000
+E05000468,Ravensbury,Merton,"10023",10023.000
+E05000469,Raynes Park,Merton,"10033",10033.000
+E05000470,St Helier,Merton,"10919",10919.000
+E05000471,Trinity,Merton,"10234",10234.000
+E05000472,Village,Merton,"8389",8389.000
+E05000473,West Barnes,Merton,"10052",10052.000
+E05000474,Wimbledon Park,Merton,"11307",11307.000
+E05000475,Beckton,Newham,"16452",16452.000
+E05000476,Boleyn,Newham,"17229",17229.000
+E05000477,Canning Town North,Newham,"17640",17640.000
+E05000478,Canning Town South,Newham,"21092",21092.000
+E05000479,Custom House,Newham,"13534",13534.000
+E05000480,East Ham Central,Newham,"17229",17229.000
+E05000481,East Ham North,Newham,"14956",14956.000
+E05000482,East Ham South,Newham,"16933",16933.000
+E05000483,Forest Gate North,Newham,"16487",16487.000
+E05000484,Forest Gate South,Newham,"18158",18158.000
+E05000485,Green Street East,Newham,"16613",16613.000
+E05000486,Green Street West,Newham,"14980",14980.000
+E05000487,Little Ilford,Newham,"17808",17808.000
+E05000488,Manor Park,Newham,"15694",15694.000
+E05000489,Plaistow North,Newham,"16005",16005.000
+E05000490,Plaistow South,Newham,"18008",18008.000
+E05000491,Royal Docks,Newham,"16414",16414.000
+E05000492,Stratford and New Town,Newham,"36666",36666.000
+E05000493,Wall End,Newham,"15172",15172.000
+E05000494,West Ham,Newham,"16064",16064.000
+E05000516,Barnes,Richmond upon Thames,"10121",10121.000
+E05000517,East Sheen,Richmond upon Thames,"10691",10691.000
+E05000518,Fulwell and Hampton Hill,Richmond upon Thames,"10707",10707.000
+E05000519,"Ham, Petersham and Richmond Riverside",Richmond upon Thames,"11177",11177.000
+E05000520,Hampton,Richmond upon Thames,"10316",10316.000
+E05000521,Hampton North,Richmond upon Thames,"9470",9470.000
+E05000522,Hampton Wick,Richmond upon Thames,"11431",11431.000
+E05000523,Heathfield,Richmond upon Thames,"10791",10791.000
+E05000524,Kew,Richmond upon Thames,"12040",12040.000
+E05000525,Mortlake and Barnes Common,Richmond upon Thames,"11605",11605.000
+E05000526,North Richmond,Richmond upon Thames,"11940",11940.000
+E05000527,St Margarets and North Twickenham,Richmond upon Thames,"12011",12011.000
+E05000528,South Richmond,Richmond upon Thames,"12208",12208.000
+E05000529,South Twickenham,Richmond upon Thames,"10263",10263.000
+E05000530,Teddington,Richmond upon Thames,"10790",10790.000
+E05000531,Twickenham Riverside,Richmond upon Thames,"11313",11313.000
+E05000532,West Twickenham,Richmond upon Thames,"11088",11088.000
+E05000533,Whitton,Richmond upon Thames,"10057",10057.000
+E05000555,Beddington North,Sutton,"10870",10870.000
+E05000556,Beddington South,Sutton,"11261",11261.000
+E05000557,Belmont,Sutton,"10645",10645.000
+E05000558,Carshalton Central,Sutton,"10847",10847.000
+E05000559,Carshalton South and Clockhouse,Sutton,"10586",10586.000
+E05000560,Cheam,Sutton,"10677",10677.000
+E05000561,Nonsuch,Sutton,"10895",10895.000
+E05000562,St Helier,Sutton,"12727",12727.000
+E05000563,Stonecot,Sutton,"10918",10918.000
+E05000564,Sutton Central,Sutton,"13152",13152.000
+E05000565,Sutton North,Sutton,"11364",11364.000
+E05000566,Sutton South,Sutton,"10845",10845.000
+E05000567,Sutton West,Sutton,"11096",11096.000
+E05000568,The Wrythe,Sutton,"11187",11187.000
+E05000569,Wallington North,Sutton,"11845",11845.000
+E05000570,Wallington South,Sutton,"11219",11219.000
+E05000571,Wandle Valley,Sutton,"12741",12741.000
+E05000572,Worcester Park,Sutton,"13474",13474.000
+E05000590,Cann Hall,Waltham Forest,"14427",14427.000
+E05000591,Cathall,Waltham Forest,"13112",13112.000
+E05000592,Chapel End,Waltham Forest,"15245",15245.000
+E05000593,Chingford Green,Waltham Forest,"10551",10551.000
+E05000594,Endlebury,Waltham Forest,"10957",10957.000
+E05000595,Forest,Waltham Forest,"13196",13196.000
+E05000596,Grove Green,Waltham Forest,"16047",16047.000
+E05000597,Hale End and Highams Park,Waltham Forest,"12714",12714.000
+E05000598,Hatch Lane,Waltham Forest,"11661",11661.000
+E05000599,High Street,Waltham Forest,"14904",14904.000
+E05000600,Higham Hill,Waltham Forest,"15642",15642.000
+E05000601,Hoe Street,Waltham Forest,"14727",14727.000
+E05000602,Larkswood,Waltham Forest,"12745",12745.000
+E05000603,Lea Bridge,Waltham Forest,"16459",16459.000
+E05000604,Leyton,Waltham Forest,"15733",15733.000
+E05000605,Leytonstone,Waltham Forest,"13961",13961.000
+E05000606,Markhouse,Waltham Forest,"13995",13995.000
+E05000607,Valley,Waltham Forest,"12558",12558.000
+E05000608,William Morris,Waltham Forest,"14367",14367.000
+E05000609,Wood Street,Waltham Forest,"13982",13982.000
+E05000610,Balham,Wandsworth,"15948",15948.000
+E05000611,Bedford,Wandsworth,"13826",13826.000
+E05000612,Earlsfield,Wandsworth,"16405",16405.000
+E05000613,East Putney,Wandsworth,"16218",16218.000
+E05000614,Fairfield,Wandsworth,"15668",15668.000
+E05000615,Furzedown,Wandsworth,"17039",17039.000
+E05000616,Graveney,Wandsworth,"15645",15645.000
+E05000617,Latchmere,Wandsworth,"16308",16308.000
+E05000618,Nightingale,Wandsworth,"14634",14634.000
+E05000619,Northcote,Wandsworth,"16733",16733.000
+E05000620,Queenstown,Wandsworth,"20397",20397.000
+E05000621,Roehampton and Putney Heath,Wandsworth,"17423",17423.000
+E05000622,St Mary's Park,Wandsworth,"19473",19473.000
+E05000623,Shaftesbury,Wandsworth,"15645",15645.000
+E05000624,Southfields,Wandsworth,"17296",17296.000
+E05000625,Thamesfield,Wandsworth,"16349",16349.000
+E05000626,Tooting,Wandsworth,"16518",16518.000
+E05000627,Wandsworth Common,Wandsworth,"15473",15473.000
+E05000628,West Hill,Wandsworth,"16482",16482.000
+E05000629,West Putney,Wandsworth,"16197",16197.000
+E05000630,Abbey Road,Westminster,"14944",14944.000
+E05000631,Bayswater,Westminster,"11957",11957.000
+E05000632,Bryanston and Dorset Square,Westminster,"14671",14671.000
+E05000633,Churchill,Westminster,"11071",11071.000
+E05000634,Church Street,Westminster,"13146",13146.000
+E05000635,Harrow Road,Westminster,"12963",12963.000
+E05000636,Hyde Park,Westminster,"15076",15076.000
+E05000637,Knightsbridge and Belgravia,Westminster,"11746",11746.000
+E05000638,Lancaster Gate,Westminster,"15567",15567.000
+E05000639,Little Venice,Westminster,"12369",12369.000
+E05000640,Maida Vale,Westminster,"11210",11210.000
+E05000641,Marylebone High Street,Westminster,"13479",13479.000
+E05000642,Queen's Park,Westminster,"13639",13639.000
+E05000643,Regent's Park,Westminster,"15927",15927.000
+E05000644,St James's,Westminster,"12535",12535.000
+E05000645,Tachbrook,Westminster,"9765",9765.000
+E05000646,Vincent Square,Westminster,"12509",12509.000
+E05000647,Warwick,Westminster,"10540",10540.000
+E05000648,Westbourne,Westminster,"14624",14624.000
+E05000649,West End,Westminster,"13579",13579.000
+E05009288,Aldersgate,City of London,"2428",2428.000
+E05009292,Bishopsgate,City of London,"306",306.000
+E05009302,Cripplegate,City of London,"2552",2552.000
+E05009304,Farringdon Within,City of London,"392",392.000
+E05009305,Farringdon Without,City of London,"1478",1478.000
+E05009308,Portsoken,City of London,"1888",1888.000
+E05009309,Queenhithe,City of London,"385",385.000
+E05009310,Tower,City of London,"292",292.000
+E05009367,Brownswood,Hackney,"9557",9557.000
+E05009368,Cazenove,Hackney,"15638",15638.000
+E05009369,Clissold,Hackney,"13510",13510.000
+E05009370,Dalston,Hackney,"10697",10697.000
+E05009371,De Beauvoir,Hackney,"10305",10305.000
+E05009372,Hackney Central,Hackney,"14232",14232.000
+E05009373,Hackney Downs,Hackney,"14202",14202.000
+E05009374,Hackney Wick,Hackney,"13074",13074.000
+E05009375,Haggerston,Hackney,"14745",14745.000
+E05009376,Homerton,Hackney,"14658",14658.000
+E05009377,Hoxton East & Shoreditch,Hackney,"13921",13921.000
+E05009378,Hoxton West,Hackney,"16983",16983.000
+E05009379,King's Park,Hackney,"12725",12725.000
+E05009380,Lea Bridge,Hackney,"16012",16012.000
+E05009381,London Fields,Hackney,"13358",13358.000
+E05009382,Shacklewell,Hackney,"9745",9745.000
+E05009383,Springfield,Hackney,"17548",17548.000
+E05009384,Stamford Hill West,Hackney,"11373",11373.000
+E05009385,Stoke Newington,Hackney,"14157",14157.000
+E05009386,Victoria,Hackney,"13629",13629.000
+E05009387,Woodberry Down,Hackney,"11051",11051.000
+E05009388,Abingdon,Kensington and Chelsea,"9730",9730.000
+E05009389,Brompton & Hans Town,Kensington and Chelsea,"9825",9825.000
+E05009390,Campden,Kensington and Chelsea,"9836",9836.000
+E05009391,Chelsea Riverside,Kensington and Chelsea,"8403",8403.000
+E05009392,Colville,Kensington and Chelsea,"8815",8815.000
+E05009393,Courtfield,Kensington and Chelsea,"9997",9997.000
+E05009394,Dalgarno,Kensington and Chelsea,"7025",7025.000
+E05009395,Earl's Court,Kensington and Chelsea,"9851",9851.000
+E05009396,Golborne,Kensington and Chelsea,"7658",7658.000
+E05009397,Holland,Kensington and Chelsea,"8674",8674.000
+E05009398,Norland,Kensington and Chelsea,"5998",5998.000
+E05009399,Notting Dale,Kensington and Chelsea,"7560",7560.000
+E05009400,Pembridge,Kensington and Chelsea,"5837",5837.000
+E05009401,Queen's Gate,Kensington and Chelsea,"10000",10000.000
+E05009402,Redcliffe,Kensington and Chelsea,"10296",10296.000
+E05009403,Royal Hospital,Kensington and Chelsea,"10122",10122.000
+E05009404,St. Helen's,Kensington and Chelsea,"5834",5834.000
+E05009405,Stanley,Kensington and Chelsea,"10668",10668.000
+E05009317,Bethnal Green,Tower Hamlets,"22328",22328.000
+E05009318,Blackwall & Cubitt Town,Tower Hamlets,"21537",21537.000
+E05009319,Bow East,Tower Hamlets,"20014",20014.000
+E05009320,Bow West,Tower Hamlets,"14508",14508.000
+E05009321,Bromley North,Tower Hamlets,"10738",10738.000
+E05009322,Bromley South,Tower Hamlets,"14730",14730.000
+E05009323,Canary Wharf,Tower Hamlets,"19016",19016.000
+E05009324,Island Gardens,Tower Hamlets,"17070",17070.000
+E05009325,Lansbury,Tower Hamlets,"18486",18486.000
+E05009326,Limehouse,Tower Hamlets,"7596",7596.000
+E05009327,Mile End,Tower Hamlets,"23419",23419.000
+E05009328,Poplar,Tower Hamlets,"7704",7704.000
+E05009329,St Dunstan's,Tower Hamlets,"14690",14690.000
+E05009330,St Katharine's & Wapping,Tower Hamlets,"13112",13112.000
+E05009331,St Peter's,Tower Hamlets,"21767",21767.000
+E05009332,Shadwell,Tower Hamlets,"14891",14891.000
+E05009333,Spitalfields & Banglatown,Tower Hamlets,"14648",14648.000
+E05009334,Stepney Green,Tower Hamlets,"12857",12857.000
+E05009335,Weavers,Tower Hamlets,"15312",15312.000
+E05009336,Whitechapel,Tower Hamlets,"20322",20322.000
+E05011217,Barnehurst,Bexley,"12290",12290.000
+E05011218,Belvedere,Bexley,"18090",18090.000
+E05011219,Bexleyheath,Bexley,"15255",15255.000
+E05011220,Blackfen & Lamorbey,Bexley,"16296",16296.000
+E05011221,Blendon & Penhill,Bexley,"16005",16005.000
+E05011222,Crayford,Bexley,"16470",16470.000
+E05011223,Crook Log,Bexley,"15762",15762.000
+E05011224,East Wickham,Bexley,"15932",15932.000
+E05011225,Erith,Bexley,"11996",11996.000
+E05011226,Falconwood & Welling,Bexley,"16910",16910.000
+E05011227,Longlands,Bexley,"10073",10073.000
+E05011228,Northumberland Heath,Bexley,"11020",11020.000
+E05011229,St Mary's & St James,Bexley,"10604",10604.000
+E05011230,Sidcup,Bexley,"15172",15172.000
+E05011231,Slade Green & Northend,Bexley,"12919",12919.000
+E05011232,Thamesmead East,Bexley,"17513",17513.000
+E05011233,West Heath,Bexley,"15980",15980.000
+E05011462,Addiscombe East,Croydon,"11433",11433.000
+E05011463,Addiscombe West,Croydon,"15981",15981.000
+E05011464,Bensham Manor,Croydon,"16612",16612.000
+E05011465,Broad Green,Croydon,"20176",20176.000
+E05011466,Coulsdon Town,Croydon,"13638",13638.000
+E05011467,Crystal Palace & Upper Norwood,Croydon,"16954",16954.000
+E05011468,Fairfield,Croydon,"13232",13232.000
+E05011469,Kenley,Croydon,"10843",10843.000
+E05011470,New Addington North,Croydon,"10984",10984.000
+E05011471,New Addington South,Croydon,"11859",11859.000
+E05011472,Norbury & Pollards Hill,Croydon,"13262",13262.000
+E05011473,Norbury Park,Croydon,"10564",10564.000
+E05011474,Old Coulsdon,Croydon,"10070",10070.000
+E05011475,Park Hill & Whitgift,Croydon,"5701",5701.000
+E05011476,Purley & Woodcote,Croydon,"15831",15831.000
+E05011477,Purley Oaks & Riddlesdown,Croydon,"9752",9752.000
+E05011478,Sanderstead,Croydon,"15643",15643.000
+E05011479,Selhurst,Croydon,"12485",12485.000
+E05011480,Selsdon & Addington Village,Croydon,"10234",10234.000
+E05011481,Selsdon Vale & Forestdale,Croydon,"9400",9400.000
+E05011482,Shirley North,Croydon,"15058",15058.000
+E05011483,Shirley South,Croydon,"10526",10526.000
+E05011484,South Croydon,Croydon,"18079",18079.000
+E05011485,South Norwood,Croydon,"16505",16505.000
+E05011486,Thornton Heath,Croydon,"17651",17651.000
+E05011487,Waddon,Croydon,"18656",18656.000
+E05011488,West Thornton,Croydon,"18569",18569.000
+E05011489,Woodside,Croydon,"17012",17012.000
+E05011234,Aldborough,Redbridge,"14874",14874.000
+E05011235,Barkingside,Redbridge,"14860",14860.000
+E05011236,Bridge,Redbridge,"13373",13373.000
+E05011237,Chadwell,Redbridge,"16289",16289.000
+E05011238,Churchfields,Redbridge,"15693",15693.000
+E05011239,Clayhall,Redbridge,"14035",14035.000
+E05011240,Clementswood,Redbridge,"14975",14975.000
+E05011241,Cranbrook,Redbridge,"13413",13413.000
+E05011242,Fairlop,Redbridge,"13950",13950.000
+E05011243,Fullwell,Redbridge,"14655",14655.000
+E05011244,Goodmayes,Redbridge,"15198",15198.000
+E05011245,Hainault,Redbridge,"14421",14421.000
+E05011246,Ilford Town,Redbridge,"11342",11342.000
+E05011247,Loxford,Redbridge,"15418",15418.000
+E05011248,Mayfield,Redbridge,"15140",15140.000
+E05011249,Monkhams,Redbridge,"9089",9089.000
+E05011250,Newbury,Redbridge,"13946",13946.000
+E05011251,Seven Kings,Redbridge,"14998",14998.000
+E05011252,South Woodford,Redbridge,"13295",13295.000
+E05011253,Valentines,Redbridge,"15374",15374.000
+E05011254,Wanstead Park,Redbridge,"8066",8066.000
+E05011255,Wanstead Village,Redbridge,"12818",12818.000
+E05011095,Borough & Bankside,Southwark,"10858",10858.000
+E05011096,Camberwell Green,Southwark,"15069",15069.000
+E05011097,Champion Hill,Southwark,"10591",10591.000
+E05011098,Chaucer,Southwark,"14783",14783.000
+E05011099,Dulwich Hill,Southwark,"9810",9810.000
+E05011100,Dulwich Village,Southwark,"11255",11255.000
+E05011101,Dulwich Wood,Southwark,"10699",10699.000
+E05011102,Faraday,Southwark,"12633",12633.000
+E05011103,Goose Green,Southwark,"14216",14216.000
+E05011104,London Bridge & West Bermondsey,Southwark,"17667",17667.000
+E05011105,Newington,Southwark,"14587",14587.000
+E05011106,North Bermondsey,Southwark,"18001",18001.000
+E05011107,North Walworth,Southwark,"13365",13365.000
+E05011108,Nunhead & Queen's Road,Southwark,"16630",16630.000
+E05011109,Old Kent Road,Southwark,"18084",18084.000
+E05011110,Peckham,Southwark,"14462",14462.000
+E05011111,Peckham Rye,Southwark,"10578",10578.000
+E05011112,Rotherhithe,Southwark,"18026",18026.000
+E05011113,Rye Lane,Southwark,"15652",15652.000
+E05011114,St George's,Southwark,"6969",6969.000
+E05011115,St Giles,Southwark,"15315",15315.000
+E05011116,South Bermondsey,Southwark,"17008",17008.000
+E05011117,Surrey Docks,Southwark,"12572",12572.000
