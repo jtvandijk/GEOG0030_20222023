@@ -553,7 +553,7 @@ As you can see, the analysis and visualisation part comes quite late in the over
 
 For this practical, we will investigate how the population in London has changed over time. Understanding population change - over time and space - is spatial analysis at its most fundamental. We can understand a lot just from where population is growing or decreasing, including thinking through the impacts of these changes on the provision of housing, education, health and transport infrastructure.
 
-We can also see first-hand the impact of wider socio-economic processes, such as urbanisation. Today we will look at population in London in 2011, 2015, and 2019 at the \emph{ward} scale that we can use within our future analysis projects, starting next week.
+We can also see first-hand the impact of wider socio-economic processes, such as urbanisation. Today we will look at population in London in 2011, 2015, and 2019 at the \emph{Ward} scale that we can use within our future analysis projects, starting next week.
 
 \textbf{Note}
 We will use the population dataset to \emph{normalise} other datasets. Why? When we record events created by humans, there is often a population bias: simply, more people in an area will by probability lead to a higher occurrence of said event, such as crime. We will look at this in greater detail next week.
@@ -638,7 +638,7 @@ We will start by downloading the administrative geography boundaries:
   Download all three zipfiles to your computer: \texttt{statistical-gis-boundaries-london.zip}, \texttt{London-wards-2014.zip} and \texttt{London-wards-2018.zip}.
 \end{enumerate}
 
-The first dataset contains all levels of London's administrative boundaries. In descending size order: borough, Ward, Middle layer Super Output Area (MSOA), Lower layer Super Output Area (LSOA), and Output Area (OA) based on the 2011 Census. The second dataset contains an \emph{updated} version of the Ward boundaries, as of 2014. The third dataset contains yet another \emph{updated} version of the Ward boundaries, as of 2018. As we will be looking at population data for 2015 and 2019, it is best practice to use those boundaries that are most reflective of the `geography' at the time; therefore, we will use these 2014 / 2018 ward boundaries for our 2015 / 2019 population dataset, respectively.
+The first dataset contains all levels of London's administrative boundaries. In descending size order: Borough, Ward, Middle layer Super Output Area (MSOA), Lower layer Super Output Area (LSOA), and Output Area (OA) based on the 2011 Census. The second dataset contains an \emph{updated} version of the Ward boundaries, as of 2014. The third dataset contains yet another \emph{updated} version of the Ward boundaries, as of 2018. As we will be looking at population data for 2015 and 2019, it is best practice to use those boundaries that are most reflective of the `geography' at the time; therefore, we will use these 2014 / 2018 Ward boundaries for our 2015 / 2019 population dataset, respectively.
 
 \textbf{Note}
 Once downloaded, you will need to unzip all files before you can use them. To unzip the file, you can use the built-in functionality of your computer's operating system. For Windows: right click on the zip file, select \textbf{Extract All}, and then follow the instructions. For Mac OS: double-click on the the zip file and it should unzip automatically.
@@ -672,9 +672,9 @@ For our population datasets, we will use the ONS mid-year estimates (MYE). These
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Navigate to the \emph{ward} level datasets: \href{https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/wardlevelmidyearpopulationestimatesexperimental}{{[}Link{]}}
+  Navigate to the \emph{Ward} level datasets: \href{https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/wardlevelmidyearpopulationestimatesexperimental}{{[}Link{]}}
 \item
-  When you navigate to this page, you will find multiple choices of data to download. We will need to download the estimates for \textbf{2011, 2015} and \textbf{2019}. Click to download each of the zipfiles. Choose the \textbf{revised} versions for 2015 and the (Census-based) 2011 wards edition for 2011.
+  When you navigate to this page, you will find multiple choices of data to download. We will need to download the estimates for \textbf{2011, 2015} and \textbf{2019}. Click to download each of the zipfiles. Choose the \textbf{revised} versions for 2015 and the (Census-based) 2011 Wards edition for 2011.
 \item
   In your \texttt{GEOG0030/data/raw/} folder, create a new folder called \texttt{population}, unzip your downloaded files, and copy the three spreadsheets to the newly created \texttt{population} folder.
 \item
@@ -686,7 +686,7 @@ Now it is time to do some quite extensive data cleaning and preparation.
 \hypertarget{w02-cleaning}{%
 \subsection{Cleaning data}\label{w02-cleaning}}
 
-When you open up any of the ward spreadsheets in Excel =, you will notice that there are several worksheets contained in this workbook. However, we are only interested in the total population tab. We therefore need to copy over the data from the 2011, 2015 and 2019 datasets into separate \texttt{csv} files.
+When you open up any of the Ward spreadsheets in Excel =, you will notice that there are several worksheets contained in this workbook. However, we are only interested in the total population tab. We therefore need to copy over the data from the 2011, 2015 and 2019 datasets into separate \texttt{csv} files.
 
 \hypertarget{london-population-in-2011}{%
 \subsubsection{London population in 2011}\label{london-population-in-2011}}
@@ -695,11 +695,11 @@ When you open up any of the ward spreadsheets in Excel =, you will notice that t
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Open the 2011 ward spreadsheet in Excel.
+  Open the 2011 Ward spreadsheet in Excel.
 \item
   Click on the \texttt{Mid-2011\ Persons} tab and have a look at the data. As you should be able to see, we have a set of different fields (e.g.~\texttt{Ward\ Code}, \texttt{Ward\ Name}), including population counts. Because we do not need all the data in the spreadsheet, we will extract only the data we need for our analysis. This means we need the total population (\texttt{All\ Ages}) data, alongside some identifying information that distinguishes each record from one another. Here we can see that both \texttt{Ward\ Code} and \texttt{Ward\ Name} suit this requirement. We can also think that the \texttt{Local\ Authority} column might be of use, so we also keep this information.
 \item
-  Create a new Excel spreadsheet Excel and from the \texttt{Mid-2011\ Persons} spreadsheet, copy over all cells from columns \textbf{A} to \textbf{D} and rows \textbf{4 to 636} into this new spreadsheet. Row 636 denotes the end of the \emph{Greater London} wards (i.e.~the end of the \emph{Westminster Local Authority}) which are kept (in most scenarios) at the top of the spreadsheet as their \textbf{Ward Codes} are the first in sequential order.
+  Create a new Excel spreadsheet Excel and from the \texttt{Mid-2011\ Persons} spreadsheet, copy over all cells from columns \textbf{A} to \textbf{D} and rows \textbf{4 to 636} into this new spreadsheet. Row 636 denotes the end of the \emph{Greater London} Wards (i.e.~the end of the \emph{Westminster Local Authority}) which are kept (in most scenarios) at the top of the spreadsheet as their \textbf{Ward Codes} are the first in sequential order.
 \item
   Before we go any further, we need to format our data. First, we want to rename our fields to remove the spaces and superscript formatting. Re-title the fields as follows: \texttt{ward\_code}, \texttt{ward\_name}, \texttt{local\_authority} and \texttt{pop2011}.
 \item
@@ -715,13 +715,13 @@ When you open up any of the ward spreadsheets in Excel =, you will notice that t
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Open the 2015 ward spreadsheet in Excel.
+  Open the 2015 Ward spreadsheet in Excel.
 \item
-  As you will see again, there are plenty of worksheets available and we want to select the \texttt{Mid-2015\ Persons} tab. We now need to copy over the data from our 2015 dataset to a new spreadsheet again. However, at first instance, you will notice that the City of London (CoL) wards are missing from this dataset. Then if you scroll to the end of the London Local Authorities, i.e.~to the bottom of Westminster, what you should notice is that the final row for the Westminster data is in fact row 575 - this suggests we are missing the data fror some Local Authorities (LAs). We need to determine which ones are missing and try to find them in the 2015 spreadsheet. With this in mind, start by copying over all cells from columns \textbf{A} to \textbf{D} and rows \textbf{5 to 575} into a new spreadsheet.
+  As you will see again, there are plenty of worksheets available and we want to select the \texttt{Mid-2015\ Persons} tab. We now need to copy over the data from our 2015 dataset to a new spreadsheet again. However, at first instance, you will notice that the City of London (CoL) Wards are missing from this dataset. Then if you scroll to the end of the London Local Authorities, i.e.~to the bottom of Westminster, what you should notice is that the final row for the Westminster data is in fact row 575 - this suggests we are missing the data fror some Local Authorities (LAs). We need to determine which ones are missing and try to find them in the 2015 spreadsheet. With this in mind, start by copying over all cells from columns \textbf{A} to \textbf{D} and rows \textbf{5 to 575} into a new spreadsheet.
 \item
   If you were to compare the names of the London Boroughs that we have now copied with the full list, you would notice that we are missing \emph{City of London}, \emph{Hackney}, \emph{Kensington and Chelsea}, and \emph{Tower Hamlets}. If we head back to the original 2015 raw dataset, we can actually find this data (as well as the City of London) further down in the spreadsheet. It seems like these LAs had their codes revised in the 2014 revision and are no longer in the same order as the 2011 dataset.
 \item
-  Locate the data for the \emph{City of London}, \emph{Hackney}, \emph{Kensington and Chelsea} and \emph{Tower Hamlets} and copy this over into our new spreadsheet. Double-check that you now have in total \textbf{637} wards within your dataset.
+  Locate the data for the \emph{City of London}, \emph{Hackney}, \emph{Kensington and Chelsea} and \emph{Tower Hamlets} and copy this over into our new spreadsheet. Double-check that you now have in total \textbf{637} Wards within your dataset.
 \item
   Remember to rename the fields as above, but change your population field to \textbf{pop2015}. Also, remember to reformat the values in your \texttt{pop2015} column.
 \item
@@ -735,17 +735,17 @@ When you open up any of the ward spreadsheets in Excel =, you will notice that t
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Open the 2019 ward spreadsheet in Excel. This time we are interested in the \texttt{Mid-2019\ Persons} tab.
+  Open the 2019 Ward spreadsheet in Excel. This time we are interested in the \texttt{Mid-2019\ Persons} tab.
 \item
-  This time the data that we are interested in can be found in columns \texttt{A}, \texttt{B}, \texttt{D} and \texttt{G}. Because the columns that we want are not positioned next to one antoher, start by hiding columns \texttt{C}, \texttt{E} and \texttt{F}. You can do this by right-clicking on the colums you want to hide and selecting \textbf{Hide}.
+  This time the data that we are interested in can be found in columns \texttt{A}, \texttt{B}, \texttt{D} and \texttt{G}. Because the columns that we want are not positioned next to one another, start by hiding columns \texttt{C}, \texttt{E} and \texttt{F}. You can do this by right-clicking on the colums you want to hide and selecting \textbf{Hide}.
 \item
   Next, copy the data from \textbf{row 5 to the final row for the Westminster data} for columns \texttt{A}, \texttt{B}, \texttt{D} and \texttt{G} over into a new spreadsheet.
 \item
-  If you look at the total rows that we have copied over, we have even fewer wards than the 2015 dataset. This time we are not only missing data for \emph{City of London}, \emph{Hackney}, \emph{Kensington and Chelsea}, \emph{Tower Hamlets} but also for \emph{Bexley}, \emph{Croydon}, \emph{Redbridge}, and \emph{Southwark}.
+  If you look at the total rows that we have copied over, we have even fewer Wards than the 2015 dataset. This time we are not only missing data for \emph{City of London}, \emph{Hackney}, \emph{Kensington and Chelsea}, \emph{Tower Hamlets} but also for \emph{Bexley}, \emph{Croydon}, \emph{Redbridge}, and \emph{Southwark}.
 \item
-  Copy over the remaining wards for these Local Authorities/boroughs.
+  Copy over the remaining Wards for these Local Authorities/Boroughs.
 \item
-  Once you've copied them over - you should now have \textbf{640} wards. Delete columns \texttt{C}, \texttt{E} and \texttt{F} and rename the remaining fields as you have done previously. Also, remember to reformat the values in your \texttt{pop2019} column.
+  Once you've copied them over - you should now have \textbf{640} Wards. Delete columns \texttt{C}, \texttt{E} and \texttt{F} and rename the remaining fields as you have done previously. Also, remember to reformat the values in your \texttt{pop2019} column.
 \item
   Once complete, save your spreadsheet into your \texttt{output} folder as \texttt{ward\_population\_2019.csv}.
 \end{enumerate}
@@ -758,9 +758,9 @@ You should now have your three population \texttt{csv} datasets in your \texttt{
 \hypertarget{setting-up-a-project}{%
 \subsubsection{Setting up a project}\label{setting-up-a-project}}
 
-We will now use QGIS to create population maps for the wards in London across our three time periods. To achieve this, we need to \textbf{join our table data to our spatial datasets} and then map our populations for our visual analysis.
+We will now use QGIS to create population maps for the Wards in London across our three time periods. To achieve this, we need to \textbf{join our table data to our spatial datasets} and then map our populations for our visual analysis.
 
-Because, as we have seen above, we have issues with the number of wards and changes in boundaries across our three years, we will not (for now) complete any quantitative analysis of these population changes - this would require significant additional processing that we do not have time for today.
+Because, as we have seen above, we have issues with the number of Wards and changes in boundaries across our three years, we will not (for now) complete any quantitative analysis of these population changes - this would require significant additional processing that we do not have time for today.
 
 \textbf{Note}
 Data interoperability is a key issue that you will face in spatial analysis, particularly when it comes to Administrative Geographies.
@@ -795,7 +795,7 @@ We will first focus on loading and joining the 2011 datasets.
   Here, we will select the \texttt{London\_Ward.shp} dataset. Click on the \texttt{.shp} file of this dataset and click \textbf{Open}. Then click \textbf{Add}. You may need to close the box after adding the layer.
 \end{enumerate}
 
-We can take a moment just to look at our ward data - and recognise the shape of London. Can you see the City of London in the dataset? It has the smallest wards in the entire London area. With the dataset loaded, we can now explore it in a little more detail. We want to check out two things about our data: first, its \textbf{Properties} and secondly, its \textbf{Attribute Table}.
+We can take a moment just to look at our Ward data - and recognise the shape of London. Can you see the City of London in the dataset? It has the smallest Wards in the entire London area. With the dataset loaded, we can now explore it in a little more detail. We want to check out two things about our data: first, its \textbf{Properties} and secondly, its \textbf{Attribute Table}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -807,13 +807,13 @@ We can take a moment just to look at our ward data - and recognise the shape of 
   Right-click on the \texttt{London\_Ward} layer and select \textbf{Properties}. Click through the different tabs and see what they contain. Keep the \textbf{Properties} box open.
 \end{enumerate}
 
-Before adding our population data, we can make a quick map of the wards in London - we can add labels and change the \emph{symbolisation} of our wards.
+Before adding our population data, we can make a quick map of the Wards in London - we can add labels and change the \emph{symbolisation} of our Wards.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{5}
 \item
-  In the \textbf{Properties} box, click on the \textbf{Symbology} tab - this is where we can change how our data layer looks. For example, here we can change the line and fill colour of our wards utilising either the default options available or clicking on \textbf{Simple Fill} and changing these properties directly. Keep the overall \textbf{styling} to a \textbf{Single Symbol} for now - we will get back to this once we have added the population data. You can also click on the \textbf{Labels} tab - and set the Labels option to \textbf{Single labels}.
+  In the \textbf{Properties} box, click on the \textbf{Symbology} tab - this is where we can change how our data layer looks. For example, here we can change the line and fill colour of our Wards utilising either the default options available or clicking on \textbf{Simple Fill} and changing these properties directly. Keep the overall \textbf{styling} to a \textbf{Single Symbol} for now - we will get back to this once we have added the population data. You can also click on the \textbf{Labels} tab - and set the Labels option to \textbf{Single labels}.
 \item
   QGIS will default to the \textbf{NAME} column within our data. You can change the properties of these labels using the options available. Change the font to \textbf{Futura} and size \textbf{8} and under the add a small buffer to the labels by selecting \textbf{Draw text bufer} under the \textbf{Buffer} tab. You can click \textbf{Apply} to see what your labels look like. Please note that the background colour may differ.
 \end{enumerate}
@@ -844,7 +844,7 @@ The second concept is the order in which your layers are drawn -- and this is re
 
 Being aware of this need for `order' is important when we shift to using RStudio and \texttt{tmap} to plot our maps, as if you do not layer your data correctly in your code, your map will end up not looking as you hoped!
 
-For us using QGIS right now, the layers will be drawn from bottom to top. At the moment, we only have one layer loaded, so we do not need to worry about our order right now - but as we add in our 2015 and 2018 ward files, it is useful to know about this order as we will need to display them individually to export them at the end.
+For us using QGIS right now, the layers will be drawn from bottom to top. At the moment, we only have one layer loaded, so we do not need to worry about our order right now - but as we add in our 2015 and 2018 Ward files, it is useful to know about this order as we will need to display them individually to export them at the end.
 
 \hypertarget{conducting-an-attribute-join}{%
 \subsubsection{Conducting an attribute join}\label{conducting-an-attribute-join}}
@@ -907,7 +907,7 @@ To make our join work, we need to check that we have a matching \textbf{UID} acr
   Click on \textbf{Apply} in the main Join tab and then click \textbf{OK} to return to the main QGIS window.
 \end{itemize}
 
-We can now check to see if our join has worked by opening up our \texttt{London\_Ward} \textbf{Attribute Table} and looking to see if our wards now have a \textbf{Population} field attached to it.
+We can now check to see if our join has worked by opening up our \texttt{London\_Ward} \textbf{Attribute Table} and looking to see if our Wards now have a \textbf{Population} field attached to it.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -920,7 +920,7 @@ We can now check to see if our join has worked by opening up our \texttt{London\
 As long as it has joined, you can move forward with the next steps. If your join has not worked, try the steps again - and if you are still struggling, do let us know.
 
 \textbf{Note}
-Now, the join that you have created between your ward and population datasets in only held in QGIS's memory. If you were to close the programme now, you would lose this join and have to repeat it the next time you opened QGIS. To prevent this from happening, we need to export our dataset to a new shapefile - and then re-add this to the map.
+Now, the join that you have created between your Ward and population datasets in only held in QGIS's memory. If you were to close the programme now, you would lose this join and have to repeat it the next time you opened QGIS. To prevent this from happening, we need to export our dataset to a new shapefile - and then re-add this to the map.
 
 Let's do this now:
 
@@ -988,7 +988,7 @@ You should now be looking at something like this:
 \caption{Your result.}\label{fig:02-ward-result}
 \end{figure}
 
-You will be able to see that we have \textbf{some} missing data - and this is for several wards within the City of London. This is because census data is \textbf{only recorded for 8 out of the 25 wards} and therefore we have no data for the remaining wards. As a result, these wards are left blank, i.e.~white, to represent a \texttt{NODATA} value.
+You will be able to see that we have \textbf{some} missing data - and this is for several Wards within the City of London. This is because census data is \textbf{only recorded for 8 out of the 25 Wards} and therefore we have no data for the remaining Wards. As a result, these Wards are left blank, i.e.~white, to represent a \texttt{NODATA} value.
 
 \textbf{Note}
 One thing to flag is that \texttt{NODATA} means no data - whereas \texttt{0}, particularly in a scenario like this, would be an actual numeric value. It is important to remember this when processing and visualising data, to make sure you do not represent a \texttt{NODATA} value incorrectly.
@@ -1041,5 +1041,702 @@ To make visual comparisons against our three datasets, theoretically we would ne
 \section{Before you leave}\label{byl-w02}}
 
 Save your project so you can go back to it if you need to, other than that \href{https://www.youtube.com/watch?v=Wmc8bQoL-J0}{that is it for this week}!
+
+\hypertarget{cartography-and-visualisation}{%
+\chapter{Cartography and Visualisation}\label{cartography-and-visualisation}}
+
+This week's lecture has given you an in-depth introduction into how we can create a successful map, including understanding map projections, cartographic conventions and issues faced with the analysis of aggregated data at areal units. The practical component of the week puts some of these learnings into practice as we analyse crime rates within London at two different scales.
+
+\hypertarget{reading-w03}{%
+\section{Reading list}\label{reading-w03}}
+
+\hypertarget{essential-readings-2}{%
+\subsubsection*{Essential readings}\label{essential-readings-2}}
+\addcontentsline{toc}{subsubsection}{Essential readings}
+
+\begin{itemize}
+\tightlist
+\item
+  Longley, P. \emph{et al.} 2015. Geographic Information Science \& Systems, \textbf{Chapter 4}: \emph{Georeferencing}. \href{https://ucl.rl.talis.com/link?url=https\%3A\%2F\%2Fapp.knovel.com\%2Fhotlink\%2Ftoc\%2Fid\%3AkpGISSE001\%2Fgeographic-information-science\%3Fkpromoter\%3Dmarc\&sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a}{{[}Link{]}}
+\item
+  Longley, P. \emph{et al.} 2015. Geographic Information Science \& Systems, \textbf{Chapter 11}: \emph{Cartography and Map Production}. \href{https://ucl.rl.talis.com/link?url=https\%3A\%2F\%2Fapp.knovel.com\%2Fhotlink\%2Ftoc\%2Fid\%3AkpGISSE001\%2Fgeographic-information-science\%3Fkpromoter\%3Dmarc\&sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a}{{[}Link{]}}
+\item
+  Wong, D. 2009. Modifiable Areal Unit Problem. \emph{International Encyclopedia of Human Geography} 169-174. \href{https://doi.org/10.1016/B978-008044910-4.00475-2}{{[}Link{]}}
+\end{itemize}
+
+\hypertarget{suggested-readings-2}{%
+\subsubsection*{Suggested readings}\label{suggested-readings-2}}
+\addcontentsline{toc}{subsubsection}{Suggested readings}
+
+\begin{itemize}
+\tightlist
+\item
+  Longley, P. \emph{et al.} 2015. Geographic Information Science \& systems, \textbf{Chapter 12}: \emph{Geovisualization}. \href{https://ucl.rl.talis.com/link?url=https\%3A\%2F\%2Fapp.knovel.com\%2Fhotlink\%2Ftoc\%2Fid\%3AkpGISSE001\%2Fgeographic-information-science\%3Fkpromoter\%3Dmarc\&sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a}{{[}Link{]}}
+\item
+  Usery, L. and Seong, J. 2001. All equal-area map projections are created equal, but some are more equal than others. \emph{Cartography and Geographic Information Science} 28(3): 183-194. \href{https://doi.org/10.1559/152304001782153053}{{[}Link{]}}
+\end{itemize}
+
+\hypertarget{crime-in-london}{%
+\section{Crime in London}\label{crime-in-london}}
+
+Over the next few weeks, we will look to model driving factors behind crime across London from both a statistical and spatial perspective. As \href{https://www.oxfordbibliographies.com/view/document/obo-9780195396607/obo-9780195396607-0123.xml}{Reid \emph{et al.} (2018)} argue:
+
+\begin{quote}
+Spatial analysis can be employed in both an exploratory and well as a more confirmatory manner with the primary purpose of identifying how certain community or ecological factors (such as population characteristics or the built environment) influence the spatial patterns of crime.
+\end{quote}
+
+Against this background, we are actually going to answer a very simple question today: does our perception of crime (and its distribution) in London vary at different scales? Here we are looking to test whether we would make the \textbf{ecological fallacy} mistake of assuming patterns at the Ward level are the same at the Borough level by looking to directly account for the impact of the Modifiable Area Unit Problem within our results. To test this, we will use these two administrative geographies (\textbf{Borough} and \textbf{Ward}) to aggregate crime data for London in 2020. Here we will be looking specifically at a specific type of crime: \emph{Theft from a person}.
+
+\hypertarget{w03-finding}{%
+\subsection{Finding our datasets}\label{w03-finding}}
+
+As we saw last week, accessing data within the UK, and specifically for London, is relatively straight-forward - you simply need to know which data portal contains the dataset you want!
+
+\textbf{Note}
+The datasets you will create in this practical will be used in other practicals, so make sure to follow every step and export your data into your \texttt{output} folder at the end. The practical will also introduce you to point-in-polygon counts. You will be using this type of analysis throughout this module, so it is incredibly important that you understand how they work -- even as seemingly simple as they may be!
+
+\hypertarget{crime-data}{%
+\subsubsection{Crime data}\label{crime-data}}
+
+For our crime data, we will use data directly from the \textbf{Police Data Portal}, which you can find at \url{https://data.police.uk/}. This Data Portal allows you to access and generate tabular data for crime recorded in the U.K. across different the different Police Forces since 2017.
+
+In total, there are 45 territorial police forces (TPF) and 3 special police forces (SPF) of the United Kingdom. Each TPF covers a specific area in the UK (e.g.~the ``West Midlands Police Force''), whilst the SPFs are cross-jurisdiction and cover specific types of crime, such as the British Transport Police. Therefore, when we want to download data for a specific area, we need to know which Police Force covers our area interest.
+
+When you look to download crime data for London, for example, there are \textbf{two} territorial police forces working within the city and its greater metropolitan area:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  \textbf{The Metropolitan Police Force (The Met)}, which covers nearly the entire London area, including Greater London
+\item
+  \textbf{The City of London (CoL) Police}, which covers the City of London. The Met has no jurisdiction in the CoL.
+\end{enumerate}
+
+You therefore need to decide if you want to include an analysis of crime in the City of London or not - we will in our current study.
+
+\hypertarget{population-data}{%
+\subsubsection{Population data}\label{population-data}}
+
+We know that if we want to study a phenomena like crime and aggregate it to an areal unit, we will need to normalise this by our population. Luckily, we already sorted out our Ward population dataset last week (i.e.~\texttt{ward\_population\_2019.shp}). In addition to our \textbf{Ward} level dataset, we also want to generate the same type of shapefile for our London \textbf{Boroughs}, i.e.~a \texttt{borough\_population\_2019.shp}, utilising the same approach as last week, joining our population table data to our Borough shape data. To do this, we need to know where to get both our required datasets from - fortunately, you already have a Borough shapefile in your \texttt{raw/boundaries/2011} folder. Therefore, it is just a case of tracking down the same Mid-Year Estimates (MYE) for London Boroughs as we did for the Wards.
+
+\textbf{Note}
+Because the boundaries of the London Boroughs have not been changed since 1965, we can get away with using the 2011 \texttt{shapefile} instead of having to download a more up to date version.
+
+\hypertarget{w03-downloading}{%
+\subsection{Downloading data}\label{w03-downloading}}
+
+As outlined above, to get going with our analysis, we need to download both the \textbf{population} data for our Boroughs and the 2020 \textbf{crime} data for our two police forces in London.
+
+Let us tackle the population data first.
+
+\hypertarget{borough-population}{%
+\subsubsection{Borough population}\label{borough-population}}
+
+Through a quick search, we can find our Borough population table data pretty much in the same place as our Ward data - however it is a separate spreadsheet to download.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Navigate to the data on the website of the Office for National Statistics: \href{https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland}{{[}Link{]}}.
+\item
+  Download the \textbf{Mid-2019: April 2020 local authority district codes} \texttt{.xls} file.
+\item
+  Open the dataset in your spreadsheet editing software and navigate to the \texttt{MYE2-Persons} tab. Now extract: \texttt{Code}, \texttt{Name}, \texttt{Geography} and \texttt{All\ ages} data for all London Boroughs.
+  You should have a total of \textbf{33} Boroughs.
+\item
+  Once you have your 33 Boroughs separated from the rest of the data, copy the columns (\texttt{Code}, \texttt{Name}, \texttt{Geography} and \texttt{All\ ages}) and respective data for each Borough into a new \texttt{csv}.
+\item
+  Remember to format the \textbf{field names}. Like last week, also remember to make sure that the \texttt{All\ ages} field is recognised as a \textbf{numeric} field. Save as a new \texttt{csv} in your \texttt{output} folder: \texttt{borough\_population\_2019.csv}.
+\end{enumerate}
+
+\hypertarget{ward-population}{%
+\subsubsection{Ward population}\label{ward-population}}
+
+As mentioned above, you should have a \texttt{ward\_population\_2019.shp} file within your \texttt{output} data folder.
+
+\hypertarget{crime-data-1}{%
+\subsubsection{Crime data}\label{crime-data-1}}
+
+Normally, we would now head to the Police Data Portal and download our crime data. However, the manual processing that is required is too exhaustive to do manually - and far (far!) easier to do using programming. As such you can download a pre-filtered spreadsheet instead. Unzip the download and copy the \texttt{csv} into a \textbf{new} folder in your \texttt{raw} data folder called: \texttt{crime}.
+
+\hypertarget{file-download}{%
+\subsubsection*{File download}\label{file-download}}
+\addcontentsline{toc}{subsubsection}{File download}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+File
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Link
+\end{minipage} \\
+\midrule()
+\endhead
+Theft from persons in 2020 & \texttt{csv} & \href{https://github.com/jtvandijk/GEOG0030/tree/master/data/zip/crime_theft_2020_london.zip}{Download} \\
+\bottomrule()
+\end{longtable}
+
+\textbf{Note}
+When mapping the data from the provided longitude and latitude coordinates, it is important to know that these locations represent the approximate location of a crime --- not the exact place that it happened. This displacement occurs to preserve anonymity of the individuals involved. The process by how this displacement occurs is standardised. There is a list of anonymous map points to which the exact location of each crime is compared against this master list to find the nearest map point. The co-ordinates of the actual crime are then replaced with the co-ordinates of the map point. Each map point is specifically chosen to avoid associating that point with an exact household. Interestingly enough, the police also convert the data from their recorded BNG eastings and northings into WGS84 latitude and longitude.
+
+\hypertarget{using-qgis-to-map-our-crime-data}{%
+\subsection{Using QGIS to map our crime data}\label{using-qgis-to-map-our-crime-data}}
+
+\hypertarget{setting-up-a-project-1}{%
+\subsubsection{Setting up a project}\label{setting-up-a-project-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Start \textbf{QGIS}
+\item
+  Click on \textbf{Project} -\textgreater{} \textbf{New}. Save your project as \texttt{w3-crime-analysis}. Remember to save your work throughout the practical.
+\item
+  Before we get started with adding data, we will first set the Coordinate Reference System of our Project. Click on \textbf{Project} -\textgreater{} \textbf{Properties -- CRS}. In the Filter box, type \textbf{British National Grid}. Select \textbf{OSGB 1936 / British National Grid - EPSG:27700} and click \textbf{Apply}. Click \textbf{OK}.
+\end{enumerate}
+
+Now we have our \textbf{Project CRS} set, we are ready to start loading and processing our data.
+
+\hypertarget{adding-layers-1}{%
+\subsubsection{Adding layers}\label{adding-layers-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Click on \textbf{Layer} -\textgreater{} \textbf{Add Layer} -\textgreater{} \textbf{Add Vector Layer}.
+\item
+  With \textbf{File} select as your source type, click on the small three dots button and navigate to your \texttt{ward\_population\_2019.shp} in your \texttt{output} folder. Click on the \texttt{.shp} file of this dataset and click \textbf{Open}. Then click \textbf{Add}. You may need to close the box after adding the layer.
+\end{enumerate}
+
+We now need to create our Borough population shapefile - and to do so, we need to repeat exactly the same process as last week in terms of joining our table data to our shapefile. You should now be able to do this, so we will not provide you with detailed instructions. Remember, you need to:
+
+\begin{itemize}
+\item
+  Load the respective Borough dataset as a Vector Layer found in your \texttt{raw/boundaries/2011} data folder: \texttt{London\_Borough\_Excluding\_MHW.shp}.
+\item
+  Load the respective population dataset that you just created as a \textbf{Delimited Text File Layer}. Remember the settings, including no geometry!
+\item
+  Join the two datasets together using the \textbf{Join} tool in the Borough dataset \textbf{Properties} box. Remember which fields to use, which to add, and to remove the prefix.
+\item
+  Export your joined dataset into a new dataset within your \texttt{output} folder: \texttt{borough\_population\_2019.shp}.
+\item
+  Make sure this dataset is loaded into your \textbf{Layers} / Added to the map.
+\item
+  Remove the original Borough and population data layers.
+\end{itemize}
+
+Once this is done, we are ready to load and map our crime data. We will load this data using the \textbf{Delimited Text File Layer} option you would have used just now to load the Borough population - but this time, we will be adding point coordinates to map our crime data as points.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Click on \textbf{Layer} -\textgreater{} \textbf{Add Layer} -\textgreater{} \textbf{Add Delimited Text File Layer}.
+\item
+  With \textbf{File} select as your source type, click on the small three dots button and navigate to your \texttt{crime\_theft\_2020.csv} in your \texttt{raw/crime} folder. Click on the \texttt{.csv} file of this dataset and click \textbf{Open}. In \textbf{Record and Fields Options} tick \texttt{Decimal\ separator\ is\ comma}, \texttt{First\ record\ has\ field\ names}, \texttt{Detect\ field\ types} and \texttt{Discard\ empty\ fields}. In \textbf{Geometry Definition}, select \texttt{Point\ coordinates} and set the \textbf{X field} to \texttt{Longitude} and the \textbf{Y field} to \texttt{Latitude}. The \textbf{Geometry CRS} should be: \texttt{EPSG:4326\ -\ WGS84}. Click \textbf{Add}.
+\end{enumerate}
+
+\textbf{Note}
+You may be wondering whether we are not using the incorrect CRS for our data. As you click \textbf{Add}, you should have gotten a a pop-up from QGIS asking about transformations - they are the mathematical algorithms that convert data from one CRS to another. And this is exactly what QGIS is trying to do. QGIS knows that the \textbf{Project CRS} is \textbf{BNG} but the \textbf{Layer} you are trying to add has a \textbf{WGS84} CRS. QGIS is asking you what transformation it should use to project the Layer in the Project CRS. This is because one key strength of QGIS is that it can \textbf{project ``on the fly''} - what this means is that QGIS will automatically convert all Layers to the Project CRS once it knows which transformation you would like to use so that they will all be rendered in the correct position with respect to each other! But you must note that this transformation is only \textbf{temporary in nature} and as a result, it is not a full \textbf{reprojection} of our data. More details on this can be found in QGIS' \href{https://docs.qgis.org/3.16/en/docs/user_manual/working_with_projections/working_with_projections.html}{user manual section on working with projections}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  For now, let us use the on-the-fly projection and accept QGIS' default value by clicking \textbf{OK}. This transformation should be built-in to your QGIS transformation library, whereas some of the more accurate options would need installation.
+\end{enumerate}
+
+You should now see your crime dataset displayed on the map.
+
+\begin{figure}
+
+{\centering \includegraphics[width=12.74in]{images/w03/crime_unproj} 
+
+}
+
+\caption{Borough map with crime data.}\label{fig:03-borough-crime}
+\end{figure}
+
+We can test the `temporary' nature of the projection by looking at the CRS of the \texttt{crime\_theft\_2020} layer:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Right-click on the \texttt{crime\_theft\_2020} layer then select \textbf{Properties} -\textgreater{} \textbf{Information} and then look at the associated CRS. You should see that the CRS of the layer is still \texttt{WGS84}.
+\end{enumerate}
+
+We want to make sure our analysis is as accurate and efficient as possible, so it is best to reproject our data into the \textbf{same CRS} as our administrative datasets, i.e.~British National Grid. This also means we will have the dataset to use in other projects, just in case.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Back in the main QGIS window, click on \textbf{Vector} -\textgreater{} \textbf{Data Management Tools} -\textgreater{} \textbf{Reproject Layer}. Fill in the parameters as follows:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Input Layer:} \texttt{crime\_theft\_2020}
+  \item
+    \textbf{Target CRS:} \texttt{Project\ CRS:\ EPSG:\ 27700}
+  \item
+    \textbf{Reprojected:} Click on the three buttons and \textbf{Save to File} to create a new data file.
+  \item
+    \textbf{Save} it in your \texttt{working} folder as \texttt{crime\_theft\_2020\_BNG.shp}
+  \item
+    Click \textbf{Run} and then close the tool box.
+  \end{itemize}
+\end{enumerate}
+
+You should now see the new data layer added to your Layers.
+
+\textbf{Note}
+QGIS can at times be a little bit buggy so when it creates new data layers in your Layers box, it often automates the name, hence you might see your layer added as \texttt{Reprojected}. It does this with other management and analysis tools as well, so just something to be aware of!
+
+Before moving on, let us do some housekeeping.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  Remove the \texttt{crime\_theft\_2020} original dataset.
+\item
+  Rename the \texttt{Reprojected} dataset to \texttt{crime\_theft\_2020}.
+\end{enumerate}
+
+Now we have an organised Layers and project, we are ready to start our crime analysis!
+
+\hypertarget{counting-points-in-polygons}{%
+\subsubsection{Counting points-in-polygons}\label{counting-points-in-polygons}}
+
+The next step of our analysis is incredibly simple - as QGIS has an in-built tool for us to use. We will use the \texttt{Count\ Points\ in\ Polygons} in the \texttt{Analysis} toolset for \texttt{Vector} data to count how many crimes have occured in both our \textbf{Wards} and our \textbf{Boroughs}. We will then have our count statistic which we will need to normalise by our population data to create our \textbf{crime rate} final statistic.
+
+Let's get going and first start with calculating the crime rate for the Borough scale:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Click on \textbf{Vector} -\textgreater{} \textbf{Analysis Tools} -\textgreater{} \textbf{Count Points in Polygons}.
+\item
+  Within the toolbox, select the parameters as follows:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Polygons:} \texttt{borough\_population\_2019}
+  \item
+    \textbf{Points:} \texttt{crime\_theft\_2020} \emph{(Note how both our data layers state the same CRS!)}
+  \item
+    No weight field or class field
+  \item
+    \textbf{Count field names:} \texttt{crimecount}
+  \item
+    Click on the three dot button and \textbf{Save to file:} \texttt{working} -\textgreater{} \texttt{borough\_crime\_2020.shp}
+  \end{itemize}
+\item
+  Click \textbf{Run} and \textbf{Close} the box. You should now see a \texttt{Count} layer added to your Layers box.
+\item
+  Click the checkbox next to \texttt{crime\_theft\_2020} to hide the crime points layer for now.
+\item
+  Right-click on the \texttt{borough\_crime\_2020} layer and open the \textbf{Attribute Table}. You should now see a \texttt{crimecount} column next to your \texttt{pop2019} column. You can look through the column to see the different levels of crime in the each Borough. You can also sort the column, from small to big, big to small, like you would do in a spreadsheet software.
+\end{enumerate}
+
+Whilst it is great that we have ve got our \texttt{crimecount}, as we know, what we actually need is a \textbf{crime rate} to account for the different sizes in population in the Boroughs and to avoid a \textbf{population heat map}.
+
+To get our \textbf{crime rate} statistic, we are going to do our first bit of table manipulation in QGIS.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  With the \textbf{Attribute Table} of your \texttt{Count} layer still open, click on the \textbf{pencil} icon at the start of the row.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This pencil actually turns on the Editing mode in QGIS.
+  \item
+    The Editing mode allows you to edit both the \textbf{Attribute Table} values \textbf{and} the \textbf{geometry} of your data.
+  \item
+    E.g. you could actually move the various vertex of your Boroughs whilst in this Editing mode if you like!
+  \item
+    When it comes to the \textbf{Attribute Table}, it means you can directly edit existing values in the table \textbf{or} create and add new fields to the table.
+  \item
+    Whilst you can actually do the latter outside of the Editing mode, this Editing mode means you can reverse any edits you make and they are not permanent just in case you make a mistake.
+  \item
+    Using the Editing mode is the \textbf{correct} approach to editing your table, however, it might not always be the approach you use when generating new fields and, as we all are sometimes, a little lazy. \emph{(This may be a simple case of ``Do what I say, not what I do!'')}
+  \end{itemize}
+\end{enumerate}
+
+Let us go ahead and add a new field to contain our \textbf{Crime Rate}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Whilst in the Editing mode, click on \textbf{New Field} button (or Ctrl+W/CMD+W) and fill in the \textbf{Field Parameters} as follows:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Name:} \texttt{crime\_rate}
+  \item
+    \textbf{Comment:} \emph{leave blank}
+  \item
+    \textbf{Type:} Decimal number
+  \item
+    \textbf{Length:} 10
+  \item
+    \textbf{Precision:} 0
+  \end{itemize}
+\item
+  Click \textbf{OK},
+\end{enumerate}
+
+You should now see a new field added to our \textbf{Attribute Table}.
+
+\textbf{Note}
+Understanding how to add new fields and their parameters rely on you understanding the different data types we covered last week - and thinking through what sort of data type your field needs to contain. In our case, we will store our data as a decimal to enable our final calculation to produce a decimal (an integer/integer is likely to produce a decimal) but we will set the precision to \textbf{0} to have zero places after our decimal place when the data is used. That is because ultimately, we want our crime rate represented as an integer because, realistically, you cannot have half a crime. Calculating a decimal however will allow us to round-up within our calculations.
+
+The empty field has \emph{NULL} populated for each row - so we need to find a way to give our Boroughs some crime rate data. To do this, we will calculate a simple \textbf{Crime Rate} using the \textbf{Field Calculator} tool provided by QGIS within the \textbf{Attribute Table}. We will create a crime rate that details the number of crimes per 10,000 people in the Borough. In most cases, a crime rate per person will create a decimal result less than 1 which not only will not be stored correctly by our \texttt{crime\_rate} field but, for many people, a \textbf{decimal} value is hard to interpret and understand.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\item
+  Whilst still in the Editing mode, click on the \textbf{Abacus} button (Ctrl + I / Cmd + I), which is actually the \textbf{Field Calculator}. A new pop-up should load up. We can see there are various options we could click at the top - including \textbf{Create a new field}. So we could in fact create a new field directly from the field calculator which would help us combine these two steps in one and quicken our workflow!
+\item
+  For now, in the Field Calculator pop-up:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check the \textbf{Update existing field} box.
+  \item
+    Use the drop-down to select the \texttt{crime\_rate}field.
+  \item
+    In the Expression editor, add the following expression: \textbf{( ``crimecount'' / ``pop2019'' ) * 10000}
+  \item
+    You can type this in manually or use the \texttt{Fields\ and\ Values} selector in the box in the middle to add the fields into the editor.
+  \item
+    Once done, click \textbf{OK}.
+  \end{itemize}
+\end{enumerate}
+
+You should then return to the \textbf{Attribute Table} and see our newly populated \texttt{crime\_rate} field - at the moment, we can see the resulting calculations stored as decimals.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\item
+  Click on the \textbf{Save} button to save these edits.
+\item
+  Click again on the \textbf{Pencil} button to exit Editing mode - you should see the numbers turn to integers.
+\end{enumerate}
+
+\textbf{Note}
+On some computers and installations the numbers do not get changed to an \texttt{integer}, but remain a \texttt{double}. If this happens, create a new field directly in the Field Calculator. instead of ticking the \textbf{Update existing field} box you keep the \textbf{Create a new field} box ticked. Name the new field \texttt{crime\_rate\_int}, make sure the \textbf{Output field type} is set to \texttt{Whole\ number\ (integer)}, and use the same expression as above to get the crime rate in a new column.
+
+We now have a \texttt{crime\_rate} column to map. Before moving to the next step, if you would like, go ahead and symbolise your Boroughs by this \texttt{crime\_rate}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Rename your Borough crime rate layer to \texttt{Borough\ Crime\ Rate}.
+\end{enumerate}
+
+Great! We now have our Borough crime rate dataset ready for mapping and analysis - we just now need to repeat this process to have our Ward dataset.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Repeat the above processes to create a \texttt{crime\_rate} column within our Ward dataset ready for mapping and analysis.
+\end{enumerate}
+
+\hypertarget{tips}{%
+\subsubsection*{Tips}\label{tips}}
+\addcontentsline{toc}{subsubsection}{Tips}
+
+\begin{itemize}
+\item
+  Remember, you can use the field calculator straight away to shorten the field creation process by selecting to create a new field whilst completing the field calculation (still using the same parameters though!).
+\item
+  One additional small tip is that in the middle box in the Field Calculator, you can load \textbf{Recent field calculations} and double-click on your prior calculation to automate the creation of the \texttt{crime\_rate} calculation!
+\end{itemize}
+
+\hypertarget{mapping-our-crime-data}{%
+\subsubsection{Mapping our crime data}\label{mapping-our-crime-data}}
+
+Now you have both datasets ready, it is time to style the maps. Remember to use the \textbf{Properties} box to first symbolise your maps. Think through using the appropriate colour scheme - and perhaps have a look online for some examples, if you do not want to use the defaults. Once you are happy with their symbolisation, we will turn them into proper publishable maps using QGIS's \textbf{Print Layout}. If you have ever used ArcMap, this is similar to switch the view of your map canvas to a print layout within the main window - but in QGIS's case, it loads up a new window.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  From the main QGIS window, click on \textbf{Project} -\textgreater{} \textbf{New Print Layout}. In the small box that first appears, call your new print layout: \texttt{crime\_map\_borough\_ward}.
+\end{enumerate}
+
+A new window should appear.
+
+Initially, when opening the print layout provides you with a blank canvas that represents the paper surface when using the print option.
+
+On the \textbf{left-hand} side of the window, you will find buttons beside the canvas to add print layout items: the current QGIS map canvas, text labels, images, legends, scale bars, basic shapes, arrows, attribute tables and HTML frames. In this toolbar you also find buttons to navigate, zoom in on an area and pan the view on the layout a well as buttons to select any layout item and to move the contents of the map item.
+
+On the \textbf{right-hand} side of the window, you will find two set of panels. The upper one holds the panels Items and Undo History and the lower holds the panels Layout, Item properties and Atlas generation. For our practical today, we're most interested in the bottom panel as \textbf{Layout} will control the overall look of our map, whilst \textbf{Item properties} will allow us to customise the elements, such as Title or Legend, that we may add to our map.
+
+In the \textbf{bottom part} of the window, you can find a status bar with mouse position, current page number, a combo box to set the zoom level, the number of selected items if applicable and, in the case of atlas generation, the number of features.
+
+In the \textbf{upper part} of the window, you can find menus and other toolbars. All print layout tools are available in menus and as icons in a toolbar.
+
+Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items.
+
+To start with creating a map, you use the \textbf{Add Map} tool to draw a box in which a snapshot of the \textbf{current active} map you have displayed in your QGIS main window will be loaded.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Click on the \textbf{Add Map} tool and draw a box in the first half of our map to load our current map. Note, you can move your map around and resize the box simply by clicking on it as you would in Word etc.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=37.08in]{images/w03/map_layout} 
+
+}
+
+\caption{Current active map in the Print Layout.}\label{fig:03-map-print-layout}
+\end{figure}
+
+As you can see, the map currently does not look that great - we could really do with zooming in, as we do not need all of the white space.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  With your map selected, head to the \textbf{Items Properties} panel and look for the \textbf{Scale} parameter.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Here we can manually edit the \textbf{scale} of our map to find the right zoom level.
+  \item
+    Have a go at entering different values and see what level you think suits the size of your map.
+  \item
+    Keep a note of the scale, as we will need this for the second map we will add to our map layout - our Borough map.
+  \item
+    Next, in the same panel, if you would like, you can add a frame to your map - this will draw a box (of your selected formatting) around the current map.
+  \item
+    In the same panel, note down the size of your map - we want to make sure the next map we add is of the same size.
+  \item
+    Note, if you need to move the position of the map within the box, look for the \textbf{Move Item Content} tool on the left-hand side toolbar.
+  \item
+    Once you are done, finally click on the \textbf{Lock Layers} and \textbf{Lock Style for layers.}
+  \end{itemize}
+\end{enumerate}
+
+By locking the Layers (and their symbology) in our map, it means we can change our data/map in our main QGIS window without changing the map in the Print Layout - as we will see in a minute when adding our Borough crime rate map. If we do not lock our layers, our map would automatically update to whatever is next displayed in the main QGIS window.
+
+Now we have added our first map to our Map Layout, we want to add a \textbf{Legend} for this specific map.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Click on the \textbf{Add Legend} tool and again, draw a box on your map in which your legend will appear.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    As you will see, your Legend auto-generates an entry for every layer in our Layers box in the main QGIS application:
+  \end{itemize}
+\end{enumerate}
+
+\begin{center}\includegraphics[width=4.58in]{images/w03/autolegend} \end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  In \textbf{Item Properties}, uncheck \textbf{auto-update} - this stops QGIS automatically populating your legend and enables you to customise your legend.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    First, let us rename our Layer in the legend to: \textbf{Ward Crime Rate (per 10,000 people)}.
+  \item
+    Next, we want to remove all other Layers, using the \textbf{-} button
+  \item
+    We can also customise the Legend further, including type, size and alignment of font - go ahead and style your legend as you would prefer.
+  \item
+    Move the Legend to an appropriate part of the layout near your Ward crime rate map - resize if necessary.
+  \end{itemize}
+\end{itemize}
+
+Now we are finished with the Ward map, we want to make sure we do not change any aspect of its layout. To do so, we need to lock both the Map and Legend in the \textbf{Items} panel - this prevents us accidentally moving items in our layout. Note, this is different to locking your layers in the \textbf{Items Properties} as we did earlier.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  In the \textbf{Items} panel, click the \textbf{Lock} check box for both our map and legend.
+\end{enumerate}
+
+Once locked, we can now start to add our Borough map.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  In the main QGIS window, uncheck your \texttt{Ward\ Crime\ Rate} layer and make sure your \texttt{Borough\ Crime\ Rate} layer is now visible.
+\end{enumerate}
+
+Return to the Print Layout window.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Repeat the process above of adding a map to the window - this time, you should now see your Borough map loaded in the box (and you should see \textbf{no} changes to your Ward map).
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Place your Borough map next to your Ward map - use the snap grids to help.
+  \item
+    Set your \textbf{Borough} map to the \textbf{same zoom level} as your \textbf{Ward} map.
+  \item
+    Make sure your \textbf{Borough map} is the \textbf{same size} as your \textbf{Ward} map.
+  \item
+    Set your Borough map to the \textbf{same extent} as your \textbf{Ward} map (extra neatness!).
+  \item
+    Add a frame if you want.
+  \item
+    Lock your layer and its symbology in the \textbf{Items Properties} once ready and the lock your layer in the \textbf{Items} panel.
+  \end{itemize}
+\end{enumerate}
+
+We now just need to add a second legend for our Borough map. If we had standardised our values across our two maps, then we would only need to use one legend. However, in this case, as there is a difference in the values, we need to have two legends.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Repeat the process as above to add a Legend for our Borough map.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Remember to re-title the Legend to make it more legible/informative.
+  \item
+    Match the same formatting for a clean look.
+  \end{itemize}
+\item
+  Once complete, \textbf{lock these two items} in the \textbf{Items} panel as well.
+\end{enumerate}
+
+Now we have our two maps ready, we can add our \textbf{main map elements}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Title}
+\item
+  \textbf{Orientation}
+\item
+  \textbf{Data Source}
+\end{itemize}
+
+We will not at this time add anything else - an inset map could be nice, but this requires additional data that we do not have at the moment. Any other map elements would also probably make our design look too busy.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Using the tools on the left-hand tool bar:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Add a \textbf{scale bar}: use the \textbf{Item Properties} to adjust the \textbf{Style}, \textbf{number of segments}, \textbf{font}, etc.
+  \item
+    Add a \textbf{north arrow}: draw a box to generate the arrow and then use the \textbf{Item Properties} to adjust..
+  \item
+    Add a \textbf{title} at the top of the page, and subtitles above the individual maps.
+  \item
+    Finally add a box detailing our data sources, you can copy and paste the following:
+    \texttt{Contains\ National\ Statistics\ data\ ©\ Crown\ copyright\ and\ database\ right\ {[}2015{]}\ (Open\ Government\ Licence).\ Contains\ Ordnance\ Survey\ data\ ©\ Crown\ copyright\ and\ database\ right\ {[}2015{]}.\ Crime\ data\ obtained\ from\ data.police.uk\ (Open\ Government\ Licence).}
+  \end{itemize}
+\end{enumerate}
+
+Once you have added these properties in, you should have something that looks a little like this:
+
+\begin{figure}
+
+{\centering \includegraphics[width=48.71in]{images/w03/london_crime_rate} 
+
+}
+
+\caption{Crime rates in London boroughs and Wards. Note that the numbers in the legend may differ from the numbers in your own legend.}\label{fig:03-finale-map}
+\end{figure}
+
+The only thing outstanding is to export our map to a file. Go to \textbf{Layout} -\textgreater{} \textbf{Export as Image} and then save it in your maps folder as \texttt{London\_2020\_Crime-Rate.png}.
+
+\hypertarget{assignment-w03}{%
+\section{Assignment}\label{assignment-w03}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Looking at the maps you have created, how does your perception of crime (and its distribution) in London vary at different scales?
+\end{enumerate}
+
+At the moment, we have looked at the crime rate as an amount, therefore we use a sequential colour scheme that shows, predominantly, where the crime rate is the highest. As an alternative, we could use a diverging colour scheme that could show us where the crime rate is lower and/or higher than a critical mid-point, such as the average crime rate across the Wards or Borough.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Create a map of crime in London, at both the Borough and Ward level, that shows for each administrative geography the percentage difference from the overall mean crime rate.
+\end{enumerate}
+
+\hypertarget{tips-1}{%
+\subsubsection*{Tips}\label{tips-1}}
+\addcontentsline{toc}{subsubsection}{Tips}
+
+\begin{itemize}
+\tightlist
+\item
+  You will need to start by calculating the average crime rate for both datasets and subsequently calculate the difference from these values for each geography.
+\item
+  All calculations can be done using the field calculator in QGIS, but will require some thinking about the right expression.
+\end{itemize}
+
+\hypertarget{byl-w03}{%
+\section{Before you leave}\label{byl-w03}}
+
+\href{https://www.youtube.com/watch?v=3wxyN3z9PL4}{That is us all done}. Remember to save your project and export your Ward and Borough shapefiles to your \texttt{final} folder!
 
 \end{document}

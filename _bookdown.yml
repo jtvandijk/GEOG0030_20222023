@@ -3,6 +3,7 @@ rmd_files:
 - index.Rmd
 - 01-introduction.Rmd
 - 02-GIScience.Rmd
+- 03-cartography.Rmd
 #- 11-data.Rmd
 language:
   ui:
