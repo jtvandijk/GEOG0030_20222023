@@ -33,6 +33,3 @@ conducting-an-attribute-join
 exporting-map-for-visual-analysis
 assignment-w02
 byl-w02
-data-sources
-open-data
-safeguarded-data

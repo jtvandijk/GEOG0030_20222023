@@ -29,9 +29,7 @@ for htmlf in html_files:
                                         '<li class="part"><span><b>Additional Resources</b></span></li>')
 
     # update back and forth buttons
-    html_content = html_content.replace('<link rel="next" href="module-introduction.html"/>', \
-                                        '<link rel="next" href="geocomputation-an-introduction.html"/>')
-
+    
     # write
     with open(htmlf, 'w') as file:
         file.write(html_content)

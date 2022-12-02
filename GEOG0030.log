@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  25 NOV 2022 17:22
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  2 DEC 2022 12:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -730,13 +730,13 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 3.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 3.
-[3])
+)
 \tf@toc=\write5
 \openout5 = `GEOG0030.toc'.
 
-[4] [5
+[3] [4
 
-] [6
+] [5] [6
 
 ]
 File: images/general/geocomputation_welcome.png Graphic file (type bmp)
@@ -751,12 +751,12 @@ Chapter 1.
 File: images/w01/rstudio_interface.png Graphic file (type bmp)
 <images/w01/rstudio_interface.png>
 
-Overfull \hbox (482.66284pt too wide) in paragraph at lines 341--342
+Overfull \hbox (482.66284pt too wide) in paragraph at lines 343--344
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.06268pt on input line 346.
+LaTeX Warning: Float too large for page by 24.06268pt on input line 348.
 
 [16] [17] [18] [19] [20
 
@@ -769,7 +769,7 @@ File: images/w02/river_thames.png Graphic file (type bmp)
 File: images/w02/datasearch.png Graphic file (type bmp)
 <images/w02/datasearch.png>
 [23] [24] [25]
-Overfull \hbox (72.315pt too wide) in paragraph at lines 636--637
+Overfull \hbox (72.315pt too wide) in paragraph at lines 638--639
 []\TU/lmr/m/n/10 Download all three zipfiles to your computer: \TU/lmtt/m/n/10 statistical-gis-boundaries-london.zip\TU/lmr/m/n/10 ,
  []
 
@@ -777,22 +777,22 @@ Overfull \hbox (72.315pt too wide) in paragraph at lines 636--637
 File: images/w02/file_management.png Graphic file (type bmp)
 <images/w02/file_management.png>
 [27]
-Underfull \hbox (badness 3407) in paragraph at lines 677--679
+Underfull \hbox (badness 3407) in paragraph at lines 679--681
 []\TU/lmr/m/n/10 In your \TU/lmtt/m/n/10 GEOG0030/data/raw/ \TU/lmr/m/n/10 folder, create a new folder called
  []
 
 
-Overfull \hbox (25.85703pt too wide) in paragraph at lines 679--680
+Overfull \hbox (25.85703pt too wide) in paragraph at lines 681--682
 []\TU/lmr/m/n/10 Rename the files you donwloaded to: \TU/lmtt/m/n/10 MYE_ward_2011.xls\TU/lmr/m/n/10 , \TU/lmtt/m/n/10 MYE_ward_2015.xls\TU/lmr/m/n/10 ,
  []
 
 [28]
-Overfull \hbox (18.06pt too wide) in paragraph at lines 706--707
+Overfull \hbox (18.06pt too wide) in paragraph at lines 708--709
 []\TU/lmr/m/n/10 Save your spreadsheet into your \TU/lmtt/m/n/10 output \TU/lmr/m/n/10 folder as \TU/lmtt/m/n/10 ward_population_2011.csv\TU/lmr/m/n/10 . 
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 726--727
+Underfull \hbox (badness 1303) in paragraph at lines 728--729
 []\TU/lmr/m/n/10 Once complete, save your spreadsheet into your \TU/lmtt/m/n/10 output \TU/lmr/m/n/10 folder as
  []
 
@@ -800,7 +800,7 @@ Underfull \hbox (badness 1303) in paragraph at lines 726--727
 Underfull \vbox (badness 7981) has occurred while \output is active []
 
 [29]
-Underfull \hbox (badness 1303) in paragraph at lines 748--749
+Underfull \hbox (badness 1303) in paragraph at lines 750--751
 []\TU/lmr/m/n/10 Once complete, save your spreadsheet into your \TU/lmtt/m/n/10 output \TU/lmr/m/n/10 folder as
  []
 
@@ -808,23 +808,23 @@ Underfull \hbox (badness 1303) in paragraph at lines 748--749
 File: images/w02/wardlabels.png Graphic file (type bmp)
 <images/w02/wardlabels.png>
 
-Overfull \hbox (553.40018pt too wide) in paragraph at lines 822--823
+Overfull \hbox (553.40018pt too wide) in paragraph at lines 824--825
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.10089pt on input line 827.
+LaTeX Warning: Float too large for page by 24.10089pt on input line 829.
 
 [32] [33]
 File: images/w02/attribute_joins.png Graphic file (type bmp)
 <images/w02/attribute_joins.png>
 
-Overfull \hbox (74.1431pt too wide) in paragraph at lines 869--869
+Overfull \hbox (74.1431pt too wide) in paragraph at lines 871--871
  [] 
  []
 
 [34]
-Underfull \hbox (badness 1496) in paragraph at lines 895--897
+Underfull \hbox (badness 1496) in paragraph at lines 897--899
 []\TU/lmr/m/n/10 Click on the \TU/lmr/bx/n/10 + \TU/lmr/m/n/10 button. Make sure the \TU/lmr/bx/n/10 Join Layer \TU/lmr/m/n/10 is set to
  []
 
@@ -832,30 +832,24 @@ Underfull \hbox (badness 1496) in paragraph at lines 895--897
 File: images/w02/ward_2011.png Graphic file (type bmp)
 <images/w02/ward_2011.png>
 
-Overfull \hbox (560.72662pt too wide) in paragraph at lines 984--985
+Overfull \hbox (560.72662pt too wide) in paragraph at lines 986--987
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.05553pt on input line 989.
+LaTeX Warning: Float too large for page by 24.05553pt on input line 991.
 
-[36] [37] [38] [39] [40
-
-] [41] [42
-
-]
-Chapter 3.
-[43] [44] [45] (./GEOG0030.aux)
+[36] [37] [38] [39] (./GEOG0030.aux)
 Package rerunfilecheck Info: File `GEOG0030.out' has not changed.
-(rerunfilecheck)             Checksum: C3B1EB5A7571714D21F796E5146FC05B;3180.
+(rerunfilecheck)             Checksum: E5178C81BA99BE2721B1F890ADD11145;2683.
  ) 
 Here is how much of TeX's memory you used:
- 17659 strings out of 478189
- 326087 string characters out of 5853293
- 769031 words of memory out of 5000000
- 38013 multiletter control sequences out of 15000+600000
+ 17654 strings out of 478189
+ 326011 string characters out of 5853293
+ 768866 words of memory out of 5000000
+ 38008 multiletter control sequences out of 15000+600000
  475726 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,7n,121p,1198b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on GEOG0030.pdf (45 pages).
+Output written on GEOG0030.pdf (39 pages).

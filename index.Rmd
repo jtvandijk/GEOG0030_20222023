@@ -17,6 +17,7 @@ url: 'https\://jtvandijk.github.io/GEOG0030'
 ```{r 00-welcome, echo=FALSE, out.width = '100%', fig.align='center', cache=TRUE}
 knitr::include_graphics('images/general/geocomputation_welcome.png') 
 ```
+*Last modified: `r Sys.Date()`*
 
 ## Welcome {-}
 Welcome to **Geocomputation**. This module will introduce you both to the principles of spatial analysis as well as provide you with a comprehensive introduction to the use of programming. Over the next ten weeks, you will learn about the theory, methods and tools of spatial analysis through relevant case studies. We will start by using QGIS before moving to the R programming language. You will learn how to find, manage and clean spatial, demographic and socioeconomic datasets, and then analyse them using core spatial and statistical analysis techniques. 

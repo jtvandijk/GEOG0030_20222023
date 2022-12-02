@@ -3,7 +3,7 @@ rmd_files:
 - index.Rmd
 - 01-introduction.Rmd
 - 02-GIScience.Rmd
-- 11-data.Rmd
+#- 11-data.Rmd
 language:
   ui:
     chapter_name: ""

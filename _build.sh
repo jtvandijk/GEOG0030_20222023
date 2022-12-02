@@ -3,11 +3,8 @@
 # option
 set -ev
 
-# render gitbook
-Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
-
-# render pdf
-Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
+# render
+Rscript _gitbook.R
 
 # pretty fix HTML
 source activate html
