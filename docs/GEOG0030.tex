@@ -772,7 +772,7 @@ Data interoperability is a key issue that you will face in spatial analysis, par
   Start \textbf{QGIS}.
   Let's start a new project.
 \item
-  Click on \textbf{Project} -\textgreater{} \textbf{New}. Save your project into your \texttt{qgis} folder as \texttt{w2-pop-analysis}. Remember to save your work throughout the practical.
+  Click on \textbf{Project} -\textgreater{} \textbf{New}. Save your project as \texttt{w2-pop-analysis}. Remember to save your work throughout the practical.
 \item
   Before we get started with adding data, we will first set the Coordinate Reference System of our Project. Click on \textbf{Project} -\textgreater{} \textbf{Properties -- CRS}. In the Filter box, type \textbf{British National Grid}. Select \textbf{OSGB 1936 / British National Grid - EPSG:27700} and click Apply. Click \textbf{OK}.
 \end{enumerate}
@@ -787,7 +787,6 @@ We will first focus on loading and joining the 2011 datasets.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
 \item
   Click on \textbf{Layer} -\textgreater{} \textbf{Add Layer} -\textgreater{} \textbf{Add Vector Layer}.
 \item
@@ -800,7 +799,7 @@ We can take a moment just to look at our ward data - and recognise the shape of 
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
+\setcounter{enumi}{3}
 \tightlist
 \item
   Right-click on the \texttt{London\_Ward} layer and open the \textbf{Attribute Table} and look at how the attributes are stored and presented in the table. Explore the different buttons in the Attribute Table and see if you can figure out what they mean. Once done, close the Attribute Table.
@@ -812,7 +811,7 @@ Before adding our population data, we can make a quick map of the wards in Londo
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{9}
+\setcounter{enumi}{5}
 \item
   In the \textbf{Properties} box, click on the \textbf{Symbology} tab - this is where we can change how our data layer looks. For example, here we can change the line and fill colour of our wards utilising either the default options available or clicking on \textbf{Simple Fill} and changing these properties directly. Keep the overall \textbf{styling} to a \textbf{Single Symbol} for now - we will get back to this once we have added the population data. You can also click on the \textbf{Labels} tab - and set the Labels option to \textbf{Single labels}.
 \item
@@ -830,7 +829,7 @@ Before adding our population data, we can make a quick map of the wards in Londo
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{11}
+\setcounter{enumi}{7}
 \tightlist
 \item
   Click \textbf{OK} once you are done changing the Symbology and Label style of your data to return to the main window.
@@ -854,7 +853,6 @@ We are now going to join our 2011 population data to our 2011 shapefile. First, 
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{12}
 \item
   Click on \textbf{Layer} -\textgreater{} \textbf{Add Layer} -\textgreater{} \textbf{Add Delimited Text Layer}.
 \item
@@ -884,7 +882,7 @@ To make our join work, we need to check that we have a matching \textbf{UID} acr
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{15}
+\setcounter{enumi}{3}
 \item
   Open up the Attribute Tables of each layer and check what fields we have that could be used for the join. We can see that both our respective ``code'' fields have the same codes (\texttt{ward\_code} and \texttt{GSS\_code}) so we can use these to create our joins.
 \item
@@ -913,7 +911,7 @@ We can now check to see if our join has worked by opening up our \texttt{London\
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{17}
+\setcounter{enumi}{5}
 \tightlist
 \item
   Right-click on the \texttt{London\_Ward} layer and open the \textbf{Attribute Table} and check that the population data column has been added to the table.
@@ -928,7 +926,7 @@ Let's do this now:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{18}
+\setcounter{enumi}{6}
 \tightlist
 \item
   Right-click on your \texttt{London\_Ward} shapefile and click \textbf{Export} -\textgreater{} \textbf{Save Features As\ldots{}}. The format should be set to an ESRI shapefile.
@@ -937,7 +935,7 @@ Let's do this now:
 \begin{itemize}
 \tightlist
 \item
-  Then click on the three dots buttons and navigate to your \texttt{final} folder and enter: \texttt{ward\_population\_2011} as your file name.
+  Then click on the three dots buttons and navigate to your \texttt{output} folder and enter: \texttt{ward\_population\_2011} as your file name.
 \item
   Check that the \textbf{CRS} is \textbf{British National Grid}.
 \item
@@ -950,7 +948,7 @@ The final thing we would like to do with this dataset is to style our dataset by
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{19}
+\setcounter{enumi}{7}
 \tightlist
 \item
   To do this, again right-click on the \textbf{Layer} -\textgreater{} \textbf{Properties} -\textgreater{} \textbf{Symbology}.
@@ -992,20 +990,20 @@ You should now be looking at something like this:
 
 You will be able to see that we have \textbf{some} missing data - and this is for several wards within the City of London. This is because census data is \textbf{only recorded for 8 out of the 25 wards} and therefore we have no data for the remaining wards. As a result, these wards are left blank, i.e.~white, to represent a \texttt{NODATA} value.
 
+\textbf{Note}
 One thing to flag is that \texttt{NODATA} means no data - whereas \texttt{0}, particularly in a scenario like this, would be an actual numeric value. It is important to remember this when processing and visualising data, to make sure you do not represent a \texttt{NODATA} value incorrectly.
 
 \hypertarget{exporting-map-for-visual-analysis}{%
 \subsection{Exporting map for visual analysis}\label{exporting-map-for-visual-analysis}}
 
-To export your map (as is):
-- Select only the map layers you want to export and then opt for \textbf{Project} -\textgreater{} \textbf{Import/Export} -\textgreater{} \textbf{Export to Image} and save your final map in your \texttt{maps} folder. You may want to create a folder for these maps titled \texttt{w02}.
+To export your map select only the map layers you want to export and then opt for \textbf{Project} -\textgreater{} \textbf{Import/Export} -\textgreater{} \textbf{Export to Image} and save your final map in your \texttt{maps} folder. You may want to create a folder for these maps titled \texttt{w02}.
 
 Next week, we will look at how to style our maps using the main map conventions (adding North Arrows, Scale Bars and Legends) but for now a simple picture will do.
 
 \hypertarget{assignment-w02}{%
 \section{Assignment}\label{assignment-w02}}
 
-You now need to \textbf{repeat this whole process} for your 2015 and 2019 datasets. Remember, you need to:
+You now need to \textbf{repeat the entire process} for your 2015 and 2019 datasets. Remember, you need to:
 
 \begin{itemize}
 \tightlist
@@ -1016,7 +1014,7 @@ You now need to \textbf{repeat this whole process} for your 2015 and 2019 datase
 \item
   Join the two datasets together using the Join tool in the Ward dataset Properties box.
 \item
-  Export your joined dataset into a new dataset within your \texttt{final} folder.
+  Export your joined dataset into a new dataset within your \texttt{output} folder.
 \item
   Style your data appropriately.
 \item

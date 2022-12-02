@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  2 DEC 2022 12:57
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  2 DEC 2022 13:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -808,23 +808,23 @@ Underfull \hbox (badness 1303) in paragraph at lines 750--751
 File: images/w02/wardlabels.png Graphic file (type bmp)
 <images/w02/wardlabels.png>
 
-Overfull \hbox (553.40018pt too wide) in paragraph at lines 824--825
+Overfull \hbox (553.40018pt too wide) in paragraph at lines 823--824
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.10089pt on input line 829.
+LaTeX Warning: Float too large for page by 24.10089pt on input line 828.
 
 [32] [33]
 File: images/w02/attribute_joins.png Graphic file (type bmp)
 <images/w02/attribute_joins.png>
 
-Overfull \hbox (74.1431pt too wide) in paragraph at lines 871--871
+Overfull \hbox (74.1431pt too wide) in paragraph at lines 869--869
  [] 
  []
 
 [34]
-Underfull \hbox (badness 1496) in paragraph at lines 897--899
+Underfull \hbox (badness 1496) in paragraph at lines 895--897
 []\TU/lmr/m/n/10 Click on the \TU/lmr/bx/n/10 + \TU/lmr/m/n/10 button. Make sure the \TU/lmr/bx/n/10 Join Layer \TU/lmr/m/n/10 is set to
  []
 
@@ -832,12 +832,12 @@ Underfull \hbox (badness 1496) in paragraph at lines 897--899
 File: images/w02/ward_2011.png Graphic file (type bmp)
 <images/w02/ward_2011.png>
 
-Overfull \hbox (560.72662pt too wide) in paragraph at lines 986--987
+Overfull \hbox (560.72662pt too wide) in paragraph at lines 984--985
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.05553pt on input line 991.
+LaTeX Warning: Float too large for page by 24.05553pt on input line 989.
 
 [36] [37] [38] [39] (./GEOG0030.aux)
 Package rerunfilecheck Info: File `GEOG0030.out' has not changed.

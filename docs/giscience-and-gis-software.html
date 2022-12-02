@@ -438,7 +438,7 @@ Data interoperability is a key issue that you will face in spatial analysis, par
 <ol style="list-style-type: decimal">
 <li>Start <strong>QGIS</strong>.
 Let’s start a new project.</li>
-<li>Click on <strong>Project</strong> -&gt; <strong>New</strong>. Save your project into your <code>qgis</code> folder as <code>w2-pop-analysis</code>. Remember to save your work throughout the practical.</li>
+<li>Click on <strong>Project</strong> -&gt; <strong>New</strong>. Save your project as <code>w2-pop-analysis</code>. Remember to save your work throughout the practical.</li>
 <li>Before we get started with adding data, we will first set the Coordinate Reference System of our Project. Click on <strong>Project</strong> -&gt; <strong>Properties – CRS</strong>. In the Filter box, type <strong>British National Grid</strong>. Select <strong>OSGB 1936 / British National Grid - EPSG:27700</strong> and click Apply. Click <strong>OK</strong>.</li>
 </ol>
 <div class="note">
@@ -449,18 +449,18 @@ We will explain CRSs and using CRSs in GIS software in more detail next week.</p
 <div id="adding-layers" class="section level4 hasAnchor" number="2.3.6.2">
 <h4><span class="header-section-number">2.3.6.2</span> Adding layers<a href="giscience-and-gis-software.html#adding-layers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will first focus on loading and joining the 2011 datasets.</p>
-<ol start="5" style="list-style-type: decimal">
+<ol style="list-style-type: decimal">
 <li><p>Click on <strong>Layer</strong> -&gt; <strong>Add Layer</strong> -&gt; <strong>Add Vector Layer</strong>.</p></li>
 <li><p>With <strong>File</strong> select as your source type, click on the small three dots button and navigate to your 2011 boundary files.</p></li>
 <li><p>Here, we will select the <code>London_Ward.shp</code> dataset. Click on the <code>.shp</code> file of this dataset and click <strong>Open</strong>. Then click <strong>Add</strong>. You may need to close the box after adding the layer.</p></li>
 </ol>
 <p>We can take a moment just to look at our ward data - and recognise the shape of London. Can you see the City of London in the dataset? It has the smallest wards in the entire London area. With the dataset loaded, we can now explore it in a little more detail. We want to check out two things about our data: first, its <strong>Properties</strong> and secondly, its <strong>Attribute Table</strong>.</p>
-<ol start="8" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li>Right-click on the <code>London_Ward</code> layer and open the <strong>Attribute Table</strong> and look at how the attributes are stored and presented in the table. Explore the different buttons in the Attribute Table and see if you can figure out what they mean. Once done, close the Attribute Table.</li>
 <li>Right-click on the <code>London_Ward</code> layer and select <strong>Properties</strong>. Click through the different tabs and see what they contain. Keep the <strong>Properties</strong> box open.</li>
 </ol>
 <p>Before adding our population data, we can make a quick map of the wards in London - we can add labels and change the <em>symbolisation</em> of our wards.</p>
-<ol start="10" style="list-style-type: decimal">
+<ol start="6" style="list-style-type: decimal">
 <li><p>In the <strong>Properties</strong> box, click on the <strong>Symbology</strong> tab - this is where we can change how our data layer looks. For example, here we can change the line and fill colour of our wards utilising either the default options available or clicking on <strong>Simple Fill</strong> and changing these properties directly. Keep the overall <strong>styling</strong> to a <strong>Single Symbol</strong> for now - we will get back to this once we have added the population data. You can also click on the <strong>Labels</strong> tab - and set the Labels option to <strong>Single labels</strong>.</p></li>
 <li><p>QGIS will default to the <strong>NAME</strong> column within our data. You can change the properties of these labels using the options available. Change the font to <strong>Futura</strong> and size <strong>8</strong> and under the add a small buffer to the labels by selecting <strong>Draw text bufer</strong> under the <strong>Buffer</strong> tab. You can click <strong>Apply</strong> to see what your labels look like. Please note that the background colour may differ.</p></li>
 </ol>
@@ -470,7 +470,7 @@ We will explain CRSs and using CRSs in GIS software in more detail next week.</p
 Figure 2.4: It looks incredibly busy.
 </p>
 </div>
-<ol start="12" style="list-style-type: decimal">
+<ol start="8" style="list-style-type: decimal">
 <li>Click <strong>OK</strong> once you are done changing the Symbology and Label style of your data to return to the main window.</li>
 </ol>
 <div class="note">
@@ -485,7 +485,7 @@ The main strength of a GUI GIS system is that is really helps us understand how 
 <div id="conducting-an-attribute-join" class="section level4 hasAnchor" number="2.3.6.3">
 <h4><span class="header-section-number">2.3.6.3</span> Conducting an attribute join<a href="giscience-and-gis-software.html#conducting-an-attribute-join" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We are now going to join our 2011 population data to our 2011 shapefile. First, we need to add the 2011 population data to our project.</p>
-<ol start="13" style="list-style-type: decimal">
+<ol style="list-style-type: decimal">
 <li><p>Click on <strong>Layer</strong> -&gt; <strong>Add Layer</strong> -&gt; <strong>Add Delimited Text Layer</strong>.</p></li>
 <li><p>Click on the three dots button again and navigate to your <strong>2011 population data</strong> in your <code>working</code> folder. Your file format should be set to <code>csv</code>. You should have the following boxes clicked under the <strong>Record and Field options</strong> menu: <em>Decimal separator is comma; First record has field names; Detect field types; Discard empty fields</em>. QGIS does many of these by default, but do double-check!</p></li>
 <li><p>Set the Geometry to <em>No geometry (attribute only table)</em> under the <strong>Geometry Definition</strong> menu. Then click <strong>Add</strong> and <strong>Close</strong>. You should now see a table added to your <code>Layers</code> box.</p></li>
@@ -502,7 +502,7 @@ An attribute join is one of two types of data joins you will use in spatial anal
 <p>Common errors, such as adding in spaces or using <code>0</code> instead <code>O</code> (and vice versa) can still happen – but it is less likely.</p>
 </div>
 <p>To make our join work, we need to check that we have a matching <strong>UID</strong> across both our datasets. We therefore need to look at the tables of both datasets and check what attributes we have that could be used for this possible match.</p>
-<ol start="16" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li><p>Open up the Attribute Tables of each layer and check what fields we have that could be used for the join. We can see that both our respective “code” fields have the same codes (<code>ward_code</code> and <code>GSS_code</code>) so we can use these to create our joins.</p></li>
 <li><p>Right-click on your <code>London_Ward</code> layer -&gt; <strong>Properties</strong> and then click on the <strong>Joins</strong> tab.</p></li>
 </ol>
@@ -516,7 +516,7 @@ An attribute join is one of two types of data joins you will use in spatial anal
 <li>Click on <strong>Apply</strong> in the main Join tab and then click <strong>OK</strong> to return to the main QGIS window.</li>
 </ul>
 <p>We can now check to see if our join has worked by opening up our <code>London_Ward</code> <strong>Attribute Table</strong> and looking to see if our wards now have a <strong>Population</strong> field attached to it.</p>
-<ol start="18" style="list-style-type: decimal">
+<ol start="6" style="list-style-type: decimal">
 <li>Right-click on the <code>London_Ward</code> layer and open the <strong>Attribute Table</strong> and check that the population data column has been added to the table.</li>
 </ol>
 <p>As long as it has joined, you can move forward with the next steps. If your join has not worked, try the steps again - and if you are still struggling, do let us know.</p>
@@ -525,17 +525,17 @@ An attribute join is one of two types of data joins you will use in spatial anal
 Now, the join that you have created between your ward and population datasets in only held in QGIS’s memory. If you were to close the programme now, you would lose this join and have to repeat it the next time you opened QGIS. To prevent this from happening, we need to export our dataset to a new shapefile - and then re-add this to the map.</p>
 </div>
 <p>Let’s do this now:</p>
-<ol start="19" style="list-style-type: decimal">
+<ol start="7" style="list-style-type: decimal">
 <li>Right-click on your <code>London_Ward</code> shapefile and click <strong>Export</strong> -&gt; <strong>Save Features As…</strong>. The format should be set to an ESRI shapefile.</li>
 </ol>
 <ul>
-<li>Then click on the three dots buttons and navigate to your <code>final</code> folder and enter: <code>ward_population_2011</code> as your file name.</li>
+<li>Then click on the three dots buttons and navigate to your <code>output</code> folder and enter: <code>ward_population_2011</code> as your file name.</li>
 <li>Check that the <strong>CRS</strong> is <strong>British National Grid</strong>.</li>
 <li>Leave the remaining fields as selected, but check that the <strong>Add saved file to map</strong> is checked. Click <strong>OK</strong>.</li>
 </ul>
 <p>You should now see our new shapefile add itself to our map. You can now remove the original <code>London_Ward</code> and <code>ward_population_2011</code> datasets from our Layers box (Right-click on the layers and opt for <strong>Remove Layer…</strong>).</p>
 <p>The final thing we would like to do with this dataset is to style our dataset by our newly added population field to show population distribution around London.</p>
-<ol start="20" style="list-style-type: decimal">
+<ol start="8" style="list-style-type: decimal">
 <li>To do this, again right-click on the <strong>Layer</strong> -&gt; <strong>Properties</strong> -&gt; <strong>Symbology</strong>.</li>
 </ol>
 <ul>
@@ -560,24 +560,26 @@ Figure 2.5: Your result.
 </p>
 </div>
 <p>You will be able to see that we have <strong>some</strong> missing data - and this is for several wards within the City of London. This is because census data is <strong>only recorded for 8 out of the 25 wards</strong> and therefore we have no data for the remaining wards. As a result, these wards are left blank, i.e. white, to represent a <code>NODATA</code> value.</p>
-<p>One thing to flag is that <code>NODATA</code> means no data - whereas <code>0</code>, particularly in a scenario like this, would be an actual numeric value. It is important to remember this when processing and visualising data, to make sure you do not represent a <code>NODATA</code> value incorrectly.</p>
+<div class="note">
+<p><strong>Note</strong> <br/>
+One thing to flag is that <code>NODATA</code> means no data - whereas <code>0</code>, particularly in a scenario like this, would be an actual numeric value. It is important to remember this when processing and visualising data, to make sure you do not represent a <code>NODATA</code> value incorrectly.</p>
+</div>
 </div>
 </div>
 <div id="exporting-map-for-visual-analysis" class="section level3 hasAnchor" number="2.3.7">
 <h3><span class="header-section-number">2.3.7</span> Exporting map for visual analysis<a href="giscience-and-gis-software.html#exporting-map-for-visual-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To export your map (as is):
-- Select only the map layers you want to export and then opt for <strong>Project</strong> -&gt; <strong>Import/Export</strong> -&gt; <strong>Export to Image</strong> and save your final map in your <code>maps</code> folder. You may want to create a folder for these maps titled <code>w02</code>.</p>
+<p>To export your map select only the map layers you want to export and then opt for <strong>Project</strong> -&gt; <strong>Import/Export</strong> -&gt; <strong>Export to Image</strong> and save your final map in your <code>maps</code> folder. You may want to create a folder for these maps titled <code>w02</code>.</p>
 <p>Next week, we will look at how to style our maps using the main map conventions (adding North Arrows, Scale Bars and Legends) but for now a simple picture will do.</p>
 </div>
 </div>
 <div id="assignment-w02" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Assignment<a href="giscience-and-gis-software.html#assignment-w02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You now need to <strong>repeat this whole process</strong> for your 2015 and 2019 datasets. Remember, you need to:</p>
+<p>You now need to <strong>repeat the entire process</strong> for your 2015 and 2019 datasets. Remember, you need to:</p>
 <ul>
 <li>Load the respective Ward dataset as a Vector Layer.</li>
 <li>Load the respective Population dataset as a Delimited Text File Layer (remember the settings!).</li>
 <li>Join the two datasets together using the Join tool in the Ward dataset Properties box.</li>
-<li>Export your joined dataset into a new dataset within your <code>final</code> folder.</li>
+<li>Export your joined dataset into a new dataset within your <code>output</code> folder.</li>
 <li>Style your data appropriately.</li>
 <li>Export your maps as an image to your <code>maps</code> folder.</li>
 </ul>
