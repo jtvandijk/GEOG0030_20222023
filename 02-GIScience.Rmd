@@ -250,7 +250,7 @@ We are now going to join our 2011 population data to our 2011 shapefile. First, 
 
 1. Click on **Layer** -> **Add Layer** -> **Add Delimited Text Layer**.
 
-2. Click on the three dots button again and navigate to your **2011 population data** in your `working` folder. Your file format should be set to `csv`. You should have the following boxes clicked under the **Record and Field options** menu: *Decimal separator is comma; First record has field names; Detect field types; Discard empty fields*. QGIS does many of these by default, but do double-check!
+2. Click on the three dots button again and navigate to your **2011 population data** in your `working` folder. Your file format should be set to `csv`. You should have the following boxes clicked under the **Record and Field options** menu: `Decimal separator is comma`, `First record has field names`, `Detect field types` and `Discard empty fields`. QGIS does many of these by default, but do double-check!
 
 3. Set the Geometry to *No geometry (attribute only table)* under the **Geometry Definition** menu. Then click **Add** and **Close**. You should now see a table added to your `Layers` box.
 

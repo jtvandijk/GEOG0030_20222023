@@ -120,18 +120,18 @@ Once this is done, we are ready to load and map our crime data. We will load thi
 
 1. Click on **Layer** -> **Add Layer** -> **Add Delimited Text File Layer**.
 
-2. With **File** select as your source type, click on the small three dots button and navigate to your `crime_theft_2020.csv` in your `raw/crime` folder. Click on the `.csv` file of this dataset and click **Open**. In **Record and Fields Options** tick `Decimal separator is comma`, `First record has field names`, `Detect field types` and `Discard empty fields`. In **Geometry Definition**, select `Point coordinates` and set the **X field** to `Longitude` and the **Y field** to `Latitude`. The **Geometry CRS** should be: `EPSG:4326 - WGS84`. Click **Add**.
+2. With **File** select as your source type, click on the small three dots button and navigate to your `crime_theft_2020.csv` in your `raw/crime` folder. Click on the `.csv` file of this dataset and click **Open**. In **Record and Fields Options** tick `Decimal separator is comma`, `First record has field names`, `Detect field types` and `Discard empty fields`. Under **Geometry Definition**, select `Point coordinates` and set the **X field** to `Longitude` and the **Y field** to `Latitude`. The **Geometry CRS** should be: `EPSG:4326 - WGS84`. Click **Add**.
 
 :::note
 **Note**<br/>
-You may be wondering whether we are not using the incorrect CRS for our data. As you click **Add**, you should have gotten a a pop-up from QGIS asking about transformations - they are the mathematical algorithms that convert data from one CRS to another. And this is exactly what QGIS is trying to do. QGIS knows that the **Project CRS** is **BNG** but the **Layer** you are trying to add has a **WGS84** CRS. QGIS is asking you what transformation it should use to project the Layer in the Project CRS. This is because one key strength of QGIS is that it can **project "on the fly"** - what this means is that QGIS will automatically convert all Layers to the Project CRS once it knows which transformation you would like to use so that they will all be rendered in the correct position with respect to each other! But you must note that this transformation is only **temporary in nature** and as a result, it is not a full **reprojection** of our data. More details on this can be found in QGIS' [user manual section on working with projections](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_projections/working_with_projections.html).
+You may be wondering whether we are not using the incorrect CRS for our data. As you click **Add**, you should have gotten a a pop-up from QGIS asking about transformations - they are the mathematical algorithms that convert data from one CRS to another. And this is exactly what QGIS is trying to do. QGIS knows that the **Project CRS** is **BNG** but the **Layer** you are trying to add has a **WGS84** CRS. QGIS is asking you what transformation it should use to project the Layer in the Project CRS. This is because one key strength of QGIS is that it can project data **"on the fly"**. What this means is that QGIS will automatically convert all Layers to the Project CRS once it knows which transformation you would like to use so that they will all be rendered in the correct position with respect to each other. However, you must note that this transformation is only **temporary in nature** and as a result, it is not a full **reprojection** of our data. More details on this can be found in QGIS' [user manual section on working with projections](https://docs.qgis.org/3.22/en/docs/user_manual/working_with_projections/working_with_projections.html).
 :::
 
 3. For now, let us use the on-the-fly projection and accept QGIS' default value by clicking **OK**. This transformation should be built-in to your QGIS transformation library, whereas some of the more accurate options would need installation.
 
 You should now see your crime dataset displayed on the map.
 
-```{r 03-borough-crime, echo=FALSE, fig.align='center', fig.cap='Borough map with crime data.'}
+```{r 03-borough-crime, echo=FALSE, fig.align='center', out.width="90%", fig.cap='Borough map with crime data.'}
 knitr::include_graphics('images/w03/crime_unproj.png')
 ```
 
@@ -145,23 +145,23 @@ We want to make sure our analysis is as accurate and efficient as possible, so i
     + **Input Layer:** `crime_theft_2020`
     + **Target CRS:** `Project CRS: EPSG: 27700`
     + **Reprojected:** Click on the three buttons and **Save to File** to create a new data file.
-    + **Save** it in your `working` folder as `crime_theft_2020_BNG.shp`
+    + **Save** it in your `output` folder as `crime_theft_2020_BNG.shp`
     + Click **Run** and then close the tool box.
   
 You should now see the new data layer added to your Layers.
 
 :::note
 **Note** <br />
-QGIS can at times be a little bit buggy so when it creates new data layers in your Layers box, it often automates the name, hence you might see your layer added as `Reprojected`. It does this with other management and analysis tools as well, so just something to be aware of! 
+QGIS can at times be a little bit buggy so when it creates new data layers in your Layers box, it often automates the name, hence you might see your layer added as `Reprojected`. It does this with other management and analysis tools as well, so something to be aware of.
 :::
 
 Before moving on, let us do some housekeeping.
 
-6. Remove the `crime_theft_2020` original dataset.
+6. Remove the original `crime_theft_2020` dataset, only keeping the reprojected version.
 
 7. Rename the `Reprojected` dataset to `crime_theft_2020`.
 
-Now we have an organised Layers and project, we are ready to start our crime analysis!
+Now we have an organised Layers and project, we are ready to start our crime analysis.
 
 #### Counting points-in-polygons 
 The next step of our analysis is incredibly simple - as QGIS has an in-built tool for us to use. We will use the `Count Points in Polygons` in the `Analysis` toolset for `Vector` data to count how many crimes have occured in both our **Wards** and our **Boroughs**. We will then have our count statistic which we will need to normalise by our population data to create our **crime rate** final statistic.
@@ -175,7 +175,7 @@ Let's get going and first start with calculating the crime rate for the Borough 
     + **Points:** `crime_theft_2020` *(Note how both our data layers state the same CRS!)*
     + No weight field or class field
     + **Count field names:** `crimecount`
-    + Click on the three dot button and **Save to file:** `working` -> `borough_crime_2020.shp`
+    + Click on the three dot button and **Save to file:** `output` -> `borough_crime_2020.shp`
     
 3. Click **Run** and **Close** the box. You should now see a `Count` layer added to your Layers box. 
 
@@ -183,17 +183,12 @@ Let's get going and first start with calculating the crime rate for the Borough 
 
 5. Right-click on the `borough_crime_2020` layer and open the **Attribute Table**. You should now see a `crimecount` column next to your `pop2019` column. You can look through the column to see the different levels of crime in the each Borough. You can also sort the column, from small to big, big to small, like you would do in a spreadsheet software.
 
-Whilst it is great that we have ve got our `crimecount`, as we know, what we actually need is a **crime rate** to account for the different sizes in population in the Boroughs and to avoid a **population heat map**. 
-
-To get our **crime rate** statistic, we are going to do our first bit of table manipulation in QGIS.
+Whilst it is great that we have ve got our `crimecount`, as we know, what we actually need is a **crime rate** to account for the different population sizes accross the Boroughs. To get our **crime rate** statistic, we are going to do our first bit of table manipulation in QGIS.
      
-6. With the **Attribute Table** of your `Count` layer still open, click on the **pencil** icon at the start of the row. 
-    + This pencil actually turns on the Editing mode in QGIS.
-    + The Editing mode allows you to edit both the **Attribute Table** values **and** the **geometry** of your data.
-    + E.g. you could actually move the various vertex of your Boroughs whilst in this Editing mode if you like!
-    + When it comes to the **Attribute Table**, it means you can directly edit existing values in the table **or** create and add new fields to the table.
-    + Whilst you can actually do the latter outside of the Editing mode, this Editing mode means you can reverse any edits you make and they are not permanent just in case you make a mistake.
-    + Using the Editing mode is the **correct** approach to editing your table, however, it might not always be the approach you use when generating new fields and, as we all are sometimes, a little lazy. *(This may be a simple case of "Do what I say, not what I do!")*
+6. With the **Attribute Table** of your `Count` layer still open, click on the **pencil** icon at the top left corner. This pencil switches on the **Editing** mode. 
+
+The Editing mode allows you to edit both the **Attribute Table** values **and** the **geometry** of your data. When it comes to the **Attribute Table**, it means you can directly edit existing values in the table **or** create and add new fields to the table. Whilst you can actually do the latter outside of the Editing mode, this Editing mode means you can reverse any edits you make and they are not permanent just in case you make a mistake.
+Using the Editing mode is the **safest** approach to editing your table, however, it might not always be the approach you use when generating new fields.
   
 Let us go ahead and add a new field to contain our **Crime Rate**.   
 
@@ -215,9 +210,9 @@ Understanding how to add new fields and their parameters rely on you understandi
 
 The empty field has *NULL* populated for each row - so we need to find a way to give our Boroughs some crime rate data. To do this, we will calculate a simple **Crime Rate** using the **Field Calculator** tool provided by QGIS within the **Attribute Table**. We will create a crime rate that details the number of crimes per 10,000 people in the Borough. In most cases, a crime rate per person will create a decimal result less than 1 which not only will not be stored correctly by our `crime_rate` field but, for many people, a **decimal** value is hard to interpret and understand.
 
-9. Whilst still in the Editing mode, click on the **Abacus** button (Ctrl + I / Cmd + I), which is actually the **Field Calculator**. A new pop-up should load up. We can see there are various options we could click at the top - including **Create a new field**. So we could in fact create a new field directly from the field calculator which would help us combine these two steps in one and quicken our workflow!
+9. Whilst still in the Editing mode, click on the **Abacus** button (Ctrl + I / Cmd + I), which is known as the **Field Calculator**. A new pop-up should load up.
 
-10. For now, in the Field Calculator pop-up:
+10. In the Field Calculator pop-up:
     + Check the **Update existing field** box.
     + Use the drop-down to select the `crime_rate`field.
     + In the Expression editor, add the following expression: **( "crimecount" / "pop2019" ) \* 10000**
@@ -226,31 +221,19 @@ The empty field has *NULL* populated for each row - so we need to find a way to 
     
 You should then return to the **Attribute Table** and see our newly populated `crime_rate` field - at the moment, we can see the resulting calculations stored as decimals.
   
-11. Click on the **Save** button to save these edits.
-
-12. Click again on the **Pencil** button to exit Editing mode - you should see the numbers turn to integers.
+11. Click on the **Save** button to save these edits. Click again on the **Pencil** button to exit Editing mode - you should see the numbers turn to integers.
 
 :::note
 **Note** <br />
 On some computers and installations the numbers do not get changed to an `integer`, but remain a `double`. If this happens, create a new field directly in the Field Calculator. instead of ticking the **Update existing field** box you keep the **Create a new field** box ticked. Name the new field `crime_rate_int`, make sure the **Output field type** is set to `Whole number (integer)`, and use the same expression as above to get the crime rate in a new column.
 :::
 
-We now have a `crime_rate` column to map. Before moving to the next step, if you would like, go ahead and symbolise your Boroughs by this `crime_rate`.
+12. Rename your Borough crime rate layer to `Borough Crime Rate`.
 
-13. Rename your Borough crime rate layer to `Borough Crime Rate`.
-
-Great! We now have our Borough crime rate dataset ready for mapping and analysis - we just now need to repeat this process to have our Ward dataset.
-
-14. Repeat the above processes to create a `crime_rate` column within our Ward dataset ready for mapping and analysis.
-
-#### Tips {-}
-
-* Remember, you can use the field calculator straight away to shorten the field creation process by selecting to create a new field whilst completing the field calculation (still using the same parameters though!). 
-
-* One additional small tip is that in the middle box in the Field Calculator, you can load **Recent field calculations** and double-click on your prior calculation to automate the creation of the `crime_rate` calculation! 
+13. Great! We now have our Borough crime rate dataset ready for mapping and analysis - we just now need to repeat this process to have our Ward dataset. So: repeat the above processes to create a `crime_rate` column within our Ward dataset ready for mapping and analysis.
 
 #### Mapping our crime data
-Now you have both datasets ready, it is time to style the maps. Remember to use the **Properties** box to first symbolise your maps. Think through using the appropriate colour scheme - and perhaps have a look online for some examples, if you do not want to use the defaults. Once you are happy with their symbolisation, we will turn them into proper publishable maps using QGIS's **Print Layout**. If you have ever used ArcMap, this is similar to switch the view of your map canvas to a print layout within the main window - but in QGIS's case, it loads up a new window.
+Now you have both datasets ready, it is time to style the maps. Remember to use the **Properties** box to first symbolise your maps. Think through using the appropriate colour scheme - and perhaps [have a look online for some examples](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) if you do not want to use the defaults. Once you are happy with their symbolisation, we will turn them into proper publishable maps using QGIS's **Print Layout**. If you have ever used ArcMap, this is similar to switch the view of your map canvas to a print layout within the main window - but in QGIS's case, it loads up a new window.
 
 1. From the main QGIS window, click on **Project** -> **New Print Layout**. In the small box that first appears, call your new print layout: `crime_map_borough_ward`.
 
@@ -272,7 +255,7 @@ To start with creating a map, you use the **Add Map** tool to draw a box in whic
 
 1. Click on the **Add Map** tool and draw a box in the first half of our map to load our current map. Note, you can move your map around and resize the box simply by clicking on it as you would in Word etc.
 
-```{r 03-map-print-layout, echo=FALSE, fig.align='center', fig.cap='Current active map in the Print Layout.'}
+```{r 03-map-print-layout, echo=FALSE, fig.align='center', out.width="90%", fig.cap='Current active map in the **Print Layout**.'}
 knitr::include_graphics('images/w03/map_layout.png')
 ```
     
@@ -310,7 +293,7 @@ Once locked, we can now start to add our Borough map.
 
 5. In the main QGIS window, uncheck your `Ward Crime Rate` layer and make sure your `Borough Crime Rate` layer is now visible.
 
-Return to the Print Layout window.
+Return to the **Print Layout** window.
 
 6. Repeat the process above of adding a map to the window - this time, you should now see your Borough map loaded in the box (and you should see **no** changes to your Ward map).
     + Place your Borough map next to your Ward map - use the snap grids to help.
@@ -363,4 +346,4 @@ At the moment, we have looked at the crime rate as an amount, therefore we use a
 - All calculations can be done using the field calculator in QGIS, but will require some thinking about the right expression.
 
 ## Before you leave {#byl-w03}
-[That is us all done](https://www.youtube.com/watch?v=3wxyN3z9PL4). Remember to save your project and export your Ward and Borough shapefiles to your `final` folder!
+[That is us all done](https://www.youtube.com/watch?v=3wxyN3z9PL4). Remember to save your project and export your Ward and Borough shapefiles to your `output` folder!
