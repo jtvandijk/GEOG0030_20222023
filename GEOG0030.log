@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  6 DEC 2022 16:58
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  6 DEC 2022 18:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -910,27 +910,27 @@ File: images/w04/programming_languages.png Graphic file (type bmp)
 File: images/w04/rstudio_interface.png Graphic file (type bmp)
 <images/w04/rstudio_interface.png>
 
-Underfull \hbox (badness 2393) in paragraph at lines 1833--1835
+Underfull \hbox (badness 2393) in paragraph at lines 1829--1831
 []\TU/lmr/bx/n/10 Console\TU/lmr/m/n/10 : where we write “one-off” code, such as installing li-
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 1833--1835
+Underfull \hbox (badness 1584) in paragraph at lines 1829--1831
 \TU/lmr/m/n/10 braries/packages, as well as running quick views or plots of our
  []
 
 [60] [61] [62] [63] [64] [65] [66]
-Underfull \hbox (badness 6658) in paragraph at lines 2152--2153
+Underfull \hbox (badness 6658) in paragraph at lines 2148--2149
 []\TU/lmr/m/n/10 Type in \TU/lmtt/m/n/10 two_str_variable <- c("This is our second variable", "It
  []
 
 [67] [68] [69] [70]
-Underfull \hbox (badness 10000) in paragraph at lines 2338--2339
+Underfull \hbox (badness 10000) in paragraph at lines 2334--2335
 []\TU/lmr/m/n/10 Type \TU/lmtt/m/n/10 giss_year_nos <- matrix(c(giss_year, giss_page_no), ncol=2)
  []
 
 [71] [72] [73] [74]
-Underfull \hbox (badness 1275) in paragraph at lines 2543--2544
+Underfull \hbox (badness 1275) in paragraph at lines 2539--2540
 \TU/lmr/m/n/10 means if you load the \TU/lmtt/m/n/10 tidyverse \TU/lmr/m/n/10 package within your script (through
  []
 
@@ -938,7 +938,7 @@ Underfull \hbox (badness 1275) in paragraph at lines 2543--2544
 File: images/w04/new-script.png Graphic file (type bmp)
 <images/w04/new-script.png>
 [77] [78]
-Underfull \hbox (badness 3668) in paragraph at lines 2694--2695
+Underfull \hbox (badness 3668) in paragraph at lines 2690--2691
 []\TU/lmr/m/n/10 Under the \TU/lmr/bx/n/10 Custom download \TU/lmr/m/n/10 tab select \TU/lmtt/m/n/10 Metropolitan Police
  []
 
@@ -948,65 +948,65 @@ File: images/w04/download-crime.png Graphic file (type bmp)
 File: images/w04/organised-crime.png Graphic file (type bmp)
 <images/w04/organised-crime.png>
 
-Overfull \hbox (640.46185pt too wide) in paragraph at lines 2720--2721
+Overfull \hbox (640.46185pt too wide) in paragraph at lines 2716--2717
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.08517pt on input line 2725.
+LaTeX Warning: Float too large for page by 24.08517pt on input line 2721.
 
 [80] [81] [82]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (90.75pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ##   Crime ~1 Month Repor~2 Falls~3 Longi~4 Latit~5 Locat~6 LSOA ~7 LSOA ~8 Crime~9[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ##   <chr>    <chr> <chr>   <chr>     <dbl>   <dbl> <chr>   <chr>   <chr>   <chr>[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (90.75pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ## 1 37c663d~ 2020~ City o~ City o~ -0.106     51.5 On or ~ E01000~ Camden~ Theft ~[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ## 2 5b89923~ 2020~ City o~ City o~ -0.118     51.5 On or ~ E01000~ Camden~ Drugs[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (90.75pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ## 3 0717268~ 2020~ City o~ City o~ -0.112     51.5 On or ~ E01000~ Camden~ Other ~[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (90.75pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ## 4 14e02a6~ 2020~ City o~ City o~ -0.111     51.5 On or ~ E01000~ Camden~ Other ~[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (90.75pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ## 5 fb3350c~ 2020~ City o~ City o~ -0.113     51.5 On or ~ E01000~ Camden~ Other ~[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (90.75pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ## 6 <NA>     2020~ City o~ City o~ -0.0976    51.5 On or ~ E01000~ City o~ Anti-s~[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ## # ... with 2 more variables: `Last outcome category` <chr>, Context <lgl>, and[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ## #   abbreviated variable names 1: `Crime ID`, 2: `Reported by`,[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2845--2845
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2841--2841
 []\TU/lmtt/m/n/10 ## #   3: `Falls within`, 4: Longitude, 5: Latitude, 6: Location, 7: `LSOA code`,[] 
  []
 
@@ -1018,12 +1018,12 @@ Package rerunfilecheck Info: File `GEOG0030.out' has not changed.
 (rerunfilecheck)             Checksum: 05F285CBEC7BBACEBA5B855E1D78192D;4790.
  ) 
 Here is how much of TeX's memory you used:
- 17896 strings out of 478189
- 333165 string characters out of 5853293
- 774580 words of memory out of 5000000
- 38238 multiletter control sequences out of 15000+600000
+ 17895 strings out of 478189
+ 333159 string characters out of 5853293
+ 774548 words of memory out of 5000000
+ 38237 multiletter control sequences out of 15000+600000
  475726 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,7n,121p,1446b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,7n,121p,1441b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on GEOG0030.pdf (86 pages).

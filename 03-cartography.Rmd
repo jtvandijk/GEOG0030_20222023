@@ -344,9 +344,12 @@ At the moment, we have looked at the crime rate as an amount, therefore we use a
 
 2. Create a map of crime in London, at both the Borough and Ward level, that shows for each administrative geography the percentage difference from the overall mean crime rate.
 
-#### Tips {-}
+:::note
+**Tips** <br/>
+
 - You will need to start by calculating the average crime rate for both datasets and subsequently calculate the difference from these values for each geography.
 - All calculations can be done using the field calculator in QGIS, but will require some thinking about the right expression.
+:::
 
 ## Before you leave {#byl-w03}
 [That is us all done](https://www.youtube.com/watch?v=3wxyN3z9PL4). Remember to save your project and export your Ward and Borough shapefiles to your `output` folder!
