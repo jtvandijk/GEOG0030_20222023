@@ -37,7 +37,7 @@ What is important to understand is that R and RStudio are two different things:
 
 As you may know already, R is a free and open-source programming language, that originally was created to focus on statistical analysis. In conjunction with the development of R as a language, the same community created the RStudio IDE to execute this statistical programming. Together, R and RStudio have grown into an incredibly success partnership of analytical programming language and analysis software - and is widely used for academic research as well as in the commercial sector. As a result, it has a huge and active contributor community which constantly adds functionality to the language and software, making it an incredibly useful tool for many purposes and applications beyond statistical analysis.
 
-Unlike traditional statistical analysis programmes you may have used such as [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel) or even [ArcGIS Online](https://www.arcgis.com/home/index.html), within the RStudio IDE, the user has to type commands to get it to execute tasks such as loading in a data set or performing a calculation. We primarily do this by building up a script, that provides a record of what you have done, whilst also enabling the straightforward repetition of tasks. 
+Unlike traditional statistical analysis programmes you may have used such as [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel) or even [ArcGIS Online](https://www.arcgis.com/home/index.html), within the RStudio IDE, the user has to type commands to get it to execute tasks such as loading in a dataset or performing a calculation. We primarily do this by building up a script, that provides a record of what you have done, whilst also enabling the straightforward repetition of tasks. 
 
 We can also use the **R Console** to execute simple instructions that do not need repeating such as installing libraries or quickly viewing data (we will get to this in a second). In addition, R, its various graphic-oriented "packages" and RStudio are capable of making graphs, charts and maps through just a few lines of code (you might notice a **Plots** window to your right in your RStudio window)  - which can then be easily modified and tweaked by making slight changes to the script if mistakes are spotted. 
 
@@ -80,7 +80,7 @@ You may also have your **Script Window** open, which is where we build up and wr
 We will see how we use these windows as we progress through this tutorial and understand in more detail what we mean by words such as 'attributes' (do not get confused here with the **Attribute Table** for QGIS) and data structures.
 
 ## RStudio console
-We will first start off with using **RStudio's console** to test out some of R's in-built functionality by creating a few variables as well as a dummy data set that we will be able to analyse - and to get familiar with writing code.
+We will first start off with using **RStudio's console** to test out some of R's in-built functionality by creating a few variables as well as a dummy dataset that we will be able to analyse - and to get familiar with writing code.
 
 :::note
 **Note**<br/>
@@ -406,7 +406,7 @@ The thing about matrices is that, for us, they do not have a huge amount of use.
 The function we just used above, `matrix()`, was the first function that we used that took more than one argument. 
 In this case, the arguments the matrix needed to run were: 
 
-1. What data or data set should be stored in the matrix.
+1. What data or dataset should be stored in the matrix.
 2. How many columns (`ncol=`) do we need to store our data in.
 
 For any function, there will be **mandatory** arguments (i.e. it will not run without these) or **optional** arguments (i.e. it will run without these, as the default to this argument has been set usually to `FALSE`, `0` or `NULL`). These are normally documented in the documentation, including details on the format the function expects these arguments to be in. 
@@ -526,7 +526,7 @@ There are some specific functions in the `tidyverse` suite of packages that will
 | dplyr	    | summarise         | summarise data |
 | dplyr	    | group by          | group data into subgroups for further processing |
 | tidyr	    | pivot_longer      | convert data from wide format to long format |
-| tidyr	    | pivot_wider       | convert long format data set to wide format |
+| tidyr	    | pivot_wider       | convert long format dataset to wide format |
 
 These functions all complete very fundamental tasks that we need to manipulate and wrangle our data.
 
@@ -603,7 +603,7 @@ By key commands:
 If you are running a script that seems to be stuck (for whatever reason) or you notice some of your code is wrong, you will need to interrupt R. To do so, click on **Session** -> **Interrupt R**. If this does not work, you may end up needing to **Terminate R** but this may lose any unsaved progress.
 
 ### Crime data
-Where last week we provided you with a crime data set, this week you will download and prepare the data set yourself. 
+Where last week we provided you with a crime dataset, this week you will download and prepare the dataset yourself. 
 
 1. Start by navigating to [data.police.uk](https://data.police.uk/). And click on **Downloads**.
 2. Under the data range select `January 2020` to `December 2020`.
@@ -613,7 +613,7 @@ Where last week we provided you with a crime data set, this week you will downlo
 knitr::include_graphics('images/w04/download-crime.png')
 ```
 
-4. It may take a few minutes for the download to be generated, so be patient. Once the **Download now** button appears, you can download the 2020 crime data set.
+4. It may take a few minutes for the download to be generated, so be patient. Once the **Download now** button appears, you can download the 2020 crime dataset.
 5. Once downloaded, unzip the file. You will notice that the zip file contains 12 individual folders, one for each month in 2020. Each folder contains two files: one containing the data for the `Metropolitan Police Service` and one for the `City of London Police`. 
 6. Create a new folder named `all_crime` in your `data/raw/crime` directory and copy all 12 folders containing our data to this new folder.
 
@@ -746,4 +746,4 @@ Do not forget to save your script so you can go back to it at a later time. When
 The graphs and figures we have made so far are not really pretty. Although possible with the basic R installation, there are easier and better ways to make nice visualisations. For this we can turn to other R packages that have been developed. In fact, there are many hundreds of packages in R each designed for a specific purpose, some of which you can use to create plots in R. One of those packages is called `ggplot2`. The `ggplot2` package is an implementation of the Grammar of Graphics ([Wilkinson 2005](https://en.wikipedia.org/wiki/Leland_Wilkinson)) - a general scheme for data visualisation that breaks up graphs into semantic components such as scales and layers. `ggplot2` can serve as a replacement for the base graphics in R and contains a number of default options that match good visualisation practice. You provide the data, tell `ggplot2` how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details. An excellent introduction to `ggplot2` can be found in the online, freely available book [R for Data Science](https://r4ds.had.co.nz/data-visualisation.html); written by Hadley Wickham, core developer of `ggplot2` and the `tidyverse`. Have a particularly close look at **Chapter 3**: *Data visualisation*: [[Link]](https://r4ds.had.co.nz/data-visualisation.html).
 
 ## Before you leave {#byl-w04}
-We have managed to take a data set of over one million records and clean and filter it to provide a chart that actually shows the potential impact of the first COVID-19 lockdown on theft crime in London. Of course, there is a lot more research and exploratory data analysis we would need to complete before we could really substantiate our findings, but this first chart is certainly a step in the right direction. Next week, we will be doing a lot more with our data set - including a lot more data wrangling and of course spatial analysis, but hopefully this week has shown you want you can achieve with just a few lines of code. [That concludes the tutorial for this week](https://www.youtube.com/watch?v=NKyYr2pbXUM).
+We have managed to take a dataset of over one million records and clean and filter it to create a barplot on theft crime in London. Of course, there is a lot more research and exploratory data analysis that can be done, but this first chart is certainly a step in the right direction. Next week, we will be doing a lot more with our dataset - including a lot more data wrangling and of course spatial analysis, but hopefully this week has shown you want you can achieve with just a few lines of code. [That concludes the tutorial for this week](https://www.youtube.com/watch?v=NKyYr2pbXUM).

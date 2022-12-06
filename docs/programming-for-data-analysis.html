@@ -291,7 +291,7 @@ Figure 4.1: Top 10 programming languages and their applications according to DZo
 <li>RStudio is our <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">Integrated Development Environment (IDE)</a>, which we need to understand in terms of functionality and workflow. An IDE is simply a complicated way of saying “a place where I write and build scripts and execute my code”.</li>
 </ul>
 <p>As you may know already, R is a free and open-source programming language, that originally was created to focus on statistical analysis. In conjunction with the development of R as a language, the same community created the RStudio IDE to execute this statistical programming. Together, R and RStudio have grown into an incredibly success partnership of analytical programming language and analysis software - and is widely used for academic research as well as in the commercial sector. As a result, it has a huge and active contributor community which constantly adds functionality to the language and software, making it an incredibly useful tool for many purposes and applications beyond statistical analysis.</p>
-<p>Unlike traditional statistical analysis programmes you may have used such as <a href="https://www.microsoft.com/en-us/microsoft-365/excel">Microsoft Excel</a> or even <a href="https://www.arcgis.com/home/index.html">ArcGIS Online</a>, within the RStudio IDE, the user has to type commands to get it to execute tasks such as loading in a data set or performing a calculation. We primarily do this by building up a script, that provides a record of what you have done, whilst also enabling the straightforward repetition of tasks.</p>
+<p>Unlike traditional statistical analysis programmes you may have used such as <a href="https://www.microsoft.com/en-us/microsoft-365/excel">Microsoft Excel</a> or even <a href="https://www.arcgis.com/home/index.html">ArcGIS Online</a>, within the RStudio IDE, the user has to type commands to get it to execute tasks such as loading in a dataset or performing a calculation. We primarily do this by building up a script, that provides a record of what you have done, whilst also enabling the straightforward repetition of tasks.</p>
 <p>We can also use the <strong>R Console</strong> to execute simple instructions that do not need repeating such as installing libraries or quickly viewing data (we will get to this in a second). In addition, R, its various graphic-oriented “packages” and RStudio are capable of making graphs, charts and maps through just a few lines of code (you might notice a <strong>Plots</strong> window to your right in your RStudio window) - which can then be easily modified and tweaked by making slight changes to the script if mistakes are spotted.</p>
 <p>Unfortunately, command-line computing can also be off-putting at first. It is easy to make mistakes that are not always obvious to detect and thus debug. Nevertheless, there are good reasons to stick with R and RStudio. These include:</p>
 <ul>
@@ -333,7 +333,7 @@ Figure 4.2: RStudio on RStudio Server.
 </div>
 <div id="rstudio-console" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> RStudio console<a href="programming-for-data-analysis.html#rstudio-console" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We will first start off with using <strong>RStudio’s console</strong> to test out some of R’s in-built functionality by creating a few variables as well as a dummy data set that we will be able to analyse - and to get familiar with writing code.</p>
+<p>We will first start off with using <strong>RStudio’s console</strong> to test out some of R’s in-built functionality by creating a few variables as well as a dummy dataset that we will be able to analyse - and to get familiar with writing code.</p>
 <div class="note">
 <p><strong>Note</strong><br/>
 You might need to click on the console window to get it to expand; you can then drag it to take up a larger space in your RStudio window.</p>
@@ -581,7 +581,7 @@ We are going to explore these data structures with some of dummy data on the tot
 The function we just used above, <code>matrix()</code>, was the first function that we used that took more than one argument.
 In this case, the arguments the matrix needed to run were:</p>
 <ol style="list-style-type: decimal">
-<li>What data or data set should be stored in the matrix.</li>
+<li>What data or dataset should be stored in the matrix.</li>
 <li>How many columns (<code>ncol=</code>) do we need to store our data in.</li>
 </ol>
 <p>For any function, there will be <strong>mandatory</strong> arguments (i.e. it will not run without these) or <strong>optional</strong> arguments (i.e. it will run without these, as the default to this argument has been set usually to <code>FALSE</code>, <code>0</code> or <code>NULL</code>). These are normally documented in the documentation, including details on the format the function expects these arguments to be in.</p>
@@ -718,7 +718,7 @@ In this case, the arguments the matrix needed to run were:</p>
 <tr class="odd">
 <td align="left">tidyr</td>
 <td align="left">pivot_wider</td>
-<td align="left">convert long format data set to wide format</td>
+<td align="left">convert long format dataset to wide format</td>
 </tr>
 </tbody>
 </table>
@@ -791,7 +791,7 @@ Figure 4.3: Creating a new script.
 </div>
 <div id="crime-data-2" class="section level3 hasAnchor" number="4.6.4">
 <h3><span class="header-section-number">4.6.4</span> Crime data<a href="programming-for-data-analysis.html#crime-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Where last week we provided you with a crime data set, this week you will download and prepare the data set yourself.</p>
+<p>Where last week we provided you with a crime dataset, this week you will download and prepare the dataset yourself.</p>
 <ol style="list-style-type: decimal">
 <li>Start by navigating to <a href="https://data.police.uk/">data.police.uk</a>. And click on <strong>Downloads</strong>.</li>
 <li>Under the data range select <code>January 2020</code> to <code>December 2020</code>.</li>
@@ -804,7 +804,7 @@ Figure 4.4: Downloading our crime data.
 </p>
 </div>
 <ol start="4" style="list-style-type: decimal">
-<li>It may take a few minutes for the download to be generated, so be patient. Once the <strong>Download now</strong> button appears, you can download the 2020 crime data set.</li>
+<li>It may take a few minutes for the download to be generated, so be patient. Once the <strong>Download now</strong> button appears, you can download the 2020 crime dataset.</li>
 <li>Once downloaded, unzip the file. You will notice that the zip file contains 12 individual folders, one for each month in 2020. Each folder contains two files: one containing the data for the <code>Metropolitan Police Service</code> and one for the <code>City of London Police</code>.</li>
 <li>Create a new folder named <code>all_crime</code> in your <code>data/raw/crime</code> directory and copy all 12 folders containing our data to this new folder.</li>
 </ol>
@@ -917,7 +917,7 @@ Do not forget to save your script so you can go back to it at a later time. When
 </div>
 <div id="byl-w04" class="section level2 hasAnchor" number="4.9">
 <h2><span class="header-section-number">4.9</span> Before you leave<a href="programming-for-data-analysis.html#byl-w04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We have managed to take a data set of over one million records and clean and filter it to provide a chart that actually shows the potential impact of the first COVID-19 lockdown on theft crime in London. Of course, there is a lot more research and exploratory data analysis we would need to complete before we could really substantiate our findings, but this first chart is certainly a step in the right direction. Next week, we will be doing a lot more with our data set - including a lot more data wrangling and of course spatial analysis, but hopefully this week has shown you want you can achieve with just a few lines of code. <a href="https://www.youtube.com/watch?v=NKyYr2pbXUM">That concludes the tutorial for this week</a>.</p>
+<p>We have managed to take a dataset of over one million records and clean and filter it to create a barplot on theft crime in London. Of course, there is a lot more research and exploratory data analysis that can be done, but this first chart is certainly a step in the right direction. Next week, we will be doing a lot more with our dataset - including a lot more data wrangling and of course spatial analysis, but hopefully this week has shown you want you can achieve with just a few lines of code. <a href="https://www.youtube.com/watch?v=NKyYr2pbXUM">That concludes the tutorial for this week</a>.</p>
 
 </div>
 </div>
