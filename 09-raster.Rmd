@@ -219,7 +219,12 @@ Another very common technique used in raster analysis via map algebra is the use
 
 For example, in our case, we can aggregate the `lonpop_change` raster to our actual London ward boundaries, i.e. calculate for each ward in our dataset, the average (or other function) population change, as determined by our raster. We can, of course, use other functions other than the `mean`. What function you use will simply depend on your application. Esri has [a great resource](https://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/h-how-zonal-statistics-works.htm) on how Zonal statistics works with other functions and raster 
 
-```{r 09-I-am-in-the-zone, warnings=FALSE, message=FALSE,  cache=TRUE, tidy=TRUE}
+```{r 09-set-tmap-setting, warnings=FALSE, message=FALSE, cache=FALSE, tidy=TRUE}
+# change tmap mode to plot
+tmap_mode("plot")
+```
+
+```{r 09-I-am-in-the-zone, warnings=FALSE, message=FALSE,  cache=TRUE, tidy='styler'}
 # aggregate to administrative geography
 # note: the output is a vector that is forced to a SpatialPolygons object (not sf)
 london_ward_pop <- raster::extract(lonpop_change, london_ward, fun=mean, sp=TRUE)
