@@ -9,7 +9,9 @@ rmd_files:
 - 06-operations.Rmd
 - 07-autocorrelation.Rmd
 - 08-point-pattern.Rmd
-#- 11-data.Rmd
+- 09-raster.Rmd
+- 10-network.Rmd
+- 11-data.Rmd
 language:
   ui:
     chapter_name: ""

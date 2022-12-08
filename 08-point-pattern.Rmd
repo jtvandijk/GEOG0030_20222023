@@ -4,7 +4,6 @@ This week, we will be looking at how we can use Point Pattern Analysis (PPA) to 
 <!-- ## Lecture slides {#slides-w08} -->
 <!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w08_geo.pdf). -->
 
-
 ## Reading list {#reading-w08}
 #### Essential readings {-}
 - Cheshire, J. and Longley, P. 2011. Identifying spatial concentrations of surnames. *International Journal of Geographical Information Science* 26(2), pp.309-325. [[Link]](https://doi.org/10.1080/13658816.2011.591291)
