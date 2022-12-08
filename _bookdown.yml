@@ -8,6 +8,7 @@ rmd_files:
 - 05-spatial.Rmd
 - 06-operations.Rmd
 - 07-autocorrelation.Rmd
+- 08-point-pattern.Rmd
 #- 11-data.Rmd
 language:
   ui:

@@ -669,7 +669,7 @@ Our map shows quite clearly hot and cold spots of obesity across London. How doe
 
 :::tip
 **Tip** <br/>
-If we want to only map the statistically significant clusters, we need to use these [z-scores](https://en.wikipedia.org/wiki/Standard_score) to filter out only statistically significant clusters. When using a 95 percent confidence level are `-1.96` and `+1.96` standard deviations.
+If we want to only map the statistically significant clusters, we need to use these [z-scores](https://en.wikipedia.org/wiki/Standard_score) to filter out only statistically significant clusters. When using a 95 percent confidence level your values should be between `-1.96` and `+1.96` standard deviations.
 :::
 
 ## Assignment 2 {#assignment-2-w07}

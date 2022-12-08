@@ -18,3 +18,14 @@ osmdata
 sp
 spData
 spdep
+spatstat.data
+spatstat.geom
+spatstat.random
+nlme
+spatstat.explore
+rpart
+spatstat.model
+spatstat.linnet
+spatstat
+raster
+dbscan
