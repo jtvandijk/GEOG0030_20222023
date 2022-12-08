@@ -9,6 +9,7 @@ link-citations: yes
 github-repo: "jtvandijk/GEOG0030"
 description: "GEOG0030: Geocomputation handbook."
 url: 'https\://jtvandijk.github.io/GEOG0030'
+always_allow_html: true
 ---
 # Module Overview {-}
 

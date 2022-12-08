@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  6 DEC 2022 18:15
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.19)  8 DEC 2022 14:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -407,7 +407,8 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip67
-) (./GEOG0030.aux)
+)
+No file GEOG0030.aux.
 \openout1 = `GEOG0030.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
@@ -675,9 +676,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 129.
 LaTeX Info: Redefining \pageref on input line 129.
 LaTeX Info: Redefining \nameref on input line 129.
-(./GEOG0030.out) (./GEOG0030.out)
 \@outlinefile=\write4
 \openout4 = `GEOG0030.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
 (Font)              scaled to size 12.0pt on input line 131.
@@ -713,30 +716,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [2
 
-] (./GEOG0030.toc
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 3.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 3.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 3.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 3.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 3.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 3.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 3.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 3.
-[3])
+]
 \tf@toc=\write5
 \openout5 = `GEOG0030.toc'.
 
-[4] [5
+[3] [4
 
-] [6
+] [5] [6
 
 ]
 File: images/general/geocomputation_welcome.png Graphic file (type bmp)
@@ -760,7 +746,29 @@ File: images/w02/river_thames.png Graphic file (type bmp)
 [20]
 File: images/w02/datasearch.png Graphic file (type bmp)
 <images/w02/datasearch.png>
-[21] [22] [23]
+[21] [22]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 563.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 563.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00092pt on input line 563.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00064pt on input line 563.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 563.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 563.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 563.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 563.
+[23]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 2.1 on input line 600.
+
+
 Overfull \hbox (72.315pt too wide) in paragraph at lines 637--638
 []\TU/lmr/m/n/10 Download all three zipfiles to your computer: \TU/lmtt/m/n/10 statistical-gis-boundaries-london.zip\TU/lmr/m/n/10 ,
  []
@@ -1013,17 +1021,381 @@ Overfull \hbox (80.25pt too wide) in paragraph at lines 2841--2841
 [83] [84]
 File: GEOG0030_files/figure-latex/04-bar-plot-1.pdf Graphic file (type pdf)
 <use GEOG0030_files/figure-latex/04-bar-plot-1.pdf>
-[85] [86] (./GEOG0030.aux)
-Package rerunfilecheck Info: File `GEOG0030.out' has not changed.
-(rerunfilecheck)             Checksum: 05F285CBEC7BBACEBA5B855E1D78192D;4790.
- ) 
+[85] [86]
+Chapter 5.
+[87
+
+]
+Underfull \hbox (badness 2680) in paragraph at lines 2997--2998
+[]\TU/lmr/m/n/10 You should now see a new \TU/lmtt/m/n/10 csv \TU/lmr/m/n/10 within your raw crime data folder
+ []
+
+[88]
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ##   crime_id month repor~1 falls~2 longi~3 latit~4 locat~5 lsoa_~6 lsoa_~7 crime~8[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ##   <chr>    <chr> <chr>   <chr>     <dbl>   <dbl> <chr>   <chr>   <chr>   <chr>[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ## 1 37c663d~ 2020~ City o~ City o~ -0.106     51.5 On or ~ E01000~ Camden~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ## 2 dcfa16f~ 2020~ City o~ City o~ -0.0941    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ## 3 be9310e~ 2020~ City o~ City o~ -0.0945    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ## 4 0cbb0c5~ 2020~ City o~ City o~ -0.0945    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ## 5 aaafbcf~ 2020~ City o~ City o~ -0.0750    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ## 6 8249cc1~ 2020~ City o~ City o~ -0.0750    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ## # ... with 2 more variables: last_outcome_category <chr>, context <lgl>, and[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ## #   abbreviated variable names 1: reported_by, 2: falls_within, 3: longitude,[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 3056--3056
+[]\TU/lmtt/m/n/10 ## #   4: latitude, 5: location, 6: lsoa_code, 7: lsoa_name, 8: crime_type[] 
+ []
+
+[89]
+Overfull \hbox (227.25pt too wide) in paragraph at lines 3078--3078
+[]\TU/lmtt/m/n/10 ##   `/Users/justinvandijk/Dropbox/UCL/Web/jtvandijk.github.io/GEOG0030/data/output/ward_population_2019.shp'[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3078--3078
+[]\TU/lmtt/m/n/10 ## Bounding box:  xmin: 503568.2 ymin: 155850.8 xmax: 561957.5 ymax: 200933.9[] 
+ []
+
+File: GEOG0030_files/figure-latex/05-plot-wardpop-1.pdf Graphic file (type pdf)
+<use GEOG0030_files/figure-latex/05-plot-wardpop-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[90]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [1] "NAME"       "GSS_CODE"   "DISTRICT"   "LAGSSCODE"  "HECTARES"[] 
+ []
+
+[91]
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ##  [19]  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ##  [37]  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ##  [55]  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ##  [73]  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ##  [91]  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [109] 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [127] 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [145] 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [163] 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [181] 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [199] 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [217] 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [235] 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [253] 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [271] 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [289] 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [307] 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [325] 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [343] 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [361] 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [379] 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [397] 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [415] 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [433] 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 448 449 450[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [451] 451 452 453 454 455 456 457 458 459 460 461 462 463 464 465 466 467 468[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [469] 469 470 471 472 473 474 475 476 477 478 479 480 481 482 483 484 485 486[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [487] 487 488 489 490 491 492 493 494 495 496 497 498 499 500 501 502 503 504[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [505] 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520 521 522[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [523] 523 524 525 526 527 528 529 530 531 532 533 534 535 536 537 538 539 540[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [541] 541 542 543 544 545 546 547 548 549 550 551 552 553 554 555 556 557 558[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [559] 559 560 561 562 563 564 565 566 567 568 569 570 571 572 573 574 575 576[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [577] 577 578 579 580 581 582 583 584 585 586 587 588 589 590 591 592 593 594[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [595] 595 596 597 598 599 600 601 602 603 604 605 606 607 608 609 610 611 612[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [613] 613 614 615 616 617 618 619 620 621 622 623 624 625 626 627 628 629 630[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ## [631] 631 632 633 634 635 636 637 638 639 640 641 642 643 644 645 646 647 648[] 
+ []
+
+[92]
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ##       NAME   GSS_CODE   DISTRICT  LAGSSCODE   HECTARES NONLD_AREA    pop2019[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3177--3177
+[]\TU/lmtt/m/n/10 ##       <NA>       <NA>       <NA>       <NA>       <NA>       <NA>       <NA>[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3197--3197
+[]\TU/lmtt/m/n/10 ## Bounding box:  xmin: 503568.2 ymin: 155850.8 xmax: 561957.5 ymax: 200933.9[] 
+ []
+
+[93]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3270--3270
+[]\TU/lmtt/m/n/10 ##         PARAMETER["Scale factor at natural origin",0.9996012717,[] 
+ []
+
+
+Overfull \hbox (615.75pt too wide) in paragraph at lines 3270--3270
+[]\TU/lmtt/m/n/10 ##         AREA["United Kingdom (UK) - offshore to boundary of UKCS within 49°45'N to 61°N and 9°W to 2°E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore."],[] 
+ []
+
+
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
+[94] [95]
+Underfull \hbox (badness 2717) in paragraph at lines 3336--3338
+[]\TU/lmr/m/n/10 Your code would look something like: \TU/lmtt/m/n/10 merge(x, y, by.x =
+ []
+
+[96]
+File: images/w05/dplyr-joins.png Graphic file (type bmp)
+<images/w05/dplyr-joins.png>
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ##   crime_id month repor~1 falls~2 longi~3 latit~4 locat~5 lsoa_~6 lsoa_~7 crime~8[] 
+ []
+
+[97] [98]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ##   <chr>    <chr> <chr>   <chr>     <dbl>   <dbl> <chr>   <chr>   <chr>   <chr>[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## 1 37c663d~ 2020~ City o~ City o~ -0.106     51.5 On or ~ E01000~ Camden~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## 2 dcfa16f~ 2020~ City o~ City o~ -0.0941    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## 3 be9310e~ 2020~ City o~ City o~ -0.0945    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## 4 0cbb0c5~ 2020~ City o~ City o~ -0.0945    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## 5 aaafbcf~ 2020~ City o~ City o~ -0.0750    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## 6 8249cc1~ 2020~ City o~ City o~ -0.0750    51.5 On or ~ E01000~ City o~ Theft ~[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## # ... with 9 more variables: last_outcome_category <chr>, context <lgl>,[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## #   LSOA11NM <chr>, WD18CD <chr>, WD18NM <chr>, WD18NMW <chr>, LAD18CD <chr>,[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## #   LAD18NM <chr>, FID <dbl>, and abbreviated variable names 1: reported_by,[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 ## #   2: falls_within, 3: longitude, 4: latitude, 5: location, 6: lsoa_code,[] 
+ []
+
+[99] [100] [101] [102] [103] [104] [105]
+File: images/w05/pivot_wider.png Graphic file (type bmp)
+<images/w05/pivot_wider.png>
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3752 ...ation for the `pivot_wider()` function.}
+                                                  \label{fig:05-pivot-wider} 
 Here is how much of TeX's memory you used:
- 17895 strings out of 478189
- 333159 string characters out of 5853293
- 774548 words of memory out of 5000000
- 38237 multiletter control sequences out of 15000+600000
+ 17812 strings out of 478189
+ 332178 string characters out of 5853293
+ 777117 words of memory out of 5000000
+ 38160 multiletter control sequences out of 15000+600000
  475726 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,7n,121p,1441b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,7n,121p,1441b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on GEOG0030.pdf (86 pages).
+Output written on GEOG0030.pdf (105 pages).
