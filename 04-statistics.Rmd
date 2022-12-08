@@ -501,7 +501,7 @@ We can see we have **four rows** and **three columns**.  We can also finally use
 attributes(giss_df)
 ```
 
-:::note
+:::tip
 **Tips** <br/>
 
 * R is case-sensitive so you need to make sure that you capitalise everything correctly if required.

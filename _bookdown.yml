@@ -5,6 +5,7 @@ rmd_files:
 - 02-GIScience.Rmd
 - 03-cartography.Rmd
 - 04-statistics.Rmd
+- 05-spatial.Rmd
 #- 11-data.Rmd
 language:
   ui:

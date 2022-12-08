@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Programming for Data Analysis | GEOG0030: Geocomputation</title>
-  <meta name="description" content="3 Programming for Data Analysis | GEOG0030: Geocomputation handbook." />
+  <title>4 Programming for Data Analysis | GEOG0030: Geocomputation</title>
+  <meta name="description" content="4 Programming for Data Analysis | GEOG0030: Geocomputation handbook." />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Programming for Data Analysis | GEOG0030: Geocomputation" />
+  <meta property="og:title" content="4 Programming for Data Analysis | GEOG0030: Geocomputation" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="3 Programming for Data Analysis | GEOG0030: Geocomputation handbook." />
+  <meta property="og:description" content="4 Programming for Data Analysis | GEOG0030: Geocomputation handbook." />
   <meta name="github-repo" content="jtvandijk/GEOG0030" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Programming for Data Analysis | GEOG0030: Geocomputation" />
+  <meta name="twitter:title" content="4 Programming for Data Analysis | GEOG0030: Geocomputation" />
   
-  <meta name="twitter:description" content="3 Programming for Data Analysis | GEOG0030: Geocomputation handbook." />
+  <meta name="twitter:description" content="4 Programming for Data Analysis | GEOG0030: Geocomputation handbook." />
   
 
 <meta name="author" content="Justin van Dijk" />
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="cartography-and-visualisation.html"/>
-
+<link rel="next" href="programming-for-spatial-analysis.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,13 +51,13 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -91,7 +91,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -104,7 +104,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -137,95 +137,117 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Module Overview</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Module Overview</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html"><i class="fa fa-check"></i>Module Introduction</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#welcome"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#module-overview-1"><i class="fa fa-check"></i>Module overview</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#welcome"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#module-overview-1"><i class="fa fa-check"></i>Module overview</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting</a></li>
+<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="foundational-concepts.html"><a href="foundational-concepts.html"><i class="fa fa-check"></i>Foundational Concepts</a>
+<li class="chapter" data-level="" data-path="foundational-concepts.html"><a href="foundational-concepts.html"><i class="fa fa-check"></i>Foundational Concepts</a></li>
+<li class="chapter" data-level="1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html"><i class="fa fa-check"></i><b>1</b> Geocomputation: An Introduction</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="foundational-concepts.html"><a href="foundational-concepts.html#reading-w01"><i class="fa fa-check"></i><b>0.1</b> Reading list</a></li>
-<li class="chapter" data-level="0.2" data-path="foundational-concepts.html"><a href="foundational-concepts.html#getting-started"><i class="fa fa-check"></i><b>0.2</b> Getting started</a></li>
-<li class="chapter" data-level="0.3" data-path="foundational-concepts.html"><a href="foundational-concepts.html#software"><i class="fa fa-check"></i><b>0.3</b> Software</a>
+<li class="chapter" data-level="1.1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#reading-w01"><i class="fa fa-check"></i><b>1.1</b> Reading list</a></li>
+<li class="chapter" data-level="1.2" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a></li>
+<li class="chapter" data-level="1.3" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#software"><i class="fa fa-check"></i><b>1.3</b> Software</a>
 <ul>
-<li class="chapter" data-level="0.3.1" data-path="foundational-concepts.html"><a href="foundational-concepts.html#qgis-installation"><i class="fa fa-check"></i><b>0.3.1</b> QGIS Installation</a></li>
-<li class="chapter" data-level="0.3.2" data-path="foundational-concepts.html"><a href="foundational-concepts.html#r-and-rstudio-installation"><i class="fa fa-check"></i><b>0.3.2</b> R and RStudio Installation</a></li>
-<li class="chapter" data-level="0.3.3" data-path="foundational-concepts.html"><a href="foundational-concepts.html#ucl"><i class="fa fa-check"></i><b>0.3.3</b> UCL Desktop and RStudio Server</a></li>
-<li class="chapter" data-level="0.3.4" data-path="foundational-concepts.html"><a href="foundational-concepts.html#r-package-installation"><i class="fa fa-check"></i><b>0.3.4</b> R package installation</a></li>
-<li class="chapter" data-level="0.3.5" data-path="foundational-concepts.html"><a href="foundational-concepts.html#a-note-on-arcgis"><i class="fa fa-check"></i><b>0.3.5</b> A note on ArcGIS</a></li>
+<li class="chapter" data-level="1.3.1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#qgis-installation"><i class="fa fa-check"></i><b>1.3.1</b> QGIS Installation</a></li>
+<li class="chapter" data-level="1.3.2" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#r-and-rstudio-installation"><i class="fa fa-check"></i><b>1.3.2</b> R and RStudio Installation</a></li>
+<li class="chapter" data-level="1.3.3" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#ucl"><i class="fa fa-check"></i><b>1.3.3</b> UCL Desktop and RStudio Server</a></li>
+<li class="chapter" data-level="1.3.4" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#r-package-installation"><i class="fa fa-check"></i><b>1.3.4</b> R package installation</a></li>
+<li class="chapter" data-level="1.3.5" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#a-note-on-arcgis"><i class="fa fa-check"></i><b>1.3.5</b> A note on ArcGIS</a></li>
 </ul></li>
-<li class="chapter" data-level="0.4" data-path="foundational-concepts.html"><a href="foundational-concepts.html#byl-w01"><i class="fa fa-check"></i><b>0.4</b> Before you leave</a></li>
+<li class="chapter" data-level="1.4" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#byl-w01"><i class="fa fa-check"></i><b>1.4</b> Before you leave</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html"><i class="fa fa-check"></i><b>1</b> GIScience and GIS software</a>
+<li class="chapter" data-level="2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html"><i class="fa fa-check"></i><b>2</b> GIScience and GIS software</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#reading-w02"><i class="fa fa-check"></i><b>1.1</b> Reading list</a></li>
-<li class="chapter" data-level="1.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#simple-digitisation-of-spatial-features"><i class="fa fa-check"></i><b>1.2</b> Simple digitisation of spatial features</a></li>
-<li class="chapter" data-level="1.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#population-change-in-london"><i class="fa fa-check"></i><b>1.3</b> Population change in London</a>
+<li class="chapter" data-level="2.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#reading-w02"><i class="fa fa-check"></i><b>2.1</b> Reading list</a></li>
+<li class="chapter" data-level="2.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#simple-digitisation-of-spatial-features"><i class="fa fa-check"></i><b>2.2</b> Simple digitisation of spatial features</a></li>
+<li class="chapter" data-level="2.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#population-change-in-london"><i class="fa fa-check"></i><b>2.3</b> Population change in London</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-scene"><i class="fa fa-check"></i><b>1.3.1</b> Setting the scene</a></li>
-<li class="chapter" data-level="1.3.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-finding"><i class="fa fa-check"></i><b>1.3.2</b> Finding data</a></li>
-<li class="chapter" data-level="1.3.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w01-housekeeping"><i class="fa fa-check"></i><b>1.3.3</b> Housekeeping</a></li>
-<li class="chapter" data-level="1.3.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-downloading"><i class="fa fa-check"></i><b>1.3.4</b> Downloading data</a></li>
-<li class="chapter" data-level="1.3.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-cleaning"><i class="fa fa-check"></i><b>1.3.5</b> Cleaning data</a></li>
-<li class="chapter" data-level="1.3.6" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#using-qgis-to-map-our-population-data"><i class="fa fa-check"></i><b>1.3.6</b> Using QGIS to map our population data</a></li>
-<li class="chapter" data-level="1.3.7" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#exporting-map-for-visual-analysis"><i class="fa fa-check"></i><b>1.3.7</b> Exporting map for visual analysis</a></li>
+<li class="chapter" data-level="2.3.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-scene"><i class="fa fa-check"></i><b>2.3.1</b> Setting the scene</a></li>
+<li class="chapter" data-level="2.3.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-finding"><i class="fa fa-check"></i><b>2.3.2</b> Finding data</a></li>
+<li class="chapter" data-level="2.3.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w01-housekeeping"><i class="fa fa-check"></i><b>2.3.3</b> Housekeeping</a></li>
+<li class="chapter" data-level="2.3.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-downloading"><i class="fa fa-check"></i><b>2.3.4</b> Downloading data</a></li>
+<li class="chapter" data-level="2.3.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-cleaning"><i class="fa fa-check"></i><b>2.3.5</b> Cleaning data</a></li>
+<li class="chapter" data-level="2.3.6" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#using-qgis-to-map-our-population-data"><i class="fa fa-check"></i><b>2.3.6</b> Using QGIS to map our population data</a></li>
+<li class="chapter" data-level="2.3.7" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#exporting-map-for-visual-analysis"><i class="fa fa-check"></i><b>2.3.7</b> Exporting map for visual analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#assignment-w02"><i class="fa fa-check"></i><b>1.4</b> Assignment</a></li>
-<li class="chapter" data-level="1.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#byl-w02"><i class="fa fa-check"></i><b>1.5</b> Before you leave</a></li>
+<li class="chapter" data-level="2.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#assignment-w02"><i class="fa fa-check"></i><b>2.4</b> Assignment</a></li>
+<li class="chapter" data-level="2.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#byl-w02"><i class="fa fa-check"></i><b>2.5</b> Before you leave</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html"><i class="fa fa-check"></i><b>2</b> Cartography and Visualisation</a>
+<li class="chapter" data-level="3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html"><i class="fa fa-check"></i><b>3</b> Cartography and Visualisation</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#reading-w03"><i class="fa fa-check"></i><b>2.1</b> Reading list</a></li>
-<li class="chapter" data-level="2.2" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#crime-in-london-i"><i class="fa fa-check"></i><b>2.2</b> Crime in London I</a>
+<li class="chapter" data-level="3.1" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#reading-w03"><i class="fa fa-check"></i><b>3.1</b> Reading list</a></li>
+<li class="chapter" data-level="3.2" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#crime-in-london-i"><i class="fa fa-check"></i><b>3.2</b> Crime in London I</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#w03-finding"><i class="fa fa-check"></i><b>2.2.1</b> Finding our datasets</a></li>
-<li class="chapter" data-level="2.2.2" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#w03-downloading"><i class="fa fa-check"></i><b>2.2.2</b> Downloading data</a></li>
-<li class="chapter" data-level="2.2.3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#using-qgis-to-map-our-crime-data"><i class="fa fa-check"></i><b>2.2.3</b> Using QGIS to map our crime data</a></li>
+<li class="chapter" data-level="3.2.1" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#w03-finding"><i class="fa fa-check"></i><b>3.2.1</b> Finding our datasets</a></li>
+<li class="chapter" data-level="3.2.2" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#w03-downloading"><i class="fa fa-check"></i><b>3.2.2</b> Downloading data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#using-qgis-to-map-our-crime-data"><i class="fa fa-check"></i><b>3.2.3</b> Using QGIS to map our crime data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#assignment-w03"><i class="fa fa-check"></i><b>2.3</b> Assignment</a></li>
-<li class="chapter" data-level="2.4" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#byl-w03"><i class="fa fa-check"></i><b>2.4</b> Before you leave</a></li>
+<li class="chapter" data-level="3.3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#assignment-w03"><i class="fa fa-check"></i><b>3.3</b> Assignment</a></li>
+<li class="chapter" data-level="3.4" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#byl-w03"><i class="fa fa-check"></i><b>3.4</b> Before you leave</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html"><i class="fa fa-check"></i><b>3</b> Programming for Data Analysis</a>
+<li class="chapter" data-level="4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Programming for Data Analysis</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#reading-w04"><i class="fa fa-check"></i><b>3.1</b> Reading list</a></li>
-<li class="chapter" data-level="3.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#programming"><i class="fa fa-check"></i><b>3.2</b> Programming</a></li>
-<li class="chapter" data-level="3.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#programming-in-r"><i class="fa fa-check"></i><b>3.3</b> Programming in R</a>
+<li class="chapter" data-level="4.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#reading-w04"><i class="fa fa-check"></i><b>4.1</b> Reading list</a></li>
+<li class="chapter" data-level="4.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#programming"><i class="fa fa-check"></i><b>4.2</b> Programming</a></li>
+<li class="chapter" data-level="4.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#programming-in-r"><i class="fa fa-check"></i><b>4.3</b> Programming in R</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#the-rstudio-interface"><i class="fa fa-check"></i><b>3.3.1</b> The RStudio interface</a></li>
+<li class="chapter" data-level="4.3.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#the-rstudio-interface"><i class="fa fa-check"></i><b>4.3.1</b> The RStudio interface</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#rstudio-console"><i class="fa fa-check"></i><b>3.4</b> RStudio console</a>
+<li class="chapter" data-level="4.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#rstudio-console"><i class="fa fa-check"></i><b>4.4</b> RStudio console</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#command-input"><i class="fa fa-check"></i><b>3.4.1</b> Command Input</a></li>
-<li class="chapter" data-level="3.4.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#storing-variables"><i class="fa fa-check"></i><b>3.4.2</b> Storing variables</a></li>
-<li class="chapter" data-level="3.4.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#accessing-and-returning-variables"><i class="fa fa-check"></i><b>3.4.3</b> Accessing and returning variables</a></li>
-<li class="chapter" data-level="3.4.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#variables-of-different-data-types"><i class="fa fa-check"></i><b>3.4.4</b> Variables of different data types</a></li>
-<li class="chapter" data-level="3.4.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#calling-functions-on-our-variables"><i class="fa fa-check"></i><b>3.4.5</b> Calling functions on our variables</a></li>
-<li class="chapter" data-level="3.4.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#returning-functions"><i class="fa fa-check"></i><b>3.4.6</b> Returning functions</a></li>
-<li class="chapter" data-level="3.4.7" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#examining-our-variables-using-functions"><i class="fa fa-check"></i><b>3.4.7</b> Examining our variables using functions</a></li>
-<li class="chapter" data-level="3.4.8" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#creating-a-two-element-object"><i class="fa fa-check"></i><b>3.4.8</b> Creating a two-element object</a></li>
+<li class="chapter" data-level="4.4.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#command-input"><i class="fa fa-check"></i><b>4.4.1</b> Command Input</a></li>
+<li class="chapter" data-level="4.4.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#storing-variables"><i class="fa fa-check"></i><b>4.4.2</b> Storing variables</a></li>
+<li class="chapter" data-level="4.4.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#accessing-and-returning-variables"><i class="fa fa-check"></i><b>4.4.3</b> Accessing and returning variables</a></li>
+<li class="chapter" data-level="4.4.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#variables-of-different-data-types"><i class="fa fa-check"></i><b>4.4.4</b> Variables of different data types</a></li>
+<li class="chapter" data-level="4.4.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#calling-functions-on-our-variables"><i class="fa fa-check"></i><b>4.4.5</b> Calling functions on our variables</a></li>
+<li class="chapter" data-level="4.4.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#returning-functions"><i class="fa fa-check"></i><b>4.4.6</b> Returning functions</a></li>
+<li class="chapter" data-level="4.4.7" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#examining-our-variables-using-functions"><i class="fa fa-check"></i><b>4.4.7</b> Examining our variables using functions</a></li>
+<li class="chapter" data-level="4.4.8" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#creating-a-two-element-object"><i class="fa fa-check"></i><b>4.4.8</b> Creating a two-element object</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#simple-analysis"><i class="fa fa-check"></i><b>3.5</b> Simple analysis</a>
+<li class="chapter" data-level="4.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#simple-analysis"><i class="fa fa-check"></i><b>4.5</b> Simple analysis</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#housekeeping"><i class="fa fa-check"></i><b>3.5.1</b> Housekeeping</a></li>
-<li class="chapter" data-level="3.5.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#atomic-vectors"><i class="fa fa-check"></i><b>3.5.2</b> Atomic vectors</a></li>
-<li class="chapter" data-level="3.5.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#matrices"><i class="fa fa-check"></i><b>3.5.3</b> Matrices</a></li>
-<li class="chapter" data-level="3.5.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#dataframes"><i class="fa fa-check"></i><b>3.5.4</b> Dataframes</a></li>
-<li class="chapter" data-level="3.5.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#column-names"><i class="fa fa-check"></i><b>3.5.5</b> Column names</a></li>
-<li class="chapter" data-level="3.5.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#adding-columns"><i class="fa fa-check"></i><b>3.5.6</b> Adding columns</a></li>
+<li class="chapter" data-level="4.5.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#housekeeping"><i class="fa fa-check"></i><b>4.5.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="4.5.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#atomic-vectors"><i class="fa fa-check"></i><b>4.5.2</b> Atomic vectors</a></li>
+<li class="chapter" data-level="4.5.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#matrices"><i class="fa fa-check"></i><b>4.5.3</b> Matrices</a></li>
+<li class="chapter" data-level="4.5.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#dataframes"><i class="fa fa-check"></i><b>4.5.4</b> Dataframes</a></li>
+<li class="chapter" data-level="4.5.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#column-names"><i class="fa fa-check"></i><b>4.5.5</b> Column names</a></li>
+<li class="chapter" data-level="4.5.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#adding-columns"><i class="fa fa-check"></i><b>4.5.6</b> Adding columns</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#crime-in-london-ii"><i class="fa fa-check"></i><b>3.6</b> Crime in London II</a>
+<li class="chapter" data-level="4.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#crime-in-london-ii"><i class="fa fa-check"></i><b>4.6</b> Crime in London II</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#starting-a-project"><i class="fa fa-check"></i><b>3.6.1</b> Starting a project</a></li>
-<li class="chapter" data-level="3.6.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#setting-up-a-script"><i class="fa fa-check"></i><b>3.6.2</b> Setting up a script</a></li>
-<li class="chapter" data-level="3.6.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#running-a-script"><i class="fa fa-check"></i><b>3.6.3</b> Running a script</a></li>
-<li class="chapter" data-level="3.6.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#crime-data-2"><i class="fa fa-check"></i><b>3.6.4</b> Crime data</a></li>
+<li class="chapter" data-level="4.6.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#starting-a-project"><i class="fa fa-check"></i><b>4.6.1</b> Starting a project</a></li>
+<li class="chapter" data-level="4.6.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#setting-up-a-script"><i class="fa fa-check"></i><b>4.6.2</b> Setting up a script</a></li>
+<li class="chapter" data-level="4.6.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#running-a-script"><i class="fa fa-check"></i><b>4.6.3</b> Running a script</a></li>
+<li class="chapter" data-level="4.6.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#crime-data-2"><i class="fa fa-check"></i><b>4.6.4</b> Crime data</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#assignment-w04"><i class="fa fa-check"></i><b>3.7</b> Assignment</a></li>
-<li class="chapter" data-level="3.8" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#want-more-optional"><i class="fa fa-check"></i><b>3.8</b> Want more? [Optional]</a></li>
-<li class="chapter" data-level="3.9" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#byl-w04"><i class="fa fa-check"></i><b>3.9</b> Before you leave</a></li>
+<li class="chapter" data-level="4.7" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#assignment-w04"><i class="fa fa-check"></i><b>4.7</b> Assignment</a></li>
+<li class="chapter" data-level="4.8" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#want-more-optional"><i class="fa fa-check"></i><b>4.8</b> Want more? [Optional]</a></li>
+<li class="chapter" data-level="4.9" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#byl-w04"><i class="fa fa-check"></i><b>4.9</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html"><i class="fa fa-check"></i><b>5</b> Programming for Spatial Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#reading-w05"><i class="fa fa-check"></i><b>5.1</b> Reading list</a></li>
+<li class="chapter" data-level="5.2" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#crime-in-london-iii"><i class="fa fa-check"></i><b>5.2</b> Crime in London III</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#data-preparation"><i class="fa fa-check"></i><b>5.2.1</b> Data preparation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#spatial-analysis-set-up"><i class="fa fa-check"></i><b>5.2.2</b> Spatial analysis set up</a></li>
+<li class="chapter" data-level="5.2.3" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#interacting-with-spatial-data"><i class="fa fa-check"></i><b>5.2.3</b> Interacting with spatial data</a></li>
+<li class="chapter" data-level="5.2.4" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#getting-our-crime-data-in-shape"><i class="fa fa-check"></i><b>5.2.4</b> Getting our crime data in shape</a></li>
+<li class="chapter" data-level="5.2.5" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#data-wrangling"><i class="fa fa-check"></i><b>5.2.5</b> Data wrangling</a></li>
+<li class="chapter" data-level="5.2.6" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#improving-your-workflow"><i class="fa fa-check"></i><b>5.2.6</b> Improving your workflow</a></li>
+<li class="chapter" data-level="5.2.7" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#aggregate-crime-by-ward"><i class="fa fa-check"></i><b>5.2.7</b> Aggregate crime by ward</a></li>
+<li class="chapter" data-level="5.2.8" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#joining-crime-data-to-wards"><i class="fa fa-check"></i><b>5.2.8</b> Joining crime data to wards</a></li>
+<li class="chapter" data-level="5.2.9" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#mapping-crime-data"><i class="fa fa-check"></i><b>5.2.9</b> Mapping crime data</a></li>
+<li class="chapter" data-level="5.2.10" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#styling-crime-data"><i class="fa fa-check"></i><b>5.2.10</b> Styling crime data</a></li>
+<li class="chapter" data-level="5.2.11" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#exporting-our-crime-data"><i class="fa fa-check"></i><b>5.2.11</b> Exporting our crime data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#assignment-w05"><i class="fa fa-check"></i><b>5.3</b> Assignment</a></li>
+<li class="chapter" data-level="5.4" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#byl-w05"><i class="fa fa-check"></i><b>5.4</b> Before you leave</a></li>
 </ul></li>
 </ul>
 
@@ -244,17 +266,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="programming-for-data-analysis" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Programming for Data Analysis<a href="programming-for-data-analysis.html#programming-for-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="programming-for-data-analysis" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Programming for Data Analysis<a href="programming-for-data-analysis.html#programming-for-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This week’s content introduces you to the foundational concepts associated with Programming for Data Analysis. We will cover some general principles of programming as well how we can use R and RStudio effectively for data analysis by continuing to look at crime in London.</p>
 <!-- ## Lecture slides {#slides-w04} -->
 <!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w02_geo.pdf). -->
-<div id="reading-w04" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Reading list<a href="programming-for-data-analysis.html#reading-w04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="reading-w04" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Reading list<a href="programming-for-data-analysis.html#reading-w04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="essential-readings-3" class="section level4 unnumbered hasAnchor">
 <h4>Essential readings<a href="programming-for-data-analysis.html#essential-readings-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li>Hadley, W. 2017. R for Data Science. <strong>Chapter 3</strong>: <em>Data visualisation</em>. <a href="https://r4ds.had.co.nz/data-visualisation.html">[Link]</a></li>
 <li>Hadley, W. 2017. R for Data Science. <strong>Chapter 4</strong>: <em>Workflow: basics</em>. <a href="https://r4ds.had.co.nz/workflow-basics.html">[Link]</a></li>
 <li>Hadley, W. 2017. R for Data Science. <strong>Chapter 5</strong>: <em>Data transformation</em>. <a href="https://r4ds.had.co.nz/transform.html">[Link]</a></li>
 <li>Hadley, W. 2017. R for Data Science. <strong>Chapter 6</strong>: <em>Workflow: scripts</em>. <a href="https://r4ds.had.co.nz/workflow-scripts.html">[Link]</a></li>
@@ -268,20 +289,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="programming" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Programming<a href="programming-for-data-analysis.html#programming" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="programming" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Programming<a href="programming-for-data-analysis.html#programming" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Programming is our most fundamental way of interacting with a computer - it was how computers were first built and operated - and for a long time, the Command Line Interface (CLI) was our primary way of using computers before our Graphical User Interface (GUI) Operating Systems (OS) and software became mainstream. Nowadays, the majority of us use our computers through clicking instead of typing. However, programming and computer code underpin every single application that we use on our computers.</p>
 <p>Programming is used for endless purposes and applications, ranging from software engineering and application development, to creating websites and managing databases at substantial scales. To help with this diversity of applications, multiple types of programming languages have developed - Wikipedia, for example, has a list of <strong>50 different types</strong> of languages, although there is some overlap between many of these and some are used for incredibly niche activities.</p>
 <p>In general, the main programming languages that people focus on learning at the moment include:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:04-programming-languages"></span>
 <img src="images/w04/programming_languages.png" alt="Top 10 programming languages and their applications according to DZone in 2017." width="90%" />
 <p class="caption">
-Figure 3.1: Top 10 programming languages and their applications according to DZone in 2017.
+Figure 4.1: Top 10 programming languages and their applications according to DZone in 2017.
 </p>
 </div>
 </div>
-<div id="programming-in-r" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Programming in R<a href="programming-for-data-analysis.html#programming-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="programming-in-r" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Programming in R<a href="programming-for-data-analysis.html#programming-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will be using R and RStudio in this module as the main tool to complete specific tasks we need to do for our data analysis. There are a lot of alternative tools out there that you can use to achieve the same outcomes (as you have seen with QGIS, and no doubt had experience of using some statistics/spreadsheet software) but we choose to use this tool because it provides us with many advantages over these other tools.</p>
 <p>What is important to understand is that R and RStudio are two different things:</p>
 <ul>
@@ -289,7 +310,7 @@ Figure 3.1: Top 10 programming languages and their applications according to DZo
 <li>RStudio is our <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">Integrated Development Environment (IDE)</a>, which we need to understand in terms of functionality and workflow. An IDE is simply a complicated way of saying “a place where I write and build scripts and execute my code”.</li>
 </ul>
 <p>As you may know already, R is a free and open-source programming language, that originally was created to focus on statistical analysis. In conjunction with the development of R as a language, the same community created the RStudio IDE to execute this statistical programming. Together, R and RStudio have grown into an incredibly success partnership of analytical programming language and analysis software - and is widely used for academic research as well as in the commercial sector. As a result, it has a huge and active contributor community which constantly adds functionality to the language and software, making it an incredibly useful tool for many purposes and applications beyond statistical analysis.</p>
-<p>Unlike traditional statistical analysis programmes you may have used such as <a href="https://www.microsoft.com/en-us/microsoft-365/excel">Microsoft Excel</a> or even <a href="https://www.arcgis.com/home/index.html">ArcGIS Online</a>, within the RStudio IDE, the user has to type commands to get it to execute tasks such as loading in a data set or performing a calculation. We primarily do this by building up a script, that provides a record of what you have done, whilst also enabling the straightforward repetition of tasks.</p>
+<p>Unlike traditional statistical analysis programmes you may have used such as <a href="https://www.microsoft.com/en-us/microsoft-365/excel">Microsoft Excel</a> or even <a href="https://www.arcgis.com/home/index.html">ArcGIS Online</a>, within the RStudio IDE, the user has to type commands to get it to execute tasks such as loading in a dataset or performing a calculation. We primarily do this by building up a script, that provides a record of what you have done, whilst also enabling the straightforward repetition of tasks.</p>
 <p>We can also use the <strong>R Console</strong> to execute simple instructions that do not need repeating such as installing libraries or quickly viewing data (we will get to this in a second). In addition, R, its various graphic-oriented “packages” and RStudio are capable of making graphs, charts and maps through just a few lines of code (you might notice a <strong>Plots</strong> window to your right in your RStudio window) - which can then be easily modified and tweaked by making slight changes to the script if mistakes are spotted.</p>
 <p>Unfortunately, command-line computing can also be off-putting at first. It is easy to make mistakes that are not always obvious to detect and thus debug. Nevertheless, there are good reasons to stick with R and RStudio. These include:</p>
 <ul>
@@ -307,14 +328,14 @@ Figure 3.1: Top 10 programming languages and their applications according to DZo
 <li>Creating basic and more complex plots in order to visualise the distributions values within a dataset.</li>
 </ol>
 <p>What you should remember is that R has a steep learning curve, but the benefits of using it are well worth the effort. The best way to really learn R is to take the basic code provided in tutorials and experiment with changing parameters - such as the colour of points in a graph - to really get ‘under the hood’ of the software.</p>
-<div id="the-rstudio-interface" class="section level3 hasAnchor" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> The RStudio interface<a href="programming-for-data-analysis.html#the-rstudio-interface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-rstudio-interface" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> The RStudio interface<a href="programming-for-data-analysis.html#the-rstudio-interface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You should all have access to some form of R on your personal computer, or through <a href="https://www.ucl.ac.uk/isd/services/computers/remote-access/desktopucl-anywhere">Desktop@UCL Anywhere</a> or the <a href="https://rstudio.data-science.rc.ucl.ac.uk/auth-sign-in">RStudio Server</a>. If not, please refer to the <a href="#geocomputation-an-introduction.html#software">Geocomputation: An Introduction</a> section. Go ahead and open RStudio and we will first take a quick tour of the various components of the RStudio environment interface and how and when to use them.</p>
 <p>RStudio has various windows that you use for different purposes - and you can customise its layout dependent on your preference. When you first open RStudio, it should look a little something like this:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:04-rstudio-interface-script"></span>
 <img src="images/w04/rstudio_interface.png" alt="RStudio on RStudio Server." width="90%" />
 <p class="caption">
-Figure 3.2: RStudio on RStudio Server.
+Figure 4.2: RStudio on RStudio Server.
 </p>
 </div>
 <p>The main windows (panel/pane) to keep focused on for now are:</p>
@@ -329,116 +350,116 @@ Figure 3.2: RStudio on RStudio Server.
 <p>We will see how we use these windows as we progress through this tutorial and understand in more detail what we mean by words such as ‘attributes’ (do not get confused here with the <strong>Attribute Table</strong> for QGIS) and data structures.</p>
 </div>
 </div>
-<div id="rstudio-console" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> RStudio console<a href="programming-for-data-analysis.html#rstudio-console" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We will first start off with using <strong>RStudio’s console</strong> to test out some of R’s in-built functionality by creating a few variables as well as a dummy data set that we will be able to analyse - and to get familiar with writing code.</p>
+<div id="rstudio-console" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> RStudio console<a href="programming-for-data-analysis.html#rstudio-console" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We will first start off with using <strong>RStudio’s console</strong> to test out some of R’s in-built functionality by creating a few variables as well as a dummy dataset that we will be able to analyse - and to get familiar with writing code.</p>
 <div class="note">
 <p><strong>Note</strong><br/>
 You might need to click on the console window to get it to expand; you can then drag it to take up a larger space in your RStudio window.</p>
 </div>
 <p>In your RStudio console, you should see a prompt sign <code>&gt;</code> on the left hand side. This is where we can directly interact with R. Anything that appears as red in the command line means it is an error (or a warning) so you will likely need to correct your code. If you just a <code>&gt;</code> it means you can type in your next line, a <code>+</code> means that you have not finished the previous line of code. As will become clear, <code>+</code> signs often appear if you do not close brackets or you did not properly finish your command in a way that R expected.</p>
 <p>In your console, let us go ahead and conduct some quick maths. At their most basic, all programming languages can be used like calculators.</p>
-<div id="command-input" class="section level3 hasAnchor" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> Command Input<a href="programming-for-data-analysis.html#command-input" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="command-input" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Command Input<a href="programming-for-data-analysis.html#command-input" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Type in <code>10 * 12</code> into the console.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="programming-for-data-analysis.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conduct some maths</span></span>
-<span id="cb1-2"><a href="programming-for-data-analysis.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">*</span> <span class="dv">12</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="programming-for-data-analysis.html#cb3-1" aria-hidden="true"></a><span class="co"># conduct some maths</span></span>
+<span id="cb3-2"><a href="programming-for-data-analysis.html#cb3-2" aria-hidden="true"></a><span class="dv">10</span> <span class="op">*</span><span class="st"> </span><span class="dv">12</span></span></code></pre></div>
 <pre><code>## [1] 120</code></pre>
 <p>Once you press return, you should see the answer of 120 returned below.</p>
 </div>
-<div id="storing-variables" class="section level3 hasAnchor" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> Storing variables<a href="programming-for-data-analysis.html#storing-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="storing-variables" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Storing variables<a href="programming-for-data-analysis.html#storing-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Rather than use ‘raw’ or ‘standalone’ numbers and values, we primarily want to use variables that store these values (or groups of them) under a memorable name for easy reference later. In R terminology this is called <strong>creating an object</strong> and this object becomes stored as a <strong>variable</strong>. The <code>&lt;-</code> symbol is used to assign the value to the variable name you have given. Let us create two variables for experimenting with.</p>
 <p>Type in <code>ten &lt;- 10</code> into the console and execute.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="programming-for-data-analysis.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># store a variable</span></span>
-<span id="cb3-2"><a href="programming-for-data-analysis.html#cb3-2" aria-hidden="true" tabindex="-1"></a>ten <span class="ot">&lt;-</span> <span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="programming-for-data-analysis.html#cb5-1" aria-hidden="true"></a><span class="co"># store a variable</span></span>
+<span id="cb5-2"><a href="programming-for-data-analysis.html#cb5-2" aria-hidden="true"></a>ten &lt;-<span class="st"> </span><span class="dv">10</span></span></code></pre></div>
 <p>You have just created your first variable. You will see nothing is returned in the console, but if you check your environment window it has now appeared as a new variable that contains the associated value.</p>
 <p>Type in <code>twelve &lt;- 12</code> into the console and execute.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="programming-for-data-analysis.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># store a variable</span></span>
-<span id="cb4-2"><a href="programming-for-data-analysis.html#cb4-2" aria-hidden="true" tabindex="-1"></a>twelve <span class="ot">&lt;-</span> <span class="dv">12</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="programming-for-data-analysis.html#cb6-1" aria-hidden="true"></a><span class="co"># store a variable</span></span>
+<span id="cb6-2"><a href="programming-for-data-analysis.html#cb6-2" aria-hidden="true"></a>twelve &lt;-<span class="st"> </span><span class="dv">12</span></span></code></pre></div>
 <p>Once again, you will see nothing returned to the console but do check your environment window for your variable. We have now stored two numbers into our environment and given them variable names for easy reference. R stores these objects as variables in your computer’s RAM so they can be processed quickly. Without saving your environment (we will come onto this below), these variables would be lost if you close R. Now we have our variables, we can go ahead and execute the same simple multiplication:</p>
 <p>Type in <code>ten * twelve</code> into the console and execute.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="programming-for-data-analysis.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conduct some maths  using our variables</span></span>
-<span id="cb5-2"><a href="programming-for-data-analysis.html#cb5-2" aria-hidden="true" tabindex="-1"></a>ten <span class="sc">*</span> twelve</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="programming-for-data-analysis.html#cb7-1" aria-hidden="true"></a><span class="co"># conduct some maths  using our variables</span></span>
+<span id="cb7-2"><a href="programming-for-data-analysis.html#cb7-2" aria-hidden="true"></a>ten <span class="op">*</span><span class="st"> </span>twelve</span></code></pre></div>
 <pre><code>## [1] 120</code></pre>
 <p>You should see the output in the console of <strong>120</strong>. Whilst this maths may look trivial, it is, in fact, extremely powerful as it shows how these <strong>variables</strong> can be treated in the same way as the values they contain.</p>
 <p>Next, type in <code>ten * twelve * 8</code> into the console and execute.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="programming-for-data-analysis.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conduct some more maths with variables and raw values</span></span>
-<span id="cb7-2"><a href="programming-for-data-analysis.html#cb7-2" aria-hidden="true" tabindex="-1"></a>ten <span class="sc">*</span> twelve <span class="sc">*</span> <span class="dv">8</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="programming-for-data-analysis.html#cb9-1" aria-hidden="true"></a><span class="co"># conduct some more maths with variables and raw values</span></span>
+<span id="cb9-2"><a href="programming-for-data-analysis.html#cb9-2" aria-hidden="true"></a>ten <span class="op">*</span><span class="st"> </span>twelve <span class="op">*</span><span class="st"> </span><span class="dv">8</span></span></code></pre></div>
 <pre><code>## [1] 960</code></pre>
 <p>You should get an answer of 960. As you can see, we can mix <strong>variables</strong> with <strong>raw values</strong> without any problems.</p>
 <p>We can also store the output of variable calculations as a new variable. Type <code>output &lt;- ten * twelve * 8</code> into the console and execute.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="programming-for-data-analysis.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conduct some maths and store it as output</span></span>
-<span id="cb9-2"><a href="programming-for-data-analysis.html#cb9-2" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> ten <span class="sc">*</span> twelve <span class="sc">*</span> <span class="dv">8</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="programming-for-data-analysis.html#cb11-1" aria-hidden="true"></a><span class="co"># conduct some maths and store it as output</span></span>
+<span id="cb11-2"><a href="programming-for-data-analysis.html#cb11-2" aria-hidden="true"></a>output &lt;-<span class="st"> </span>ten <span class="op">*</span><span class="st"> </span>twelve <span class="op">*</span><span class="st"> </span><span class="dv">8</span></span></code></pre></div>
 <p>Because we are storing the output of our maths to a new variable, the answer is not returned to the screen.</p>
 </div>
-<div id="accessing-and-returning-variables" class="section level3 hasAnchor" number="3.4.3">
-<h3><span class="header-section-number">3.4.3</span> Accessing and returning variables<a href="programming-for-data-analysis.html#accessing-and-returning-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="accessing-and-returning-variables" class="section level3 hasAnchor" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Accessing and returning variables<a href="programming-for-data-analysis.html#accessing-and-returning-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can ask our computer to return this <code>output</code> by simply typing it into the console. You should see we get the same value as the earlier equation.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="programming-for-data-analysis.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># return the variable</span></span>
-<span id="cb10-2"><a href="programming-for-data-analysis.html#cb10-2" aria-hidden="true" tabindex="-1"></a>output</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="programming-for-data-analysis.html#cb12-1" aria-hidden="true"></a><span class="co"># return the variable</span></span>
+<span id="cb12-2"><a href="programming-for-data-analysis.html#cb12-2" aria-hidden="true"></a>output</span></code></pre></div>
 <pre><code>## [1] 960</code></pre>
 </div>
-<div id="variables-of-different-data-types" class="section level3 hasAnchor" number="3.4.4">
-<h3><span class="header-section-number">3.4.4</span> Variables of different data types<a href="programming-for-data-analysis.html#variables-of-different-data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="variables-of-different-data-types" class="section level3 hasAnchor" number="4.4.4">
+<h3><span class="header-section-number">4.4.4</span> Variables of different data types<a href="programming-for-data-analysis.html#variables-of-different-data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can also store variables of different data types, not just numbers but text as well.</p>
 <p>Type in <code>str_variable &lt;- "This is our first string variable"</code> into the console and execute.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="programming-for-data-analysis.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># store a variable</span></span>
-<span id="cb12-2"><a href="programming-for-data-analysis.html#cb12-2" aria-hidden="true" tabindex="-1"></a>str_variable <span class="ot">&lt;-</span> <span class="st">&quot;This is our 1st string variable&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="programming-for-data-analysis.html#cb14-1" aria-hidden="true"></a><span class="co"># store a variable</span></span>
+<span id="cb14-2"><a href="programming-for-data-analysis.html#cb14-2" aria-hidden="true"></a>str_variable &lt;-<span class="st"> &quot;This is our 1st string variable&quot;</span></span></code></pre></div>
 <p>We have just stored our sentence made from a combination of characters, including letters and numbers. A variable that stores “words” (that may be sentences, or codes, or file names), is known as a string. A string is always denoted by the use of quotation marks (<code>""</code> or <code>''</code>).</p>
 <p>Type in <code>str_variable</code> into the console and execute.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="programming-for-data-analysis.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># return the variable</span></span>
-<span id="cb13-2"><a href="programming-for-data-analysis.html#cb13-2" aria-hidden="true" tabindex="-1"></a>str_variable</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="programming-for-data-analysis.html#cb15-1" aria-hidden="true"></a><span class="co"># return the variable</span></span>
+<span id="cb15-2"><a href="programming-for-data-analysis.html#cb15-2" aria-hidden="true"></a>str_variable</span></code></pre></div>
 <pre><code>## [1] &quot;This is our 1st string variable&quot;</code></pre>
 <p>You should see our entire sentence returned,enclosed in quotation marks (<code>""</code>). Again, by simply entering our variable into the console, we have asked R to return our variable to us.</p>
 </div>
-<div id="calling-functions-on-our-variables" class="section level3 hasAnchor" number="3.4.5">
-<h3><span class="header-section-number">3.4.5</span> Calling functions on our variables<a href="programming-for-data-analysis.html#calling-functions-on-our-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="calling-functions-on-our-variables" class="section level3 hasAnchor" number="4.4.5">
+<h3><span class="header-section-number">4.4.5</span> Calling functions on our variables<a href="programming-for-data-analysis.html#calling-functions-on-our-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can also <strong>call</strong> a function on our variable. This use of <strong>call</strong> is a very specific programming term and generally what you use to say “use” a function. What it simply means is that we will use a specific function to do something to our variable. For example, we can also ask R to <strong>print</strong> our variable, which will give us the same output as accessing it directly via the console.</p>
 <p>Type in <code>print(str_variable)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="programming-for-data-analysis.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print str_variable to the screen</span></span>
-<span id="cb15-2"><a href="programming-for-data-analysis.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(str_variable)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="programming-for-data-analysis.html#cb17-1" aria-hidden="true"></a><span class="co"># print str_variable to the screen</span></span>
+<span id="cb17-2"><a href="programming-for-data-analysis.html#cb17-2" aria-hidden="true"></a><span class="kw">print</span>(str_variable)</span></code></pre></div>
 <pre><code>## [1] &quot;This is our 1st string variable&quot;</code></pre>
 <p>We have just used our first function: <code>print()</code>. This function actively finds the variable and then returns this to our screen. You can type <code>?print</code> into the console to find out more about the <code>print()</code> function.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="programming-for-data-analysis.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gain access to the documentation for our print function</span></span>
-<span id="cb17-2"><a href="programming-for-data-analysis.html#cb17-2" aria-hidden="true" tabindex="-1"></a>?print</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="programming-for-data-analysis.html#cb19-1" aria-hidden="true"></a><span class="co"># gain access to the documentation for our print function</span></span>
+<span id="cb19-2"><a href="programming-for-data-analysis.html#cb19-2" aria-hidden="true"></a>?print</span></code></pre></div>
 <p>This can be used with any function to get access to their documentation which is essential to know how to use the function correctly and understand its output.</p>
 <div class="note">
 <p><strong>Note</strong> <br />
 In many cases, a function will take more than one argument or parameter, so it is important to know what you need to provide the function with in order for it to work. For now, we are using functions that only need one <em>required</em> argument although most functions will also have several <em>optional</em> or <em>default</em> parameters.</p>
 </div>
 </div>
-<div id="returning-functions" class="section level3 hasAnchor" number="3.4.6">
-<h3><span class="header-section-number">3.4.6</span> Returning functions<a href="programming-for-data-analysis.html#returning-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="returning-functions" class="section level3 hasAnchor" number="4.4.6">
+<h3><span class="header-section-number">4.4.6</span> Returning functions<a href="programming-for-data-analysis.html#returning-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When a function provides an output, such as this, it is known as <strong>returning</strong>. Not all functions will return an output to your screen, so often we require a <code>print()</code> statement or another type of returning function to check whether the function was successful or not. More on this later.</p>
 </div>
-<div id="examining-our-variables-using-functions" class="section level3 hasAnchor" number="3.4.7">
-<h3><span class="header-section-number">3.4.7</span> Examining our variables using functions<a href="programming-for-data-analysis.html#examining-our-variables-using-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="examining-our-variables-using-functions" class="section level3 hasAnchor" number="4.4.7">
+<h3><span class="header-section-number">4.4.7</span> Examining our variables using functions<a href="programming-for-data-analysis.html#examining-our-variables-using-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Within the base R language, there are various functions that have been written to help us examine and find out information about our variables. For example, we can use the <code>typeof()</code> function to check what data type our variable is.</p>
 <p>Type in <code>typeof(str_variable)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="programming-for-data-analysis.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the typeof() function on str_variable to return the data type of our variable</span></span>
-<span id="cb18-2"><a href="programming-for-data-analysis.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(str_variable)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="programming-for-data-analysis.html#cb20-1" aria-hidden="true"></a><span class="co"># call the typeof() function on str_variable to return the data type of our variable</span></span>
+<span id="cb20-2"><a href="programming-for-data-analysis.html#cb20-2" aria-hidden="true"></a><span class="kw">typeof</span>(str_variable)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>You should see the answer: <em>character</em>. As evident, our <code>str_variable</code> is a character data type. We can try testing this out on one of our earlier variables too.</p>
 <p>Type in <code>typeof(ten)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="programming-for-data-analysis.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the typeof() function on ten variable to return the data type of our variable</span></span>
-<span id="cb20-2"><a href="programming-for-data-analysis.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(ten)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="programming-for-data-analysis.html#cb22-1" aria-hidden="true"></a><span class="co"># call the typeof() function on ten variable to return the data type of our variable</span></span>
+<span id="cb22-2"><a href="programming-for-data-analysis.html#cb22-2" aria-hidden="true"></a><span class="kw">typeof</span>(ten)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <p>You should see the answer: <em>double</em>. As evident, our <code>ten</code> is a double data type.</p>
 <p>For high-level objects that involve (more complicated) data structures, such as when we load a <code>csv</code> into R as a <strong>data frame</strong>, we are also able to check what <strong>class</strong> our object is:</p>
 <p>Type in <code>class(str_variable)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="programming-for-data-analysis.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the class() function on str_variable to return the class of our object</span></span>
-<span id="cb22-2"><a href="programming-for-data-analysis.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(str_variable)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="programming-for-data-analysis.html#cb24-1" aria-hidden="true"></a><span class="co"># call the class() function on str_variable to return the class of our object</span></span>
+<span id="cb24-2"><a href="programming-for-data-analysis.html#cb24-2" aria-hidden="true"></a><span class="kw">class</span>(str_variable)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>In this case, you will get the same answer because in R both its class and type are the same: a <em>character.</em> In other programming languages, you might have had <em>string</em> returned instead, but this effectively means the same thing.</p>
 <p>Type in <code>class(ten)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="programming-for-data-analysis.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the class() function on ten to return the class of our object</span></span>
-<span id="cb24-2"><a href="programming-for-data-analysis.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ten)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="programming-for-data-analysis.html#cb26-1" aria-hidden="true"></a><span class="co"># call the class() function on ten to return the class of our object</span></span>
+<span id="cb26-2"><a href="programming-for-data-analysis.html#cb26-2" aria-hidden="true"></a><span class="kw">class</span>(ten)</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <p>In this case, you will get a different answer because the class of this variable is numeric. This is because the class of numeric objects can contain either doubles (decimals) or integers (whole numbers). We can test this by asking whether our <code>ten</code> variable is an integer or not.</p>
 <p>Type in <code>is.integer(ten)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="programming-for-data-analysis.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test our ten variable by asking if it is an integer</span></span>
-<span id="cb26-2"><a href="programming-for-data-analysis.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>(ten)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="programming-for-data-analysis.html#cb28-1" aria-hidden="true"></a><span class="co"># test our ten variable by asking if it is an integer</span></span>
+<span id="cb28-2"><a href="programming-for-data-analysis.html#cb28-2" aria-hidden="true"></a><span class="kw">is.integer</span>(ten)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>You should see we get the answer <code>FALSE</code>: as we know from our earlier <code>typeof()</code> function our variable ten is stored as a double and therefore cannot be an integer.</p>
 <div class="note">
@@ -447,34 +468,34 @@ Whilst knowing how to distinguish between different data types might not seem im
 </div>
 <p>We can also ask how long our variable is. in this case, we will find out how many different sets of characters (strings) are stored in our variable, <code>str_variable</code>.</p>
 <p>Type in <code>length(str_variable)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="programming-for-data-analysis.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the length() function on str_variable to return the length of our variable</span></span>
-<span id="cb28-2"><a href="programming-for-data-analysis.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(str_variable)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="programming-for-data-analysis.html#cb30-1" aria-hidden="true"></a><span class="co"># call the length() function on str_variable to return the length of our variable</span></span>
+<span id="cb30-2"><a href="programming-for-data-analysis.html#cb30-2" aria-hidden="true"></a><span class="kw">length</span>(str_variable)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>You should get the answer <code>1</code> because we only have one <em>set</em> of characters. We can also ask how long each set of characters is within our variable, i.e. ask how long the string contained by our variable is.</p>
 <p>Type in <code>nchar(str_variable)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="programming-for-data-analysis.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the nchar() function on str_variable to return the length of each of our elements within our variable</span></span>
-<span id="cb30-2"><a href="programming-for-data-analysis.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(str_variable)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="programming-for-data-analysis.html#cb32-1" aria-hidden="true"></a><span class="co"># call the nchar() function on str_variable to return the length of each of our elements within our variable</span></span>
+<span id="cb32-2"><a href="programming-for-data-analysis.html#cb32-2" aria-hidden="true"></a><span class="kw">nchar</span>(str_variable)</span></code></pre></div>
 <pre><code>## [1] 31</code></pre>
 <p>You should get an answer of <code>31</code>.</p>
 </div>
-<div id="creating-a-two-element-object" class="section level3 hasAnchor" number="3.4.8">
-<h3><span class="header-section-number">3.4.8</span> Creating a two-element object<a href="programming-for-data-analysis.html#creating-a-two-element-object" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="creating-a-two-element-object" class="section level3 hasAnchor" number="4.4.8">
+<h3><span class="header-section-number">4.4.8</span> Creating a two-element object<a href="programming-for-data-analysis.html#creating-a-two-element-object" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let us go ahead and test these two ‘length’ functions a little further by creating a new variable to store two string sets within our object, i.e. our variable will hold two elements.</p>
 <p>Type in <code>two_str_variable &lt;- c("This is our second variable", "It has two parts to it")</code> into the console and execute.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="programming-for-data-analysis.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># store a new variable with two items using the c() function</span></span>
-<span id="cb32-2"><a href="programming-for-data-analysis.html#cb32-2" aria-hidden="true" tabindex="-1"></a>two_str_variable <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;This is our second string variable&quot;</span>, <span class="st">&quot;It has two parts to it&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="programming-for-data-analysis.html#cb34-1" aria-hidden="true"></a><span class="co"># store a new variable with two items using the c() function</span></span>
+<span id="cb34-2"><a href="programming-for-data-analysis.html#cb34-2" aria-hidden="true"></a>two_str_variable &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;This is our second string variable&quot;</span>, <span class="st">&quot;It has two parts to it&quot;</span>)</span></code></pre></div>
 <p>In this piece of code, we have created a new variable using the <code>c()</code> function in R, that stands for <em>combine values into a vector or list</em>. We have provided that function with two sets of strings, using a <em>comma</em> to separate our two strings - all contained within the function’s brackets (<code>()</code>). You should now see a new variable in your environment window which tells us it is a) chr: characters, b) contains two items, and c) lists those items.</p>
 <p>Let us now try both our <code>length()</code> and <code>nchar()</code> on our new variable and see what the results are.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="programming-for-data-analysis.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the length() function </span></span>
-<span id="cb33-2"><a href="programming-for-data-analysis.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(two_str_variable)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="programming-for-data-analysis.html#cb35-1" aria-hidden="true"></a><span class="co"># call the length() function </span></span>
+<span id="cb35-2"><a href="programming-for-data-analysis.html#cb35-2" aria-hidden="true"></a><span class="kw">length</span>(two_str_variable)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="programming-for-data-analysis.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the nchar() function</span></span>
-<span id="cb35-2"><a href="programming-for-data-analysis.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(two_str_variable)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="programming-for-data-analysis.html#cb37-1" aria-hidden="true"></a><span class="co"># call the nchar() function</span></span>
+<span id="cb37-2"><a href="programming-for-data-analysis.html#cb37-2" aria-hidden="true"></a><span class="kw">nchar</span>(two_str_variable)</span></code></pre></div>
 <pre><code>## [1] 34 22</code></pre>
 <p>You should notice that the <code>length()</code> function now returned a <strong>2</strong> and the <code>nchar()</code> function returned two values of <strong>34 and 22</strong>.</p>
 <p>There is one final function that we often want to use with our variables when we are first exploring them, which is <code>attributes()</code>. Because our current variables are very simple, they do not have any attributes but it is a really useful function, which we will come across later on.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="programming-for-data-analysis.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the attributes() function </span></span>
-<span id="cb37-2"><a href="programming-for-data-analysis.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(two_str_variable)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="programming-for-data-analysis.html#cb39-1" aria-hidden="true"></a><span class="co"># call the attributes() function </span></span>
+<span id="cb39-2"><a href="programming-for-data-analysis.html#cb39-2" aria-hidden="true"></a><span class="kw">attributes</span>(two_str_variable)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <div class="note">
 <p><strong>Note</strong><br>
@@ -482,8 +503,8 @@ In addition to make notes about the functions you are coming across in the works
 </div>
 </div>
 </div>
-<div id="simple-analysis" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Simple analysis<a href="programming-for-data-analysis.html#simple-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="simple-analysis" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Simple analysis<a href="programming-for-data-analysis.html#simple-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The objects we created and played with above are very simple but the real power of R comes when we can begin to execute functions on more complex objects. R accepts four main types of data structures: <strong>vectors</strong>, <strong>matrices</strong>, <strong>data frames</strong>, and <strong>lists</strong>. These data structures are essential because they allow us to apply common statistical functions.
 We are going to explore these data structures with some of dummy data on the total number of pages and publication dates of the various editions of <strong>Geographic Information Systems and Science</strong> (GISS) book by Longley <em>et al.</em> and use these for a brief analysis:</p>
 <table>
@@ -517,57 +538,57 @@ We are going to explore these data structures with some of dummy data on the tot
 </tr>
 </tbody>
 </table>
-<div id="housekeeping" class="section level3 hasAnchor" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Housekeeping<a href="programming-for-data-analysis.html#housekeeping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="housekeeping" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Housekeeping<a href="programming-for-data-analysis.html#housekeeping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>First, let us clear up our workspace and remove our current variables. Type <code>rm(ten, twelve, output, str_variable, two_str_variable)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="programming-for-data-analysis.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clear our workspace</span></span>
-<span id="cb39-2"><a href="programming-for-data-analysis.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(ten, twelve, output, str_variable, two_str_variable)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="programming-for-data-analysis.html#cb41-1" aria-hidden="true"></a><span class="co"># clear our workspace</span></span>
+<span id="cb41-2"><a href="programming-for-data-analysis.html#cb41-2" aria-hidden="true"></a><span class="kw">rm</span>(ten, twelve, output, str_variable, two_str_variable)</span></code></pre></div>
 <p>You should now see we no longer have any variables in our window. We just used the <code>rm()</code> function to remove these variables from our environment and free up some RAM. Keeping a clear workspace is another recommendation of good practice moving forward. Of course, we do not want to get rid of any variables we might need to use later but removing any variables we no longer need (such as test variables) will help you understand and manage your code and your working environment.</p>
 </div>
-<div id="atomic-vectors" class="section level3 hasAnchor" number="3.5.2">
-<h3><span class="header-section-number">3.5.2</span> Atomic vectors<a href="programming-for-data-analysis.html#atomic-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="atomic-vectors" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Atomic vectors<a href="programming-for-data-analysis.html#atomic-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The first complex data object we will create is a vector. A vector is the most common and basic data structure in R. Vectors are a collection of elements that are mostly of either character, logical integer or numeric data types. Technically, vectors can be one of two types:</p>
 <ul>
 <li><strong>Atomic vectors</strong> (all elements are of the same data type)</li>
 <li><strong>Lists</strong> (elements can be of different data types)</li>
 </ul>
 <p>Although in practice the term “vector” most commonly refers to the atomic types and not to lists. Let us create our first official “complex” vector, detailing the different total page numbers for GISS. Type <code>giss_page_no &lt;- c(454, 517, 560, 477)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="programming-for-data-analysis.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># store our total number of pages, in chronological order, as a variable</span></span>
-<span id="cb40-2"><a href="programming-for-data-analysis.html#cb40-2" aria-hidden="true" tabindex="-1"></a>giss_page_no <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">454</span>, <span class="dv">517</span>, <span class="dv">560</span>, <span class="dv">477</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="programming-for-data-analysis.html#cb42-1" aria-hidden="true"></a><span class="co"># store our total number of pages, in chronological order, as a variable</span></span>
+<span id="cb42-2"><a href="programming-for-data-analysis.html#cb42-2" aria-hidden="true"></a>giss_page_no &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">454</span>, <span class="dv">517</span>, <span class="dv">560</span>, <span class="dv">477</span>)</span></code></pre></div>
 <p>Type <code>print(giss_page_no)</code> into the console and execute to check the results.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="programming-for-data-analysis.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print our giss_page_no variable</span></span>
-<span id="cb41-2"><a href="programming-for-data-analysis.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(giss_page_no)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="programming-for-data-analysis.html#cb43-1" aria-hidden="true"></a><span class="co"># print our giss_page_no variable</span></span>
+<span id="cb43-2"><a href="programming-for-data-analysis.html#cb43-2" aria-hidden="true"></a><span class="kw">print</span>(giss_page_no)</span></code></pre></div>
 <pre><code>## [1] 454 517 560 477</code></pre>
 <p>We can see we have our total number of pages collected together in a single vector. We could if we want, execute some statistical functions on our vector object.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="programming-for-data-analysis.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the arithmetic mean on our variable</span></span>
-<span id="cb43-2"><a href="programming-for-data-analysis.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(giss_page_no)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="programming-for-data-analysis.html#cb45-1" aria-hidden="true"></a><span class="co"># calculate the arithmetic mean on our variable</span></span>
+<span id="cb45-2"><a href="programming-for-data-analysis.html#cb45-2" aria-hidden="true"></a><span class="kw">mean</span>(giss_page_no)</span></code></pre></div>
 <pre><code>## [1] 502</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="programming-for-data-analysis.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the median on our variable</span></span>
-<span id="cb45-2"><a href="programming-for-data-analysis.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(giss_page_no)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="programming-for-data-analysis.html#cb47-1" aria-hidden="true"></a><span class="co"># calculate the median on our variable</span></span>
+<span id="cb47-2"><a href="programming-for-data-analysis.html#cb47-2" aria-hidden="true"></a><span class="kw">median</span>(giss_page_no)</span></code></pre></div>
 <pre><code>## [1] 497</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="programming-for-data-analysis.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the range numbers of our variable</span></span>
-<span id="cb47-2"><a href="programming-for-data-analysis.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(giss_page_no)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="programming-for-data-analysis.html#cb49-1" aria-hidden="true"></a><span class="co"># calculate the range numbers of our variable</span></span>
+<span id="cb49-2"><a href="programming-for-data-analysis.html#cb49-2" aria-hidden="true"></a><span class="kw">range</span>(giss_page_no)</span></code></pre></div>
 <pre><code>## [1] 454 560</code></pre>
 <p>We have now completed our first set of descriptive statistics in R. Let us see how we can build on our vector object by adding in a second vector object that details the relevant years of our book. Note that the total number of pages are entered in a specific order to correspond to these publishing dates (i.e. chronological) and therefore we will need to enter the publication year in the same order.</p>
 <p>Type <code>giss_year &lt;- c(2001, 2005, 2011, 2015)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="programming-for-data-analysis.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># store our publication years, in chronological order, as a variable</span></span>
-<span id="cb49-2"><a href="programming-for-data-analysis.html#cb49-2" aria-hidden="true" tabindex="-1"></a>giss_year <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2001</span>, <span class="dv">2005</span>, <span class="dv">2011</span>, <span class="dv">2015</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="programming-for-data-analysis.html#cb51-1" aria-hidden="true"></a><span class="co"># store our publication years, in chronological order, as a variable</span></span>
+<span id="cb51-2"><a href="programming-for-data-analysis.html#cb51-2" aria-hidden="true"></a>giss_year &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2001</span>, <span class="dv">2005</span>, <span class="dv">2011</span>, <span class="dv">2015</span>)</span></code></pre></div>
 <p>Type <code>print(giss_year)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="programming-for-data-analysis.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print our giss_year variable</span></span>
-<span id="cb50-2"><a href="programming-for-data-analysis.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(giss_year)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="programming-for-data-analysis.html#cb52-1" aria-hidden="true"></a><span class="co"># print our giss_year variable</span></span>
+<span id="cb52-2"><a href="programming-for-data-analysis.html#cb52-2" aria-hidden="true"></a><span class="kw">print</span>(giss_year)</span></code></pre></div>
 <pre><code>## [1] 2001 2005 2011 2015</code></pre>
 <p>Of course, on their own, the two vectors do not mean much but we can use the same <code>c()</code> function that we used earlier to combine the two together to create a matrix.</p>
 </div>
-<div id="matrices" class="section level3 hasAnchor" number="3.5.3">
-<h3><span class="header-section-number">3.5.3</span> Matrices<a href="programming-for-data-analysis.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="matrices" class="section level3 hasAnchor" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> Matrices<a href="programming-for-data-analysis.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In R, a matrix is simply an extension of the numeric or character vectors. They are not a separate type of object per se but simply a vector that has two dimensions. That is they contain both <strong>rows</strong> and <strong>columns</strong>. As with atomic vectors, the elements of a matrix must be of the <strong>same data type</strong>. As both our page numbers and our years are numeric, we can add them together to create a matrix using the <code>matrix()</code> function.</p>
 <p>Type <code>giss_year_nos &lt;- matrix(c(giss_year, giss_page_no), ncol=2)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="programming-for-data-analysis.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new matrix from our two vectors with two columns</span></span>
-<span id="cb52-2"><a href="programming-for-data-analysis.html#cb52-2" aria-hidden="true" tabindex="-1"></a>giss_year_nos <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(giss_year, giss_page_no), <span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb52-3"><a href="programming-for-data-analysis.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="co"># note the inclusion of a new argument to our matrix: ncol=2</span></span>
-<span id="cb52-4"><a href="programming-for-data-analysis.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># this stands for &quot;number of columns&quot; and we want two</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="programming-for-data-analysis.html#cb54-1" aria-hidden="true"></a><span class="co"># create a new matrix from our two vectors with two columns</span></span>
+<span id="cb54-2"><a href="programming-for-data-analysis.html#cb54-2" aria-hidden="true"></a>giss_year_nos &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(giss_year, giss_page_no), <span class="dt">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb54-3"><a href="programming-for-data-analysis.html#cb54-3" aria-hidden="true"></a><span class="co"># note the inclusion of a new argument to our matrix: ncol=2</span></span>
+<span id="cb54-4"><a href="programming-for-data-analysis.html#cb54-4" aria-hidden="true"></a><span class="co"># this stands for &quot;number of columns&quot; and we want two</span></span></code></pre></div>
 <p>Type <code>print(giss_year_nos)</code> into the console and execute to check the result.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="programming-for-data-analysis.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(giss_year_nos)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="programming-for-data-analysis.html#cb55-1" aria-hidden="true"></a><span class="kw">print</span>(giss_year_nos)</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,] 2001  454
 ## [2,] 2005  517
@@ -579,15 +600,15 @@ We are going to explore these data structures with some of dummy data on the tot
 The function we just used above, <code>matrix()</code>, was the first function that we used that took more than one argument.
 In this case, the arguments the matrix needed to run were:</p>
 <ol style="list-style-type: decimal">
-<li>What data or data set should be stored in the matrix.</li>
+<li>What data or dataset should be stored in the matrix.</li>
 <li>How many columns (<code>ncol=</code>) do we need to store our data in.</li>
 </ol>
 <p>For any function, there will be <strong>mandatory</strong> arguments (i.e. it will not run without these) or <strong>optional</strong> arguments (i.e. it will run without these, as the default to this argument has been set usually to <code>FALSE</code>, <code>0</code> or <code>NULL</code>). These are normally documented in the documentation, including details on the format the function expects these arguments to be in.</p>
 <p>Understanding how to find out what object and data type a variable is essential therefore to knowing whether it can be used within a function or whether we will need to transform our variable into a different data structure to be used for that specific function.</p>
 </div>
 </div>
-<div id="dataframes" class="section level3 hasAnchor" number="3.5.4">
-<h3><span class="header-section-number">3.5.4</span> Dataframes<a href="programming-for-data-analysis.html#dataframes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="dataframes" class="section level3 hasAnchor" number="4.5.4">
+<h3><span class="header-section-number">4.5.4</span> Dataframes<a href="programming-for-data-analysis.html#dataframes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A data frame is an extremely important data type in R. It is pretty much the <strong>de-facto</strong> data structure for most tabular data and the data structure we use for statistics. It also is the underlying structure to the table data (what we would call the <strong>attribute table</strong> in Q-GIS) that we associate with spatial data, more on this next week.</p>
 <p>A data frame is a special type of list where every element of the list will have the same length (i.e. data frame is a “rectangular” list), Essentially, a data frame is constructed from columns (which represent a list) and rows (which represents a corresponding element on each list). Each column will have the same amount of entries - even if, for that row, for example, the entry is simply <code>NULL</code>.</p>
 <p>Data frames can have additional attributes such as <code>rownames()</code>, which can be useful for annotating data, like <code>subject_id</code> or <code>sample_id</code> or <code>UID</code>. In statistics, they are often not used but in spatial analysis, these IDs can be essential to join data together. Some additional information on data frames:</p>
@@ -599,52 +620,52 @@ In this case, the arguments the matrix needed to run were:</p>
 </ul>
 <p>Let us go ahead and create a new data frame from our matrix.</p>
 <p>Type <code>giss_df &lt;- data.frame(giss_year_nos)</code> into the console and execute.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="programming-for-data-analysis.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new dataframe from our matrix</span></span>
-<span id="cb55-2"><a href="programming-for-data-analysis.html#cb55-2" aria-hidden="true" tabindex="-1"></a>giss_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(giss_year_nos)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="programming-for-data-analysis.html#cb57-1" aria-hidden="true"></a><span class="co"># create a new dataframe from our matrix</span></span>
+<span id="cb57-2"><a href="programming-for-data-analysis.html#cb57-2" aria-hidden="true"></a>giss_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(giss_year_nos)</span></code></pre></div>
 <p>We now have a data frame, we can use the <code>View()</code> function in R. Still in your <strong>console</strong>, type: <code>View(giss_df)</code></p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="programming-for-data-analysis.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># view our data frame</span></span>
-<span id="cb56-2"><a href="programming-for-data-analysis.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(giss_df)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="programming-for-data-analysis.html#cb58-1" aria-hidden="true"></a><span class="co"># view our data frame</span></span>
+<span id="cb58-2"><a href="programming-for-data-analysis.html#cb58-2" aria-hidden="true"></a><span class="kw">View</span>(giss_df)</span></code></pre></div>
 <p>You should now see a table pop-up as a new tab on your script window. It is now starting to look like the table we are trying to create, but we need to do something about the fieldnames. <strong>X1</strong> and <strong>X2</strong> are not very informative.</p>
 </div>
-<div id="column-names" class="section level3 hasAnchor" number="3.5.5">
-<h3><span class="header-section-number">3.5.5</span> Column names<a href="programming-for-data-analysis.html#column-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="column-names" class="section level3 hasAnchor" number="4.5.5">
+<h3><span class="header-section-number">4.5.5</span> Column names<a href="programming-for-data-analysis.html#column-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can rename our data frame column field names by using the <code>names()</code> function. Before we do this, have a read of what the <code>names()</code> function does. Still in your <strong>console</strong>, type: <code>?names</code></p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="programming-for-data-analysis.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the help documentation for the names function</span></span>
-<span id="cb57-2"><a href="programming-for-data-analysis.html#cb57-2" aria-hidden="true" tabindex="-1"></a>?names</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="programming-for-data-analysis.html#cb59-1" aria-hidden="true"></a><span class="co"># get the help documentation for the names function</span></span>
+<span id="cb59-2"><a href="programming-for-data-analysis.html#cb59-2" aria-hidden="true"></a>?names</span></code></pre></div>
 <p>As you can see, the function will get or set the names of an object, with renaming occurring by using the following syntax: <code>names(x) &lt;- value</code></p>
 <p>The value itself needs to be <em>a character vector of up to the same length as x, or NULL.</em> We have two columns in our data frame, so we need to parse our <code>names()</code> function with a character vector with <strong>two elements</strong>. In the console, we shall enter two lines of code, one after another. First our character vector with our new names, <code>new_names &lt;- c("year", "page_nos")</code>, and then the <code>names()</code> function containing this vector for renaming, <code>names(giss_df) &lt;- new_names</code>:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="programming-for-data-analysis.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a vector with our new column names</span></span>
-<span id="cb58-2"><a href="programming-for-data-analysis.html#cb58-2" aria-hidden="true" tabindex="-1"></a>new_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;page_nos&quot;</span>)</span>
-<span id="cb58-3"><a href="programming-for-data-analysis.html#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-4"><a href="programming-for-data-analysis.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co"># rename our columns with our next names</span></span>
-<span id="cb58-5"><a href="programming-for-data-analysis.html#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(giss_df) <span class="ot">&lt;-</span> new_names</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="programming-for-data-analysis.html#cb60-1" aria-hidden="true"></a><span class="co"># create a vector with our new column names</span></span>
+<span id="cb60-2"><a href="programming-for-data-analysis.html#cb60-2" aria-hidden="true"></a>new_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;page_nos&quot;</span>)</span>
+<span id="cb60-3"><a href="programming-for-data-analysis.html#cb60-3" aria-hidden="true"></a></span>
+<span id="cb60-4"><a href="programming-for-data-analysis.html#cb60-4" aria-hidden="true"></a><span class="co"># rename our columns with our next names</span></span>
+<span id="cb60-5"><a href="programming-for-data-analysis.html#cb60-5" aria-hidden="true"></a><span class="kw">names</span>(giss_df) &lt;-<span class="st"> </span>new_names</span></code></pre></div>
 <p>You can go and check your data frame again and see the new names using either <code>View()</code> function or by clicking on the tab at the top.</p>
 </div>
-<div id="adding-columns" class="section level3 hasAnchor" number="3.5.6">
-<h3><span class="header-section-number">3.5.6</span> Adding columns<a href="programming-for-data-analysis.html#adding-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="adding-columns" class="section level3 hasAnchor" number="4.5.6">
+<h3><span class="header-section-number">4.5.6</span> Adding columns<a href="programming-for-data-analysis.html#adding-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We are still missing one final column from our data frame: our <strong>edition</strong> of the textbook column. As this is a <code>character</code> data type, we would not have been able to add this directly to our matrix. This is because data frames can take different data types, unlike matrices - so let us go ahead and add the <strong>edition</strong> as a new column.</p>
 <p>To do so, we follow a similar process of creating a vector with our editions listed in chronological order, but then add this to our data frame by storing this vector as a new column in our data frame. We use the <code>$</code> sign with our code that gives us “access” to the data frame’s column - we then specify the column <code>edition</code>, which whilst it does not exist at the moment, will be created from our code that assigns our edition variable to this column.</p>
 <p>Type and execute <code>edition &lt;- c("1st", "2nd", "3rd", "4th")</code>. Then store this vector as a new column in our data frame under the column name <strong>edition</strong> by typing and executing <code>giss_df$edition &lt;- edition</code>:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="programming-for-data-analysis.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a vector with our editions</span></span>
-<span id="cb59-2"><a href="programming-for-data-analysis.html#cb59-2" aria-hidden="true" tabindex="-1"></a>edition <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1st&quot;</span>, <span class="st">&quot;2nd&quot;</span>, <span class="st">&quot;3rd&quot;</span>, <span class="st">&quot;4th&quot;</span>)</span>
-<span id="cb59-3"><a href="programming-for-data-analysis.html#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-4"><a href="programming-for-data-analysis.html#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add this vector as a new column to our data frame</span></span>
-<span id="cb59-5"><a href="programming-for-data-analysis.html#cb59-5" aria-hidden="true" tabindex="-1"></a>giss_df<span class="sc">$</span>edition <span class="ot">&lt;-</span> edition</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="programming-for-data-analysis.html#cb61-1" aria-hidden="true"></a><span class="co"># create a vector with our editions</span></span>
+<span id="cb61-2"><a href="programming-for-data-analysis.html#cb61-2" aria-hidden="true"></a>edition &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;1st&quot;</span>, <span class="st">&quot;2nd&quot;</span>, <span class="st">&quot;3rd&quot;</span>, <span class="st">&quot;4th&quot;</span>)</span>
+<span id="cb61-3"><a href="programming-for-data-analysis.html#cb61-3" aria-hidden="true"></a></span>
+<span id="cb61-4"><a href="programming-for-data-analysis.html#cb61-4" aria-hidden="true"></a><span class="co"># add this vector as a new column to our data frame</span></span>
+<span id="cb61-5"><a href="programming-for-data-analysis.html#cb61-5" aria-hidden="true"></a>giss_df<span class="op">$</span>edition &lt;-<span class="st"> </span>edition</span></code></pre></div>
 <p>Again, you can go and check your data frame and see the new column using either <code>View()</code> function or by clicking on the tab at the top or by typing <code>giss_df</code> in your console window.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="programming-for-data-analysis.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb60-2"><a href="programming-for-data-analysis.html#cb60-2" aria-hidden="true" tabindex="-1"></a>giss_df</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="programming-for-data-analysis.html#cb62-1" aria-hidden="true"></a><span class="co"># inspect</span></span>
+<span id="cb62-2"><a href="programming-for-data-analysis.html#cb62-2" aria-hidden="true"></a>giss_df</span></code></pre></div>
 <pre><code>##   year page_nos edition
 ## 1 2001      454     1st
 ## 2 2005      517     2nd
 ## 3 2011      560     3rd
 ## 4 2015      477     4th</code></pre>
 <p>Now we have our data frame, let us find out a little about it. We can first return the dimensions (the size) of our data frame by using the <code>dim()</code> function. In your <strong>console</strong>, type <code>dim(giss_df)</code> and execute.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="programming-for-data-analysis.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check our data frame dimensions</span></span>
-<span id="cb62-2"><a href="programming-for-data-analysis.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(giss_df)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="programming-for-data-analysis.html#cb64-1" aria-hidden="true"></a><span class="co"># check our data frame dimensions</span></span>
+<span id="cb64-2"><a href="programming-for-data-analysis.html#cb64-2" aria-hidden="true"></a><span class="kw">dim</span>(giss_df)</span></code></pre></div>
 <pre><code>## [1] 4 3</code></pre>
 <p>We can see we have <strong>four rows</strong> and <strong>three columns</strong>. We can also finally use our <code>attributes()</code> function to get the attributes of our data frame. In your <strong>console</strong>, type <code>attributes(giss_df)</code> and execute:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="programming-for-data-analysis.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check our data frame attributes</span></span>
-<span id="cb64-2"><a href="programming-for-data-analysis.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(giss_df)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="programming-for-data-analysis.html#cb66-1" aria-hidden="true"></a><span class="co"># check our data frame attributes</span></span>
+<span id="cb66-2"><a href="programming-for-data-analysis.html#cb66-2" aria-hidden="true"></a><span class="kw">attributes</span>(giss_df)</span></code></pre></div>
 <pre><code>## $names
 ## [1] &quot;year&quot;     &quot;page_nos&quot; &quot;edition&quot; 
 ## 
@@ -653,7 +674,7 @@ In this case, the arguments the matrix needed to run were:</p>
 ## 
 ## $class
 ## [1] &quot;data.frame&quot;</code></pre>
-<div class="note">
+<div class="tip">
 <p><strong>Tips</strong> <br/></p>
 <ul>
 <li>R is case-sensitive so you need to make sure that you capitalise everything correctly if required.</li>
@@ -664,17 +685,12 @@ In this case, the arguments the matrix needed to run were:</p>
 </div>
 </div>
 </div>
-<div id="crime-in-london-ii" class="section level2 hasAnchor" number="3.6">
-<h2><span class="header-section-number">3.6</span> Crime in London II<a href="programming-for-data-analysis.html#crime-in-london-ii" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="crime-in-london-ii" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Crime in London II<a href="programming-for-data-analysis.html#crime-in-london-ii" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>During <a href="#geocomputation-an-introduction.html#r-package-installation">Week 1’s computer tutorial</a>, we already installed several R libraries. One of these libraries was called the <code>tidyverse</code>. The <code>tidyverse</code> is a collection of packages that are specifically designed for data wrangling, management, cleaning, analysis and visualisation within RStudio. Whilst in many cases different packages work all slightly differently, all packages of the <code>tidyverse</code> share the underlying design philosophy, grammar, and data structures.</p>
 <p>The tidyverse itself is treated and loaded as a single package, but this means if you load the <code>tidyverse</code> package within your script (through <code>library(tidyverse)</code>), you will directly have access to all the functions that are part of each of the packages that are within the overall <code>tidyverse.</code> This means you do not have to load each package separately. For more information have a look at <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>.</p>
 <p>There are some specific functions in the <code>tidyverse</code> suite of packages that will help us cleaning and preparing our datasets now and in the future, which is one of the main reasons for using this library. Some of the most important and useful functions, from the <code>tidyr</code> and <code>dplyr</code> packages, are:</p>
 <table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Package</th>
@@ -716,7 +732,7 @@ In this case, the arguments the matrix needed to run were:</p>
 <tr class="odd">
 <td align="left">tidyr</td>
 <td align="left">pivot_wider</td>
-<td align="left">convert long format data set to wide format</td>
+<td align="left">convert long format dataset to wide format</td>
 </tr>
 </tbody>
 </table>
@@ -725,8 +741,8 @@ In this case, the arguments the matrix needed to run were:</p>
 <p><strong>Note</strong> <br />
 The code you just ran asked <strong>R</strong> to load all functions of the <code>tidyverse</code>. However: these functions are only available for the duration of your R sessions. When you restart your R session, you will have to load these functions again if you want to use them. Another thing to be aware of when it comes to using functions in these additional libraries, is that sometimes these functions share a name with a function form one of the <code>base</code> <strong>R</strong> packages. For instance, there exists a <code>select()</code> function within in the <code>stats</code> package that conducts linear filtering on a time series. However, after we load the <code>tidyverse</code> package and we would type <code>select()</code> this function will select columns from a data frame. We therefore sometimes need to specify which library we want to use this function from, and this can be done with a simple command (<code>library::function</code>) in our code: <code>stats::select</code> to filter that time series and <code>dplyr::select</code> to select columns in a dataframe</p>
 </div>
-<div id="starting-a-project" class="section level3 hasAnchor" number="3.6.1">
-<h3><span class="header-section-number">3.6.1</span> Starting a project<a href="programming-for-data-analysis.html#starting-a-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="starting-a-project" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Starting a project<a href="programming-for-data-analysis.html#starting-a-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the previous section, R may have seemed fairly labour-intensive. We had to enter all our data manually and each line of code had to be written into the command line. Fortunately this is not routinely the case. In RStudio, we can use <strong>scripts</strong> to build up our code that we can run repeatedly and save for future use. Before we start a new script, we first want to set up ourselves ready for the rest of our practicals by <strong>creating a new project</strong>.</p>
 <p>To put it succinctly, <strong>projects</strong> in RStudio keep all the files associated with a project together: input data, R scripts, analytical results, figures, etc.. This means we can easily keep track of all data, input and output, whilst still creating standalone scripts for each bit of processing analysis we do. It also makes dealing with <strong>directories</strong> and <strong>paths</strong> a whole lot easier; particularly if you <strong>have followed the folder structure that was advised at the start of the module</strong>.</p>
 <p>Click on <strong>File</strong> -&gt; <strong>New Project</strong> -&gt; <strong>Existing Directory</strong> and browse to your <strong>GEOG0030</strong> folder. Click on <strong>Create Project</strong>. You should now see your main window switch to this new project and if you check your <strong>Files</strong> window, you should now see a new <strong>R Project</strong> called <strong>GEOG0030</strong>.</p>
@@ -735,30 +751,30 @@ The code you just ran asked <strong>R</strong> to load all functions of the <cod
 Please ensure that <strong>folder names</strong> and <strong>file names</strong> do not contain spaces or special characters such as <code>*</code> <code>.</code> <code>"</code> <code>/</code> <code>\</code> <code>[</code> <code>]</code> <code>:</code> <code>;</code> <code>|</code> <code>=</code> <code>,</code> <code>&lt;</code> <code>?</code> <code>&gt;</code> <code>&amp;</code> <code>$</code> <code>#</code> <code>!</code> <code>'</code> <code>{</code> <code>}</code> <code>(</code> <code>)</code>. Different operating systems and programming languages deal differently with spaces and special characters and as such including these in your folder names and file names can cause many problems and unexpected errors. As an alternative to using white space you can use an underscore <code>_</code> if you like.</p>
 </div>
 </div>
-<div id="setting-up-a-script" class="section level3 hasAnchor" number="3.6.2">
-<h3><span class="header-section-number">3.6.2</span> Setting up a script<a href="programming-for-data-analysis.html#setting-up-a-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="setting-up-a-script" class="section level3 hasAnchor" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> Setting up a script<a href="programming-for-data-analysis.html#setting-up-a-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For the majority of our analysis work, we will type our code <strong>within a script</strong> and not the console. Let us create our first script. Click on <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>R Script</strong>. This should give you a blank document that looks a bit like the command line. The difference is that anything you type here can be saved as a script and re-run at a later date.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:04-rstudio-interface-script-open"></span>
 <img src="images/w04/new-script.png" alt="Creating a new script." width="90%" />
 <p class="caption">
-Figure 3.3: Creating a new script.
+Figure 4.3: Creating a new script.
 </p>
 </div>
 <p>Save your script as: <code>wk4-csv-processing.r</code>. Through our name, we know now that our script was created in Week 4 of Geocomputation and the code it will contain is something to do with <code>csv</code> processing. This will help us a lot in the future when we come to find code that we need for other projects.</p>
 <p>The <strong>first</strong> bit of code you will want to add to any script is to add a <strong>title</strong>. This title should give any reader a quick understanding of what your code achieves. When writing a script it is important to keep notes about what each step is doing. To do this, the hash (<code>#</code>) symbol is put before any code. This comments out that particular line so that R ignores it when the script is run.</p>
 <p>Let us go ahead and give our script a title - and maybe some additional information:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="programming-for-data-analysis.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combining Police Data csv&#39;s from 2020 into a single csv</span></span>
-<span id="cb66-2"><a href="programming-for-data-analysis.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Followed by analysis of data on monthly basis</span></span>
-<span id="cb66-3"><a href="programming-for-data-analysis.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: January 2023</span></span>
-<span id="cb66-4"><a href="programming-for-data-analysis.html#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Author: Justin </span></span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="programming-for-data-analysis.html#cb68-1" aria-hidden="true"></a><span class="co"># Combining Police Data csv&#39;s from 2020 into a single csv</span></span>
+<span id="cb68-2"><a href="programming-for-data-analysis.html#cb68-2" aria-hidden="true"></a><span class="co"># Followed by analysis of data on monthly basis</span></span>
+<span id="cb68-3"><a href="programming-for-data-analysis.html#cb68-3" aria-hidden="true"></a><span class="co"># Date: January 2023</span></span>
+<span id="cb68-4"><a href="programming-for-data-analysis.html#cb68-4" aria-hidden="true"></a><span class="co"># Author: Justin </span></span></code></pre></div>
 <p>Now we have our title, the <strong>second</strong> bit of code we want to include in our script is to load <strong>our libraries</strong> (i.e. the installed packages we want to use in our script):</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="programming-for-data-analysis.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries</span></span>
-<span id="cb67-2"><a href="programming-for-data-analysis.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="programming-for-data-analysis.html#cb69-1" aria-hidden="true"></a><span class="co"># libraries</span></span>
+<span id="cb69-2"><a href="programming-for-data-analysis.html#cb69-2" aria-hidden="true"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
 <p>By loading simply the <code>tidyverse</code> we gain access to several useful functions. However, when developing a script you will realise that you may need to load more libraries as you go along. When you do this, <strong>always add your library to the top of your script</strong>. If you ever share your script, it helps the person you are sharing with to recognise quickly if they need to install any additional packages prior to running the code It also means your libraries do not get lost in the multiple lines of code you are writing.</p>
 <p>We are now ready to run these first two lines of code. Remember to save your script.</p>
 </div>
-<div id="running-a-script" class="section level3 hasAnchor" number="3.6.3">
-<h3><span class="header-section-number">3.6.3</span> Running a script<a href="programming-for-data-analysis.html#running-a-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="running-a-script" class="section level3 hasAnchor" number="4.6.3">
+<h3><span class="header-section-number">4.6.3</span> Running a script<a href="programming-for-data-analysis.html#running-a-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are two main ways to run a script in RStudio: all at once or by line/chunk. It can be advantageous to pursue with the second option as you first start out to build your script as it allows you to test your code interactively.</p>
 <div id="to-run-line-by-line" class="section level4 unnumbered hasAnchor">
 <h4>To run line-by-line<a href="programming-for-data-analysis.html#to-run-line-by-line" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -787,9 +803,9 @@ Figure 3.3: Creating a new script.
 <p>If you are running a script that seems to be stuck (for whatever reason) or you notice some of your code is wrong, you will need to interrupt R. To do so, click on <strong>Session</strong> -&gt; <strong>Interrupt R</strong>. If this does not work, you may end up needing to <strong>Terminate R</strong> but this may lose any unsaved progress.</p>
 </div>
 </div>
-<div id="crime-data-2" class="section level3 hasAnchor" number="3.6.4">
-<h3><span class="header-section-number">3.6.4</span> Crime data<a href="programming-for-data-analysis.html#crime-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Where last week we provided you with a crime data set, this week you will download and prepare the data set yourself.</p>
+<div id="crime-data-2" class="section level3 hasAnchor" number="4.6.4">
+<h3><span class="header-section-number">4.6.4</span> Crime data<a href="programming-for-data-analysis.html#crime-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Where last week we provided you with a crime dataset, this week you will download and prepare the dataset yourself.</p>
 <ol style="list-style-type: decimal">
 <li>Start by navigating to <a href="https://data.police.uk/">data.police.uk</a>. And click on <strong>Downloads</strong>.</li>
 <li>Under the data range select <code>January 2020</code> to <code>December 2020</code>.</li>
@@ -798,43 +814,43 @@ Figure 3.3: Creating a new script.
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:04-download-crimes"></span>
 <img src="images/w04/download-crime.png" alt="Downloading our crime data." width="90%" />
 <p class="caption">
-Figure 3.4: Downloading our crime data.
+Figure 4.4: Downloading our crime data.
 </p>
 </div>
 <ol start="4" style="list-style-type: decimal">
-<li>It may take a few minutes for the download to be generated, so be patient. Once the <strong>Download now</strong> button appears, you can download the 2020 crime data set.</li>
+<li>It may take a few minutes for the download to be generated, so be patient. Once the <strong>Download now</strong> button appears, you can download the 2020 crime dataset.</li>
 <li>Once downloaded, unzip the file. You will notice that the zip file contains 12 individual folders, one for each month in 2020. Each folder contains two files: one containing the data for the <code>Metropolitan Police Service</code> and one for the <code>City of London Police</code>.</li>
 <li>Create a new folder named <code>all_crime</code> in your <code>data/raw/crime</code> directory and copy all 12 folders containing our data to this new folder.</li>
 </ol>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:04-organised-crime"></span>
 <img src="images/w04/organised-crime.png" alt="Your data folder should now look something like this." width="516" />
 <p class="caption">
-Figure 3.5: Your data folder should now look something like this.
+Figure 4.5: Your data folder should now look something like this.
 </p>
 </div>
-<div id="reading-data-into-r" class="section level4 hasAnchor" number="3.6.4.1">
-<h4><span class="header-section-number">3.6.4.1</span> Reading data into R<a href="programming-for-data-analysis.html#reading-data-into-r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="reading-data-into-r" class="section level4 hasAnchor" number="4.6.4.1">
+<h4><span class="header-section-number">4.6.4.1</span> Reading data into R<a href="programming-for-data-analysis.html#reading-data-into-r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We are now ready to get started with using the crime data <code>csv's</code> currently sat in our <code>all_crime</code> folder. To do so, we need to first figure out how to import the <code>csv</code> and understand the data structure it will be in after importing. To read in a <code>csv</code> into R requires the use of a very simple function from the <code>tidyverse</code> library: <code>read_csv()</code>.</p>
 <p>We can look at the help documentation to understand what we need to provide the function (or rather the optional arguments), but as we just want to load single <code>csv</code>, we will go ahead and just use the function with a simple parameter.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="programming-for-data-analysis.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in a single csv from our crime data</span></span>
-<span id="cb68-2"><a href="programming-for-data-analysis.html#cb68-2" aria-hidden="true" tabindex="-1"></a>crime_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/raw/crime/all_crime/2020-01/2020-01-metropolitan-street.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="programming-for-data-analysis.html#cb70-1" aria-hidden="true"></a><span class="co"># read in a single csv from our crime data</span></span>
+<span id="cb70-2"><a href="programming-for-data-analysis.html#cb70-2" aria-hidden="true"></a>crime_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/raw/crime/all_crime/2020-01/2020-01-metropolitan-street.csv&quot;</span>)</span></code></pre></div>
 <div class="note">
 <p><strong>Note</strong> <br />
 If using a Windows machine, you will need to substitute your forward-slashes (<code>/</code>) with two backslashes (<code>\\</code>) whenever you are dealing with file paths!</p>
 </div>
 <p>We can explore the <code>csv</code> we have just loaded as our new <code>crime_csv</code> variable and understand the class, attributes and dimensions of our variable.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="programming-for-data-analysis.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check class </span></span>
-<span id="cb69-2"><a href="programming-for-data-analysis.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(crime_csv)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="programming-for-data-analysis.html#cb71-1" aria-hidden="true"></a><span class="co"># check class </span></span>
+<span id="cb71-2"><a href="programming-for-data-analysis.html#cb71-2" aria-hidden="true"></a><span class="kw">class</span>(crime_csv)</span></code></pre></div>
 <pre><code>## [1] &quot;spec_tbl_df&quot; &quot;tbl_df&quot;      &quot;tbl&quot;         &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="programming-for-data-analysis.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check dimensions</span></span>
-<span id="cb71-2"><a href="programming-for-data-analysis.html#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(crime_csv)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="programming-for-data-analysis.html#cb73-1" aria-hidden="true"></a><span class="co"># check dimensions</span></span>
+<span id="cb73-2"><a href="programming-for-data-analysis.html#cb73-2" aria-hidden="true"></a><span class="kw">dim</span>(crime_csv)</span></code></pre></div>
 <pre><code>## [1] 90979    12</code></pre>
 <p>We have found out our variable is a data frame, containing <strong>90,979 rows and 12 columns</strong>. We however do not want just the single <code>csv</code> and instead what to combine all our <code>csv's</code> in our <code>all_crime</code> folder into a single data frame - so how do we do this?</p>
 <p>This will be the most complicated section of code you will come across today, and we will use some functions that you have not seen before. Copy the following code below into your script, then execute.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="programming-for-data-analysis.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in all files and append all rows to a single data frame</span></span>
-<span id="cb73-2"><a href="programming-for-data-analysis.html#cb73-2" aria-hidden="true" tabindex="-1"></a>all_crime_df <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;data/raw/crime/all_crime/&quot;</span>, <span class="at">full.names=</span><span class="cn">TRUE</span>, <span class="at">recursive=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb73-3"><a href="programming-for-data-analysis.html#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(read_csv) <span class="sc">%&gt;%</span></span>
-<span id="cb73-4"><a href="programming-for-data-analysis.html#cb73-4" aria-hidden="true" tabindex="-1"></a>  bind_rows</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="programming-for-data-analysis.html#cb75-1" aria-hidden="true"></a><span class="co"># read in all files and append all rows to a single data frame</span></span>
+<span id="cb75-2"><a href="programming-for-data-analysis.html#cb75-2" aria-hidden="true"></a>all_crime_df &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">path=</span><span class="st">&quot;data/raw/crime/all_crime/&quot;</span>, <span class="dt">full.names=</span><span class="ot">TRUE</span>, <span class="dt">recursive=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb75-3"><a href="programming-for-data-analysis.html#cb75-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">lapply</span>(read_csv) <span class="op">%&gt;%</span></span>
+<span id="cb75-4"><a href="programming-for-data-analysis.html#cb75-4" aria-hidden="true"></a><span class="st">  </span>bind_rows</span></code></pre></div>
 <p>This might take a little time to process (or might not), as we have a lot of data to get through. You should see a new data frame appear in your global environment called <code>all_crime_df</code>, for which we now have 1,187,847 observations!</p>
 <div class="note">
 <p><strong>Note</strong><br>
@@ -847,15 +863,15 @@ It is a little difficult to explain the code above without going into too much d
 <p>These three different actions are combined by using something called a pipe (<code>%&gt;%</code> or <code>|&gt;</code>), which we will explain in more detail in later weeks.</p>
 </div>
 </div>
-<div id="inspecting-data-in-r" class="section level4 hasAnchor" number="3.6.4.2">
-<h4><span class="header-section-number">3.6.4.2</span> Inspecting data in R<a href="programming-for-data-analysis.html#inspecting-data-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="inspecting-data-in-r" class="section level4 hasAnchor" number="4.6.4.2">
+<h4><span class="header-section-number">4.6.4.2</span> Inspecting data in R<a href="programming-for-data-analysis.html#inspecting-data-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We can now have a look at our large dataframe in more detail.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="programming-for-data-analysis.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># understand our all_crime_df cols, rows and print the first five rows</span></span>
-<span id="cb74-2"><a href="programming-for-data-analysis.html#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(all_crime_df)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="programming-for-data-analysis.html#cb76-1" aria-hidden="true"></a><span class="co"># understand our all_crime_df cols, rows and print the first five rows</span></span>
+<span id="cb76-2"><a href="programming-for-data-analysis.html#cb76-2" aria-hidden="true"></a><span class="kw">ncol</span>(all_crime_df)</span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="programming-for-data-analysis.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(all_crime_df)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="programming-for-data-analysis.html#cb78-1" aria-hidden="true"></a><span class="kw">nrow</span>(all_crime_df)</span></code></pre></div>
 <pre><code>## [1] 1187847</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="programming-for-data-analysis.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(all_crime_df)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="programming-for-data-analysis.html#cb80-1" aria-hidden="true"></a><span class="kw">head</span>(all_crime_df)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 12
 ##   Crime …¹ Month Repor…² Falls…³ Longi…⁴ Latit…⁵ Locat…⁶ LSOA …⁷ LSOA …⁸ Crime…⁹
 ##   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
@@ -870,14 +886,14 @@ It is a little difficult to explain the code above without going into too much d
 ## #   ⁴​Longitude, ⁵​Latitude, ⁶​Location, ⁷​`LSOA code`, ⁸​`LSOA name`, ⁹​`Crime type`</code></pre>
 <p>You should now see with have the same number of columns as our previous single <code>csv</code>, but with many more rows. You can also see that the <code>head()</code> function provides us with the first <strong>five</strong> rows of our data frame. You can conversely use <code>tail()</code> to provide the last five rows.</p>
 <p>For now in our analysis, we only want to extract the <strong>theft</strong> crime in our data frame - so we will want to filter our data based on the <strong>Crime type</strong> column. However, as we can see, we have a space in our field name for <strong>Crime type</strong> and, in fact, many of the other fields. As we want to avoid having spaces in our field names when coding, we need to rename our fields. Rename the field names, just as we did with our GIS table earlier:</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="programming-for-data-analysis.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new vector containing updated no space / no capital field names</span></span>
-<span id="cb80-2"><a href="programming-for-data-analysis.html#cb80-2" aria-hidden="true" tabindex="-1"></a>no_space_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;crime_id&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;reported_by&quot;</span>, <span class="st">&quot;falls_within&quot;</span>, <span class="st">&quot;longitude&quot;</span>,<span class="st">&quot;latitude&quot;</span>, <span class="st">&quot;location&quot;</span>, <span class="st">&quot;lsoa_code&quot;</span>, <span class="st">&quot;lsoa_name&quot;</span>, <span class="st">&quot;crime_type&quot;</span>, <span class="st">&quot;last_outcome_category&quot;</span>, <span class="st">&quot;context&quot;</span>)</span>
-<span id="cb80-3"><a href="programming-for-data-analysis.html#cb80-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-4"><a href="programming-for-data-analysis.html#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="co"># rename our df field names using these new names</span></span>
-<span id="cb80-5"><a href="programming-for-data-analysis.html#cb80-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(all_crime_df) <span class="ot">&lt;-</span> no_space_names</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="programming-for-data-analysis.html#cb82-1" aria-hidden="true"></a><span class="co"># create a new vector containing updated no space / no capital field names</span></span>
+<span id="cb82-2"><a href="programming-for-data-analysis.html#cb82-2" aria-hidden="true"></a>no_space_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;crime_id&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;reported_by&quot;</span>, <span class="st">&quot;falls_within&quot;</span>, <span class="st">&quot;longitude&quot;</span>,<span class="st">&quot;latitude&quot;</span>, <span class="st">&quot;location&quot;</span>, <span class="st">&quot;lsoa_code&quot;</span>, <span class="st">&quot;lsoa_name&quot;</span>, <span class="st">&quot;crime_type&quot;</span>, <span class="st">&quot;last_outcome_category&quot;</span>, <span class="st">&quot;context&quot;</span>)</span>
+<span id="cb82-3"><a href="programming-for-data-analysis.html#cb82-3" aria-hidden="true"></a></span>
+<span id="cb82-4"><a href="programming-for-data-analysis.html#cb82-4" aria-hidden="true"></a><span class="co"># rename our df field names using these new names</span></span>
+<span id="cb82-5"><a href="programming-for-data-analysis.html#cb82-5" aria-hidden="true"></a><span class="kw">names</span>(all_crime_df) &lt;-<span class="st"> </span>no_space_names</span></code></pre></div>
 <p>We now have our dataframe ready for filtering. To do so, we will use the <code>filter()</code> function from the <code>dplyr</code> package:</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="programming-for-data-analysis.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter all_crime_df to contain only theft, store as a new variable: all_theft_df</span></span>
-<span id="cb81-2"><a href="programming-for-data-analysis.html#cb81-2" aria-hidden="true" tabindex="-1"></a>all_theft_df <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(all_crime_df, crime_type <span class="sc">==</span> <span class="st">&quot;Theft from the person&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="programming-for-data-analysis.html#cb83-1" aria-hidden="true"></a><span class="co"># filter all_crime_df to contain only theft, store as a new variable: all_theft_df</span></span>
+<span id="cb83-2"><a href="programming-for-data-analysis.html#cb83-2" aria-hidden="true"></a>all_theft_df &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(all_crime_df, crime_type <span class="op">==</span><span class="st"> &quot;Theft from the person&quot;</span>)</span></code></pre></div>
 <p>You should now see the new variable appear in your environment with <strong>31,578</strong> observations.</p>
 <div class="note">
 <p><strong>Note</strong> <br />
@@ -885,17 +901,17 @@ Although not necessary per se because R uses the function from the package that 
 </div>
 <p>We now want to do some further housekeeping and create on final data frame that will allow us to analyse crime in London by month. To do so, we want to count how many thefts occur each month in London. Fortunately, <code>dplyr</code> has another function that will do this for us, known simply as <code>count()</code>.</p>
 <p>When you go ahead and search the documentation to understand the <code>count()</code> function, you will see that there is only one function called <code>count()</code> at the moment, i.e. the one in the <code>dplyr</code> library, so we do not need to use the additional syntax we used above. Let us go ahead and count the number of thefts in London <strong>by month</strong>:</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="programming-for-data-analysis.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># count in the all_theft_df the number of crimes by month and store as a new dataframe</span></span>
-<span id="cb82-2"><a href="programming-for-data-analysis.html#cb82-2" aria-hidden="true" tabindex="-1"></a>theft_month_df <span class="ot">&lt;-</span> <span class="fu">count</span>(all_theft_df, month)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="programming-for-data-analysis.html#cb84-1" aria-hidden="true"></a><span class="co"># count in the all_theft_df the number of crimes by month and store as a new dataframe</span></span>
+<span id="cb84-2"><a href="programming-for-data-analysis.html#cb84-2" aria-hidden="true"></a>theft_month_df &lt;-<span class="st"> </span><span class="kw">count</span>(all_theft_df, month)</span></code></pre></div>
 <p>We have stored the output of our <code>count()</code> function to a new data frame: <code>theft_month_df</code>. Go ahead and look at the data frame to see the output: it is a very simple table containing simply the month and <code>n</code>, i.e. the number of thefts occurring per month. We can and should go ahead and rename this column to help with our interpretation of the data frame. We will use a quick approach to do this, that uses <strong>selection</strong> of the precise column to rename only the second column:</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="programming-for-data-analysis.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename the second column of our new data frame to crime_totals</span></span>
-<span id="cb83-2"><a href="programming-for-data-analysis.html#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(theft_month_df)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;crime_totals&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="programming-for-data-analysis.html#cb85-1" aria-hidden="true"></a><span class="co"># rename the second column of our new data frame to crime_totals</span></span>
+<span id="cb85-2"><a href="programming-for-data-analysis.html#cb85-2" aria-hidden="true"></a><span class="kw">names</span>(theft_month_df)[<span class="dv">2</span>] &lt;-<span class="st"> &quot;crime_totals&quot;</span></span></code></pre></div>
 <p>This selection is made through the <code>[2]</code> element of code added after the <code>names()</code> function we have used earlier. We will look more at selection, slicing and indexing during next week’s tutorial.</p>
 </div>
 </div>
 </div>
-<div id="assignment-w04" class="section level2 hasAnchor" number="3.7">
-<h2><span class="header-section-number">3.7</span> Assignment<a href="programming-for-data-analysis.html#assignment-w04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="assignment-w04" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Assignment<a href="programming-for-data-analysis.html#assignment-w04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now we have prepared our dataset, we can conduct some analysis:</p>
 <ol style="list-style-type: decimal">
 <li>What was the average number of crimes per month in London in 2020?</li>
@@ -909,13 +925,13 @@ Although not necessary per se because R uses the function from the package that 
 Do not forget to save your script so you can go back to it at a later time. When you close R and are asked if you want to save your workspace: this is not necessary. Saving the workspace will keep any variables generated during your current session saved and available in a future session, but so will re-running your script.</p>
 </div>
 </div>
-<div id="want-more-optional" class="section level2 hasAnchor" number="3.8">
-<h2><span class="header-section-number">3.8</span> Want more? [Optional]<a href="programming-for-data-analysis.html#want-more-optional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The graphs and figures we have made so far are not really pretty. Although possible with the basic R installation, there are easier and better ways to make nice visualisations. For this we can turn to other R packages that have been developed. In fact, there are many hundreds of packages in R each designed for a specific purpose, some of which you can use to create plots in R. One of those packages is called <code>ggplot2</code>. The <code>ggplot2</code> package is an implementation of the Grammar of Graphics (<a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson 2005</a>) - a general scheme for data visualisation that breaks up graphs into semantic components such as scales and layers. <code>ggplot2</code> can serve as a replacement for the base graphics in R and contains a number of default options that match good visualisation practice. You provide the data, tell <code>ggplot2</code> how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details. An excellent introduction to <code>ggplot2</code> can be found in the online, freely available book <a href="https://r4ds.had.co.nz/data-visualisation.html">R for Data Science</a>; written by Hadley Wickham, core developer of <code>ggplot2</code> and the <code>tidyverse</code>. Have a particularly close look at <strong>Chapter 3</strong>: <em>Data visualisation</em>: <a href="https://r4ds.had.co.nz/data-visualisation.html">[Link]</a>.</p>
+<div id="want-more-optional" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Want more? [Optional]<a href="programming-for-data-analysis.html#want-more-optional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The graphs and figures we have made so far are rather basic. Although possible with the basic R installation, there are easier and better ways to make nice visualisations. For this we can turn to other R packages that have been developed. In fact, there are many hundreds of packages in R each designed for a specific purpose, some of which you can use to create plots in R. One of those packages is called <code>ggplot2</code>. The <code>ggplot2</code> package is an implementation of the Grammar of Graphics (<a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson 2005</a>) - a general scheme for data visualisation that breaks up graphs into semantic components such as scales and layers. <code>ggplot2</code> can serve as a replacement for the base graphics in R and contains a number of default options that match good visualisation practice. You provide the data, tell <code>ggplot2</code> how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details. An excellent introduction to <code>ggplot2</code> can be found in the online, freely available book <a href="https://r4ds.had.co.nz/data-visualisation.html">R for Data Science</a>; written by Hadley Wickham, core developer of <code>ggplot2</code> and the <code>tidyverse</code>. Have a particularly close look at <strong>Chapter 3</strong>: <em>Data visualisation</em>: <a href="https://r4ds.had.co.nz/data-visualisation.html">[Link]</a>.</p>
 </div>
-<div id="byl-w04" class="section level2 hasAnchor" number="3.9">
-<h2><span class="header-section-number">3.9</span> Before you leave<a href="programming-for-data-analysis.html#byl-w04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We have managed to take a data set of over one million records and clean and filter it to provide a chart that actually shows the potential impact of the first COVID-19 lockdown on theft crime in London. Of course, there is a lot more research and exploratory data analysis we would need to complete before we could really substantiate our findings, but this first chart is certainly a step in the right direction. Next week, we will be doing a lot more with our data set - including a lot more data wrangling and of course spatial analysis, but hopefully this week has shown you want you can achieve with just a few lines of code. <a href="https://www.youtube.com/watch?v=NKyYr2pbXUM">That concludes the tutorial for this week</a>.</p>
+<div id="byl-w04" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Before you leave<a href="programming-for-data-analysis.html#byl-w04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have managed to take a dataset of over one million records and clean and filter it to create a barplot on theft crime in London. Of course, there is a lot more research and exploratory data analysis that can be done, but this first chart is certainly a step in the right direction. Next week, we will be doing a lot more with our dataset - including a lot more data wrangling and of course spatial analysis, but hopefully this week has shown you want you can achieve with just a few lines of code. <a href="https://www.youtube.com/watch?v=NKyYr2pbXUM">That concludes the tutorial for this week</a>!</p>
 
 </div>
 </div>
@@ -924,8 +940,8 @@ Do not forget to save your script so you can go back to it at a later time. When
           </div>
         </div>
       </div>
-<a href="cartography-and-visualisation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="cartography-and-visualisation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="programming-for-spatial-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -37,3 +37,14 @@
   background-color: #e6f2ff;
   color: #525252;
 }
+
+/*--- tip ---*/
+.tip {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  background-color: #FDEAD7;
+  color: #525252;
+}
