@@ -72,7 +72,7 @@ Now we have installed or have access to QGIS and R, we need to customise R. Many
 
 ```{r 01-install-libaries, echo=TRUE, warnings=TRUE, message=TRUE, eval=FALSE, tidy='TRUE'}
 # install all packages that we need
-install.packages(c('tidyverse','sf','tmap','osmdata','RColorBrewer','janitor','spdep','dbscan','raster','spatstat','gstat','dodgr'))
+install.packages(c('tidyverse','sf','tmap','osmdata','RColorBrewer','janitor','spdep','dbscan','raster','spatstat','spatstat.core','gstat','dodgr'))
 ```
 
 Once you have installed the packages, we need to check whether we can in fact load them into our R session. Copy and paste the following code into the **console**, and executed by hitting **Enter** again.
