@@ -7,5 +7,5 @@ set -ev
 Rscript _gitbook.R
 
 # pretty fix HTML
-source activate html
-python _set_part.py
+# source activate html
+# python _set_part.py

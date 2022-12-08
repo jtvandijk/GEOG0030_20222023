@@ -11,7 +11,16 @@ description: "GEOG0030: Geocomputation handbook."
 url: 'https\://jtvandijk.github.io/GEOG0030'
 always_allow_html: true
 ---
-# Module Overview {-}
+# (PART\*) Module Overview {-}
+
+```{r 00-notes, echo=FALSE, warning=FALSE}
+# libraries to generate book:
+# rmarkdown / core
+# bookdown / core
+# servr / dev
+# formatR / pretty code
+# styler / pretty code
+```
 
 # Module Introduction {-}
 

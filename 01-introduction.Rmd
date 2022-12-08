@@ -1,4 +1,4 @@
-# Foundational Concepts {-}
+# (PART\*) Foundational Concepts {-}
 # Geocomputation: An Introduction
 This week’s lecture provided you with a thorough introduction on Geocomputation, outlining how and why it is different to a traditional GIScience course. We set the scene for the remainder of the module and explained how the foundational concepts that you will learn in the first half of term sit within the overall module. This week we start easy by setting up our work environment and set up the software that we will  need over the coming weeks.
 
@@ -70,7 +70,7 @@ If it is the first time you log on to RStudio server you may only see the RStudi
 ### R package installation 
 Now we have installed or have access to QGIS and R, we need to customise R. Many useful R function come in packages, these are free libraries of code written and made available by other by R users. This includes packages specifically developed for data cleaning, data wrangling, visualisation, mapping, and spatial analysis. To save us some time, we will install all R packages that we will need over the next ten weeks in one go. Now copy and paste the following code into the **console**. You can execute the code by hitting **Enter**. This may take a while.
 
-```{r 01-install-libaries, echo=TRUE, warnings=TRUE, message=TRUE, eval=FALSE, tidy=TRUE}
+```{r 01-install-libaries, echo=TRUE, warnings=TRUE, message=TRUE, eval=FALSE, tidy='TRUE'}
 # install all packages that we need
 install.packages(c('tidyverse','sf','tmap','osmdata','RColorBrewer','janitor','spdep','dbscan','raster','spatstat','gstat','dodgr'))
 ```

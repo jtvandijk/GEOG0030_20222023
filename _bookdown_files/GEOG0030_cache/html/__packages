@@ -9,4 +9,9 @@ stringr
 forcats
 sf
 tmap
+janitor
+RColorBrewer
+osmdata
 vembedr
+rmarkdown
+bookdown

@@ -52,6 +52,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
 
 
 <style type="text/css">
@@ -138,16 +148,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Module Overview</a></li>
-<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html"><i class="fa fa-check"></i>Module Introduction</a>
+<li class="part"><span><b>Module Overview</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Module Introduction</a>
 <ul>
-<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#welcome"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
-<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#module-overview-1"><i class="fa fa-check"></i>Module overview</a></li>
-<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting</a></li>
-<li class="chapter" data-level="" data-path="module-introduction.html"><a href="module-introduction.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#welcome"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#module-overview"><i class="fa fa-check"></i>Module overview</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="foundational-concepts.html"><a href="foundational-concepts.html"><i class="fa fa-check"></i>Foundational Concepts</a></li>
+<li class="part"><span><b>Foundational Concepts</b></span></li>
 <li class="chapter" data-level="1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html"><i class="fa fa-check"></i><b>1</b> Geocomputation: An Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#reading-w01"><i class="fa fa-check"></i><b>1.1</b> Reading list</a></li>
@@ -249,6 +259,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#assignment-w05"><i class="fa fa-check"></i><b>5.3</b> Assignment</a></li>
 <li class="chapter" data-level="5.4" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#byl-w05"><i class="fa fa-check"></i><b>5.4</b> Before you leave</a></li>
+</ul></li>
+<li class="part"><span><b>Core Spatial Analysis</b></span></li>
+<li class="chapter" data-level="6" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><i class="fa fa-check"></i><b>6</b> Analysing Spatial Patterns I: Geometric Operations and Spatial Queries</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#reading-w06"><i class="fa fa-check"></i><b>6.1</b> Reading list</a></li>
+<li class="chapter" data-level="6.2" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#bike-theft-w06"><i class="fa fa-check"></i><b>6.2</b> Bike theft in London</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#housekeeping-w06"><i class="fa fa-check"></i><b>6.2.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="6.2.2" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#loading-data-w06"><i class="fa fa-check"></i><b>6.2.2</b> Loading data</a></li>
+<li class="chapter" data-level="6.2.3" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#data-preparation-w06"><i class="fa fa-check"></i><b>6.2.3</b> Data preparation</a></li>
+<li class="chapter" data-level="6.2.4" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#spatial-operations-i"><i class="fa fa-check"></i><b>6.2.4</b> Spatial operations I</a></li>
+<li class="chapter" data-level="6.2.5" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#spatial-operations-ii"><i class="fa fa-check"></i><b>6.2.5</b> Spatial operations II</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#assignment-w06"><i class="fa fa-check"></i><b>6.3</b> Assignment</a></li>
+<li class="chapter" data-level="6.4" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#byl-w06"><i class="fa fa-check"></i><b>6.4</b> Before you leave</a></li>
 </ul></li>
 </ul>
 

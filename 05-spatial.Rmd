@@ -1,5 +1,5 @@
 # Programming for Spatial Analysis
-This week we are going to look at how to use R and RStudio as a piece of GIS software. Like last week, we will be completing an analysis on our London theft crime data set. However, rather than solely looking at changing crime rates over time, we will add a spatial component to our analysis: how has crime changed across our wards over the years.
+This week we are going to look at how to use R and RStudio as a piece of GIS software. Like last week, we will be completing an analysis on our London theft crime dataset. However, rather than solely looking at changing crime rates over time, we will add a spatial component to our analysis: how has crime changed across our wards over the years.
 
 <!-- ## Lecture slides {#slides-w05} -->
 <!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w05_geo.pdf). -->
@@ -50,13 +50,20 @@ Open a new script within your GEOG0030 project and save this script as `wk5-crim
 
 Now let us add **all** of the libraries we will be using today to the top of our script:
 
-```{r 05-scr-libs-all, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
+```{r 05-scr-libs-all, warnings=FALSE, message=FALSE, cache=FALSE, tidy=TRUE}
 # libraries
 library(tidyverse)
 library(sf)
 library(tmap)
 ```
-You are already familiar with the `tidyverse` library, but now we adding `sf` to read and load our spatial data as well as `tmap` to visualise our spatial data. We are going to load both of the data sets we need today straight away: the `crime_theft_2020_london.csv` we have just exported and the `ward_population_2019.shp` we created in Week 3.
+
+```{r 05-set-tmap-setting, warnings=FALSE, message=FALSE, cache=FALSE, tidy=TRUE}
+# change tmap mode to plot
+tmap_mode("plot")
+```
+
+
+You are already familiar with the `tidyverse` library, but now we adding `sf` to read and load our spatial data as well as `tmap` to visualise our spatial data. We are going to load both of the datasets we need today straight away: the `crime_theft_2020_london.csv` we have just exported and the `ward_population_2019.shp` we created in Week 3.
 
 First, let's load our `crime_theft_2020_london.csv` into a dataframe called `all_theft_df`. 
 
@@ -72,7 +79,7 @@ We can double-check what our `csv` looks like by either viewing our data or simp
 head(all_theft_df)
 ``` 
 
-You should see these rows display in your console. Great, the data set looks as we remember, with the different fields, including, importantly for this week, the **LSOA code** which we will use to process and join our data together.
+You should see these rows display in your console. Great, the dataset looks as we remember, with the different fields, including, importantly for this week, the **LSOA code** which we will use to process and join our data together.
 
 Next, let's add our `ward_population_2019.shp`. We will store this as a variable called `ward_population` and use the `sf` library to load the data:
 
@@ -90,7 +97,7 @@ As this is the first time we have loaded spatial data into R, let's go for a lit
 plot(ward_population)
 ``` 
 
-You should see your `ward_population` plot appear in your **Plots** window - as you will see, your ward data set is plotted 'thematically' by each of the fields within the data set, including our `pop2019` field we created last week. 
+You should see your `ward_population` plot appear in your **Plots** window - as you will see, your ward dataset is plotted 'thematically' by each of the fields within the dataset, including our `pop2019` field we created last week. 
 
 :::tip
 **Tip** <br>
@@ -109,7 +116,7 @@ We should see our data is an `sf` dataframe, which is great as it means we can u
 attributes(ward_population)
 ``` 
 
-We can see how many rows we have, the names of our rows and a few more pieces of information about our `ward_population` data, for example, we can see that the specific `$sf_column` i.e. our spatial information) in our data set is called `geometry`.
+We can see how many rows we have, the names of our rows and a few more pieces of information about our `ward_population` data, for example, we can see that the specific `$sf_column` i.e. our spatial information) in our dataset is called `geometry`.
 
 We can investigate this column a little more by **selecting** this column within our console to return. In the **console** type:
 
@@ -127,9 +134,9 @@ From this selection we can find out the dataset's:
 * bbox (bounding box)
 * CRS (coordinate reference system)
 
-And also the first five geometries of our data set.
+And also the first five geometries of our dataset.
 
-This is really useful as one of the first things we want to know about our spatial data is what *coordinate system* it is projected with. As we should know, our `ward_population` data was created and exported within *British National Grid*, therefore seeing the EPSG code of British National Grid - 27700 - as our CRS confirms to us that R has read in our data set correctly.
+This is really useful as one of the first things we want to know about our spatial data is what *coordinate system* it is projected with. As we should know, our `ward_population` data was created and exported within *British National Grid*, therefore seeing the EPSG code of British National Grid - 27700 - as our CRS confirms to us that R has read in our dataset correctly.
 
 We could also actually find out this information using the `st_crs()` function from the `sf` library.
 
@@ -140,7 +147,7 @@ st_crs(ward_population)
 
 You notice that we actually get a lot more information about our CRS beyond simply the code using this function. This function is really important to us as users of spatial data as it allows us to retrieve and set the CRS of our spatial data when the data does not come with a `.proj` file but we do know what projection system should be used.
 
-The final thing we might want to do before we get started with our data analysis is to simply look at the data table part of our data set, i.e. what we called the **Attribute Table** in QGIS, but here it is simply the table part of our data frame. To do so, you can either use the `View()` function in the console or click on the `ward_population` variable within our environment.
+The final thing we might want to do before we get started with our data analysis is to simply look at the data table part of our dataset, i.e. what we called the **Attribute Table** in QGIS, but here it is simply the table part of our data frame. To do so, you can either use the `View()` function in the console or click on the `ward_population` variable within our environment.
 
 ### Getting our crime data in shape
 Now we have our data loaded, our next step is to process our data to create what we need as our final output for analysis: a spatial dataframe that contains a **theft crime rate** for each ward for each month in 2020. However, if we look at our `all_theft_df`, we do not have a field that contains the wards our crimes have occurred in. We only have two types of spatial or spatially-relevant data in our `all_theft_df`:
@@ -148,7 +155,7 @@ Now we have our data loaded, our next step is to process our data to create what
 1) The approximate WGS84 **latitude** and **longitude**.
 2) The **Lower Super Output Area (LSOA)** in which the crime it occurred.
 
-From Week 3's practical, we know we can map our points using the coordinates and then provide a count by using a **point-in-polygon** (PIP) operation. However to do this for each month, we would need to filter our data set for each month and repeat the PIP operation - when we know a little more advanced code, this might end up being quite simple, but for now we will try to see if we can solve it differently.
+From Week 3's practical, we know we can map our points using the coordinates and then provide a count by using a **point-in-polygon** (PIP) operation. However to do this for each month, we would need to filter our dataset for each month and repeat the PIP operation - when we know a little more advanced code, this might end up being quite simple, but for now we will try to see if we can solve it differently.
 
 #### Attribute join
 To get the number of crimes that occurred in each ward, all we need to do is figure our which Ward our LSOAs fall within and then we can add this as an additional attribute or rather **column** to our `all_theft_df`.
@@ -191,9 +198,9 @@ Within R, you have two options to complete a data frame join:
     + If they do not have the same name, you need a `by` argument, such as `left_join(x, y, by = c("xName" = "yName"))`. Left of the equals is the column for the first data frame, right of the equals is the name of the column for the second data frame.
 :::    
 
-As we have seen from the list of fields above, we know that we have at least **two** fields that should match across the data sets: our **lsoa codes** and **lsoa names**. We of course need to identify the precise fields that contain these values in each of our data frames, i.e. `LSOA11CD` and `LSOA11NM` in our `lsoa_ward_lookup` dataframe and `lsoa_code` and `lsoa_name` in our `all_theft_df` dataframe, but once we know what fields we can use, we can go ahead and join our two data frames together.
+As we have seen from the list of fields above, we know that we have at least **two** fields that should match across the datasets: our **lsoa codes** and **lsoa names**. We of course need to identify the precise fields that contain these values in each of our data frames, i.e. `LSOA11CD` and `LSOA11NM` in our `lsoa_ward_lookup` dataframe and `lsoa_code` and `lsoa_name` in our `all_theft_df` dataframe, but once we know what fields we can use, we can go ahead and join our two data frames together.
 
-We are going to need to make **multiple** joins between our tables as we have multiple entries of crime for the same LSOA. In addition, we are going to need to use a function that allows us to keep **all rows** in our `all_theft_df` dataframe, but we do not need to keep **all rows** in our `lsoa_ward_lookup` if those wards are not within our data set.
+We are going to need to make **multiple** joins between our tables as we have multiple entries of crime for the same LSOA. In addition, we are going to need to use a function that allows us to keep **all rows** in our `all_theft_df` dataframe, but we do not need to keep **all rows** in our `lsoa_ward_lookup` if those wards are not within our dataset.
 
 Let's have a look in detail at how the four different types of joins from `dplyr` work:
 
@@ -215,7 +222,7 @@ Let's go ahead and check our join to make sure that our LSOA codes and names mat
 head(all_theft_ward_df)
 ``` 
 
-You should now see that you have with **19** variables: **12** from `all_theft_df`, plus **7** from `lsoa_ward_lookup.` Now we have our joined data set, we can move forward with some more data wrangling. Before we do this, it would be good if we could trim down our dataframe to only the relevant data that we need moving forward.
+You should now see that you have with **19** variables: **12** from `all_theft_df`, plus **7** from `lsoa_ward_lookup.` Now we have our joined dataset, we can move forward with some more data wrangling. Before we do this, it would be good if we could trim down our dataframe to only the relevant data that we need moving forward.
 
 To be able to 'trim' our data frame, we have two choices in terms of the code we might want to run. First, we could look to drop certain columns from our data frame. Alternatively, we could create a subset of the columns we want to keep from our data frame and store this as a new variable or simply overwrite the currently stored variable. To do either of these types of data transformation, we need to know more about how we can interact with a data frame in terms of **indexing**, **selecting** and **slicing**.
 
@@ -503,7 +510,7 @@ We can compute a new column by using the `mutate()` function from the `dplyr` li
 all_theft_ward_sdf <- all_theft_ward_sdf %>% mutate(theft_total = rowSums(across(8:19), na.rm = T))
 ``` 
 
-You can now `View()` our updated `all_theft_ward_sdf` spatial data frame and sort out columns to see those with a `theft_total` of 0. What you should see is that we have approximately 20 City of London wards without data, whilst we do indeed have 10 additional wards without data. This seems not unlikely, so we can move forward with our data set as it is, but what we will need to do is adjust the values present within these wards prior to our visualisation analysis: these should not have `NA` as their value but rather `0.` In comparison our City of London wards should only contain `NA`. To make sure our data is as correct as possible prior to visualisation, we will remove our City of London wards that do not have any data (crime or population), and then convert the `NA` in our theft counts to `0`.
+You can now `View()` our updated `all_theft_ward_sdf` spatial data frame and sort out columns to see those with a `theft_total` of 0. What you should see is that we have approximately 20 City of London wards without data, whilst we do indeed have 10 additional wards without data. This seems not unlikely, so we can move forward with our dataset as it is, but what we will need to do is adjust the values present within these wards prior to our visualisation analysis: these should not have `NA` as their value but rather `0.` In comparison our City of London wards should only contain `NA`. To make sure our data is as correct as possible prior to visualisation, we will remove our City of London wards that do not have any data (crime or population), and then convert the `NA` in our theft counts to `0`.
 
 ```{r 05-tidy-tidy, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
 # filter out City of London wards with a crime count of 0 or a population of 0
@@ -565,7 +572,7 @@ To actually draw the shape, we next need to add a layer to specify the type of s
 
 Let's see how we can build up our first map in `tmap`.
 
-```{r 05-mapping-101, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE, eval=FALSE}
+```{r 05-mapping-101, warnings=FALSE, message=FALSE, cache=TRUE, tidy='styler', eval=FALSE}
 # set our tm_shape equal to our spatial data frame
 tm_shape(theft_crime_rate_sdf) +
   # draw out spatial objects as polygons
@@ -585,7 +592,7 @@ The `col` parameter within `tm_polygons()` is used to fill our polygons with a s
 
 Let's go ahead and pass our `jan_2020` column within the `col=` parameter and see what we get:
 
-```{r 05-choro-1, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
+```{r 05-choro-1, warnings=FALSE, message=FALSE, cache=TRUE, tidy='styler'}
 # set our tm_shape equal to our spatial data frame
 tm_shape(theft_crime_rate_sdf) +
   # draw out spatial objects as polygons, specifying a data column
@@ -602,7 +609,7 @@ Using the documentation for `tm_polygons()`, it looks like the following paramet
 
 Let's say we want to change our choropleth map to have 5 classes, determined via the `jenks` method. We simply need to add the `n` and `style` parameters into our `tm_polygons()` layer:
 
-```{r 05-choro-2, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
+```{r 05-choro-2, warnings=FALSE, message=FALSE, cache=TRUE, tidy='styler'}
 # set our tm_shape equal to our spatial data frame
 tm_shape(theft_crime_rate_sdf) + 
   # draw out spatial objects as polygons, specifying a data column, specifying jenks
@@ -611,7 +618,7 @@ tm_shape(theft_crime_rate_sdf) +
 
 We now have a choropleth that reflects better the distribution of our data, but we can make them a little prettier by rounding the values. To do so, we can change the `style` of the map to `fixed` and then supply a new argument for `breaks` that contains the rounded classification breaks:
 
-```{r 05-choro-3, warnings=FALSE, message=FALSE, cache=TRUE}
+```{r 05-choro-3, warnings=FALSE, message=FALSE, cache=TRUE, tidy='styler'}
 # set our tm_shape equal to our spatial data frame
 tm_shape(theft_crime_rate_sdf) + 
   # draw out spatial objects as polygons, specifying a data column, specifying fixed breaks
@@ -620,7 +627,7 @@ tm_shape(theft_crime_rate_sdf) +
 
 That looks a little better from the classification side of things. We still have one final data-related challenge to solve, before we start to style our map and that is showing the polygons for City of London wards, even though we have no data for them. The easiest way to do so is to simply add a spatial object to our map that symbolises our polygons as grey wards and then draw the crime data on top:
 
-```{r 05-choro-4, message=FALSE, cache=TRUE, warnings=FALSE, tidy=TRUE}
+```{r 05-choro-4, message=FALSE, cache=TRUE, warnings=FALSE, tidy='styler'}
 # set out tm_shape equal to our original ward data frame
 tm_shape(ward_population) + 
   # draw out spatial objects as polygons, set to grey
@@ -647,7 +654,7 @@ Fundamentally, the **key functions** to be aware of:
 
 To be able to start styling our map, we need to interrogate each of these functions and their parameters to trial and error options to ultimately create a map we are happy with:
 
-```{r 05-map-template-1, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
+```{r 05-map-template-1, warnings=FALSE, message=FALSE, cache=FALSE, tidy='styler'}
 # set out tm_shape equal to our original ward data frame
 tm_shape(ward_population) + 
   # draw out spatial objects as polygons, set to grey
@@ -661,7 +668,7 @@ tm_shape(theft_crime_rate_sdf) +
               palette = "Blues", border.col = "white", 
               title = "Rate per 10,000 people") + 
   # add title
-  tm_layout(main.title = 'Theft Crime January 2020', 
+  tm_layout(main.title = "Theft Crime January 2020", 
             main.title.fontface = 2, 
             fontfamily = "Helvetica", 
             legend.outside = TRUE, 
@@ -681,7 +688,7 @@ We will leave it at this, although there is a few more things we would want to d
 ### Exporting our crime data
 Once we are finished making our map, we can go ahead and export it to our `maps` folder. To do so, we need to save our map-making code to as a variable and then use the `tmap_save()` function to save the output of this code to a picture within our maps folder.
 
-```{r 05-export-map, warnings=FALSE, message=FALSE, cache=TRUE, eval=FALSE, tidy=TRUE}
+```{r 05-export-map, warnings=FALSE, message=FALSE, cache=TRUE, eval=FALSE, tidy='styler'}
 # add map object to variable
 jan2020_map <- 
   # set out tm_shape equal to our original ward data frame
@@ -712,24 +719,24 @@ tm_shape(theft_crime_rate_sdf) +
                position = c("left", "bottom"))
 
 # save as image
-tmap_save(jan2020_map, filename = "maps/jan2020_theft_crime_map.png")
+tmap_save(jan2020_map, filename = "data/map/jan2020_theft_crime_map.png")
 ```
 
-We also want to export the rest of our hard work in terms of data wrangling that we have completed for this practical - so let's go ahead and export our data frames so we can use them in future projects.
+We also want to export the rest of our hard work in terms of data wrangling that we have completed for this practical, so let's go ahead and export our data frames so we can use them in future projects.
 
 ```{r 05-export-data-frames, warnings=FALSE, message=FALSE, cache=TRUE, eval=FALSE, tidy=TRUE}
-# write out the all_theft_ward_sdf to a shapefile within our working data folder
+# write out the all_theft_ward_sdf to a shapefile within our output data folder
 st_write(theft_crime_rate_sdf,"data/output/theft_rate_by_ward_per_month_2020.shp", row.names = FALSE)
-# write out the all_theft_ward_sdf to a shapefile within our working data folder
+# write out the all_theft_ward_sdf to a shapefile within our output data folder
 st_write(all_theft_ward_sdf,"data/output/theft_count_by_ward_per_month_2020.shp", row.names = FALSE)
-# write out the all_theft_ward_sdf to a csv within our raw crime data folder
+# write out the all_theft_ward_sdf to a csv within our output data folder
 write.csv(all_theft_ward_sdf,"data/output/theft_count_by_ward_per_month_2020.csv", row.names = FALSE)
 ```
 
 ## Assignment {#assignment-w05}
 For your assignment for this week, we want you to create a map for a different month of 2020 with a different layout and look. Keep in mind:
 
-- You will need to really think about your classification breaks when you change to map a different data set.
+- You will need to really think about your classification breaks when you change to map a different dataset.
 - Play with the different settings, e.g. change the colours of the map, change the legend title name, change the type of North arrow, etc.
 
 If you are up for a challenge: now try to create a map in which you incorporate the maps of two different months together in one figure. Google is your friend!

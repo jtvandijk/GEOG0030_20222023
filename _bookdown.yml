@@ -6,6 +6,7 @@ rmd_files:
 - 03-cartography.Rmd
 - 04-statistics.Rmd
 - 05-spatial.Rmd
+- 06-operations.Rmd
 #- 11-data.Rmd
 language:
   ui:
