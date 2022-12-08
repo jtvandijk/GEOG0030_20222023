@@ -1,3 +1,5 @@
+rmarkdown
+bookdown
 tidyverse
 ggplot2
 tibble
@@ -9,9 +11,10 @@ stringr
 forcats
 sf
 tmap
+vembedr
 janitor
 RColorBrewer
 osmdata
-vembedr
-rmarkdown
-bookdown
+sp
+spData
+spdep

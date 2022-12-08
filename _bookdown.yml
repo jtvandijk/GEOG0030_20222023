@@ -7,6 +7,7 @@ rmd_files:
 - 04-statistics.Rmd
 - 05-spatial.Rmd
 - 06-operations.Rmd
+- 07-autocorrelation.Rmd
 #- 11-data.Rmd
 language:
   ui:
