@@ -66,8 +66,8 @@ Some of the datasets held by the CDRC that you can apply for are:
 * [NHS Hospital Admission Rates by Ethnic Group and other Characteristics]( https://data.cdrc.ac.uk/dataset/nhs-hospital-admission-rates-ethnic-group-and-other-characteristics)
 * [Speedchecker Broadband Internet Speed Tests](https://data.cdrc.ac.uk/dataset/speedchecker-broadband-internet-speed-tests)
 
-:::note
-**Note**<br />
+:::tip
+**Tip**<br />
 Given that the application can take several weeks, the Safeguarded CDRC datasets may be useful for your dissertation work but probably not for the GEOG0030 coursework assignment. However, any of the CDRC datasets that are marked as **Open Data** do not require this application process and you can download these datasets directly after registering on the website.
 :::
 
