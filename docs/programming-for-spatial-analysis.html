@@ -854,12 +854,6 @@ We will be using quite a few of these functions in the remaining data wrangling 
 <li><code>pivot_longer()</code> “lengthens” data, increasing the number of rows and decreasing the number of columns.</li>
 </ul>
 <p>Our data is already pretty long, so that seems to suggest that we should use <code>pivot_wider()</code>. We just need to first read through the documentation to figure out what parameters we need to use and how. Type <code>?pivot_wider</code> into the console to access the documentation.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:05-pivot-wider"></span>
-<img src="images/w05/pivot_wider.png" alt="Documentation for the `pivot_wider()` function." width="90%" />
-<p class="caption">
-Figure 5.2: Documentation for the <code>pivot_wider()</code> function.
-</p>
-</div>
 <p>If we read through the documentation, we can figure our that our two parameters of interest are the <code>names_from</code> and <code>values_from</code> fields. We use the <code>names_from</code> parameter to set our <code>month</code> column as the column from which to derive output fields from, and the <code>values_from</code> field as our <code>n</code> field (count field) to set our values. As we do not have a field that uniquely identifies each of our rows, we can not use the <code>id_cols</code> parameter. We will therefore need to state the parameters in our code to make sure the function reads in our fields for the right parameter:</p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="programming-for-spatial-analysis.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pivot wider</span></span>
 <span id="cb134-2"><a href="programming-for-spatial-analysis.html#cb134-2" aria-hidden="true" tabindex="-1"></a>theft_by_ward_month_df <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(theft_count_month_ward, <span class="at">names_from =</span> month,</span>

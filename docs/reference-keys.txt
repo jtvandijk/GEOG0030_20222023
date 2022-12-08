@@ -13,7 +13,6 @@ fig:04-rstudio-interface-script-open
 fig:04-download-crimes
 fig:04-organised-crime
 fig:05-dplyr
-fig:05-pivot-wider
 fig:06-snap1
 fig:06-buffer-buffer
 fig:07-download-gif

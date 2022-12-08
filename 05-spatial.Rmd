@@ -463,10 +463,6 @@ To change the *shape* of our data, we are going to need to use `tidyr`'s pivot f
 
 Our data is already pretty long, so that seems to suggest that we should use `pivot_wider()`. We just need to first read through the documentation to figure out what parameters we need to use and how. Type `?pivot_wider` into the console to access the documentation.
 
-```{r 05-pivot-wider, echo=FALSE, out.width="90%", fig.align='center', cache=TRUE, fig.cap='Documentation for the `pivot_wider()` function.'}
-knitr::include_graphics('images/w05/pivot_wider.png')
-```
-
 If we read through the documentation, we can figure our that our two parameters of interest are the `names_from` and `values_from` fields. We use the `names_from` parameter to set our `month` column as the column from which to derive output fields from, and the `values_from` field as our `n` field (count field) to set our values. As we do not have a field that uniquely identifies each of our rows, we can not use the `id_cols` parameter. We will therefore need to state the parameters in our code to make sure the function reads in our fields for the right parameter:
 
 ```{r 05-pivot-theft-month, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
