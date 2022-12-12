@@ -398,9 +398,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="essential-readings-4" class="section level4 unnumbered hasAnchor">
 <h4>Essential readings<a href="programming-for-spatial-analysis.html#essential-readings-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li>Longley, P. <em>et al.</em> 2015. Geographic Information Science &amp; systems, <strong>Chapter 13</strong>: <em>Spatial Analysis</em>. <a href="https://rl.talis.com/3/ucl/items/fd38ec78-2bea-4165-aab3-0e9d9093db8e.html?lang=en-gb&amp;login=1">[Link]</a></li>
+<li>Longley, P. <em>et al.</em> 2015. Geographic Information Science &amp; systems, <strong>Chapter 13</strong>: <em>Spatial Analysis</em>. <a href="https://ucl.rl.talis.com/link?url=https%3A%2F%2Fapp.knovel.com%2Fhotlink%2Ftoc%2Fid%3AkpGISSE001%2Fgeographic-information-science%3Fkpromoter%3Dmarc&amp;sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a">[Link]</a></li>
 <li>Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, <strong>Chapter 2</strong>: <em>Geographic Data in R</em>. <a href="https://geocompr.robinlovelace.net/spatial-class.html">[Link]</a></li>
-<li>Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, <strong>Chapter 3</strong>: <em>Attribute data operations</em>. <a href="https://geocompr.robinlovelace.net/geometric-operations.html">[Link]</a></li>
+<li>Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, <strong>Chapter 3</strong>: <em>Attribute data operations</em>. <a href="https://geocompr.robinlovelace.net/attr.html">[Link]</a></li>
 <li>Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, <strong>Chapter 8</strong>: <em>Making maps with R</em>. <a href="https://geocompr.robinlovelace.net/adv-map.html">[Link]</a></li>
 </ul>
 </div>
@@ -631,7 +631,7 @@ This <code>plot()</code> function is not to be used to make maps but can be used
 <p>From a GIScience perspective, there are many ways to do this but the most straight forward is to use something called a <strong>look-up table</strong>. Look-up tables are an extremely common tool in database management and programming, providing a very simple approach to storing additional information about a feature (such as a row within a dataframe) in a separate table that can quite literally be “looked up” when needed for a specific application.</p>
 <p>In our case, we will actually join our look-up table to our current <code>all_theft_df</code> to get this information “hard-coded” to our dataframe for ease of use. To be able to do this, we therefore need to find a look-up table that contains a list of <strong>LSOAs</strong> in London and the <strong>wards</strong> in which they are contained. Lucky for us the <a href="https://www.ons.gov.uk/">Office for National Statistics</a> provides this for us in their Open Geography Portal. They have a table that contains exactly what we’re looking for: <strong>Lower Layer Super Output Area (2011) to Ward (2018) Lookup in England and Wales v3</strong>. As the description on the website tells us: “<em>This file is a best-fit lookup between 2011 lower layer super output areas, electoral wards/divisions and local authority districts in England and Wales as at 31 December 2018.</em>”</p>
 <ol style="list-style-type: decimal">
-<li>Download the look-up table from the ONS: <a href="https://geoportal.statistics.gov.uk/datasets/8c05b84af48f4d25a2be35f1d984b883_0">Link</a></li>
+<li>Download the ONS look-up table: <a href="https://github.com/jtvandijk/GEOG0030/tree/master/data/zip/lsoa_ward_lookup.zip">[Link]</a></li>
 <li>Move this file in your <strong>data</strong> -&gt; <strong>raw</strong> -&gt; <strong>boundaries</strong> folder and rename to <code>data/raw/boundaries/lsoa_ward_lookup.csv</code>.</li>
 <li>Load the dataset using the <code>read_csv()</code> function. Do not worry if you have a few “parsing” failures, the table should still work fine.</li>
 </ol>

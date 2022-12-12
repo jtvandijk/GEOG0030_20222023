@@ -6,9 +6,9 @@ This week we are going to look at how to use R and RStudio as a piece of GIS sof
 
 ## Reading list {#reading-w05}
 #### Essential readings {-}
-- Longley, P. *et al.* 2015. Geographic Information Science & systems, **Chapter 13**: *Spatial Analysis*. [[Link]](https://rl.talis.com/3/ucl/items/fd38ec78-2bea-4165-aab3-0e9d9093db8e.html?lang=en-gb&login=1)
+- Longley, P. *et al.* 2015. Geographic Information Science & systems, **Chapter 13**: *Spatial Analysis*. [[Link]](https://ucl.rl.talis.com/link?url=https%3A%2F%2Fapp.knovel.com%2Fhotlink%2Ftoc%2Fid%3AkpGISSE001%2Fgeographic-information-science%3Fkpromoter%3Dmarc&sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a)
 - Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, **Chapter 2**: *Geographic Data in R*. [[Link]](https://geocompr.robinlovelace.net/spatial-class.html)
-- Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, **Chapter 3**: *Attribute data operations*. [[Link]](https://geocompr.robinlovelace.net/geometric-operations.html)
+- Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, **Chapter 3**: *Attribute data operations*. [[Link]](https://geocompr.robinlovelace.net/attr.html)
 - Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, **Chapter 8**: *Making maps with R*. [[Link]](https://geocompr.robinlovelace.net/adv-map.html)
 
 #### Suggested readings {-}
@@ -164,7 +164,7 @@ From a GIScience perspective, there are many ways to do this but the most straig
 
 In our case, we will actually join our look-up table to our current `all_theft_df` to get this information "hard-coded" to our dataframe for ease of use. To be able to do this, we therefore need to find a look-up table that contains a list of **LSOAs** in London and the **wards** in which they are contained. Lucky for us the [Office for National Statistics](https://www.ons.gov.uk/) provides this for us in their Open Geography Portal. They have a table that contains exactly what we're looking for: **Lower Layer Super Output Area (2011) to Ward (2018) Lookup in England and Wales v3**. As the description on the website tells us: "*This file is a best-fit lookup between 2011 lower layer super output areas, electoral wards/divisions and local authority districts in England and Wales as at 31 December 2018.*"
 
-1. Download the look-up table from the ONS: [Link](https://geoportal.statistics.gov.uk/datasets/8c05b84af48f4d25a2be35f1d984b883_0)
+1. Download the ONS look-up table: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/zip/lsoa_ward_lookup.zip)
 2. Move this file in your **data** -> **raw** -> **boundaries** folder and rename to `data/raw/boundaries/lsoa_ward_lookup.csv`.
 3. Load the dataset using the `read_csv()` function. Do not worry if you have a few "parsing" failures, the table should still work fine.
     

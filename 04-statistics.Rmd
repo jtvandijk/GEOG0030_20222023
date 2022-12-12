@@ -81,8 +81,8 @@ We will see how we use these windows as we progress through this tutorial and un
 ## RStudio console
 We will first start off with using **RStudio's console** to test out some of R's in-built functionality by creating a few variables as well as a dummy dataset that we will be able to analyse - and to get familiar with writing code.
 
-:::note
-**Note**<br/>
+:::tip
+**Tip**<br/>
 You might need to click on the console window to get it to expand; you can then drag it to take up a larger space in your RStudio window.
 :::
 

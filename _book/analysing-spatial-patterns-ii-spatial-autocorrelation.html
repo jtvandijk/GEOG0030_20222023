@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Analysing Spatial Patterns II: Spatial Autocorrelation | GEOG0030: Geocomputation</title>
+  <meta name="description" content="7 Analysing Spatial Patterns II: Spatial Autocorrelation | GEOG0030: Geocomputation handbook." />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Analysing Spatial Patterns II: Spatial Autocorrelation | GEOG0030: Geocomputation" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="7 Analysing Spatial Patterns II: Spatial Autocorrelation | GEOG0030: Geocomputation handbook." />
+  <meta name="github-repo" content="jtvandijk/GEOG0030" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Analysing Spatial Patterns II: Spatial Autocorrelation | GEOG0030: Geocomputation" />
+  
+  <meta name="twitter:description" content="7 Analysing Spatial Patterns II: Spatial Autocorrelation | GEOG0030: Geocomputation handbook." />
+  
+
+<meta name="author" content="Justin van Dijk" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"/>
+<link rel="next" href="analysing-spatial-patterns-iii-point-pattern-analysis.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo">
+<a href="https://www.ucl.ac.uk/module-catalogue/modules/geocomputation-GEOG0030"><img src="images/general/ucl_logo.png">
+</a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>Module Overview</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Module Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#welcome"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#module-overview"><i class="fa fa-check"></i>Module overview</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="part"><span><b>Foundational Concepts</b></span></li>
+<li class="chapter" data-level="1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html"><i class="fa fa-check"></i><b>1</b> Geocomputation: An Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#reading-w01"><i class="fa fa-check"></i><b>1.1</b> Reading list</a></li>
+<li class="chapter" data-level="1.2" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a></li>
+<li class="chapter" data-level="1.3" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#software"><i class="fa fa-check"></i><b>1.3</b> Software</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#qgis-installation"><i class="fa fa-check"></i><b>1.3.1</b> QGIS Installation</a></li>
+<li class="chapter" data-level="1.3.2" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#r-and-rstudio-installation"><i class="fa fa-check"></i><b>1.3.2</b> R and RStudio Installation</a></li>
+<li class="chapter" data-level="1.3.3" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#ucl"><i class="fa fa-check"></i><b>1.3.3</b> UCL Desktop and RStudio Server</a></li>
+<li class="chapter" data-level="1.3.4" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#r-package-installation"><i class="fa fa-check"></i><b>1.3.4</b> R package installation</a></li>
+<li class="chapter" data-level="1.3.5" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#a-note-on-arcgis"><i class="fa fa-check"></i><b>1.3.5</b> A note on ArcGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#byl-w01"><i class="fa fa-check"></i><b>1.4</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html"><i class="fa fa-check"></i><b>2</b> GIScience and GIS software</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#reading-w02"><i class="fa fa-check"></i><b>2.1</b> Reading list</a></li>
+<li class="chapter" data-level="2.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#simple-digitisation-of-spatial-features"><i class="fa fa-check"></i><b>2.2</b> Simple digitisation of spatial features</a></li>
+<li class="chapter" data-level="2.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#population-change-in-london"><i class="fa fa-check"></i><b>2.3</b> Population change in London</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-scene"><i class="fa fa-check"></i><b>2.3.1</b> Setting the scene</a></li>
+<li class="chapter" data-level="2.3.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-finding"><i class="fa fa-check"></i><b>2.3.2</b> Finding data</a></li>
+<li class="chapter" data-level="2.3.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w01-housekeeping"><i class="fa fa-check"></i><b>2.3.3</b> Housekeeping</a></li>
+<li class="chapter" data-level="2.3.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-downloading"><i class="fa fa-check"></i><b>2.3.4</b> Downloading data</a></li>
+<li class="chapter" data-level="2.3.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-cleaning"><i class="fa fa-check"></i><b>2.3.5</b> Cleaning data</a></li>
+<li class="chapter" data-level="2.3.6" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#using-qgis-to-map-our-population-data"><i class="fa fa-check"></i><b>2.3.6</b> Using QGIS to map our population data</a></li>
+<li class="chapter" data-level="2.3.7" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#exporting-map-for-visual-analysis"><i class="fa fa-check"></i><b>2.3.7</b> Exporting map for visual analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#assignment-w02"><i class="fa fa-check"></i><b>2.4</b> Assignment</a></li>
+<li class="chapter" data-level="2.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#byl-w02"><i class="fa fa-check"></i><b>2.5</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html"><i class="fa fa-check"></i><b>3</b> Cartography and Visualisation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#reading-w03"><i class="fa fa-check"></i><b>3.1</b> Reading list</a></li>
+<li class="chapter" data-level="3.2" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#crime-in-london-i"><i class="fa fa-check"></i><b>3.2</b> Crime in London I</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#w03-finding"><i class="fa fa-check"></i><b>3.2.1</b> Finding our datasets</a></li>
+<li class="chapter" data-level="3.2.2" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#w03-downloading"><i class="fa fa-check"></i><b>3.2.2</b> Downloading data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#using-qgis-to-map-our-crime-data"><i class="fa fa-check"></i><b>3.2.3</b> Using QGIS to map our crime data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#assignment-w03"><i class="fa fa-check"></i><b>3.3</b> Assignment</a></li>
+<li class="chapter" data-level="3.4" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#byl-w03"><i class="fa fa-check"></i><b>3.4</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Programming for Data Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#reading-w04"><i class="fa fa-check"></i><b>4.1</b> Reading list</a></li>
+<li class="chapter" data-level="4.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#programming"><i class="fa fa-check"></i><b>4.2</b> Programming</a></li>
+<li class="chapter" data-level="4.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#programming-in-r"><i class="fa fa-check"></i><b>4.3</b> Programming in R</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#the-rstudio-interface"><i class="fa fa-check"></i><b>4.3.1</b> The RStudio interface</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#rstudio-console"><i class="fa fa-check"></i><b>4.4</b> RStudio console</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#command-input"><i class="fa fa-check"></i><b>4.4.1</b> Command Input</a></li>
+<li class="chapter" data-level="4.4.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#storing-variables"><i class="fa fa-check"></i><b>4.4.2</b> Storing variables</a></li>
+<li class="chapter" data-level="4.4.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#accessing-and-returning-variables"><i class="fa fa-check"></i><b>4.4.3</b> Accessing and returning variables</a></li>
+<li class="chapter" data-level="4.4.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#variables-of-different-data-types"><i class="fa fa-check"></i><b>4.4.4</b> Variables of different data types</a></li>
+<li class="chapter" data-level="4.4.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#calling-functions-on-our-variables"><i class="fa fa-check"></i><b>4.4.5</b> Calling functions on our variables</a></li>
+<li class="chapter" data-level="4.4.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#returning-functions"><i class="fa fa-check"></i><b>4.4.6</b> Returning functions</a></li>
+<li class="chapter" data-level="4.4.7" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#examining-our-variables-using-functions"><i class="fa fa-check"></i><b>4.4.7</b> Examining our variables using functions</a></li>
+<li class="chapter" data-level="4.4.8" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#creating-a-two-element-object"><i class="fa fa-check"></i><b>4.4.8</b> Creating a two-element object</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#simple-analysis"><i class="fa fa-check"></i><b>4.5</b> Simple analysis</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#housekeeping"><i class="fa fa-check"></i><b>4.5.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="4.5.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#atomic-vectors"><i class="fa fa-check"></i><b>4.5.2</b> Atomic vectors</a></li>
+<li class="chapter" data-level="4.5.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#matrices"><i class="fa fa-check"></i><b>4.5.3</b> Matrices</a></li>
+<li class="chapter" data-level="4.5.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#dataframes"><i class="fa fa-check"></i><b>4.5.4</b> Dataframes</a></li>
+<li class="chapter" data-level="4.5.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#column-names"><i class="fa fa-check"></i><b>4.5.5</b> Column names</a></li>
+<li class="chapter" data-level="4.5.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#adding-columns"><i class="fa fa-check"></i><b>4.5.6</b> Adding columns</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#crime-in-london-ii"><i class="fa fa-check"></i><b>4.6</b> Crime in London II</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#starting-a-project"><i class="fa fa-check"></i><b>4.6.1</b> Starting a project</a></li>
+<li class="chapter" data-level="4.6.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#setting-up-a-script"><i class="fa fa-check"></i><b>4.6.2</b> Setting up a script</a></li>
+<li class="chapter" data-level="4.6.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#running-a-script"><i class="fa fa-check"></i><b>4.6.3</b> Running a script</a></li>
+<li class="chapter" data-level="4.6.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#crime-data-2"><i class="fa fa-check"></i><b>4.6.4</b> Crime data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#assignment-w04"><i class="fa fa-check"></i><b>4.7</b> Assignment</a></li>
+<li class="chapter" data-level="4.8" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#wm-w04"><i class="fa fa-check"></i><b>4.8</b> Want more? [Optional]</a></li>
+<li class="chapter" data-level="4.9" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#byl-w04"><i class="fa fa-check"></i><b>4.9</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html"><i class="fa fa-check"></i><b>5</b> Programming for Spatial Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#reading-w05"><i class="fa fa-check"></i><b>5.1</b> Reading list</a></li>
+<li class="chapter" data-level="5.2" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#crime-in-london-iii"><i class="fa fa-check"></i><b>5.2</b> Crime in London III</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#data-preparation"><i class="fa fa-check"></i><b>5.2.1</b> Data preparation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#spatial-analysis-set-up"><i class="fa fa-check"></i><b>5.2.2</b> Spatial analysis set up</a></li>
+<li class="chapter" data-level="5.2.3" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#interacting-with-spatial-data"><i class="fa fa-check"></i><b>5.2.3</b> Interacting with spatial data</a></li>
+<li class="chapter" data-level="5.2.4" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#getting-our-crime-data-in-shape"><i class="fa fa-check"></i><b>5.2.4</b> Getting our crime data in shape</a></li>
+<li class="chapter" data-level="5.2.5" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#data-wrangling"><i class="fa fa-check"></i><b>5.2.5</b> Data wrangling</a></li>
+<li class="chapter" data-level="5.2.6" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#improving-your-workflow"><i class="fa fa-check"></i><b>5.2.6</b> Improving your workflow</a></li>
+<li class="chapter" data-level="5.2.7" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#aggregate-crime-by-ward"><i class="fa fa-check"></i><b>5.2.7</b> Aggregate crime by ward</a></li>
+<li class="chapter" data-level="5.2.8" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#joining-crime-data-to-wards"><i class="fa fa-check"></i><b>5.2.8</b> Joining crime data to wards</a></li>
+<li class="chapter" data-level="5.2.9" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#mapping-crime-data"><i class="fa fa-check"></i><b>5.2.9</b> Mapping crime data</a></li>
+<li class="chapter" data-level="5.2.10" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#styling-crime-data"><i class="fa fa-check"></i><b>5.2.10</b> Styling crime data</a></li>
+<li class="chapter" data-level="5.2.11" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#exporting-our-crime-data"><i class="fa fa-check"></i><b>5.2.11</b> Exporting our crime data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#assignment-w05"><i class="fa fa-check"></i><b>5.3</b> Assignment</a></li>
+<li class="chapter" data-level="5.4" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#byl-w05"><i class="fa fa-check"></i><b>5.4</b> Before you leave</a></li>
+</ul></li>
+<li class="part"><span><b>Core Spatial Analysis</b></span></li>
+<li class="chapter" data-level="6" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><i class="fa fa-check"></i><b>6</b> Analysing Spatial Patterns I: Geometric Operations and Spatial Queries</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#reading-w06"><i class="fa fa-check"></i><b>6.1</b> Reading list</a></li>
+<li class="chapter" data-level="6.2" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#bike-theft-w06"><i class="fa fa-check"></i><b>6.2</b> Bike theft in London</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#housekeeping-w06"><i class="fa fa-check"></i><b>6.2.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="6.2.2" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#loading-data-w06"><i class="fa fa-check"></i><b>6.2.2</b> Loading data</a></li>
+<li class="chapter" data-level="6.2.3" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#data-preparation-w06"><i class="fa fa-check"></i><b>6.2.3</b> Data preparation</a></li>
+<li class="chapter" data-level="6.2.4" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#spatial-operations-i"><i class="fa fa-check"></i><b>6.2.4</b> Spatial operations I</a></li>
+<li class="chapter" data-level="6.2.5" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#spatial-operations-ii"><i class="fa fa-check"></i><b>6.2.5</b> Spatial operations II</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#assignment-w06"><i class="fa fa-check"></i><b>6.3</b> Assignment</a></li>
+<li class="chapter" data-level="6.4" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#byl-w06"><i class="fa fa-check"></i><b>6.4</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><i class="fa fa-check"></i><b>7</b> Analysing Spatial Patterns II: Spatial Autocorrelation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#reading-w07"><i class="fa fa-check"></i><b>7.1</b> Reading list</a></li>
+<li class="chapter" data-level="7.2" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#childhood-obesity"><i class="fa fa-check"></i><b>7.2</b> Childhood obesity</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#housekeeping-w07"><i class="fa fa-check"></i><b>7.2.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="7.2.2" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#loading-data-w07"><i class="fa fa-check"></i><b>7.2.2</b> Loading data</a></li>
+<li class="chapter" data-level="7.2.3" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#data-preparation-w07"><i class="fa fa-check"></i><b>7.2.3</b> Data preparation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#statistical-distributions"><i class="fa fa-check"></i><b>7.3</b> Statistical distributions</a></li>
+<li class="chapter" data-level="7.4" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#assignment-1-w07"><i class="fa fa-check"></i><b>7.4</b> Assignment 1</a></li>
+<li class="chapter" data-level="7.5" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#spatial-distributions"><i class="fa fa-check"></i><b>7.5</b> Spatial distributions</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#spatial-lag"><i class="fa fa-check"></i><b>7.5.1</b> Spatial lag</a></li>
+<li class="chapter" data-level="7.5.2" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#defining-neighbours"><i class="fa fa-check"></i><b>7.5.2</b> Defining neighbours</a></li>
+<li class="chapter" data-level="7.5.3" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#spatial-weights-matrix"><i class="fa fa-check"></i><b>7.5.3</b> Spatial weights matrix</a></li>
+<li class="chapter" data-level="7.5.4" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#global-morans-i"><i class="fa fa-check"></i><b>7.5.4</b> Global Moran’s I</a></li>
+<li class="chapter" data-level="7.5.5" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#local-morans-i"><i class="fa fa-check"></i><b>7.5.5</b> Local Moran’s I</a></li>
+<li class="chapter" data-level="7.5.6" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#getis-ord-gi"><i class="fa fa-check"></i><b>7.5.6</b> Getis-Ord-Gi*</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#assignment-2-w07"><i class="fa fa-check"></i><b>7.6</b> Assignment 2</a></li>
+<li class="chapter" data-level="7.7" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#byl-w07"><i class="fa fa-check"></i><b>7.7</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html"><i class="fa fa-check"></i><b>8</b> Analysing Spatial Patterns III: Point Pattern Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#reading-w08"><i class="fa fa-check"></i><b>8.1</b> Reading list</a></li>
+<li class="chapter" data-level="8.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#bike-theft-w08"><i class="fa fa-check"></i><b>8.2</b> Bike theft in London</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#housekeeping-w08"><i class="fa fa-check"></i><b>8.2.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="8.2.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#loading-data-w08"><i class="fa fa-check"></i><b>8.2.2</b> Loading data</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#point-pattern-analysis"><i class="fa fa-check"></i><b>8.3</b> Point pattern analysis</a></li>
+<li class="chapter" data-level="8.4" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#density-based-techniques"><i class="fa fa-check"></i><b>8.4</b> Density-based techniques</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#quadrat-analysis"><i class="fa fa-check"></i><b>8.4.1</b> Quadrat analysis</a></li>
+<li class="chapter" data-level="8.4.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#kernel-density-estimation"><i class="fa fa-check"></i><b>8.4.2</b> Kernel Density Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#assignment-w08"><i class="fa fa-check"></i><b>8.5</b> Assignment</a></li>
+<li class="chapter" data-level="8.6" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#distance-based-methods"><i class="fa fa-check"></i><b>8.6</b> Distance-Based Methods</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#average-nearest-neighbour"><i class="fa fa-check"></i><b>8.6.1</b> Average Nearest Neighbour</a></li>
+<li class="chapter" data-level="8.6.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#ripleys-k-function"><i class="fa fa-check"></i><b>8.6.2</b> Ripley’s K function</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#wm-w08"><i class="fa fa-check"></i><b>8.7</b> Want more? [Optional]</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#what-is-dbscan"><i class="fa fa-check"></i><b>8.7.1</b> What is DBSCAN?</a></li>
+<li class="chapter" data-level="8.7.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#conducting-a-dbscan-analysis"><i class="fa fa-check"></i><b>8.7.2</b> Conducting a DBSCAN analysis</a></li>
+<li class="chapter" data-level="8.7.3" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#working-with-the-dbscan-output"><i class="fa fa-check"></i><b>8.7.3</b> Working with the DBSCAN output</a></li>
+<li class="chapter" data-level="8.7.4" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#mapping-dbscan-clusters"><i class="fa fa-check"></i><b>8.7.4</b> Mapping DBSCAN clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#byl-w08"><i class="fa fa-check"></i><b>8.8</b> Before you leave</a></li>
+</ul></li>
+<li class="part"><span><b>Advanced Spatial Analysis</b></span></li>
+<li class="chapter" data-level="9" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html"><i class="fa fa-check"></i><b>9</b> Rasters, Zonal Statistics and Interpolation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#reading-w09"><i class="fa fa-check"></i><b>9.1</b> Reading list</a></li>
+<li class="chapter" data-level="9.2" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#raster-data"><i class="fa fa-check"></i><b>9.2</b> Raster data</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#housekeeping-w09"><i class="fa fa-check"></i><b>9.2.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="9.2.2" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#downloading-data-w09"><i class="fa fa-check"></i><b>9.2.2</b> Downloading data</a></li>
+<li class="chapter" data-level="9.2.3" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#raster-data-1"><i class="fa fa-check"></i><b>9.2.3</b> Raster data</a></li>
+<li class="chapter" data-level="9.2.4" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#map-algebra"><i class="fa fa-check"></i><b>9.2.4</b> Map algebra</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#population-change-in-london-1"><i class="fa fa-check"></i><b>9.3</b> Population change in London</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#loading-data-w09-1"><i class="fa fa-check"></i><b>9.3.1</b> Loading data</a></li>
+<li class="chapter" data-level="9.3.2" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#analysing-population-change"><i class="fa fa-check"></i><b>9.3.2</b> Analysing population change</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#assignment-w09-01"><i class="fa fa-check"></i><b>9.4</b> Assignment 1</a></li>
+<li class="chapter" data-level="9.5" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#air-pollution-in-london"><i class="fa fa-check"></i><b>9.5</b> Air pollution in London</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#loading-data-w09-2"><i class="fa fa-check"></i><b>9.5.1</b> Loading data</a></li>
+<li class="chapter" data-level="9.5.2" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#analysing-air-pollution"><i class="fa fa-check"></i><b>9.5.2</b> Analysing air pollution</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#assignment-w09-02"><i class="fa fa-check"></i><b>9.6</b> Assignment 2</a></li>
+<li class="chapter" data-level="9.7" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#byl-w09"><i class="fa fa-check"></i><b>9.7</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html"><i class="fa fa-check"></i><b>10</b> Transport Network Analysis</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#reading-w10"><i class="fa fa-check"></i><b>10.1</b> Reading list</a></li>
+<li class="chapter" data-level="10.2" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#transport-network-analysis-1"><i class="fa fa-check"></i><b>10.2</b> Transport Network Analysis</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#accessibility-in-portsmouth"><i class="fa fa-check"></i><b>10.2.1</b> Accessibility in Portsmouth</a></li>
+<li class="chapter" data-level="10.2.2" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#loading-data-w10"><i class="fa fa-check"></i><b>10.2.2</b> Acquiring network data</a></li>
+<li class="chapter" data-level="10.2.3" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#measuring-accessibility"><i class="fa fa-check"></i><b>10.2.3</b> Measuring accessibility</a></li>
+<li class="chapter" data-level="10.2.4" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#task-w10"><i class="fa fa-check"></i><b>10.2.4</b> Tutorial task</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#wm-w10"><i class="fa fa-check"></i><b>10.3</b> Want more? [Optional]</a></li>
+<li class="chapter" data-level="10.4" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#byl-w10"><i class="fa fa-check"></i><b>10.4</b> Before you leave</a></li>
+</ul></li>
+<li class="part"><span><b>Additional Resources</b></span></li>
+<li class="chapter" data-level="11" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>11</b> Data Sources</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="data-sources.html"><a href="data-sources.html#open-data"><i class="fa fa-check"></i><b>11.1</b> Open Data</a></li>
+<li class="chapter" data-level="11.2" data-path="data-sources.html"><a href="data-sources.html#safeguarded-data"><i class="fa fa-check"></i><b>11.2</b> Safeguarded Data</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GEOG0030: Geocomputation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analysing-spatial-patterns-ii-spatial-autocorrelation" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Analysing Spatial Patterns II: Spatial Autocorrelation<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#analysing-spatial-patterns-ii-spatial-autocorrelation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This week, we will be looking at measuring spatial dependence. Spatial dependence is the idea that the observed value of a variable in one location is dependent (to some degree) on the observed value of the same value in a nearby location. For spatial analysis, this dependence can be assessed and measured statistically by considering the level of spatial autocorrelation between values of a specific variable, observed in either different locations or between pairs of variables observed at the same location. Spatial autocorrelation occurs when these values are not independent of one another and instead cluster together across geographic space.</p>
+<!-- ## Lecture slides {#slides-w07} -->
+<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w07_geo.pdf). -->
+<div id="reading-w07" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Reading list<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#reading-w07" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="essential-readings-6" class="section level4 unnumbered hasAnchor">
+<h4>Essential readings<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#essential-readings-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Griffith, D. 2017. <em>Spatial Autocorrelation</em>. The Geographic Information Science &amp; Technology Body of Knowledge. <a href="https://doi.org/10.22224/gistbok/2020.3.10">[Link]</a></li>
+<li>Gimond, M. 2021. Intro to GIS and spatial analysis. <strong>Chapter 13</strong>: <em>Spatial autocorrelation</em>. <a href="https://mgimond.github.io/Spatial/spatial-autocorrelation.html">[Link]</a></li>
+<li>Livings, M. and Wu, A-M. 2020. <em>Local Measures of Spatial Association</em>. The Geographic Information Science &amp; Technology Body of Knowledge. <a href="https://doi.org/10.22224/gistbok/2020.3.10">[Link]</a></li>
+<li>Longley, P. <em>et al</em>. 2015. Geographic Information Science &amp; systems, <strong>Chapter 13</strong>: <em>Spatial Analysis</em>. <a href="https://ucl.rl.talis.com/link?url=https%3A%2F%2Fapp.knovel.com%2Fhotlink%2Ftoc%2Fid%3AkpGISSE001%2Fgeographic-information-science%3Fkpromoter%3Dmarc&amp;sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a">[Link]</a></li>
+</ul>
+</div>
+<div id="suggested-readings-6" class="section level4 unnumbered hasAnchor">
+<h4>Suggested readings<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#suggested-readings-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Brundson, C. and Comber, L. 2018. An Introduction to R for Spatial Analysis and Mapping. <strong>Chapter 7</strong>: <em>Spatial Attribute Analysis with R</em>. <a href="https://ucl.userservices.exlibrisgroup.com/view/action/uresolver.do?operation=resolveService&amp;package_service_id=10347667960004761&amp;institutionId=4761&amp;customerId=4760">[Link]</a></li>
+<li>Lee, S. 2019. Uncertainty in the effects of the modifiable areal unit problem under different levels of spatial autocorrelation: a simulation study. <em>International Journal of Geographical Information Science</em> 33: 1135-1154. <a href="https://doi.org/10.1080/13658816.2018.1542699">[Link]</a></li>
+<li>Harris, R. 2020. Exploring the neighbourhood-level correlates of Covid-19 deaths in London using a difference across spatial boundaries method. <em>Health &amp; Place</em> 66: 102446. <a href="https://doi.org/10.1016/j.healthplace.2020.102446">[Link]</a></li>
+</ul>
+</div>
+</div>
+<div id="childhood-obesity" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Childhood obesity<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#childhood-obesity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This week, we are using a completely new dataset and investigating a different phenomena: <strong>childhood obesity</strong>. We will be investigating its distribution across London at the ward-level. To complete this analysis, we will be using a single data download from the <a href="https://data.london.gov.uk/">London Datastore</a>, which we will need to clean, wrangle and then join to one of our ward shapefiles in order to spatially investigate the distribution of childhood obesity.</p>
+<div id="housekeeping-w07" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Housekeeping<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#housekeeping-w07" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s get ourselves ready to start our practical content by first downloading the relevant data and loading this within our script.</p>
+<p>Open a new script within your GEOG0030 project and save this script as <code>wk7-obesity-spatial-analysis.r</code>. At the top of your script, add the following metadata (substitute accordingly):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysing childhood obesity and its factors Date: January 2023 Author: Justin</span></span></code></pre></div>
+<p>Add the following libraries for loading in your script:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries</span></span>
+<span id="cb2-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb2-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb2-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb2-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb2-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span></code></pre></div>
+</div>
+<div id="loading-data-w07" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Loading data<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#loading-data-w07" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We are going to only need <strong>two</strong> datasets for this week: our London ward boundaries from 2011 and the Greater London Authority (GLA) Ward Atlas and Profiles. The GLA Ward Atlas and Profiles provide a range of demographic and related data for each ward in Greater London and were specifically designed to provide an overview of the ward’s population by collating and presenting a range of data on the population, diversity, households, life expectancy, housing, crime, benefits, land use, deprivation, and employment.</p>
+<p>Indicators in the Atlas/Profile include:</p>
+<ul>
+<li>Age and sex</li>
+<li>Land area, projections and population density</li>
+<li>Household composition, religion, ethnicity</li>
+<li>Birth rates (general fertility rate), death rates (standardised mortality ratio), life expectancy</li>
+<li>Average house prices, properties sold, housing by council tax band, tenure, property size (bedrooms), dwelling build period and type, mortgage and landlord home repossession</li>
+<li>Employment and economic activity, Incapacity Benefit, Housing Benefit, Household income, Income Support and JobSeekers Allowance claimant rates, dependent children receiving child-tax credits by lone parents and out-of-work families, child poverty</li>
+<li>GCSE results, A-level / Level 3 results (average point scores), pupil absence</li>
+<li>Child obesity</li>
+<li>Crime rates (by type of crime), fires, ambulance call outs, road casualties</li>
+<li>Happiness and well-being, land use, public transport accessibility (PTALs), access to public greenspace, access to nature, air emissions / quality, car use, bicycle travel</li>
+<li>Indices of Deprivation</li>
+<li>Election turnout</li>
+</ul>
+<p>The main dataset utilises the <strong>2011 Ward Boundaries as its spatial representation</strong>, therefore we need to use the 2011 boundaries. We already have our 2011 London Ward boundaries within our <code>raw</code> data folder, so we only need to download our Ward Atlas.</p>
+<ol style="list-style-type: decimal">
+<li>Navigate to the ward Atlas dataset in the London Data Store: <a href="https://data.london.gov.uk/dataset/ward-profiles-and-atlas">[Link]</a>.</li>
+<li>Download the <code>ward-atlas-data.csv</code>. You might find that instead of downloading the file, your browser will open up a new window. You have two options:
+<ul>
+<li>Copy and paste all contents of the page into a text editor such as Notepad and save your pasted contents as <code>ward-atlas-data.csv</code> in your <strong>raw</strong> data folder in a new <code>atlas</code> folder. Make sure to add the <code>.csv</code> to the end of your file name to save your text file as a <code>csv</code>.</li>
+<li>Click back to the dataset page, right-click on the <code>ward-atlas-data.csv</code> name and select <strong>Download Linked File</strong> from your computer’s options. Move this into your <code>raw</code> data folder in a new <code>atlas</code> folder.</li>
+</ul></li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:07-download-gif"></span>
+<img src="images/w07/download_shot.gif" alt="Download linked file." width="450pt" />
+<p class="caption">
+Figure 7.1: Download linked file.
+</p>
+</div>
+<p>Let’s first load our London ward shapefile from our <code>raw/boundaries/2011</code> folder:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in our London ward boundaries</span></span>
+<span id="cb3-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb3-2" aria-hidden="true" tabindex="-1"></a>london_ward_shp <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">&quot;data/raw/boundaries/2011/London_Ward_CityMerged.shp&quot;</span>)</span></code></pre></div>
+<p>We can both <code>View()</code> and <code>plot()</code> the data in our console to check what our data looks like. We are happy with the dataframe (its field names) and what its looking like as a shapefile, so we do not need to do any cleaning on this dataset. We can now turn to our <strong>London Ward Atlas</strong> dataset and load the <code>csv</code> dataset into R:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in our ward atlas data csv from our raw data folder</span></span>
+<span id="cb4-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb4-2" aria-hidden="true" tabindex="-1"></a>all_ward_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/raw/atlas/ward-atlas-data.csv&quot;</span>)</span></code></pre></div>
+<p>If you go ahead and view the data, you will see we have a lot of information about our Wards in the dataset. We have a total of <strong>946 variables</strong> four our 629 wards. We cannot exactly analyse all of these variables, so we will need to extract only the variables we need.</p>
+<div class="note">
+<p><strong>Note</strong> <br/>
+If you run into an error along the lines of <code>Error in nchar(x, "width") : invalid multibyte string, element 1</code>, there is an issue with the character encoding of the file. If this is the case, please download a <a href="https://en.wikipedia.org/wiki/UTF-8#:~:text=UTF%2D8%20is%20a%20variable,Transformation%20Format%20%E2%80%93%208%2Dbit.&amp;text=Code%20points%20with%20lower%20numerical,are%20encoded%20using%20fewer%20bytes.">UTF-8 encoded</a> copy of the file here: <a href="https://github.com/jtvandijk/GEOG0030/tree/master/data/zip/ward-atlas-data.zip">[Link]</a></p>
+</div>
+</div>
+<div id="data-preparation-w07" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Data preparation<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#data-preparation-w07" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To clean our data and extract the variables for our analysis, we need to identify those most useful to our research. Of course, we need to find a variable that matches our phenomena of investigation: child obesity. We will also keep several additional variables in case one would want to move beyond studying the distribution of child obesity, e.g. by looking at explanatory factors such as:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Individual level factors</strong>: diet and exercise, parents’ weights, mode of travel to school / time taken to walk to school.</li>
+<li><strong>Household/societal level factors</strong>: area deprivation, household income, household employment</li>
+</ol>
+<p>This week, our data wrangling is quite minimal but it is important you follow all the steps to ensure you have the correct final dataframe for our analysis. Overall, you will:</p>
+<ul>
+<li>Select the required columns for our dataframe and analysis.</li>
+<li>Remove the first row which contains data that are part of the column names.</li>
+<li>Remove the last three rows, which contains data for the whole of London, England, and England and Wales.</li>
+<li>Clean and rename our field columns.</li>
+<li>Coerce our variables into the correct data type for our analysis.</li>
+<li>Join our ‘atlas data’ dataframe to our ward spatial dataframe.</li>
+</ul>
+<p>The fields that we need to extract from our dataset include:</p>
+<ul>
+<li><strong>838</strong>: Childhood Obesity Prevalence; Year 6 (School children aged 10-11); 2011/12 to 2013/14: % obese</li>
+<li><strong>900</strong>: Indices of Deprivation; IDACI; 2010</li>
+<li><strong>248</strong>: House Prices; Median House Price; 2014</li>
+<li><strong>353</strong>: Household Income; Mean Modelled Household income (£); 2012/13</li>
+<li><strong>373</strong>: Employment; Adults not in Employment - 2011 Census; % of households with no adults in employment with dependent children</li>
+<li><strong>377</strong>: Qualifications; Qualifications and Students - 2011 Census; % No qualifications</li>
+<li><strong>859</strong>: Access to green space and nature; % homes with deficiency in access to nature; 2012</li>
+<li><strong>865</strong>: Public Transport Accessibility; Average PTAL score; 2014</li>
+</ul>
+<p>and of course:</p>
+<ul>
+<li><strong>2</strong>: …2 - which contains our ward codes.</li>
+<li><strong>4</strong>: …4 - which contains our ward names.</li>
+</ul>
+<p>Select our 10 fields from our <code>all_ward_data</code> dataframe for use in analysis:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select our 10 fields for analysis using their index number</span></span>
+<span id="cb5-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb5-2" aria-hidden="true" tabindex="-1"></a>obesity_ward_data <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">select</span>(all_ward_data, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">838</span>, <span class="dv">900</span>, <span class="dv">248</span>, <span class="dv">353</span>, <span class="dv">373</span>,</span>
+<span id="cb5-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">377</span>, <span class="dv">859</span>, <span class="dv">865</span>)</span></code></pre></div>
+<p>You should now have a new dataframe with our 10 variables. One issue with our original <code>csv</code> is that is contained two rows worth of field names - hence if you look at the first row of our dataframe, it does not make sense. We therefore want to remove this row as well as the last three rows. In addition, it would be good to clean up our names for use. Here we use the <code>clean_names()</code> function from the <code>janitor</code> library, which cleans our names by removing white space, special characters, capitals etc.</p>
+<p>Remove the first line of our dataframe and clean our field names:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove our first row, remove last three rows, clean the names of our fields</span></span>
+<span id="cb6-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb6-2" aria-hidden="true" tabindex="-1"></a>obesity_ward_data <span class="ot">&lt;-</span> obesity_ward_data <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="sc">-</span><span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb6-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb6-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(obesity_ward_data)</span></code></pre></div>
+<pre><code>##  [1] &quot;x2&quot;                                                                                                                        
+##  [2] &quot;x4&quot;                                                                                                                        
+##  [3] &quot;childhood_obesity_prevalence_year_6_age_10_11_2011_12_to_2013_14_percent_obese&quot;                                            
+##  [4] &quot;indices_of_deprivation_idaci_2010&quot;                                                                                         
+##  [5] &quot;house_prices_median_house_price_2014&quot;                                                                                      
+##  [6] &quot;household_income_mean_modelled_household_income_2012_13&quot;                                                                   
+##  [7] &quot;employment_adults_not_in_employment_2011_census_percent_of_households_with_no_adults_in_employment_with_dependent_children&quot;
+##  [8] &quot;qualifications_qualifications_and_students_2011_census_percent_no_qualifications&quot;                                          
+##  [9] &quot;access_to_green_space_and_nature_percent_homes_with_deficiency_in_access_to_nature_2012&quot;                                   
+## [10] &quot;public_transport_accessibility_average_ptal_score_2014&quot;</code></pre>
+<p>The final thing we can do with this dataset before we need to join it to our London Wards spatial dataframe is just tidy up our column names: <code>x2</code> and <code>x4</code> does not exactly mean much to us and it gives us a chance to shorten the names of the other variables:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename field names of ward data to something more useful</span></span>
+<span id="cb8-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(obesity_ward_data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ward_code&quot;</span>, <span class="st">&quot;ward_name&quot;</span>, <span class="st">&quot;y6_obesity_2014&quot;</span>, <span class="st">&quot;IDACI_2010&quot;</span>,</span>
+<span id="cb8-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;med_house_price_2014&quot;</span>, <span class="st">&quot;mean_hh_income_2013&quot;</span>, <span class="st">&quot;per_no_adult_employ_2011&quot;</span>, <span class="st">&quot;per_no_qual_2011&quot;</span>,</span>
+<span id="cb8-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;per_deficiency_greenspace_2012&quot;</span>, <span class="st">&quot;PTAL_2014&quot;</span>)</span></code></pre></div>
+<p>Now we have the data we want to map, we need to do a final spot of checking: one of the main issues faced with loading data directly from a <code>csv</code> in R without cleaning it first in a spreadsheet programme as we have done before, is that we cannot guarantee that the data will be loaded correctly. Unfortunately with our current dataframe we can see that not all columns are correctly loaded. If you inspect the structure of the dataframe, you will see that several of our variables are of the type <code>char</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the structure of the data</span></span>
+<span id="cb9-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(obesity_ward_data)</span></code></pre></div>
+<pre><code>## tibble [625 × 10] (S3: tbl_df/tbl/data.frame)
+##  $ ward_code                     : chr [1:625] &quot;E09000001&quot; &quot;E05000026&quot; &quot;E05000027&quot; &quot;E05000028&quot; ...
+##  $ ward_name                     : chr [1:625] &quot;City of London&quot; &quot;Abbey&quot; &quot;Alibon&quot; &quot;Becontree&quot; ...
+##  $ y6_obesity_2014               : chr [1:625] &quot;23.21428571&quot; &quot;24.71655329&quot; &quot;25.99531616&quot; &quot;29.25851703&quot; ...
+##  $ IDACI_2010                    : num [1:625] 0.12 0.439 0.397 0.38 0.435 ...
+##  $ med_house_price_2014          : num [1:625] 765000 173000 215000 210000 240500 ...
+##  $ mean_hh_income_2013           : chr [1:625] &quot;99390&quot; &quot;38870&quot; &quot;37290&quot; &quot;37860&quot; ...
+##  $ per_no_adult_employ_2011      : chr [1:625] &quot;0.86659065&quot; &quot;8.748906387&quot; &quot;12.44019139&quot; &quot;10.73182137&quot; ...
+##  $ per_no_qual_2011              : chr [1:625] &quot;6.7&quot; &quot;16.4&quot; &quot;31.2&quot; &quot;28&quot; ...
+##  $ per_deficiency_greenspace_2012: chr [1:625] &quot;100&quot; &quot;2.164412071&quot; &quot;71.7273622&quot; &quot;17.1662713&quot; ...
+##  $ PTAL_2014                     : chr [1:625] &quot;7.9&quot; &quot;5.989364918&quot; &quot;3.145890095&quot; &quot;2.8717665&quot; ...</code></pre>
+<p>The results from the <code>str()</code> function suggest that some variables have been interpreted by R to be characters rather than numeric. This might be because there is some missing data or in some cases, the decimal point can interfere with the data being read as a numeric. Luckily it is easy to change our data type - a bit like right-clicking on our columns in Excel and setting the format of the column to <code>number</code>, we will do this using code. If we wanted to apply this to a single column than we would use the code: <code>as.numeric(dataframe$column)</code> but as we want to apply this across a few columns, we will be using the <code>mutate_at()</code> function from the <code>dplyr</code> library.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change data types</span></span>
+<span id="cb11-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb11-2" aria-hidden="true" tabindex="-1"></a>obesity_ward_data <span class="ot">&lt;-</span> <span class="fu">mutate_at</span>(obesity_ward_data, <span class="fu">vars</span>(y6_obesity_2014, mean_hh_income_2013,</span>
+<span id="cb11-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb11-3" aria-hidden="true" tabindex="-1"></a>    per_no_adult_employ_2011, per_no_qual_2011, per_deficiency_greenspace_2012, PTAL_2014),</span>
+<span id="cb11-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(x))</span></code></pre></div>
+<pre><code>## Warning in (function (x) : NAs introduced by coercion</code></pre>
+<p>You will see warnings that <code>NAs</code> have been introduced by this coercion in some of our variables. This is something we will need to be aware of later in our analysis, but will not look at right now. Now our final step is to join our final <code>obesity_ward_data</code> dataframe to our <code>london_wards_shp</code> spatial dataframe so we can complete both statistical and spatial analysis:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># join obesity df to ward sdf for analysis</span></span>
+<span id="cb13-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb13-2" aria-hidden="true" tabindex="-1"></a>obesity_ward_sdf <span class="ot">&lt;-</span> <span class="fu">left_join</span>(london_ward_shp, obesity_ward_data,</span>
+<span id="cb13-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;GSS_CODE&quot;</span> <span class="ot">=</span> <span class="st">&quot;ward_code&quot;</span>)</span>
+<span id="cb13-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Have a look at your newly created spatial dataframe using the <code>plot()</code> function, for instance. If you like, you can also write out the final <code>csv</code> using the <code>write_csv()</code> function to save a raw copy in your data folder.</p>
+</div>
+</div>
+<div id="statistical-distributions" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Statistical distributions<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#statistical-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Today, we are interested in looking at spatial autocorrelation: the effect of spatial processes on distributions. We will be using our newly created <code>obesity_ward_sdf</code> to look at this in action, whilst also answering questions on the overall distribution and factors of childhood obesity.</p>
+<p>Within general data analysis, when it comes to analysing the distribution of your data, you are looking to conduct what is known as <strong>Exploratory Data Analysis</strong> (EDA) which is where we look to summarise the main characteristics of our data. EDA was promoted by prominent statistician <a href="https://en.wikipedia.org/wiki/John_Tukey">John Tukey</a> to encourage data analysts to explore their data outside of traditional formal modelling and come up with new areas of investigation and hypotheses. Tukey promoted the use of five summary statistics: <strong>the max-min, the median, and the quartiles</strong>, which, in comparison to the mean and standard deviation, provide a more robust understanding of a data’s distribution, particularly if the data is skewed.</p>
+<p>We looked at how we can use R to extract some of these summary statistics briefly in Week 4, but let’s have a look at how we can add further to this EDA, including creating some statistical charts of our data’s distribution.</p>
+<p>In your script, below your joining of our dataframes, summarise our <code>y6_obesity_2014</code> distribution</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summarise our y6_obesity_2014 data</span></span>
+<span id="cb14-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(obesity_ward_sdf<span class="sc">$</span>y6_obesity_2014)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   5.929  18.569  22.670  21.752  25.325  35.000      12</code></pre>
+<p>This <code>summary()</code> function can also be called on the dataset as a whole and will generate summary statistics for each individual numeric variable. You can execute this in your console if you like to get an understanding of all of variables - although we will focus on obesity for much of this practical. We can see that our <strong>median</strong> and <strong>mean</strong> are quite close to one another. We can also see that the quartiles are nearly the same amount apart from the mean, so we can start to think that our data is normally distribution. To confirm this, we can do the next best thing, which is plot our distribution using a <strong>histogram</strong>, using the base R <code>hist()</code> command:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the histogram of our y6_obesity_2014 data</span></span>
+<span id="cb16-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(obesity_ward_sdf<span class="sc">$</span>y6_obesity_2014)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-hist-1.png" width="672" /></p>
+<p>We can actually see our data has a slight negative skew, which makes sense given that our median is higher than our mean.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:07-data-distro"></span>
+<img src="images/w07/distributions.png" alt="Cheatsheet on data distributions: negative skew, normal, positive skew." width="648" />
+<p class="caption">
+Figure 7.2: Cheatsheet on data distributions: negative skew, normal, positive skew.
+</p>
+</div>
+<p>We can further customise our histograms if we want to make them more aesthetically pleasing and update the title and axis labeling:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pretty histogram</span></span>
+<span id="cb17-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(obesity_ward_sdf<span class="sc">$</span>y6_obesity_2014, <span class="at">breaks =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Distribution of Obesity in Year 6 children, London Wards in 2014&quot;</span>,</span>
+<span id="cb17-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Percentage of obese Year 6 children in the ward&quot;</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-hist-2-1.png" width="672" /></p>
+<p>We can also export this histogram and save it as a <code>png</code> by storing the histogram code to a variable and saving this variable to a file. The code to do so is a little different: we essentially first “open up” a file, called what we want to name our plot. We then run the code to plot our data, which will place the output “within” the file and then “close’ the file down.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># open an empty png</span></span>
+<span id="cb18-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;data/graphs/Y6_obesity_distribution.png&quot;</span>)</span>
+<span id="cb18-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pretty histogram</span></span>
+<span id="cb18-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(obesity_ward_sdf<span class="sc">$</span>y6_obesity_2014, <span class="at">breaks =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Distribution of Obesity in Year 6 children, London Wards in 2014&quot;</span>,</span>
+<span id="cb18-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Percentage of obese Year 6 children in the ward&quot;</span>)</span>
+<span id="cb18-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># close the png</span></span>
+<span id="cb18-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<p>Another type of chart we can create just using the base R library is a <strong>boxplot</strong>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:07-boxplot-img"></span>
+<img src="images/w07/boxplot.png" alt="Simple boxplot." width="650pt" />
+<p class="caption">
+Figure 7.3: Simple boxplot.
+</p>
+</div>
+<p>A boxplot shows the core characteristics of the distributions within a dataset, including the interquartile range. Plot the boxplot of our <code>y6_obesity_2014</code> variable:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the boxplot of our y6_obesity_2014 data</span></span>
+<span id="cb19-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(obesity_ward_sdf<span class="sc">$</span>y6_obesity_2014)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-boxplot-1.png" width="672" /></p>
+<div class="tip">
+<p><strong>Tip</strong> <br/>
+There is actually a lot more we can do in terms of visualising our data’s distribution and the best way forward would be to become more familiar with the <code>ggplot2</code> library. <code>ggplot2</code> is the main visualisation for both statistical and, increasingly, spatial graphs, charts and maps.</p>
+</div>
+</div>
+<div id="assignment-1-w07" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Assignment 1<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#assignment-1-w07" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Your first assignment this week is to go ahead and test each of our variables to determine their distribution. Make a note of which ones are normally distributed and which are not (and their skew). Understanding your data’s distribution is important if you want to test the relationships between different variables. For example, if you want to conduct a linear regression analysis you have to ensure that your variables are <strong>normally distributed</strong>.</p>
+</div>
+<div id="spatial-distributions" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Spatial distributions<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#spatial-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Whilst statistical analysis of distributions focus on tests and charts, when we want to understand the spatial distribution of our phenomena, we have a very simple solution: we make a map. In our case, we are looking at areal unit data and therefore we can use a choropleth map to study our data across the wards:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># store our variables of interest as a variable</span></span>
+<span id="cb20-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-2" aria-hidden="true" tabindex="-1"></a>var_fields <span class="ot">&lt;-</span> <span class="fu">names</span>(obesity_ward_sdf)[<span class="dv">10</span><span class="sc">:</span><span class="dv">17</span>]</span>
+<span id="cb20-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># map all our variables of interest at once</span></span>
+<span id="cb20-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(obesity_ward_sdf) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;gray&quot;</span>, <span class="at">border.col =</span> <span class="st">&quot;gray&quot;</span>) <span class="sc">+</span></span>
+<span id="cb20-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(obesity_ward_sdf) <span class="sc">+</span></span>
+<span id="cb20-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col =</span> var_fields) <span class="sc">+</span></span>
+<span id="cb20-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(</span>
+<span id="cb20-10"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.show =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb20-11"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.labels =</span> <span class="fu">c</span>(</span>
+<span id="cb20-12"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Yr 6 Obesity&quot;</span>, <span class="st">&quot;IDACI&quot;</span>, <span class="st">&quot;Median House Price&quot;</span>,</span>
+<span id="cb20-13"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Mean Household Income&quot;</span>, <span class="st">&quot;Percent No Adult Employment&quot;</span>,</span>
+<span id="cb20-14"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Percent No Qualifications&quot;</span>, <span class="st">&quot;Percent Deficient in Greenspace&quot;</span>,</span>
+<span id="cb20-15"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;PTAL&quot;</span></span>
+<span id="cb20-16"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb20-17"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb20-18"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_facets</span>(<span class="at">ncol =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-facet-map-1.png" width="672" /></p>
+<p>And specifically, we can create a single output choropleth map for each of our variables to visually understand their distribution:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># child obesity map</span></span>
+<span id="cb21-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_ward_shp) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;gray&quot;</span>, <span class="at">border.col =</span> <span class="st">&quot;gray&quot;</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(obesity_ward_sdf) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(</span>
+<span id="cb21-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">&quot;y6_obesity_2014&quot;</span>, <span class="at">n =</span> <span class="dv">5</span>, <span class="at">style =</span> <span class="st">&quot;jenks&quot;</span>,</span>
+<span id="cb21-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Percentage of children &quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Purples&quot;</span>,</span>
+<span id="cb21-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span></span>
+<span id="cb21-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb21-10"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(</span>
+<span id="cb21-11"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title =</span> <span class="st">&quot;Obesity of Year 6 children in London Wards in 2014&quot;</span>,</span>
+<span id="cb21-12"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title.fontface =</span> <span class="dv">2</span>, <span class="at">fontfamily =</span> <span class="st">&quot;Helvetica&quot;</span>,</span>
+<span id="cb21-13"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.outside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb21-14"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.outside.position =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb21-15"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.size =</span> <span class="dv">1</span>,</span>
+<span id="cb21-16"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.fontface =</span> <span class="dv">2</span></span>
+<span id="cb21-17"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb21-18"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>), <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;bottom&quot;</span>))</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-obesity-map-1.png" width="672" /></p>
+<p>The thing with spatial distributions is that we can quickly pick up on spatial patterns present within our data just by looking at the data. For example, in our obesity example, we can see there are clusters of high levels of obesity in East London, whilst there are clusters of low levels of obesity in the south east and south west areas of London. Let’s analyse these clusters statistically by looking at spatial autocorrelation.</p>
+<div class="note">
+<p><strong>Note</strong> <br />
+Earlier we encountered that our dataset contains <code>NAs</code> in at least one of our columns. In fact, our <code>yr6_obesity_2014</code> variable contains <code>NAs</code>. To move forward with our analysis, we need to remove those wards that do not contain any obesity information from our spatial dataframe. This will have some issues in terms of how we think about our “neighbours”, explained further below, but will allow us to run the code required.</p>
+</div>
+<p>Remove the wards in our <code>obesity_ward_sdf</code> that do not contain any obesity information.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove NAs</span></span>
+<span id="cb22-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb22-2" aria-hidden="true" tabindex="-1"></a>obesity_ward_sdf <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(y6_obesity_2014))</span></code></pre></div>
+<p>We can assess the distribution of our data using what is known as spatial autocorrelation tests, which can be conducted on both a global (identify if the data is clustered) and local (identify the precise clusters) scales. Whilst these different tests quantify how clustered, how random, or how dispersed, these distributions are through various approaches, ultimately they provide us with statistical and spatial information that can be used to create quantifiable descriptions of a variable’s distribution and how it vary over space. This can be incredibly useful when looking to explain and discuss a variable, particularly as the clustering present in one variable can be compared to another, which might be useful to make connections between underlying causes or possible solutions to the issues the original variable poses.</p>
+<p>As discussed in this week’s lecture, we have several types of tests that look to quantify spatial autocorrelation. Of these tests, there are two categories:</p>
+<ul>
+<li><strong>Global statistical</strong> tests (i.e. those that provide us with a statistic to tell us about autocorrelation in our dataset).</li>
+<li><strong>Local spatial</strong> tests (i.e. those that provide us with the cluster maps).</li>
+</ul>
+<p>Three important tests are outlined in the below table for easy reference:</p>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="9%" />
+<col width="34%" />
+<col width="34%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Test</th>
+<th align="left">Scale</th>
+<th align="left">Test</th>
+<th align="left">Output</th>
+<th align="left">Significance Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Global Moran’s I</td>
+<td align="left">Global</td>
+<td align="left">Tests how “random” the spatial distribution of values are, producing a correlation coefficient for the relationship between a variable (like income) and its surrounding values.</td>
+<td align="left"><strong>Moran’s I statistic:</strong> <br> Metric between -1 and 1. <br> -1 = dispersed <br> 0 = CSR <br> 1 = clustered</td>
+<td align="left">Yes - <span class="math inline">\(p\)</span>-value</td>
+</tr>
+<tr class="even">
+<td align="left">Local Moran’s I</td>
+<td align="left">Local</td>
+<td align="left">Tests the difference between a unit of analysis and its neighbour(s).</td>
+<td align="left"><strong>Local Moran’s I statistic:</strong> <br> 1. Can be used alongside the mean of values to generate cluster type generations. <br>i.e. High-High, High-Low, Low-High, Low-Low, Insignificant. <br> 2. Can also use standard deviation of main local statistic to show just high and low clusters</td>
+<td align="left">Yes - <span class="math inline">\(p\)</span>-value</td>
+</tr>
+<tr class="odd">
+<td align="left">Local Getis-Ord</td>
+<td align="left">Local</td>
+<td align="left">Identifies statistically significant hot spots and cold spots using the local Getis-Ord Gi* statistic.</td>
+<td align="left">Can use the standard deviation of statistic to identify hot and cold spots</td>
+<td align="left">Yes - <span class="math inline">\(p\)</span>-value</td>
+</tr>
+</tbody>
+</table>
+<p>In each of these cases, our <span class="math inline">\(p\)</span>-values are pseudo <span class="math inline">\(p\)</span>-values, generated through simulations such as that outlined in the lecture. Our pseudo <span class="math inline">\(p\)</span>-values allow us to interpret our relationships with a level of confidence. If we find that our relationships do not have any significance, then we cannot be confident in presenting them as true results.</p>
+<div id="spatial-lag" class="section level3 hasAnchor" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> Spatial lag<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#spatial-lag" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Underlying our global Moran’s I test is the concept of a <strong>spatial lag model</strong>. A spatial lag model plots each value against the mean of its neighbours’ values, defined by our selected approach. This creates a scatter plot, from which our Moran’s I statistic can be derived.</p>
+<p>An Ordinary Least Squares (OLS) regression is used to fit the data and produce a slope, which determines the Moran’s I statistic:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:07-moran-plt"></span>
+<img src="images/w07/MoranI_scatter_plot.png" alt="A spatial lag model - plotting value against the mean of its neighbours. &lt;br/&gt; Source: [Manuel Gimond](https://mgimond.github.io/Spatial/spatial-autocorrelation.html)." width="1226" />
+<p class="caption">
+Figure 7.4: A spatial lag model - plotting value against the mean of its neighbours. <br/> Source: <a href="https://mgimond.github.io/Spatial/spatial-autocorrelation.html">Manuel Gimond</a>.
+</p>
+</div>
+<p>To determine a <span class="math inline">\(p\)</span>-value from our model for global Moran’s I, this spatial lag model is computed multiple times (think hundreds, thousands) but uses a random distribution of neighbouring values to determine different slopes for multiple ways our data <em>could</em> be distributed, if our data was distributed by random. The output of this test is a sampling distribution of Moran’s I values that would confirm a null hypothesis that our values are randomly distributed. These slopes are then compared to compare our <em>observed</em> slope versus our <em>random</em> slopes and identify whether the slope is within the main distribution of these values or an outlier:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:07-spatial-lag-plt"></span>
+<img src="images/w07/MC_sim_1.png" alt="A spatial lag model - plotting value against the mean of its neighbours. &lt;br/&gt; Source: [Manuel Gimond](https://mgimond.github.io/Spatial/spatial-autocorrelation.html)." width="1094" />
+<p class="caption">
+Figure 7.5: A spatial lag model - plotting value against the mean of its neighbours. <br/> Source: <a href="https://mgimond.github.io/Spatial/spatial-autocorrelation.html">Manuel Gimond</a>.
+</p>
+</div>
+<p>If our slope is an outlier, i.e. not a value we would expect to compute if the data were randomly distributed, we are more confidently able to confirm our slope is reflective of our data’s clustering and is significant. Our <em>pseudo-</em><span class="math inline">\(p\)</span>-values are then computed from our simulation results:</p>
+<center>
+<span class="math inline">\(\frac{N_{extreme} + 1}{N + 1}\)</span>
+</center>
+<p><br></p>
+<p>Where <span class="math inline">\({N_{extreme}}\)</span> is the number of simulated Moran’s I values that were more extreme that our observed statistic and <span class="math inline">\({N}\)</span> is the total number of simulations. In the example above, from <a href="https://mgimond.github.io/Spatial/spatial-autocorrelation.html">Manuel Gimond</a>, only 1 out the 199 simulations was more extreme than the observed local Moran’s I statistic. Therefore <span class="math inline">\({N_{extreme}}\)</span> = 1 , so <span class="math inline">\(p\)</span> is equal to (1+1) / (199 + 1) = 0.01. This means that “there is a 1% probability that we would be wrong in rejecting the null hypothesis”. This approach is known as a <strong>Monte Carlo simulation</strong> or permutation bootstrap test.</p>
+</div>
+<div id="defining-neighbours" class="section level3 hasAnchor" number="7.5.2">
+<h3><span class="header-section-number">7.5.2</span> Defining neighbours<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#defining-neighbours" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For any spatial autocorrelation test that you want to conduct, you will always need one critical piece of information: <em>how do we define ‘neighbours’ in our dataset to enable the value comparison.</em> Every observation in a dataset will need to have a set of neighbours to which its value is compared. To enable this, we need to determine how many or what type of neighbours should be taken into account for each observation when conducting a spatial autocorrelation test.</p>
+<p>These ‘neighbouring’ observations can be defined in a multitude of ways, based either on geometry or proximity, and include:</p>
+<ul>
+<li><strong>Contiguity</strong> neighbours: Queen / Rook (<em>plus order</em>)</li>
+<li><strong>Fixed Distance</strong> neighbours: Euclidean Distance (e.g. within 2km)</li>
+<li><strong>(K) Nearest Neighbours</strong>: Certain <em>n</em> number of closest neighbours</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:07-neighbours"></span>
+<img src="images/w07/iffn.png" alt="Different approaches of conceptualising neighbours for spatial autocorrelation measurement: contiguity, fixed distance and nearest neighbours. Source: [Manuel Gimond](https://mgimond.github.io/Spatial/spatial-autocorrelation.html)." width="2550" />
+<p class="caption">
+Figure 7.6: Different approaches of conceptualising neighbours for spatial autocorrelation measurement: contiguity, fixed distance and nearest neighbours. Source: <a href="https://mgimond.github.io/Spatial/spatial-autocorrelation.html">Manuel Gimond</a>.
+</p>
+</div>
+<p>Depending on the variable you are measuring, the appropriateness of these different types of neighbourhood calculation techniques can change. As a result, how you define neighbours within your dataset will have an impact on the validity and accuracy of spatial analysis. Whatever approach you choose therefore needs to be grounded in particular theory that aims to represent the process and variable investigated.</p>
+<div class="note">
+<p><strong>Note</strong> <br />
+Have a look at Esri’s Help Documentation on <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/modeling-spatial-relationships.htm#GUID-729B3B01-6911-41E9-AA99-8A4CF74EEE27">Selecting a conceptualization of spatial relationships: Best practices</a> when you come to need to define neighbours yourself for your own analysis.</p>
+</div>
+<p>For our analysis into childhood obesity, we will primarily use the <strong>Queen contiguity</strong>. This approach is “<em>effective when polygons are similar in size and distribution, and when spatial relationships are a function of polygon proximity (the idea that if two polygons share a boundary, spatial interaction between them increases)</em>” (<a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/modeling-spatial-relationships.htm#GUID-729B3B01-6911-41E9-AA99-8A4CF74EEE27">Esri, 2021</a>).</p>
+</div>
+<div id="spatial-weights-matrix" class="section level3 hasAnchor" number="7.5.3">
+<h3><span class="header-section-number">7.5.3</span> Spatial weights matrix<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#spatial-weights-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before we can calculate Moran’s I and any similar statistics, we need to first define our <strong>spatial weights matrix</strong>. This is known mathematically as <span class="math inline">\(W_{ij}\)</span> and this will tell our code which unit neighbours which, according to our neighbour definition. For each neighbour definition, there is a different approach to implementing code to calculate the <span class="math inline">\(W_{ij}\)</span> spatial weights matrix.</p>
+<p>Here, we will look at three approaches:</p>
+<ol style="list-style-type: decimal">
+<li>Creating a Queen <span class="math inline">\(W_{ij}\)</span> spatial weights matrix</li>
+<li>Creating a Rook <span class="math inline">\(W_{ij}\)</span> spatial weights matrix</li>
+<li>Creating a Fixed Distance <span class="math inline">\(W_{ij}\)</span> spatial weights matrix</li>
+</ol>
+<p>For either approach, we use a single line of code to create the relevant <span class="math inline">\(W_{ij}\)</span> spatial weights matrix:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a neighbours list based on the Queen neighbour definition</span></span>
+<span id="cb23-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-2" aria-hidden="true" tabindex="-1"></a>ward_neighbours_queen <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">poly2nb</span>(., <span class="at">queen =</span> T)</span>
+<span id="cb23-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create a neighbours list based on the Rook neighbour definition</span></span>
+<span id="cb23-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-6" aria-hidden="true" tabindex="-1"></a>ward_neighbours_rook <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb23-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">poly2nb</span>(., <span class="at">queen =</span> F)</span>
+<span id="cb23-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># creates centroid and joins neighbours within 0 and 3000 &#39;units&#39; of the CRS,</span></span>
+<span id="cb23-10"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># i.e. metres</span></span>
+<span id="cb23-11"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb23-11" aria-hidden="true" tabindex="-1"></a>ward_neighbours_fd <span class="ot">&lt;-</span> <span class="fu">dnearneigh</span>(<span class="fu">st_geometry</span>(<span class="fu">st_centroid</span>(obesity_ward_sdf)), <span class="dv">0</span>, <span class="dv">3000</span>)</span></code></pre></div>
+<pre><code>## Warning in st_centroid.sf(obesity_ward_sdf): st_centroid assumes attributes are
+## constant over geometries of x</code></pre>
+<p>Creating our neighbours list through a single line of code, as above, does not really tell us much about the differences between these conceptualisations. It would be useful to the links between neighbours for our three definitions and visualise their distribution across space. To be able to do this, we will use a few lines of code to generate a visualisation based on mapping the defined connections between the centroids of our wards.</p>
+<div class="note">
+<p><strong>Note</strong> <br />
+A centroid, in its most simplest form is the central point of an areal unit. How this central point is defined can be weighted by different approaches to understanding geometries or by using an additional variable. In our case, our centroids will reflect in the ‘central’ point of our wards, determined by its geometric boundaries.</p>
+</div>
+<p>We can calculate the centroids of our wards using one of the <strong>geometric</strong> tools from the <code>sf</code> library: <code>sf_centroid()</code>:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the centroids of all of the Wards in London</span></span>
+<span id="cb25-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb25-2" aria-hidden="true" tabindex="-1"></a>ward_centroid <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_centroid</span>()</span></code></pre></div>
+<pre><code>## Warning in st_centroid.sf(.): st_centroid assumes attributes are constant over
+## geometries of x</code></pre>
+<p>You can <code>plot()</code> the <code>ward_centroid</code> using the console to see what they look like as spatial data. Now we have our ward centroids, we can go ahead and plot the centroids and the defined neighbour connections between them from each of our neighbour definitions. To do so, we will use the <code>plot()</code> function, provide the relationships via our <code>ward_neighbours_X</code> list and then the geometry associated with these lists from our <code>ward_centroid()</code>:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot neighbours: Queen</span></span>
+<span id="cb27-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ward_neighbours_queen, <span class="fu">st_geometry</span>(ward_centroid), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-plotting-neighbours-1-1.png" width="672" /></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot neighbours: Rook</span></span>
+<span id="cb28-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ward_neighbours_rook, <span class="fu">st_geometry</span>(ward_centroid), <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-plotting-neighbours-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot neighbours: Fixed Distance</span></span>
+<span id="cb29-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ward_neighbours_fd, <span class="fu">st_geometry</span>(ward_centroid), <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-plotting-neighbours-3-1.png" width="672" /></p>
+<p>When comparing these different maps, we can see that there is definitely a difference in the number of neighbours when we use our different approaches. It seems our fixed distance neighbour conceptualisation has much connections in the center of London versus areas on the outskirts. We can see that our contiguity approaches provide a more equally distributed connection map, with our Queen conceptualisation having a few more links that our Rook.</p>
+<p>We can also type the different neighbours objects into the console to find out the total number of “non-zero links” (i.e. total number of connections) present within the conceptualisation. You should see that Queen has 3560 non-zero links, Rook has 3474 and Fixed Difference has 8238. Whilst this code simply explores these conceptualisations it helps us understand further how our different neighbourhood conceptualisations can ultimately impact our overall analysis.</p>
+<p>With our neighbours now defined, we will go ahead and create our final (two) spatial weights objects that will be needed for our spatial autocorrelation code. At the moment, we currently have our neighbours defined as a “list” but we need to convert it to a “neighbours” object using the <code>nb2listw()</code> function:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a neighbours list</span></span>
+<span id="cb30-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb30-2" aria-hidden="true" tabindex="-1"></a>ward_spatial_weights_queen <span class="ot">&lt;-</span> ward_neighbours_queen <span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">nb2listw</span>(., <span class="at">style =</span> <span class="st">&quot;C&quot;</span>)</span>
+<span id="cb30-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># creates a neighbours list</span></span>
+<span id="cb30-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb30-6" aria-hidden="true" tabindex="-1"></a>ward_spatial_weights_fd <span class="ot">&lt;-</span> ward_neighbours_fd <span class="sc">%&gt;%</span></span>
+<span id="cb30-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">nb2listw</span>(., <span class="at">style =</span> <span class="st">&quot;B&quot;</span>)</span></code></pre></div>
+<div class="note">
+<p><strong>Note</strong> <br />
+If you did not remove the <code>NAs</code> in our obesity column than the following code will not run. Make sure you have done this. If not, do it now and re-run your spatial weights matrix generation code again.</p>
+</div>
+</div>
+<div id="global-morans-i" class="section level3 hasAnchor" number="7.5.4">
+<h3><span class="header-section-number">7.5.4</span> Global Moran’s I<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#global-morans-i" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>With a Global Moran’s I we test how “random” the spatial distribution of these values is, producing a global Moran’s statistic from the lag approach explained earlier.</p>
+<p>The global Moran’s I statistic is a metric between -1 and 1:</p>
+<ul>
+<li>-1 is a completely even spatial distribution of values</li>
+<li>0 is a “random” distribution</li>
+<li>1 is a “non-random” distribution of clearly defined clusters</li>
+</ul>
+<p>Before we run our global Moran’s I test, we will first create a spatial lag model plot which looks at each of the values plotted against their spatially lagged values. The graph will show quickly whether we are likely to expect our test to return a positive, zero or negative statistic:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb31-1" aria-hidden="true" tabindex="-1"></a>obesity_MI_sp <span class="ot">&lt;-</span> <span class="fu">moran.plot</span>(obesity_ward_sdf<span class="sc">$</span>y6_obesity_2014, <span class="at">listw =</span> ward_spatial_weights_queen)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-scatter-plot-MI-1.png" width="672" /></p>
+<p>We can see that there is a positive relationship between our <code>y6_obesity_2014</code> variable and the spatially lagged <code>y6_obesity_2014</code> variable, therefore we are expecting our global Moran’s I test to produce a statistic reflective of the slope visible in our scatter plot. Now we can run the global Moran’s I spatial autocorrelation test and print the result:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run the global Moran&#39;s I test on our y6_obesity_2014 data</span></span>
+<span id="cb32-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb32-2" aria-hidden="true" tabindex="-1"></a>obesity_GMI <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(y6_obesity_2014) <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.vector</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb32-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">moran.test</span>(., ward_spatial_weights_queen)</span>
+<span id="cb32-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># print global Moran&#39;s I result</span></span>
+<span id="cb32-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb32-8" aria-hidden="true" tabindex="-1"></a>obesity_GMI</span></code></pre></div>
+<pre><code>## 
+##  Moran I test under randomisation
+## 
+## data:  .  
+## weights: ward_spatial_weights_queen    
+## 
+## Moran I statistic standard deviate = 22.69, p-value &lt; 2.2e-16
+## alternative hypothesis: greater
+## sample estimates:
+## Moran I statistic       Expectation          Variance 
+##      0.5333351039     -0.0016339869      0.0005558933</code></pre>
+<p>The Moran’s I statistic calculated should be 0.53. With 1 = clustered, 0 = no pattern, -1 = dispersed, this means we can confirm that childhood obesity in London is positively autocorrelated. In other words, childhood obesity does spatially cluster. We can also consider the pseudo <span class="math inline">\(p\)</span>-value as a measure of the statistical significance of the model - at &lt; 2.2e-16, which confirm our result is (psuedo) significant.</p>
+<div class="note">
+<p><strong>Note</strong> <br/>
+Before we run our local spatial autocorrelation tests, let’s just take a second to think through what our results have shown. From our global statistical tests, we can confirm that:</p>
+<ul>
+<li>There is clustering in our dataset.</li>
+<li>Similar values are clustering.</li>
+<li>High values are clustering.</li>
+</ul>
+<p>We can conclude already that areas of high levels of childhood obesity tend to cluster in the same area. What we do not know yet is <strong>where</strong> these clusters are occurring. To help with this, we need to run our <strong>local</strong> models to identify where these clusters are located.</p>
+</div>
+</div>
+<div id="local-morans-i" class="section level3 hasAnchor" number="7.5.5">
+<h3><span class="header-section-number">7.5.5</span> Local Moran’s I<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#local-morans-i" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A local Moran’s I test deconstructs the global Moran’s I down to its components and then constructs a localized measure of autocorrelation, which can show different cluster types. To run a local Moran’s I test, the code again is similar to above:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run the local Moran&#39;s I test on our y6_obesity_2014 data</span></span>
+<span id="cb34-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb34-2" aria-hidden="true" tabindex="-1"></a>obesity_LMI <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(y6_obesity_2014) <span class="sc">%&gt;%</span></span>
+<span id="cb34-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.vector</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb34-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">localmoran</span>(., ward_spatial_weights_queen)</span>
+<span id="cb34-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># print the first 5 lines of the local Moran&#39;s I statistic output</span></span>
+<span id="cb34-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(obesity_LMI)</span></code></pre></div>
+<pre><code>##           Ii          E.Ii      Var.Ii      Z.Ii Pr(z != E(Ii))
+## 1 0.03833697 -8.703017e-05 0.009181660 0.4009978   6.884218e-01
+## 2 0.47282190 -1.379282e-03 0.144723426 1.2465027   2.125799e-01
+## 3 3.82565784 -1.107669e-02 1.147178083 3.5821711   3.407504e-04
+## 4 0.40863261 -9.066869e-05 0.009491210 4.1953536   2.724462e-05
+## 5 2.79741620 -7.224878e-03 0.749114397 3.2404343   1.193478e-03
+## 6 0.16952553 -1.234628e-05 0.001286115 4.7274492   2.273579e-06</code></pre>
+<p>As you should see, we do not get given a single statistic as per with our global tests, but rather a table of five different statistics that are all related back to each of the wards in our dataset.</p>
+<p>If we look at the help page for the <code>localmoran</code> function (run <code>?localmoran</code> in your console) we can find out what each of these statistics mean:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ii</td>
+<td align="left">Local Moran’s I statistic</td>
+</tr>
+<tr class="even">
+<td align="left">E.Ii</td>
+<td align="left">Expectation of local Moran’s I statistic</td>
+</tr>
+<tr class="odd">
+<td align="left">Var.Ii</td>
+<td align="left">Variance of local Moran’s I statistic</td>
+</tr>
+<tr class="even">
+<td align="left">Z.Ii</td>
+<td align="left">Standard deviation of local Moran’s I statistic</td>
+</tr>
+<tr class="odd">
+<td align="left">Pr()</td>
+<td align="left"><span class="math inline">\(p\)</span>-value of local Moran’s I statistic</td>
+</tr>
+</tbody>
+</table>
+<p>We therefore have a local Moran’s I statistic for each of our wards, as well as a significance value plus a few other pieces of information that can help us create some maps showing our clusters. To be able to do this, we need to join our local Moran’s I output back into our <code>obesity_ward_sdf</code> spatial dataframe, which will then allow us to map these results.</p>
+<p>To create this join, we first <strong>coerce</strong> our local Moran’s I output into a dataframe that we then join to our <code>obesity_ward_sdf</code> spatial dataframe using the <code>mutate()</code> function from the <code>dplyr</code> library. In our case, we do not need to provide an <strong>attribute</strong> to join these two dataframes together as we use the computer’s logic to join the data in the order in which it was created:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># coerce obesity_LMI into dataframe</span></span>
+<span id="cb36-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb36-2" aria-hidden="true" tabindex="-1"></a>obesity_LMI <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(obesity_LMI)</span>
+<span id="cb36-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># update the names for easier reference</span></span>
+<span id="cb36-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(obesity_LMI) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;LMI_Ii&quot;</span>, <span class="st">&quot;LMI_eIi&quot;</span>, <span class="st">&quot;LMI_varIi&quot;</span>, <span class="st">&quot;LMI_zIi&quot;</span>, <span class="st">&quot;LMI_sigP&quot;</span>)</span>
+<span id="cb36-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># join to obesity_ward_sdf</span></span>
+<span id="cb36-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb36-8" aria-hidden="true" tabindex="-1"></a>obesity_ward_sdf <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb36-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(obesity_LMI)</span></code></pre></div>
+<p>We now have the data we need to plot our local spatial autocorrelation maps. We will first plot the most simple maps to do with our local Moran’s I test: the local Moran’s I statistic as well as the <span class="math inline">\(p\)</span>-values of the local Moran’s I statistic.</p>
+<p>Map the local Moran’s I statistic:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># map our local Moran&#39;s I statistic</span></span>
+<span id="cb37-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(obesity_ward_sdf) <span class="sc">+</span></span>
+<span id="cb37-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;LMI_Ii&quot;</span>, <span class="at">style =</span> <span class="st">&quot;pretty&quot;</span>, <span class="at">midpoint =</span> <span class="dv">0</span>, <span class="at">title =</span> <span class="st">&quot;Local Moran&#39;s I statistic&quot;</span>) <span class="sc">+</span></span>
+<span id="cb37-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(</span>
+<span id="cb37-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title =</span> <span class="st">&quot;Spatial Autocorrelation of Childhood Obesity in London&quot;</span>,</span>
+<span id="cb37-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title.fontface =</span> <span class="dv">2</span>, <span class="at">fontfamily =</span> <span class="st">&quot;Helvetica&quot;</span>,</span>
+<span id="cb37-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.outside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb37-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.outside.position =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb37-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.size =</span> <span class="dv">1</span>,</span>
+<span id="cb37-10"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.fontface =</span> <span class="dv">2</span></span>
+<span id="cb37-11"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb37-12"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">&quot;arrow&quot;</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb37-13"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb37-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>), <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;bottom&quot;</span>))</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-map-LMI-1.png" width="672" /></p>
+<p>From the map, it is possible to observe the variations in autocorrelation across space. We can interpret that there seems to be a geographic pattern to the autocorrelation. However, it is not possible to understand if these are clusters of high or low values. To be able to interpret this confidently, we also need to know the significance of the patterns we see in our map and therefore need to map the <span class="math inline">\(p\)</span>-value of local Moran’s I statistic.</p>
+<p>Map the <span class="math inline">\(p\)</span>-value of local Moran’s I statistic:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># significance breaks</span></span>
+<span id="cb38-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-2" aria-hidden="true" tabindex="-1"></a>breaks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="dv">1</span>)</span>
+<span id="cb38-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># colours for our local Moran&#39;s I statistic</span></span>
+<span id="cb38-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-5" aria-hidden="true" tabindex="-1"></a>colours <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;#a6bddb&quot;</span>, <span class="st">&quot;#2b8cbe&quot;</span>)</span>
+<span id="cb38-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co"># map our local Moran&#39;s I statistic</span></span>
+<span id="cb38-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(obesity_ward_sdf) <span class="sc">+</span></span>
+<span id="cb38-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;LMI_sigP&quot;</span>,</span>
+<span id="cb38-10"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;fixed&quot;</span>, <span class="at">breaks =</span> breaks,</span>
+<span id="cb38-11"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">palette =</span> <span class="fu">rev</span>(colours), <span class="at">title =</span> <span class="st">&quot;p-value of Local Moran&#39;s I stat&quot;</span></span>
+<span id="cb38-12"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb38-13"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(</span>
+<span id="cb38-14"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title =</span> <span class="st">&quot;Spatial Autocorrelation of Childhood Obesity in London&quot;</span>,</span>
+<span id="cb38-15"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title.fontface =</span> <span class="dv">2</span>, <span class="at">fontfamily =</span> <span class="st">&quot;Helvetica&quot;</span>,</span>
+<span id="cb38-16"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.outside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb38-17"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.outside.position =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb38-18"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.size =</span> <span class="dv">1</span>,</span>
+<span id="cb38-19"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.fontface =</span> <span class="dv">2</span></span>
+<span id="cb38-20"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb38-21"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">&quot;arrow&quot;</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb38-22"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb38-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>), <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;bottom&quot;</span>))</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-map-LMI-p-1.png" width="672" /></p>
+<p>Using our significance map, we can interpret the above clusters present in our local Moran’s I statistic more confidently. As evident, we do have several clusters that are statistically significant to the <span class="math inline">\(p\)</span>-value &lt; 0.05.</p>
+<p>Ideally we would combine these two outputs to see what values cluster together and which clusters are significant. We can do this with a cluster map of our <strong>local Moran’s I statistic (Ii)</strong> which will show areas of different types of clusters, including:</p>
+<ul>
+<li><strong>HIGH-HIGH</strong>: A ward of high obesity that is also surrounded by other wards of high obesity.</li>
+<li><strong>HIGH-LOW</strong>: A ward of high obesity that is surrounded by wards of low obesity.</li>
+<li><strong>LOW-HIGH</strong>: A ward of low obesity that is surrounded by wards of high obesity.</li>
+<li><strong>LOW-LOW</strong>: A ward of low obesity that is also surrounded by other wards of low obesity.</li>
+<li>Those areas that have no significant cluster or relationship to the wards around them.</li>
+</ul>
+<p>Our HIGH-HIGH and LOW-LOW will show our clusters, whereas the other two cluster types reveal anomalies in our variable. To create a map that shows this, we need to quantify the relationship each of our wards have with the wards around them to determine their cluster type. We do this using their observed value and their local Moran’s I statistic and their deviation around their respective means:</p>
+<ul>
+<li><em>If a ward’s observed value is higher than the observed mean and it’s local Moran’s I statistic is higher than the LMI mean</em>, it is designated as <strong>HIGH-HIGH</strong>.</li>
+<li><em>If a ward’s observed value is lower than the observed mean and it’s local Moran’s I statistic is lower than the LMI mean</em>, it is designated as <strong>LOW-LOW</strong>.</li>
+<li><em>If a ward’s observed value is lower than the observed mean but it’s local Moran’s I statistic is higher than the LMI mean</em>, it is designated as <strong>LOW-HIGH</strong>.</li>
+<li><em>If a ward’s observed value is higher than the observed mean but it’s local Moran’s I statistic is lower than the LMI mean</em>, it is designated as <strong>HIGH-LOW</strong>.</li>
+<li><em>If a ward’s LMI was found not to be significant</em>, the ward will be mapped as <strong>not significant</strong>.</li>
+</ul>
+<p>For example, this means that if we know our ward’s observed value is less than the mean value of our overall <code>y6_obesity_2014 variable</code>, then it means it is of course a low value for obesity in comparison to the entirety of London. If it’s local Moran’s I statistic is also lower than the mean value of the rest of the LMI_Ii statistics, it also means it is located in a neighbourhood of low values. As a result, if this relationship is significant (determined by the pseudo <span class="math inline">\(p\)</span>-value from our local Moran’s I calculation), we can call this a “LOW-LOW” cluster.</p>
+<p>To achieve this cluster map, we need to take several additional steps:</p>
+<ul>
+<li>The first will tell us, for each ward, whether its observed value is higher or lower than the mean observed.</li>
+<li>The second will tell us, for each ward, whether its LMI value is higher or lower than the mean LMI.</li>
+<li>The third will use the values of these two columns to assign each ward with a cluster type.</li>
+</ul>
+<p>Determine the cluster type of each ward by comparing observed and LMI values against their respective means and the significance value:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compare local value for obesity with mean value</span></span>
+<span id="cb39-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-2" aria-hidden="true" tabindex="-1"></a>obesity_ward_sdf <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">obs_diff =</span> (y6_obesity_2014 <span class="sc">-</span> <span class="fu">mean</span>(obesity_ward_sdf<span class="sc">$</span>y6_obesity_2014)))</span>
+<span id="cb39-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># compare local LMI value with mean LMI value</span></span>
+<span id="cb39-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-5" aria-hidden="true" tabindex="-1"></a>obesity_ward_sdf <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">LMI_diff =</span> (obesity_LMI<span class="sc">$</span>LMI_Ii <span class="sc">-</span> <span class="fu">mean</span>(obesity_LMI<span class="sc">$</span>LMI_Ii)))</span>
+<span id="cb39-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co"># set a significance threshold</span></span>
+<span id="cb39-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-8" aria-hidden="true" tabindex="-1"></a>signif <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb39-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co"># generate column with cluster type, using values above</span></span>
+<span id="cb39-11"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-11" aria-hidden="true" tabindex="-1"></a>obesity_ward_sdf <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb39-12"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cluster_type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb39-13"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-13" aria-hidden="true" tabindex="-1"></a>    obs_diff <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> LMI_diff <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> LMI_sigP <span class="sc">&lt;</span> signif <span class="sc">~</span> <span class="st">&quot;High-High&quot;</span>,</span>
+<span id="cb39-14"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-14" aria-hidden="true" tabindex="-1"></a>    obs_diff <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> LMI_diff <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> LMI_sigP <span class="sc">&lt;</span> signif <span class="sc">~</span> <span class="st">&quot;Low-Low&quot;</span>,</span>
+<span id="cb39-15"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-15" aria-hidden="true" tabindex="-1"></a>    obs_diff <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> LMI_diff <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> LMI_sigP <span class="sc">&lt;</span> signif <span class="sc">~</span> <span class="st">&quot;Low-High&quot;</span>,</span>
+<span id="cb39-16"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-16" aria-hidden="true" tabindex="-1"></a>    obs_diff <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> LMI_diff <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> LMI_sigP <span class="sc">&lt;</span> signif <span class="sc">~</span> <span class="st">&quot;High-Low&quot;</span>,</span>
+<span id="cb39-17"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-17" aria-hidden="true" tabindex="-1"></a>    LMI_sigP <span class="sc">&gt;</span> signif <span class="sc">~</span> <span class="st">&quot;No Significance&quot;</span></span>
+<span id="cb39-18"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb39-18" aria-hidden="true" tabindex="-1"></a>  ))</span></code></pre></div>
+<p>Now we have a column detailing our cluster types, we can create a cluster map that details our four cluster types as well as those that are not significant. Creating a categorical map in R and using <code>tmap</code> is a little tricky and we will need to do some preparing of our colour palettes to ensure our data is mapped correctly. To do this, we first need to figure out how many cluster types we have in our <code>cluster_type</code> field:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># count the different values within our `cluster_type` variable</span></span>
+<span id="cb40-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">count</span>(obesity_ward_sdf, cluster_type)</span></code></pre></div>
+<pre><code>## Simple feature collection with 5 features and 2 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 503568.2 ymin: 155850.8 xmax: 561957.5 ymax: 200933.9
+## Projected CRS: OSGB36 / British National Grid
+## # A tibble: 5 × 3
+##   cluster_type        n                                                 geometry
+## * &lt;chr&gt;           &lt;int&gt;                                       &lt;MULTIPOLYGON [m]&gt;
+## 1 High-High          53 (((532073.1 176529.5, 532050.9 176496.2, 532041.3 17647…
+## 2 High-Low           22 (((523772 167981.8, 523713.5 168026.7, 523667.2 168063.…
+## 3 Low-High           70 (((519142.5 166507.1, 519154.9 166492.8, 519159.6 16648…
+## 4 Low-Low            19 (((524633.2 165084, 524628 165092.6, 524610.7 165084, 5…
+## 5 No Significance   449 (((516493.8 160310.2, 516500.9 160324.2, 516507.3 16034…</code></pre>
+<p>We can see we actually have all four cluster types present within our dataset - alongside the <code>No Significance</code> value. We therefore need to ensure our palette includes four colours for these two cluster types, plus a white colour for <code>No Significance</code>:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a colour palette</span></span>
+<span id="cb42-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-2" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#d7191c&quot;</span>, <span class="st">&quot;#fdae61&quot;</span>, <span class="st">&quot;#abd9e9&quot;</span>, <span class="st">&quot;#2c7bb6&quot;</span>, <span class="st">&quot;#F5F5F5&quot;</span>)</span>
+<span id="cb42-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the clusters</span></span>
+<span id="cb42-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(obesity_ward_sdf) <span class="sc">+</span></span>
+<span id="cb42-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col =</span> <span class="st">&quot;cluster_type&quot;</span>, <span class="at">palette =</span> pal, <span class="at">title =</span> <span class="st">&quot;Cluster Type&quot;</span>) <span class="sc">+</span></span>
+<span id="cb42-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(</span>
+<span id="cb42-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title =</span> <span class="st">&quot;Cluster Map of Childhood Obesity in London, 2014&quot;</span>,</span>
+<span id="cb42-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title.fontface =</span> <span class="dv">2</span>, <span class="at">fontfamily =</span> <span class="st">&quot;Helvetica&quot;</span>, <span class="at">legend.outside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb42-10"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.outside.position =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb42-11"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.size =</span> <span class="dv">1</span>,</span>
+<span id="cb42-12"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.fontface =</span> <span class="dv">2</span></span>
+<span id="cb42-13"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb42-14"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">&quot;arrow&quot;</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb42-15"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb42-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>), <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;bottom&quot;</span>))</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-plot-LMI-hscs-1.png" width="672" /></p>
+<p>And there we have it: within one map we can visualise both the relationship of our wards to their respective neighbourhoods and the significance of this relationship from our local Moran’s I test. This type of map is called a LISA map and is a great way of showing how a variable is actually clustering.</p>
+</div>
+<div id="getis-ord-gi" class="section level3 hasAnchor" number="7.5.6">
+<h3><span class="header-section-number">7.5.6</span> Getis-Ord-Gi*<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#getis-ord-gi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The final test we will run today is the local Getis-Ord, which will produce the Gi* statistic. This statistic will identify hot- and coldspots by looking at the neighbours within a defined proximity to identify where either high or low values cluster spatially and recognising statistically significant hotspots as those areas of high values where other areas within a neighbourhood range also share high values too (and vice versa for coldspots).</p>
+<p>Run the local Gi* statistic spatial autocorrelation test and print the result:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run the local Gi* test on our y6_obesity_2014 data, note we again use the fd</span></span>
+<span id="cb43-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># weights</span></span>
+<span id="cb43-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-3" aria-hidden="true" tabindex="-1"></a>obesity_LGO <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb43-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(y6_obesity_2014) <span class="sc">%&gt;%</span></span>
+<span id="cb43-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.vector</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb43-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">localG</span>(., ward_spatial_weights_fd)</span>
+<span id="cb43-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co"># join the local Gi* statistic to `obesity_ward_sdf` spatial dataframe</span></span>
+<span id="cb43-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-9" aria-hidden="true" tabindex="-1"></a>obesity_ward_sdf <span class="ot">&lt;-</span> obesity_ward_sdf <span class="sc">%&gt;%</span></span>
+<span id="cb43-10"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">obesity_LGO_G =</span> <span class="fu">as.numeric</span>(obesity_LGO))</span>
+<span id="cb43-11"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-12"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb43-13"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb43-13" aria-hidden="true" tabindex="-1"></a>obesity_ward_sdf</span></code></pre></div>
+<pre><code>## Simple feature collection with 613 features and 25 fields
+## Geometry type: POLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 503568.2 ymin: 155850.8 xmax: 561957.5 ymax: 200933.9
+## Projected CRS: OSGB36 / British National Grid
+## # A tibble: 613 × 26
+##    NAME                       GSS_CODE  HECTARES NONLD…¹ LB_GS…² BOROUGH POLY_ID
+##  * &lt;chr&gt;                      &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;
+##  1 Chessington South          E05000405     755.       0 E09000… Kingst…   50840
+##  2 Tolworth and Hook Rise     E05000414     259.       0 E09000… Kingst…  117160
+##  3 Berrylands                 E05000401     145.       0 E09000… Kingst…   50449
+##  4 Alexandra                  E05000400     269.       0 E09000… Kingst…   50456
+##  5 Beverley                   E05000402     188.       0 E09000… Kingst…  117161
+##  6 Coombe Hill                E05000406     442.       0 E09000… Kingst…  117159
+##  7 Chessington North and Hook E05000404     193.       0 E09000… Kingst…   50530
+##  8 Surbiton Hill              E05000413     166.       0 E09000… Kingst…   50457
+##  9 Old Malden                 E05000410     180.       0 E09000… Kingst…   50455
+## 10 St. Mark&#39;s                 E05000412     138.       0 E09000… Kingst…   50450
+## # … with 603 more rows, 19 more variables: geometry &lt;POLYGON [m]&gt;,
+## #   ward_name &lt;chr&gt;, y6_obesity_2014 &lt;dbl&gt;, IDACI_2010 &lt;dbl&gt;,
+## #   med_house_price_2014 &lt;dbl&gt;, mean_hh_income_2013 &lt;dbl&gt;,
+## #   per_no_adult_employ_2011 &lt;dbl&gt;, per_no_qual_2011 &lt;dbl&gt;,
+## #   per_deficiency_greenspace_2012 &lt;dbl&gt;, PTAL_2014 &lt;dbl&gt;, LMI_Ii &lt;dbl&gt;,
+## #   LMI_eIi &lt;dbl&gt;, LMI_varIi &lt;dbl&gt;, LMI_zIi &lt;dbl&gt;, LMI_sigP &lt;dbl&gt;,
+## #   obs_diff &lt;dbl&gt;, LMI_diff &lt;dbl&gt;, cluster_type &lt;chr&gt;, obesity_LGO_G &lt;dbl&gt;, …</code></pre>
+<p>By printing the results of our test, we can see that the local Getis-Ord test is a bit different from a local Moran’s I test as it only contains a single value: the z-score. The z-score is a standardised value relating to whether high values or low values are clustering together, which we call the Gi* statistic. We can join this output, a list of our Gi* values, to our <code>obesity_ward_sdf</code> spatial dataframe and map the result:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a colour palette</span></span>
+<span id="cb45-2"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-2" aria-hidden="true" tabindex="-1"></a>GIColours <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">brewer.pal</span>(<span class="dv">8</span>, <span class="st">&quot;RdBu&quot;</span>))</span>
+<span id="cb45-3"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the clusters</span></span>
+<span id="cb45-5"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(obesity_ward_sdf) <span class="sc">+</span></span>
+<span id="cb45-6"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">&quot;obesity_LGO_G&quot;</span>,</span>
+<span id="cb45-7"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;pretty&quot;</span>, <span class="at">palette =</span> GIColours,</span>
+<span id="cb45-8"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">midpoint =</span> <span class="dv">0</span>, <span class="at">title =</span> <span class="st">&quot;Local Gi* statistic&quot;</span></span>
+<span id="cb45-9"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-10"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(</span>
+<span id="cb45-11"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title =</span> <span class="st">&quot;Hot/Cold Spot Map of Childhood Obesity in London, 2014&quot;</span>,</span>
+<span id="cb45-12"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">main.title.fontface =</span> <span class="dv">2</span>, <span class="at">fontfamily =</span> <span class="st">&quot;Helvetica&quot;</span>,</span>
+<span id="cb45-13"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.outside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb45-14"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.outside.position =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb45-15"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.size =</span> <span class="dv">1</span>,</span>
+<span id="cb45-16"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.fontface =</span> <span class="dv">2</span></span>
+<span id="cb45-17"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-18"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">&quot;arrow&quot;</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb45-19"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#cb45-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>), <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;bottom&quot;</span>))</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/07-map-local-GO-1.png" width="672" /></p>
+<p>Our map shows quite clearly hot and cold spots of obesity across London. How does this compare with our local Moran’s I? Do we see the same clusters?</p>
+<div class="tip">
+<p><strong>Tip</strong> <br/>
+If we want to only map the statistically significant clusters, we need to use these <a href="https://en.wikipedia.org/wiki/Standard_score">z-scores</a> to filter out only statistically significant clusters. When using a 95 percent confidence level your values should be between <code>-1.96</code> and <code>+1.96</code> standard deviations.</p>
+</div>
+</div>
+</div>
+<div id="assignment-2-w07" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Assignment 2<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#assignment-2-w07" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Through conducting our spatial autocorrelation tests, we can visually confirm the presence of clusters in our <code>y6_obesity_2014</code> variable and provide a significance value associated with these tests. This provides us with a way to explain our distributions <strong>quantitatively</strong> during the analysis of our results.</p>
+<p>Now you have the code, you will be able to repeat this analysis on any variable in the future. For this week’s assignment, we therefore want you to find out whether our <code>IDACI_2010</code> variable contains spatial clustering.</p>
+<p>In order to do this, you have to:</p>
+<ol style="list-style-type: decimal">
+<li>Create a choropleth map showing the distribution of the variable values.</li>
+<li>Calculate a global spatial autocorrelation statistic and explain what it shows.</li>
+<li>Create a local Moran’s I map showing the four cluster types.</li>
+<li>Create a local Getis-Ord hotspot map.</li>
+<li>Compare these results to the output of our <code>y6_obesity_2014</code> values. Do both variables have clusters? Do we see similar clusters in similar locations? What might this tell us about the relationship between deprivation and obesity in children in London?</li>
+<li>Run the analysis using a different neighbour definition. What happens? Do the results change?</li>
+</ol>
+</div>
+<div id="byl-w07" class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> Before you leave<a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#byl-w07" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>And that is how you can measure spatial dependence in your dataset through different spatial autocorrelation measures. Next week we will focus on the last topic within our set of core spatial analysis methods and techniques, but <a href="https://www.youtube.com/watch?v=fCZVL_8D048">this week we have covered enough</a>!</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analysing-spatial-patterns-iii-point-pattern-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jtvandijk/GEOG0030/edit/master/07-autocorrelation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["GEOG0030.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

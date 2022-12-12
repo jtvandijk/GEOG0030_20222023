@@ -118,8 +118,8 @@ We will start by downloading the administrative geography boundaries:
 
 The first dataset contains all levels of London’s administrative boundaries. In descending size order: Borough, Ward, Middle layer Super Output Area (MSOA), Lower layer Super Output Area (LSOA), and Output Area (OA) based on the 2011 Census. The second dataset contains an *updated* version of the Ward boundaries, as of 2014. The third dataset contains yet another *updated* version of the Ward boundaries, as of 2018. As we will be looking at population data for 2015 and 2019, it is best practice to use those boundaries that are most reflective of the ‘geography’ at the time; therefore, we will use these 2014 / 2018 Ward boundaries for our 2015 / 2019 population dataset, respectively. 
 
-:::note
-**Note** <br/>
+:::tip
+**Tip** <br/>
 Once downloaded, you will need to unzip all files before you can use them. To unzip the file, you can use the built-in functionality of your computer’s operating system. For Windows: right click on the zip file, select **Extract All**, and then follow the instructions. For Mac OS: double-click on the the zip file and it should unzip automatically.
 :::
 
@@ -264,13 +264,13 @@ An attribute join is one of two types of data joins you will use in spatial anal
 knitr::include_graphics('images/w02/attribute_joins.png')
 ```
 
-Essentially you need a **single identifying ID** field for your records within both datasets: this can be a code, a name or any other string of information. In spatial analysis, we always **join our table data to our shape data** (One way to think about it as attaching the table data to each shape). 
+Essentially you need a **single unique identifying ID** field for your records within both datasets: this can be a code, a name or any other string of information. In spatial analysis, we always oin our table data to our shape data (One way to think about it as attaching the table data to each shape). 
 
 As a result, your target layer is always the shapefile (or spatial data) whereas your join layer is the table data. These are known as the left- and right-side tables when working with code. 
 
-**To make a join work, you need to make sure your ID field is correct across both datasets**, i.e. no typos or spelling mistakes. Computers can only follow instructions, so they do not know that *St. Thomas* in one dataset is that same as *St Thomas* in another, or even *Saint Thomas*! It will be looking for an exact match! 
+To make a join work, you need to make sure your ID field is correct across both datasets, i.e. no typos or spelling mistakes. Computers can only follow instructions, so they do not know that *St. Thomas* in one dataset is that same as *St Thomas* in another, or even *Saint Thomas*! It will be looking for an exact match! 
 
-As a result, whilst in our datasets we have kept both the name and code for both the boundary data and the population data, **when creating the join, we will always prefer to use the CODE over their names**. Unlike names, codes reduce the likelihood of error and mismatch because they do not rely on understanding spelling! 
+As a result, whilst in our datasets we have kept both the name and code for both the boundary data and the population data, when creating the join, we will always prefer to use the CODE over their names. Unlike names, codes reduce the likelihood of error and mismatch because they do not rely on understanding spelling! 
 
 Common errors, such as adding in spaces or using `0` instead `O` (and vice versa) can still happen – but it is less likely. 
 :::
@@ -319,8 +319,8 @@ The final thing we would like to do with this dataset is to style our dataset by
 - Click on the drop-down next to Mode, select **Natural Breaks**, change it to **7** classes and then click **Classify**.
 - Finally click **Apply** to style your dataset.
 
-:::note
-**Note**<br/>
+:::tip
+**Tip**<br/>
 Understanding what classification is appropriate to visualise your data is an important step within spatial analysis and visualisation, and something you will learn more about in the following weeks. Overall, they should be determined by understanding your data's distribution and match your visualisation accordingly.
 
 Feel free to explore using the different options with your dataset at the moment – the results are almost instantaneous using QGIS, which makes it a good playground to see how certain parameters or settings can change your output.

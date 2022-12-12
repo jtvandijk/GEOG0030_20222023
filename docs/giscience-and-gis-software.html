@@ -548,8 +548,8 @@ We will use the population dataset to <em>normalise</em> other datasets. Why? Wh
 <li>Download all three zipfiles to your computer: <code>statistical-gis-boundaries-london.zip</code>, <code>London-wards-2014.zip</code> and <code>London-wards-2018.zip</code>.</li>
 </ol>
 <p>The first dataset contains all levels of London’s administrative boundaries. In descending size order: Borough, Ward, Middle layer Super Output Area (MSOA), Lower layer Super Output Area (LSOA), and Output Area (OA) based on the 2011 Census. The second dataset contains an <em>updated</em> version of the Ward boundaries, as of 2014. The third dataset contains yet another <em>updated</em> version of the Ward boundaries, as of 2018. As we will be looking at population data for 2015 and 2019, it is best practice to use those boundaries that are most reflective of the ‘geography’ at the time; therefore, we will use these 2014 / 2018 Ward boundaries for our 2015 / 2019 population dataset, respectively.</p>
-<div class="note">
-<p><strong>Note</strong> <br/>
+<div class="tip">
+<p><strong>Tip</strong> <br/>
 Once downloaded, you will need to unzip all files before you can use them. To unzip the file, you can use the built-in functionality of your computer’s operating system. For Windows: right click on the zip file, select <strong>Extract All</strong>, and then follow the instructions. For Mac OS: double-click on the the zip file and it should unzip automatically.</p>
 </div>
 <p>Once unzipped, you will find two folders: <em>Esri</em> and <em>MapInfo.</em> These folders contain the same data but in different data formats: <strong>Esri shapefile</strong> and <strong>MapInfo TAB</strong>.</p>
@@ -688,10 +688,10 @@ The main strength of a GUI GIS system is that is really helps us understand how 
 <p><strong>Note</strong><br>
 An attribute join is one of two types of data joins you will use in spatial analysis (the other is a spatial join, which we will look at later on in the module). An attribute join essentially allows you to join two datasets together, as long as they share a common attribute to facilitate the ‘matching’ of rows:</p>
 <p><img src="images/w02/attribute_joins.png" width="435" style="display: block; margin: auto;" /></p>
-<p>Essentially you need a <strong>single identifying ID</strong> field for your records within both datasets: this can be a code, a name or any other string of information. In spatial analysis, we always <strong>join our table data to our shape data</strong> (One way to think about it as attaching the table data to each shape).</p>
+<p>Essentially you need a <strong>single unique identifying ID</strong> field for your records within both datasets: this can be a code, a name or any other string of information. In spatial analysis, we always oin our table data to our shape data (One way to think about it as attaching the table data to each shape).</p>
 <p>As a result, your target layer is always the shapefile (or spatial data) whereas your join layer is the table data. These are known as the left- and right-side tables when working with code.</p>
-<p><strong>To make a join work, you need to make sure your ID field is correct across both datasets</strong>, i.e. no typos or spelling mistakes. Computers can only follow instructions, so they do not know that <em>St. Thomas</em> in one dataset is that same as <em>St Thomas</em> in another, or even <em>Saint Thomas</em>! It will be looking for an exact match!</p>
-<p>As a result, whilst in our datasets we have kept both the name and code for both the boundary data and the population data, <strong>when creating the join, we will always prefer to use the CODE over their names</strong>. Unlike names, codes reduce the likelihood of error and mismatch because they do not rely on understanding spelling!</p>
+<p>To make a join work, you need to make sure your ID field is correct across both datasets, i.e. no typos or spelling mistakes. Computers can only follow instructions, so they do not know that <em>St. Thomas</em> in one dataset is that same as <em>St Thomas</em> in another, or even <em>Saint Thomas</em>! It will be looking for an exact match!</p>
+<p>As a result, whilst in our datasets we have kept both the name and code for both the boundary data and the population data, when creating the join, we will always prefer to use the CODE over their names. Unlike names, codes reduce the likelihood of error and mismatch because they do not rely on understanding spelling!</p>
 <p>Common errors, such as adding in spaces or using <code>0</code> instead <code>O</code> (and vice versa) can still happen – but it is less likely.</p>
 </div>
 <p>To make our join work, we need to check that we have a matching <strong>UID</strong> across both our datasets. We therefore need to look at the tables of both datasets and check what attributes we have that could be used for this possible match.</p>
@@ -740,8 +740,8 @@ Now, the join that you have created between your Ward and population datasets in
 <li>Click on the drop-down next to Mode, select <strong>Natural Breaks</strong>, change it to <strong>7</strong> classes and then click <strong>Classify</strong>.</li>
 <li>Finally click <strong>Apply</strong> to style your dataset.</li>
 </ul>
-<div class="note">
-<p><strong>Note</strong><br/>
+<div class="tip">
+<p><strong>Tip</strong><br/>
 Understanding what classification is appropriate to visualise your data is an important step within spatial analysis and visualisation, and something you will learn more about in the following weeks. Overall, they should be determined by understanding your data’s distribution and match your visualisation accordingly.</p>
 <p>Feel free to explore using the different options with your dataset at the moment – the results are almost instantaneous using QGIS, which makes it a good playground to see how certain parameters or settings can change your output.</p>
 </div>

@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Rasters, Zonal Statistics and Interpolation | GEOG0030: Geocomputation</title>
+  <meta name="description" content="9 Rasters, Zonal Statistics and Interpolation | GEOG0030: Geocomputation handbook." />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Rasters, Zonal Statistics and Interpolation | GEOG0030: Geocomputation" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="9 Rasters, Zonal Statistics and Interpolation | GEOG0030: Geocomputation handbook." />
+  <meta name="github-repo" content="jtvandijk/GEOG0030" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Rasters, Zonal Statistics and Interpolation | GEOG0030: Geocomputation" />
+  
+  <meta name="twitter:description" content="9 Rasters, Zonal Statistics and Interpolation | GEOG0030: Geocomputation handbook." />
+  
+
+<meta name="author" content="Justin van Dijk" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="analysing-spatial-patterns-iii-point-pattern-analysis.html"/>
+<link rel="next" href="transport-network-analysis.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo">
+<a href="https://www.ucl.ac.uk/module-catalogue/modules/geocomputation-GEOG0030"><img src="images/general/ucl_logo.png">
+</a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>Module Overview</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Module Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#welcome"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#module-overview"><i class="fa fa-check"></i>Module overview</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="part"><span><b>Foundational Concepts</b></span></li>
+<li class="chapter" data-level="1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html"><i class="fa fa-check"></i><b>1</b> Geocomputation: An Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#reading-w01"><i class="fa fa-check"></i><b>1.1</b> Reading list</a></li>
+<li class="chapter" data-level="1.2" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a></li>
+<li class="chapter" data-level="1.3" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#software"><i class="fa fa-check"></i><b>1.3</b> Software</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#qgis-installation"><i class="fa fa-check"></i><b>1.3.1</b> QGIS Installation</a></li>
+<li class="chapter" data-level="1.3.2" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#r-and-rstudio-installation"><i class="fa fa-check"></i><b>1.3.2</b> R and RStudio Installation</a></li>
+<li class="chapter" data-level="1.3.3" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#ucl"><i class="fa fa-check"></i><b>1.3.3</b> UCL Desktop and RStudio Server</a></li>
+<li class="chapter" data-level="1.3.4" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#r-package-installation"><i class="fa fa-check"></i><b>1.3.4</b> R package installation</a></li>
+<li class="chapter" data-level="1.3.5" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#a-note-on-arcgis"><i class="fa fa-check"></i><b>1.3.5</b> A note on ArcGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="geocomputation-an-introduction.html"><a href="geocomputation-an-introduction.html#byl-w01"><i class="fa fa-check"></i><b>1.4</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html"><i class="fa fa-check"></i><b>2</b> GIScience and GIS software</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#reading-w02"><i class="fa fa-check"></i><b>2.1</b> Reading list</a></li>
+<li class="chapter" data-level="2.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#simple-digitisation-of-spatial-features"><i class="fa fa-check"></i><b>2.2</b> Simple digitisation of spatial features</a></li>
+<li class="chapter" data-level="2.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#population-change-in-london"><i class="fa fa-check"></i><b>2.3</b> Population change in London</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-scene"><i class="fa fa-check"></i><b>2.3.1</b> Setting the scene</a></li>
+<li class="chapter" data-level="2.3.2" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-finding"><i class="fa fa-check"></i><b>2.3.2</b> Finding data</a></li>
+<li class="chapter" data-level="2.3.3" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w01-housekeeping"><i class="fa fa-check"></i><b>2.3.3</b> Housekeeping</a></li>
+<li class="chapter" data-level="2.3.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-downloading"><i class="fa fa-check"></i><b>2.3.4</b> Downloading data</a></li>
+<li class="chapter" data-level="2.3.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#w02-cleaning"><i class="fa fa-check"></i><b>2.3.5</b> Cleaning data</a></li>
+<li class="chapter" data-level="2.3.6" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#using-qgis-to-map-our-population-data"><i class="fa fa-check"></i><b>2.3.6</b> Using QGIS to map our population data</a></li>
+<li class="chapter" data-level="2.3.7" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#exporting-map-for-visual-analysis"><i class="fa fa-check"></i><b>2.3.7</b> Exporting map for visual analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#assignment-w02"><i class="fa fa-check"></i><b>2.4</b> Assignment</a></li>
+<li class="chapter" data-level="2.5" data-path="giscience-and-gis-software.html"><a href="giscience-and-gis-software.html#byl-w02"><i class="fa fa-check"></i><b>2.5</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html"><i class="fa fa-check"></i><b>3</b> Cartography and Visualisation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#reading-w03"><i class="fa fa-check"></i><b>3.1</b> Reading list</a></li>
+<li class="chapter" data-level="3.2" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#crime-in-london-i"><i class="fa fa-check"></i><b>3.2</b> Crime in London I</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#w03-finding"><i class="fa fa-check"></i><b>3.2.1</b> Finding our datasets</a></li>
+<li class="chapter" data-level="3.2.2" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#w03-downloading"><i class="fa fa-check"></i><b>3.2.2</b> Downloading data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#using-qgis-to-map-our-crime-data"><i class="fa fa-check"></i><b>3.2.3</b> Using QGIS to map our crime data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#assignment-w03"><i class="fa fa-check"></i><b>3.3</b> Assignment</a></li>
+<li class="chapter" data-level="3.4" data-path="cartography-and-visualisation.html"><a href="cartography-and-visualisation.html#byl-w03"><i class="fa fa-check"></i><b>3.4</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Programming for Data Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#reading-w04"><i class="fa fa-check"></i><b>4.1</b> Reading list</a></li>
+<li class="chapter" data-level="4.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#programming"><i class="fa fa-check"></i><b>4.2</b> Programming</a></li>
+<li class="chapter" data-level="4.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#programming-in-r"><i class="fa fa-check"></i><b>4.3</b> Programming in R</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#the-rstudio-interface"><i class="fa fa-check"></i><b>4.3.1</b> The RStudio interface</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#rstudio-console"><i class="fa fa-check"></i><b>4.4</b> RStudio console</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#command-input"><i class="fa fa-check"></i><b>4.4.1</b> Command Input</a></li>
+<li class="chapter" data-level="4.4.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#storing-variables"><i class="fa fa-check"></i><b>4.4.2</b> Storing variables</a></li>
+<li class="chapter" data-level="4.4.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#accessing-and-returning-variables"><i class="fa fa-check"></i><b>4.4.3</b> Accessing and returning variables</a></li>
+<li class="chapter" data-level="4.4.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#variables-of-different-data-types"><i class="fa fa-check"></i><b>4.4.4</b> Variables of different data types</a></li>
+<li class="chapter" data-level="4.4.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#calling-functions-on-our-variables"><i class="fa fa-check"></i><b>4.4.5</b> Calling functions on our variables</a></li>
+<li class="chapter" data-level="4.4.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#returning-functions"><i class="fa fa-check"></i><b>4.4.6</b> Returning functions</a></li>
+<li class="chapter" data-level="4.4.7" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#examining-our-variables-using-functions"><i class="fa fa-check"></i><b>4.4.7</b> Examining our variables using functions</a></li>
+<li class="chapter" data-level="4.4.8" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#creating-a-two-element-object"><i class="fa fa-check"></i><b>4.4.8</b> Creating a two-element object</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#simple-analysis"><i class="fa fa-check"></i><b>4.5</b> Simple analysis</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#housekeeping"><i class="fa fa-check"></i><b>4.5.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="4.5.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#atomic-vectors"><i class="fa fa-check"></i><b>4.5.2</b> Atomic vectors</a></li>
+<li class="chapter" data-level="4.5.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#matrices"><i class="fa fa-check"></i><b>4.5.3</b> Matrices</a></li>
+<li class="chapter" data-level="4.5.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#dataframes"><i class="fa fa-check"></i><b>4.5.4</b> Dataframes</a></li>
+<li class="chapter" data-level="4.5.5" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#column-names"><i class="fa fa-check"></i><b>4.5.5</b> Column names</a></li>
+<li class="chapter" data-level="4.5.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#adding-columns"><i class="fa fa-check"></i><b>4.5.6</b> Adding columns</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#crime-in-london-ii"><i class="fa fa-check"></i><b>4.6</b> Crime in London II</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#starting-a-project"><i class="fa fa-check"></i><b>4.6.1</b> Starting a project</a></li>
+<li class="chapter" data-level="4.6.2" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#setting-up-a-script"><i class="fa fa-check"></i><b>4.6.2</b> Setting up a script</a></li>
+<li class="chapter" data-level="4.6.3" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#running-a-script"><i class="fa fa-check"></i><b>4.6.3</b> Running a script</a></li>
+<li class="chapter" data-level="4.6.4" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#crime-data-2"><i class="fa fa-check"></i><b>4.6.4</b> Crime data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#assignment-w04"><i class="fa fa-check"></i><b>4.7</b> Assignment</a></li>
+<li class="chapter" data-level="4.8" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#wm-w04"><i class="fa fa-check"></i><b>4.8</b> Want more? [Optional]</a></li>
+<li class="chapter" data-level="4.9" data-path="programming-for-data-analysis.html"><a href="programming-for-data-analysis.html#byl-w04"><i class="fa fa-check"></i><b>4.9</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html"><i class="fa fa-check"></i><b>5</b> Programming for Spatial Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#reading-w05"><i class="fa fa-check"></i><b>5.1</b> Reading list</a></li>
+<li class="chapter" data-level="5.2" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#crime-in-london-iii"><i class="fa fa-check"></i><b>5.2</b> Crime in London III</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#data-preparation"><i class="fa fa-check"></i><b>5.2.1</b> Data preparation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#spatial-analysis-set-up"><i class="fa fa-check"></i><b>5.2.2</b> Spatial analysis set up</a></li>
+<li class="chapter" data-level="5.2.3" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#interacting-with-spatial-data"><i class="fa fa-check"></i><b>5.2.3</b> Interacting with spatial data</a></li>
+<li class="chapter" data-level="5.2.4" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#getting-our-crime-data-in-shape"><i class="fa fa-check"></i><b>5.2.4</b> Getting our crime data in shape</a></li>
+<li class="chapter" data-level="5.2.5" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#data-wrangling"><i class="fa fa-check"></i><b>5.2.5</b> Data wrangling</a></li>
+<li class="chapter" data-level="5.2.6" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#improving-your-workflow"><i class="fa fa-check"></i><b>5.2.6</b> Improving your workflow</a></li>
+<li class="chapter" data-level="5.2.7" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#aggregate-crime-by-ward"><i class="fa fa-check"></i><b>5.2.7</b> Aggregate crime by ward</a></li>
+<li class="chapter" data-level="5.2.8" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#joining-crime-data-to-wards"><i class="fa fa-check"></i><b>5.2.8</b> Joining crime data to wards</a></li>
+<li class="chapter" data-level="5.2.9" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#mapping-crime-data"><i class="fa fa-check"></i><b>5.2.9</b> Mapping crime data</a></li>
+<li class="chapter" data-level="5.2.10" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#styling-crime-data"><i class="fa fa-check"></i><b>5.2.10</b> Styling crime data</a></li>
+<li class="chapter" data-level="5.2.11" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#exporting-our-crime-data"><i class="fa fa-check"></i><b>5.2.11</b> Exporting our crime data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#assignment-w05"><i class="fa fa-check"></i><b>5.3</b> Assignment</a></li>
+<li class="chapter" data-level="5.4" data-path="programming-for-spatial-analysis.html"><a href="programming-for-spatial-analysis.html#byl-w05"><i class="fa fa-check"></i><b>5.4</b> Before you leave</a></li>
+</ul></li>
+<li class="part"><span><b>Core Spatial Analysis</b></span></li>
+<li class="chapter" data-level="6" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><i class="fa fa-check"></i><b>6</b> Analysing Spatial Patterns I: Geometric Operations and Spatial Queries</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#reading-w06"><i class="fa fa-check"></i><b>6.1</b> Reading list</a></li>
+<li class="chapter" data-level="6.2" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#bike-theft-w06"><i class="fa fa-check"></i><b>6.2</b> Bike theft in London</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#housekeeping-w06"><i class="fa fa-check"></i><b>6.2.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="6.2.2" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#loading-data-w06"><i class="fa fa-check"></i><b>6.2.2</b> Loading data</a></li>
+<li class="chapter" data-level="6.2.3" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#data-preparation-w06"><i class="fa fa-check"></i><b>6.2.3</b> Data preparation</a></li>
+<li class="chapter" data-level="6.2.4" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#spatial-operations-i"><i class="fa fa-check"></i><b>6.2.4</b> Spatial operations I</a></li>
+<li class="chapter" data-level="6.2.5" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#spatial-operations-ii"><i class="fa fa-check"></i><b>6.2.5</b> Spatial operations II</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#assignment-w06"><i class="fa fa-check"></i><b>6.3</b> Assignment</a></li>
+<li class="chapter" data-level="6.4" data-path="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html"><a href="analysing-spatial-patterns-i-geometric-operations-and-spatial-queries.html#byl-w06"><i class="fa fa-check"></i><b>6.4</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><i class="fa fa-check"></i><b>7</b> Analysing Spatial Patterns II: Spatial Autocorrelation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#reading-w07"><i class="fa fa-check"></i><b>7.1</b> Reading list</a></li>
+<li class="chapter" data-level="7.2" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#childhood-obesity"><i class="fa fa-check"></i><b>7.2</b> Childhood obesity</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#housekeeping-w07"><i class="fa fa-check"></i><b>7.2.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="7.2.2" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#loading-data-w07"><i class="fa fa-check"></i><b>7.2.2</b> Loading data</a></li>
+<li class="chapter" data-level="7.2.3" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#data-preparation-w07"><i class="fa fa-check"></i><b>7.2.3</b> Data preparation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#statistical-distributions"><i class="fa fa-check"></i><b>7.3</b> Statistical distributions</a></li>
+<li class="chapter" data-level="7.4" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#assignment-1-w07"><i class="fa fa-check"></i><b>7.4</b> Assignment 1</a></li>
+<li class="chapter" data-level="7.5" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#spatial-distributions"><i class="fa fa-check"></i><b>7.5</b> Spatial distributions</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#spatial-lag"><i class="fa fa-check"></i><b>7.5.1</b> Spatial lag</a></li>
+<li class="chapter" data-level="7.5.2" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#defining-neighbours"><i class="fa fa-check"></i><b>7.5.2</b> Defining neighbours</a></li>
+<li class="chapter" data-level="7.5.3" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#spatial-weights-matrix"><i class="fa fa-check"></i><b>7.5.3</b> Spatial weights matrix</a></li>
+<li class="chapter" data-level="7.5.4" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#global-morans-i"><i class="fa fa-check"></i><b>7.5.4</b> Global Moran’s I</a></li>
+<li class="chapter" data-level="7.5.5" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#local-morans-i"><i class="fa fa-check"></i><b>7.5.5</b> Local Moran’s I</a></li>
+<li class="chapter" data-level="7.5.6" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#getis-ord-gi"><i class="fa fa-check"></i><b>7.5.6</b> Getis-Ord-Gi*</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#assignment-2-w07"><i class="fa fa-check"></i><b>7.6</b> Assignment 2</a></li>
+<li class="chapter" data-level="7.7" data-path="analysing-spatial-patterns-ii-spatial-autocorrelation.html"><a href="analysing-spatial-patterns-ii-spatial-autocorrelation.html#byl-w07"><i class="fa fa-check"></i><b>7.7</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html"><i class="fa fa-check"></i><b>8</b> Analysing Spatial Patterns III: Point Pattern Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#reading-w08"><i class="fa fa-check"></i><b>8.1</b> Reading list</a></li>
+<li class="chapter" data-level="8.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#bike-theft-w08"><i class="fa fa-check"></i><b>8.2</b> Bike theft in London</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#housekeeping-w08"><i class="fa fa-check"></i><b>8.2.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="8.2.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#loading-data-w08"><i class="fa fa-check"></i><b>8.2.2</b> Loading data</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#point-pattern-analysis"><i class="fa fa-check"></i><b>8.3</b> Point pattern analysis</a></li>
+<li class="chapter" data-level="8.4" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#density-based-techniques"><i class="fa fa-check"></i><b>8.4</b> Density-based techniques</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#quadrat-analysis"><i class="fa fa-check"></i><b>8.4.1</b> Quadrat analysis</a></li>
+<li class="chapter" data-level="8.4.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#kernel-density-estimation"><i class="fa fa-check"></i><b>8.4.2</b> Kernel Density Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#assignment-w08"><i class="fa fa-check"></i><b>8.5</b> Assignment</a></li>
+<li class="chapter" data-level="8.6" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#distance-based-methods"><i class="fa fa-check"></i><b>8.6</b> Distance-Based Methods</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#average-nearest-neighbour"><i class="fa fa-check"></i><b>8.6.1</b> Average Nearest Neighbour</a></li>
+<li class="chapter" data-level="8.6.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#ripleys-k-function"><i class="fa fa-check"></i><b>8.6.2</b> Ripley’s K function</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#wm-w08"><i class="fa fa-check"></i><b>8.7</b> Want more? [Optional]</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#what-is-dbscan"><i class="fa fa-check"></i><b>8.7.1</b> What is DBSCAN?</a></li>
+<li class="chapter" data-level="8.7.2" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#conducting-a-dbscan-analysis"><i class="fa fa-check"></i><b>8.7.2</b> Conducting a DBSCAN analysis</a></li>
+<li class="chapter" data-level="8.7.3" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#working-with-the-dbscan-output"><i class="fa fa-check"></i><b>8.7.3</b> Working with the DBSCAN output</a></li>
+<li class="chapter" data-level="8.7.4" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#mapping-dbscan-clusters"><i class="fa fa-check"></i><b>8.7.4</b> Mapping DBSCAN clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="analysing-spatial-patterns-iii-point-pattern-analysis.html"><a href="analysing-spatial-patterns-iii-point-pattern-analysis.html#byl-w08"><i class="fa fa-check"></i><b>8.8</b> Before you leave</a></li>
+</ul></li>
+<li class="part"><span><b>Advanced Spatial Analysis</b></span></li>
+<li class="chapter" data-level="9" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html"><i class="fa fa-check"></i><b>9</b> Rasters, Zonal Statistics and Interpolation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#reading-w09"><i class="fa fa-check"></i><b>9.1</b> Reading list</a></li>
+<li class="chapter" data-level="9.2" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#raster-data"><i class="fa fa-check"></i><b>9.2</b> Raster data</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#housekeeping-w09"><i class="fa fa-check"></i><b>9.2.1</b> Housekeeping</a></li>
+<li class="chapter" data-level="9.2.2" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#downloading-data-w09"><i class="fa fa-check"></i><b>9.2.2</b> Downloading data</a></li>
+<li class="chapter" data-level="9.2.3" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#raster-data-1"><i class="fa fa-check"></i><b>9.2.3</b> Raster data</a></li>
+<li class="chapter" data-level="9.2.4" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#map-algebra"><i class="fa fa-check"></i><b>9.2.4</b> Map algebra</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#population-change-in-london-1"><i class="fa fa-check"></i><b>9.3</b> Population change in London</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#loading-data-w09-1"><i class="fa fa-check"></i><b>9.3.1</b> Loading data</a></li>
+<li class="chapter" data-level="9.3.2" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#analysing-population-change"><i class="fa fa-check"></i><b>9.3.2</b> Analysing population change</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#assignment-w09-01"><i class="fa fa-check"></i><b>9.4</b> Assignment 1</a></li>
+<li class="chapter" data-level="9.5" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#air-pollution-in-london"><i class="fa fa-check"></i><b>9.5</b> Air pollution in London</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#loading-data-w09-2"><i class="fa fa-check"></i><b>9.5.1</b> Loading data</a></li>
+<li class="chapter" data-level="9.5.2" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#analysing-air-pollution"><i class="fa fa-check"></i><b>9.5.2</b> Analysing air pollution</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#assignment-w09-02"><i class="fa fa-check"></i><b>9.6</b> Assignment 2</a></li>
+<li class="chapter" data-level="9.7" data-path="rasters-zonal-statistics-and-interpolation.html"><a href="rasters-zonal-statistics-and-interpolation.html#byl-w09"><i class="fa fa-check"></i><b>9.7</b> Before you leave</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html"><i class="fa fa-check"></i><b>10</b> Transport Network Analysis</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#reading-w10"><i class="fa fa-check"></i><b>10.1</b> Reading list</a></li>
+<li class="chapter" data-level="10.2" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#transport-network-analysis-1"><i class="fa fa-check"></i><b>10.2</b> Transport Network Analysis</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#accessibility-in-portsmouth"><i class="fa fa-check"></i><b>10.2.1</b> Accessibility in Portsmouth</a></li>
+<li class="chapter" data-level="10.2.2" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#loading-data-w10"><i class="fa fa-check"></i><b>10.2.2</b> Acquiring network data</a></li>
+<li class="chapter" data-level="10.2.3" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#measuring-accessibility"><i class="fa fa-check"></i><b>10.2.3</b> Measuring accessibility</a></li>
+<li class="chapter" data-level="10.2.4" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#task-w10"><i class="fa fa-check"></i><b>10.2.4</b> Tutorial task</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#wm-w10"><i class="fa fa-check"></i><b>10.3</b> Want more? [Optional]</a></li>
+<li class="chapter" data-level="10.4" data-path="transport-network-analysis.html"><a href="transport-network-analysis.html#byl-w10"><i class="fa fa-check"></i><b>10.4</b> Before you leave</a></li>
+</ul></li>
+<li class="part"><span><b>Additional Resources</b></span></li>
+<li class="chapter" data-level="11" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>11</b> Data Sources</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="data-sources.html"><a href="data-sources.html#open-data"><i class="fa fa-check"></i><b>11.1</b> Open Data</a></li>
+<li class="chapter" data-level="11.2" data-path="data-sources.html"><a href="data-sources.html#safeguarded-data"><i class="fa fa-check"></i><b>11.2</b> Safeguarded Data</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GEOG0030: Geocomputation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rasters-zonal-statistics-and-interpolation" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Rasters, Zonal Statistics and Interpolation<a href="rasters-zonal-statistics-and-interpolation.html#rasters-zonal-statistics-and-interpolation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The majority of our module has focused on the use of vector data and tabular data. This week, we switch it up by focusing primarily on raster data and its analysis using map algebra and zonal statistics.</p>
+<!-- ## Lecture slides {#slides-w09} -->
+<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w09_geo.pdf). -->
+<div id="reading-w09" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Reading list<a href="rasters-zonal-statistics-and-interpolation.html#reading-w09" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="essential-readings-8" class="section level4 unnumbered hasAnchor">
+<h4>Essential readings<a href="rasters-zonal-statistics-and-interpolation.html#essential-readings-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Dugoua, E. Kennedy, R. and Urpelainen, J. 2018. Satellite data for the social sciences: measuring rural electrification with night-time lights. <em>International Journal of Remote Sensing</em> 39(9): 2690-2701. <a href="https://doi.org/10.1080/01431161.2017.1420936">[Link]</a></li>
+<li>Gimond, M. 2021. Intro to GIS and spatial analysis. <strong>Chapter 14</strong>: <em>Spatial Interpolation</em>. <a href="https://mgimond.github.io/Spatial/spatial-interpolation.html">[Link]</a></li>
+<li>Jumaah, H. <em>et al.</em> 2019. Air quality index prediction using IDW geostatistical technique and OLS-based GIS technique in Kuala Lumpur, Malaysia. <em>Geomatics, Natural Hazards and Risk</em> 10(1): 2185-2199. <a href="https://doi.org/10.1080/19475705.2019.1683084">[Link]</a></li>
+</ul>
+</div>
+<div id="suggested-readings-8" class="section level4 unnumbered hasAnchor">
+<h4>Suggested readings<a href="rasters-zonal-statistics-and-interpolation.html#suggested-readings-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Ferreira, T. 2018. Using satellite data to track socio-economic outcomes: a case study of Namibia. <em>Stellenbosch Working Paper Series</em> WP12/2018. <a href="https://www.ekon.sun.ac.za/wpapers/2018/wp122018">[Link]</a></li>
+<li>Mellander, C. <em>et al.</em> 2015. Night-time light data: a good proxy measure for economic activity? <em>PLoS ONE</em> 10(10): e0139779. <a href="https://doi.org/10.1371/journal.pone.0139779">[Link]</a></li>
+</ul>
+</div>
+</div>
+<div id="raster-data" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Raster data<a href="rasters-zonal-statistics-and-interpolation.html#raster-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This week’s content introduces you to raster data, map algebra and interpolation. After first looking at population change in London using raster data, we will then look at generating pollution maps in London from individual point readings taken from air quality monitoring sites across London. To complete this analysis, we will be using several new datasets:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Population rasters for Great Britain</strong>: Raster datasets containing estimated population counts for Great Britain in 2001 and 2011 at a spatial resolution of 1km.</li>
+<li><strong>NO<sub>2</sub> readings across London</strong>: A dataset contain readings of NO<sub>2</sub> for individual air quality monitoring sites in London.</li>
+</ol>
+<p>We will also use our London wards (2018) administrative boundaries dataset at various points within both practicals. This file should already be in your <code>raw/boundaries</code> folder.</p>
+<div id="housekeeping-w09" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Housekeeping<a href="rasters-zonal-statistics-and-interpolation.html#housekeeping-w09" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s get ourselves ready to start our practical content by first downloading the relevant data and loading this within our script. Open a new script within your GEOG0030 project and save this script as <code>wk9-pollution-raster-analysis.r</code>. At the top of your script, add the following metadata (substitute accordingly):</p>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysing population change and pollution in London</span></span>
+<span id="cb288-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb288-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Data: January 2023</span></span>
+<span id="cb288-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb288-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Author: Justin</span></span></code></pre></div>
+<p>Within your script, add the following libraries for loading:</p>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries</span></span>
+<span id="cb289-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb289-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb289-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb289-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb289-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb289-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
+<span id="cb289-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb289-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb289-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb289-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gstat)</span>
+<span id="cb289-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb289-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span></code></pre></div>
+</div>
+<div id="downloading-data-w09" class="section level3 hasAnchor" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Downloading data<a href="rasters-zonal-statistics-and-interpolation.html#downloading-data-w09" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="population-data-1" class="section level4 hasAnchor" number="9.2.2.1">
+<h4><span class="header-section-number">9.2.2.1</span> Population data<a href="rasters-zonal-statistics-and-interpolation.html#population-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For the first part of this week’s practical material we will be using raster datasets from the <a href="https://www.liverpool.ac.uk/geography-and-planning/research/popchange/introduction/">Population Change and Geographic Inequalities in the UK, 1971-2011 (PopChange)</a> project. In this <a href="https://esrc.ukri.org/research/our-research/secondary-data-analysis-initiative/">ESRC-funded project</a>, researchers from the University of Liverpool created raster population surfaces from publicly available Census data (1971, 1981, 1991, 2001, 2011). These population surfaces are estimates of counts of people, displayed within a regular grid raster of a spatial resolution of 1km. These surfaces can be used to explore, for example, changes in the demographic profiles of small areas, area deprivation, or country of birth.</p>
+<p>To enable this, the researchers have created several categories of rasters, including: Total Population, Population by Age, Population by Country of Birth, Population by Ethnicity etc. This week we will use the <strong>Total Population</strong> datasets. To access data directly from the PopChange website requires a simple registration for log-in, you can then navigate through the datasets and choose those you would like to download.</p>
+<p>For this week, we have gone ahead and downloaded the data for you, which you can access directly from the links below:</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">PopChange Raster</th>
+<th align="left">File Type</th>
+<th align="left">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Population surface GB 2001 - Total Population</td>
+<td align="left"><code>asc</code></td>
+<td align="left"><a href="https://github.com/jtvandijk/GEOG0030/tree/master/data/zip/5a_ascii_grid2001_Total_Population_UsRsPopA.zip">Download</a></td>
+</tr>
+<tr class="even">
+<td align="left">Population surface GB 2011 - Total Population</td>
+<td align="left"><code>asc</code></td>
+<td align="left"><a href="https://github.com/jtvandijk/GEOG0030/tree/master/data/zip/5a_ascii_grid2011_Total_Population_URPopAll.zip">Download</a></td>
+</tr>
+</tbody>
+</table>
+<p>Once downloaded, copy over these files into your <code>data/raw/population</code> folder.</p>
+</div>
+<div id="pollution-data" class="section level4 hasAnchor" number="9.2.2.2">
+<h4><span class="header-section-number">9.2.2.2</span> Pollution data<a href="rasters-zonal-statistics-and-interpolation.html#pollution-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For the second part of this week’s practical material, we will explore several methods of interpolation by looking at air pollution in London by getting data from the <a href="https://www.londonair.org.uk/LondonAir/General/about.aspx">Londonair</a> website. <strong>Londonair</strong> is the website of the London Air Quality Network (LAQN), and shows air pollution in London and south east England that is provided by the <a href="https://www.imperial.ac.uk/school-public-health/environmental-research-group/">Environmental Research Group</a> of Imperial College London. The data are captured by hundreds of sensors at various continuous monitoring sites in London and the south east of England. The data are publicly available for download and we can use an R package to directly interact with the data without needing to download it. The <code>openair</code> <a href="https://davidcarslaw.github.io/openair/">R package</a> enables us to import data directly form the Londonair website.</p>
+<div class="note">
+<p><strong>Note</strong> <br />
+The <code>openair</code> library can be a bit fiddly at times: to make things easy for us, you can simply download a copy of the data below.</p>
+</div>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Pollution Data</th>
+<th align="left">Type</th>
+<th align="left">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Air pollution in London for 2019 (NO<sub>2</sub>)</td>
+<td align="left"><code>csv</code></td>
+<td align="left"><a href="https://github.com/jtvandijk/GEOG0030/tree/master/data/zip/no2_london_2019.zip">Download</a></td>
+</tr>
+</tbody>
+</table>
+<p>Once downloaded, copy over these files into a <code>data/raw/pollution</code> folder. Please note that the file is rather larger (~170 MB) and it is best to keep it as <code>.zip</code> file.</p>
+</div>
+</div>
+<div id="raster-data-1" class="section level3 hasAnchor" number="9.2.3">
+<h3><span class="header-section-number">9.2.3</span> Raster data<a href="rasters-zonal-statistics-and-interpolation.html#raster-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the previous weeks, we have predominantly worked with <strong>vector data</strong> and/or <strong>tabular data</strong> that we then join to vector data for analysis. However, depending on the nature of your research problem, you may also encounter <strong>raster data</strong>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:09-raster-but-vector"></span>
+<img src="images/W09/raster_and_vector.png" alt="A hypothetical raster and a vector model of landse." width="90%" />
+<p class="caption">
+Figure 9.1: A hypothetical raster and a vector model of landse.
+</p>
+</div>
+<p>If you remember, the main difference between vector and raster models is how they are structured. Our vectors are represented by three different types of geometries: points, lines and polygons. We have used point data in the form of our stations and bike theft, and polygons in the form of our ward and borough boundaries. In comparison, our raster datasets are composed of pixels (or grid cells) - a bit like an image. This means that a raster dataset represents a geographic phenomenon by dividing the world into a set of rectangular cells that are laid out in a grid. Each cell holds one value that represents the value of that phenomena at the location, e.g. a population density at that grid cell location. In comparison to vector data, we do not have an <em>attribute table</em> containing fields to analyse.</p>
+<p>All analysis conducted on a raster dataset therefore is primarily conducted on the cell values of a raster, rather than on the attribute values of the observations contained within our dataset or the precise geometries of our dataset. Probably one of the most common or well-known types of raster data are those that we can derive from remote sensing, including satellite and RADAR/LIDAR imagery that we see used in many environmental modelling applications, such as land use and pollution monitoring. However, over the last few years, raster data has increasingly being used within spatial data science applications. For example, <a href="www.worldpop.org">Worldpop</a> and <a href="https://dataforgood.fb.com/tools/population-density-maps/">Facebook</a> have created raster-based estimates of population density (and other variables), that you can access openly via their respective links.</p>
+<p>Beyond their benefits in computational requirements and even, for some geographical phenomena, visualisation capacity and capabilities, a key advantage of raster data is that is relatively straight-forward to standardise data across space (i.e. different countries) and across variables (i.e. different datasets) to enable greater compatibility and easier comparison of datasets than its vector counterparts. We have, for example, seen that we can run into issues quickly even with data on London, as our ward boundaries have changed so frequently even over just the last ten years.</p>
+<p>This standardisation can occur as raster data has:</p>
+<ul>
+<li>An <strong>origin</strong> point from which the grid extends and then a precise number of columns and rows within said dataset;</li>
+<li>A specific <strong>spatial resolution</strong> which refers to the <strong>cell size</strong> of the raster dataset, e.g. are the grid square 100m x 100m, 1000m x 1000m, etc.</li>
+</ul>
+<p>From these two values, it is possible to calculate the size of our raster (number of columns X spatial resolution by the number of rows X spatial resolution) as well as * <strong>snap</strong> future rasters (or <em>resample</em> current rasters) to both the <strong>spatial extent</strong> and the <strong>spatial delineation</strong> of one raster dataset (i.e. ensure the cells between the rasters will align with one another). This enables us to create rasters that essentially “line up with one another” and by doing so, we are able to complete specific calculations between our raster datasets known as <strong>map algebra</strong>.</p>
+</div>
+<div id="map-algebra" class="section level3 hasAnchor" number="9.2.4">
+<h3><span class="header-section-number">9.2.4</span> Map algebra<a href="rasters-zonal-statistics-and-interpolation.html#map-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Map algebra</strong> is a set-based algebra for manipulating geographic data, coined by <a href="https://en.wikipedia.org/wiki/Dana_Tomlin">Dana Tomlin</a> in the early 1980s. Map algebra uses maths-like operations, including addition, subtraction and multiplication to update raster cell values - depending on the output you’re looking to achieve. The most common type of map algebra is to apply these operations using <em>a cell-by-cell function</em>. Conceptually, this approach will directly stack rasters on top of one another and complete the mathematical operations that you’ve supplied to the cells that are aligned with each other.</p>
+<p>These operations might include:</p>
+<ul>
+<li><strong>Arithmetic operations</strong> that use basic mathematical functions like addition, subtraction, multiplication and division.</li>
+<li><strong>Statistical operations</strong> that use statistical operations such as minimum, maximum, average and median.</li>
+<li><strong>Relational operations</strong>, which compare cells using functions such as greater than, smaller than or equal to.</li>
+<li><strong>Trigonometric operations</strong>, which use sine, cosine, tangent, arcsine between two or more raster layers.</li>
+<li><strong>Exponential and logarithmic operations</strong> that use exponent and logarithm functions.</li>
+</ul>
+<p>But it is also possible to run (some of) these operations at a different scale. Map algebra functions can be applied using for <strong>four</strong> different approaches:</p>
+<ul>
+<li><strong>Local</strong>: The simplest approach - completing functions on a cell-by-cell basis.</li>
+<li><strong>Global</strong>: Used to apply a bulk change to all cells in a raster using a function, e.g. add 1 to all values in a raster, or calculate the euclidean distance each cell is away from a specific cell.</li>
+<li><strong>Focal</strong>: Apply a function to a set of neighborhood values to calculate the output for a single cell, e.g. using a moving window, such as kernel.</li>
+<li><strong>Zonal</strong>: Apply a function to a group of cells within a specified zone (zone can be provided as a raster or vector format).</li>
+</ul>
+<p>The utilisation of these functions can enable many different types of specialised raster analysis, such as recoding or reclassifying indivdual rasters to reduce complexity in their data values, generating the <em>Normalised Difference Vegetation Index</em> for a satellite imagery dataset, or calculating <em>Least Cost Estimate Surfaces</em> to find the most “efficient” path from one cell in a raster to another. Furthermore, using multiple raster datasets, it is possible to combine these data through mathematical overlays, from the basic mathematical operations mentioned above to more complex modelling, such as prediction using Bayes theorem.</p>
+<p>The results of these overlays have many applications, including identifying suitable locations for placing a new school or modelling risk to viruses, such as the Zika virus (e.g. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6863140/">Cunze et al, 2019</a> and <a href="https://www.sciencedirect.com/science/article/pii/S0001706X16303886?casa_token=vJFKzU7IYf4AAAAA:LkKoIPdcLztD9qmWaDEUq56H3so9PPRXvgN8hy6IidqblVRJ1FWawqlGBKybvHhYYdfRY-DLadVi">Santos &amp; Meneses, 2017</a> for those of you interested in this application), and, of course, as highlighted above, population density.</p>
+</div>
+</div>
+<div id="population-change-in-london-1" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Population change in London<a href="rasters-zonal-statistics-and-interpolation.html#population-change-in-london-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The first part of our practical this week will look at map algebra in action - and some simple raster data process - by looking to analyse population change in London between 2001 and 2011. To do so, we are going to complete a very simple bit of map algebra - we will subtract the values of the 2011 raster dataset from the 2011 raster dataset and then map the resulting values, i.e. population change. One question to think about - and reflect on as we move forward with this practical - is that we already know that small-area counts of people in a variety of population subgroups are publicly released for each Census and via the Mid-Year estimates, so why was it necessary to create these raster population surfaces?</p>
+<p>Before we open up the data in R, try to have a ‘non-spatial sneak peak’ at the <code>.asc</code> file by opening it in a normal text editor, for instance, <em>TextEdit</em> on Mac OS or <em>NotePad</em> on Windows. What you will notice is that the <code>asc</code> file, which is an exchange format, is in very fact a flat plain text file:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:09-raster-vector"></span>
+<img src="images/W09/raster_as_text.png" alt="Raster or plain text?" width="90%" />
+<p class="caption">
+Figure 9.2: Raster or plain text?
+</p>
+</div>
+<p>Reflecting on what we have just read about rasters and their format, what do you think the first few lines of the <code>asc</code> file, when opened with a text editor, mean?</p>
+<div id="loading-data-w09-1" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Loading data<a href="rasters-zonal-statistics-and-interpolation.html#loading-data-w09-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s get started and take a look at our data. First we need to load it into R (using the <code>raster</code> library) and then we can quickly plot it using the <code>base</code> plot function:</p>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load our two raster datasets</span></span>
+<span id="cb290-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb290-2" aria-hidden="true" tabindex="-1"></a>pop_2001 <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">&quot;data/raw/population/5a_ascii_grid2001_Total_Population_UsRsPopA.asc&quot;</span>)</span>
+<span id="cb290-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb290-3" aria-hidden="true" tabindex="-1"></a>pop_2011 <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">&quot;data/raw/population/5a_ascii_grid2011_Total_Population_URPopAll.asc&quot;</span>)</span>
+<span id="cb290-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb290-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb290-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb290-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot 2001 - this can be a little slow, especially for large raster</span></span>
+<span id="cb290-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb290-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pop_2001)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-load-raster%20data-1.png" width="672" /></p>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot 2011 - this can be a little slow, especially for large rasters</span></span>
+<span id="cb291-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb291-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pop_2011)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-load-raster%20data-2.png" width="672" /></p>
+<p>You should see that whilst your maps look very similar, the legend certainly shows that the values associated with each cell has grown over the 10 years between 2001 and 2011: we see our maximum increase from 15,000 people per cell to 20,000 people per cell.</p>
+<p>Now we have our raster data loaded, we want to reduce it to show only London using our London ward shapefile. To do so, we will use a combination of two techniques - the <code>crop()</code> function and then using a <code>mask</code> to refine our raster further. The <code>crop()</code> function crop any raster by the overall spatial extent or rather <em>bounding box</em> of the <code>y</code> dataset. As a result, the raster returned will be rectangular (or square) in shape - and <em>not cropped</em> to the precise geometry of the <code>y</code> dataset that we see in the use of the <code>st_intersections()</code> function that we use with vector data. To reduce a raster to the (almost) precise geometry of the <code>y</code> dataset, we need to instead use a <code>mask</code> approach.</p>
+<div class="tip">
+<p><strong>Tip</strong> <br />
+A <code>mask</code> will only work when using <strong>two</strong> raster datasets. As a result, we need to turn our <code>y</code> dataset (in our case, the London ward shapefile) into a raster - a process simply known as “rasterize” or “rasterizing”. This process of rasterizing will turn our polygon dataset into a raster and thus simplify/alter the geometry of our dataset to coerce it into a grid-based dataset:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:09-raster-as-grid"></span>
+<img src="images/W09/rtovector.png" alt="Rasterising a line vector - forcing geometries into a grid. Source: [Lovelace *et al*. 2020](https://geocompr.robinlovelace.net/geometric-operations.html#raster-vector)." width="672" />
+<p class="caption">
+Figure 9.3: Rasterising a line vector - forcing geometries into a grid. Source: <a href="https://geocompr.robinlovelace.net/geometric-operations.html#raster-vector">Lovelace <em>et al</em>. 2020</a>.
+</p>
+</div>
+</div>
+<p>To ensure our resulting raster of our London ward shapefile matches the spatial delineation (aligns our cells) and resolution (make cells the same size) of our population rasters, instead of separately rasterising (using the <code>rasterise()</code> function) our London ward shapefile and then masking (using the <code>mask()</code> function) our rasters by the resulting raster, we can combine this into one, still using the <code>rasterise()</code> function but adding the London population rasters into the function and the <code>mask</code> parameter set to <code>True</code>.</p>
+<p>Load our London ward shapefile and use this to first crop, then mask our population rasters:</p>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load london ward data</span></span>
+<span id="cb292-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-2" aria-hidden="true" tabindex="-1"></a>london_ward <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">&quot;data/raw/boundaries/2018/London_Ward.shp&quot;</span>)</span>
+<span id="cb292-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-4" aria-hidden="true" tabindex="-1"></a><span class="co"># crop raster to extent greater london</span></span>
+<span id="cb292-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-5" aria-hidden="true" tabindex="-1"></a>lonpop_2001 <span class="ot">&lt;-</span> <span class="fu">crop</span>(pop_2001, london_ward)</span>
+<span id="cb292-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-6" aria-hidden="true" tabindex="-1"></a>lonpop_2011 <span class="ot">&lt;-</span> <span class="fu">crop</span>(pop_2011, london_ward)</span>
+<span id="cb292-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-8" aria-hidden="true" tabindex="-1"></a><span class="co"># rasterise London ward, and mask each population raster</span></span>
+<span id="cb292-9"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-9" aria-hidden="true" tabindex="-1"></a>lonpop_2001 <span class="ot">&lt;-</span> <span class="fu">rasterize</span>(london_ward, lonpop_2001, <span class="at">mask =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb292-10"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-10" aria-hidden="true" tabindex="-1"></a>lonpop_2011 <span class="ot">&lt;-</span> <span class="fu">rasterize</span>(london_ward, lonpop_2011, <span class="at">mask =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb292-11"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-12"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-12" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the 2001 London population raster</span></span>
+<span id="cb292-13"><a href="rasters-zonal-statistics-and-interpolation.html#cb292-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lonpop_2001)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-confine-that-area-yall-1.png" width="672" /></p>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the 2011 London population raster</span></span>
+<span id="cb293-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb293-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lonpop_2011)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-confine-that-area-yall-2.png" width="672" /></p>
+<p>You should now have generated two plots for each year. You can quickly flick between the two and see there is evidence of population change between our two datasets.</p>
+</div>
+<div id="analysing-population-change" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Analysing population change<a href="rasters-zonal-statistics-and-interpolation.html#analysing-population-change" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now we have our two London population rasters, we are now ready to go ahead and calculate population change between our two datasets by subtracting our 2001 population raster from our 2011 population raster:</p>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb294-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subtract 2001 population from 2011 population</span></span>
+<span id="cb294-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb294-2" aria-hidden="true" tabindex="-1"></a>lonpop_change <span class="ot">&lt;-</span> lonpop_2011 <span class="sc">-</span> lonpop_2001</span>
+<span id="cb294-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb294-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb294-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb294-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the results</span></span>
+<span id="cb294-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb294-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lonpop_change)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-local-is-lekker-1.png" width="672" /></p>
+<p>We now have a raster that shows us population change in London - and to our surprise, there are areas in which population has actually declined. We can utilise some of the focal and zonal functions from our map algebra catalogue to further enhance our understanding of population change in London.</p>
+<p>To further analyse our population change raster, we can create a ‘pseudo’ hotspot map of our <code>lonpop_change</code> raster by calculating a smoothed version of our raster using the <code>focal()</code> function. This will enable us to see more clearly where there are areas of high counts (surrounded by areas of high counts) and vice versa - just like our KDE analysis of bike theft. Using the <code>focal()</code> function, we generate a raster that summarises the average (mean) value, using the <code>fun=</code> parameter set to <code>mean</code>, of the <strong>9</strong> nearest neighbours for each cell, using a weight matrix defined in our <code>w</code> parameter and set to a <code>matrix</code> (consisting of our cell with 3 rows and 3 columns as neighbours):</p>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="co"># focal statistics (of 9 neighbours) to calculate smoothed raster</span></span>
+<span id="cb295-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb295-2" aria-hidden="true" tabindex="-1"></a>lonpop_smooth <span class="ot">&lt;-</span> <span class="fu">focal</span>(lonpop_change, <span class="at">w =</span> <span class="fu">matrix</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>), <span class="at">fun =</span> mean)</span>
+<span id="cb295-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb295-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb295-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb295-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot results</span></span>
+<span id="cb295-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb295-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lonpop_smooth)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-focus-on-the-hood-1.png" width="672" /></p>
+<p>Our areas of high population growth are now more visible in our dataset. Our areas of population decline are potentially not as stark, but are certainly still visible within our raster. We can also look to use zonal functions to better represent our population change by aggregating our data to coarser resolutions. For example, we can resize our raster’s spatial resolution to contain larger grid cells which will, of course, simplify our data, making larger trends more visible in our data but of course, may end up obfuscating smaller trends.</p>
+<p>We can resize our <code>lonpop_change</code> raster by using the <code>aggregate()</code> function and setting the <code>fact=</code> (factor) parameter to the “order” of rescaling we would like (in our case, 2 times larger both width and height). We then provide the <code>fun=</code> (function) by which to aggregate our data, in this case, we will continue to use the <code>mean</code> but we could in fact provide <code>min</code> or <code>max</code> depending on our future applications/analysis of our dataset:</p>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rescale raster and aggregate based on mean</span></span>
+<span id="cb296-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb296-2" aria-hidden="true" tabindex="-1"></a>lonpop_change_agg <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(lonpop_change, <span class="at">fact =</span> <span class="dv">2</span>, <span class="at">fun =</span> mean)</span>
+<span id="cb296-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb296-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb296-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb296-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot resulting raster</span></span>
+<span id="cb296-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb296-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lonpop_change_agg)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-zone-zone-zone-1.png" width="672" /></p>
+<p>Another very common technique used in raster analysis via map algebra is the use of <strong>zonal statistics</strong>. As outlined earlier, a zonal statistics operation is one that calculates statistics on cell values of a raster (a value raster) within specific zones that are defined by another dataset. The zones can be provided by both <strong>raster</strong> and <strong>vector</strong> data - as a result, <strong>zonal statistics</strong> are a really useful tool if we need to aggregate data from a raster dataset for use within further analysis that primarily uses vector data, such as when we’re analysing data within administrative boundaries.</p>
+<p>For example, in our case, we can aggregate the <code>lonpop_change</code> raster to our actual London ward boundaries, i.e. calculate for each ward in our dataset, the average (or other function) population change, as determined by our raster. We can, of course, use other functions other than the <code>mean</code>. What function you use will simply depend on your application. Esri has <a href="https://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/h-how-zonal-statistics-works.htm">a great resource</a> on how Zonal statistics works with other functions and raster</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change tmap mode to plot</span></span>
+<span id="cb297-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb297-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb298-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregate to administrative geography</span></span>
+<span id="cb298-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb298-2" aria-hidden="true" tabindex="-1"></a><span class="co"># note: the output is a vector that is forced to a SpatialPolygons object (not sf)</span></span>
+<span id="cb298-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb298-3" aria-hidden="true" tabindex="-1"></a>london_ward_pop <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>(lonpop_change, london_ward, <span class="at">fun =</span> mean, <span class="at">sp =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb298-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb298-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb298-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb298-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot via tmap</span></span>
+<span id="cb298-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb298-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_ward_pop) <span class="sc">+</span></span>
+<span id="cb298-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb298-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col =</span> <span class="st">&quot;layer&quot;</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-I-am-in-the-zone-1.png" width="672" /></p>
+<p>We now have a vector dataset that we could go ahead and run many of the analyses that we have completed in previous weeks. Furthermore, we can use this data within other analyses we might want to complete. For example, if we are using population change as a specific variable to analyse another dataset that is only available as a vector dataset / at the ward level.</p>
+<div class="note">
+<p><strong>Note</strong> <br />
+Trying to calculate population change, particularly across decades as we have done here, is quite difficult with our Census and Mid-Year Estimates given the differences in our ward boundaries and the impact this has when we try to join datasets from different years that then have different codes that we need to join by attribute. Using raster data, such as these datasets, are a good workaround to these issues, but, of course, with any data processing, will add some level of uncertainty into our datasets.</p>
+</div>
+</div>
+</div>
+<div id="assignment-w09-01" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Assignment 1<a href="rasters-zonal-statistics-and-interpolation.html#assignment-w09-01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The first assignment this week is a purely theoretical question: How can we use a combination of the techniques we have used over the last few weeks to calculate the number of people in London under-served by public transport?</p>
+<p>To answer the question, we want you to think of a method using what you have learnt above in regards to map algebra and your use of point data in the previous week, to think about how we can calculate the number of people who are <strong>not within 400m euclidean distance walk</strong> of a <strong>bus, tube or train station</strong> in London.</p>
+<div class="tip">
+<p><strong>Tip</strong> <br />
+Many libraries in R share the same function names. This can be a problem when these packages are loaded in a same R session. For instance <code>extract</code> is not only the name of a function in the <code>raster</code> package, but also the name of functions in the <code>magrittr</code> and <code>tidyr</code> packages. To ensure you are using the function that you think you are using, you can specify the package using the <code>::</code> approach, as follows: <code>library::function</code>, e.g. <code>tidyr::extract</code> or <code>raster::extract</code>.</p>
+</div>
+</div>
+<div id="air-pollution-in-london" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Air pollution in London<a href="rasters-zonal-statistics-and-interpolation.html#air-pollution-in-london" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The second half of this week’s tutorial focuses on interpolation. Spatial interpolation is the prediction of a given phenomenon in unmeasured locations. There are many reasons why we may wish to interpolate point data across a map. It could be because we are trying to predict a variable across space, including in areas where there are little to no data. We might also want to smooth the data across space so that we cannot interpret the results of individuals, but still identify the general trends from the data. This is particularly useful when the data corresponds to individual persons and disclosing their locations is unethical.</p>
+<p>To predict the values of the cells of our resulting raster, we need to determine how to interpolate between our points, i.e. develop a set of procedures that enable us to calculate predicted values of the variable of interest with confidence and, of course, repetitively.
+We will put some techniques into action by interpolating our air quality point data into a raster surface to understand further how air pollution varies across London.</p>
+<div id="loading-data-w09-2" class="section level3 hasAnchor" number="9.5.1">
+<h3><span class="header-section-number">9.5.1</span> Loading data<a href="rasters-zonal-statistics-and-interpolation.html#loading-data-w09-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before we get going within interpolating our pollution dataset, let’s first take a look at the distribution of the London Air monitoring sites in London. What are your thoughts about the distribution of the sites? Do you think they will provide enough data for an accurate enough interpolation?</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:09-monitoring-in-london"></span>
+<img src="images/W09/london_air.png" alt="Locations of the London Air monitoring sites in London. Source: [Londonair 2020](https://www.londonair.org.uk/london/asp/publicdetails.asp)." width="550pt" />
+<p class="caption">
+Figure 9.4: Locations of the London Air monitoring sites in London. Source: <a href="https://www.londonair.org.uk/london/asp/publicdetails.asp">Londonair 2020</a>.
+</p>
+</div>
+<p>Ultimately, monitoring sites and the sensor stations present at them can be expensive to install and run, therefore, identifying the most important places for data collection will somewhat determine their location, alongside trying to create a somewhat even distribution over London. As we can see in the locations of the stations above, there are certainly some areas in London that do not have a station nearby, whilst others (such as central London) where there are many stations available.</p>
+<p>When using interpolation, the distribution and density of our data points will impact the accuracy of our final raster and we may end up with a level of uncertainty in the areas where data is more sparse, such as the north-west and the south-east of London. Despite this, we can still create an interpolated surface for our pollutant of interest, we just need to interpret our final raster with acknowledgement of these limitations. For this week’s practical, we will go ahead and use the Londonair’s data to study the levels of <strong>Nitrogen Dioxide (NO<sub>2</sub>) in London for 2019</strong>. Once we have our data loaded and processed in the right format, we will start interpolating our data using at first two models: Thiessen Polygons and Inverse Distance Weighting.</p>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in downloaded data</span></span>
+<span id="cb299-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb299-2" aria-hidden="true" tabindex="-1"></a><span class="co"># as the file is quite large, we will read it directly from zip</span></span>
+<span id="cb299-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb299-3" aria-hidden="true" tabindex="-1"></a>pollution <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/raw/pollution/no2_london_2019.zip&quot;</span>)</span>
+<span id="cb299-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb299-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb299-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb299-5" aria-hidden="true" tabindex="-1"></a><span class="co"># pollution dataframe dimensions</span></span>
+<span id="cb299-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb299-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(pollution)</span></code></pre></div>
+<pre><code>## [1] 1596509       7</code></pre>
+<p>Reading in the <code>csv</code> might take a little time: we have 1,596,509 observations with 7 variables.</p>
+</div>
+<div id="analysing-air-pollution" class="section level3 hasAnchor" number="9.5.2">
+<h3><span class="header-section-number">9.5.2</span> Analysing air pollution<a href="rasters-zonal-statistics-and-interpolation.html#analysing-air-pollution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s take a look at why it’s so large and inspect the first five rows of our dataframe:</p>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb301-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rreturn first five rows of our pollution dataframe</span></span>
+<span id="cb301-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb301-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pollution)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 7
+##   date                  no2 site                   code  latit…¹ longi…² site_…³
+##   &lt;dttm&gt;              &lt;dbl&gt; &lt;chr&gt;                  &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  
+## 1 2019-07-01 12:00:00  14.5 Southwark - Tower Bri… SK8      51.5 -0.0782 Roadsi…
+## 2 2019-07-01 13:00:00  16.1 Southwark - Tower Bri… SK8      51.5 -0.0782 Roadsi…
+## 3 2019-07-01 14:00:00  16.2 Southwark - Tower Bri… SK8      51.5 -0.0782 Roadsi…
+## 4 2019-07-01 15:00:00  21.8 Southwark - Tower Bri… SK8      51.5 -0.0782 Roadsi…
+## 5 2019-07-01 16:00:00  19.7 Southwark - Tower Bri… SK8      51.5 -0.0782 Roadsi…
+## 6 2019-07-01 17:00:00  17.5 Southwark - Tower Bri… SK8      51.5 -0.0782 Roadsi…
+## # … with abbreviated variable names ¹​latitude, ²​longitude, ³​site_type</code></pre>
+<p>We can see that in our first five rows we have data for the <strong>same site</strong> and if we look at the <strong>date</strong> field, we can see we have a reading observation for every hour. With 24 hours in the day, 365 days in a year and potentially hundreds of sites, it should therefore be of no surprise that we have such a big <code>csv</code>. In the end, for this practical, we only want to create one raster, so to make our data more useable we will go ahead and aggregate the data and get the average NO<sub>2</sub> value for each monitoring site over 2019.</p>
+<p>Use the <code>dplyr</code> library functions to return the mean NO<sub>2</sub> value for each monitoring site over 2019. Let’s also make sure that we retain the latitude and longitude of our monitoring sites:</p>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregate data to unique latitude and longitude combinations, remove</span></span>
+<span id="cb303-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb303-2" aria-hidden="true" tabindex="-1"></a><span class="co"># monitoring sites without coordinates, summarise the no2 by the mean</span></span>
+<span id="cb303-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb303-3" aria-hidden="true" tabindex="-1"></a>avg_pollution <span class="ot">&lt;-</span> pollution <span class="sc">%&gt;%</span></span>
+<span id="cb303-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb303-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(latitude, longitude) <span class="sc">%&gt;%</span></span>
+<span id="cb303-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb303-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">no2 =</span> <span class="fu">mean</span>(no2)) <span class="sc">%&gt;%</span></span>
+<span id="cb303-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb303-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(latitude <span class="sc">|</span> longitude))</span>
+<span id="cb303-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb303-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb303-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb303-8" aria-hidden="true" tabindex="-1"></a><span class="co"># return the first five rows of our new dataframe</span></span>
+<span id="cb303-9"><a href="rasters-zonal-statistics-and-interpolation.html#cb303-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(avg_pollution)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+## # Groups:   latitude [6]
+##   latitude longitude   no2
+##      &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;
+## 1     49.8    -7.56  35.6 
+## 2     50.4    -4.14  17.5 
+## 3     50.7    -1.83  11.5 
+## 4     50.8     0.284 15.7 
+## 5     50.8     0.181  7.23
+## 6     50.8     0.272 11.4</code></pre>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="co"># return the histogram of our no2 values</span></span>
+<span id="cb305-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb305-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(avg_pollution<span class="sc">$</span>no2)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-that-is-mean-1.png" width="672" /></p>
+<p>We should now see that we only have our latitude and longitude coordinates and the average NO<sub>2</sub> value associated with each. Our histogram also shows us the general distribution of our values: we can see that we have a slight positive skew to our dataset. To use this data within our different interpolation methods, we will need to transform our data into a point spatial dataframe using the <code>st_as_sf()</code> function that we have come across before. One thing you should notice is that the latitude and longitude are projected in WGS84 and, therefore, we need to reproject our resulting spatial dataframe into British National Grid. We will also make sure that all of our points are within our London ward extent, using the <code>st_intersection()</code> function.</p>
+<p>Create a spatial dataframe containing our London monitoring sites and their average NO<sub>2</sub> reading:</p>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load London wards for reference map</span></span>
+<span id="cb306-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-2" aria-hidden="true" tabindex="-1"></a>london_ward <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">&quot;data/raw/boundaries/2018/London_Ward.shp&quot;</span>)</span>
+<span id="cb306-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb306-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create a point spatial dataframe, project</span></span>
+<span id="cb306-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-5" aria-hidden="true" tabindex="-1"></a>pollution_points <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(avg_pollution, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>),</span>
+<span id="cb306-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">crs =</span> <span class="dv">4326</span>)[, <span class="dv">1</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb306-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_transform</span>(<span class="dv">27700</span>)</span>
+<span id="cb306-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb306-9"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure all points are within the boundaries of Greater London</span></span>
+<span id="cb306-10"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-10" aria-hidden="true" tabindex="-1"></a>lonpollution_points <span class="ot">&lt;-</span> pollution_points <span class="sc">%&gt;%</span></span>
+<span id="cb306-11"><a href="rasters-zonal-statistics-and-interpolation.html#cb306-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_intersection</span>(london_ward)</span></code></pre></div>
+<pre><code>## Warning: attribute variables are assumed to be spatially constant throughout all
+## geometries</code></pre>
+<p>Let’s create a <strong>proportional symbol</strong> map to visualise these points:</p>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure tmap mode is set to plot</span></span>
+<span id="cb308-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span>
+<span id="cb308-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb308-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot our London wards in grey</span></span>
+<span id="cb308-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_ward) <span class="sc">+</span></span>
+<span id="cb308-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">palette =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb308-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot our pollution_points as bubbles, using the NO2 field to determine size</span></span>
+<span id="cb308-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(lonpollution_points) <span class="sc">+</span></span>
+<span id="cb308-9"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_bubbles</span>(</span>
+<span id="cb308-10"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">&quot;no2&quot;</span>, <span class="at">col =</span> <span class="st">&quot;mediumorchid&quot;</span>, <span class="at">style =</span> <span class="st">&quot;pretty&quot;</span>,</span>
+<span id="cb308-11"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">scale =</span> <span class="dv">1</span>, <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb308-12"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title.size =</span> <span class="st">&quot;Average NO2 ug/m3 reading in 2019&quot;</span></span>
+<span id="cb308-13"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb308-14"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># set legend</span></span>
+<span id="cb308-15"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;top&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb308-16"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add a north arrow</span></span>
+<span id="cb308-17"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">&quot;arrow&quot;</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;top&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb308-18"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add a scale bar</span></span>
+<span id="cb308-19"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_scale_bar</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>), <span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>, <span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb308-20"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add a data statement</span></span>
+<span id="cb308-21"><a href="rasters-zonal-statistics-and-interpolation.html#cb308-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_credits</span>(<span class="st">&quot;Air quality data from London Air.&quot;</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-those-symbols-are-in-proportion-1.png" width="672" /></p>
+<p>Our proportional symbols map already tells us a little about our dataset - we can see that NO<sub>2</sub> levels are much higher towards the centre of London, although we can see some anomalies in the south-west, for example. But we can also see how and why a smoothed surface of our data <strong>could</strong> be really useful for further interpretation - and this is where interpolating our data comes in.</p>
+<div id="thiessen-polygons" class="section level4 hasAnchor" number="9.5.2.1">
+<h4><span class="header-section-number">9.5.2.1</span> Thiessen polygons<a href="rasters-zonal-statistics-and-interpolation.html#thiessen-polygons" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The first step we can take to interpolate the data across space is to create Thiessen polygons. Thiessen polygons are formed to assign boundaries of the areas closest to each unique point. Therefore, for every point in a dataset, it has a corresponding Thiessen polygon.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:09-thiessen"></span>
+<img src="images/W09/thiessen.jpg" alt="Creating a set of Thiessen polygons. Source: Esri 2020." width="550pt" />
+<p class="caption">
+Figure 9.5: Creating a set of Thiessen polygons. Source: Esri 2020.
+</p>
+</div>
+<div class="note">
+<p><strong>Note</strong> <br />
+You may come across the term Voronoi polygons: these are the same thing as Thiessen polygons. Both terms are used interchangeably to describe this type of geometry created from point data. In the field of GIS we tend to refer to them as Thiessen polygons, after the American meteorologist who frequented their use. In other fields, particularly mathematics and computer science, they are generally referred to as Voronoi diagrams, in honour of the mathematician Georgy Voronoy.</p>
+</div>
+<p>We can create Thiessen polygons using the <code>sf</code> library with a bit of code: we will create a simple function called <code>st_thiessen_point()</code> that we can use to generate Thiessen polygons directly from a point dataset.</p>
+<div class="tip">
+<p><strong>Tip</strong> <br/>
+Do not worry about fully understanding the code behind the function, but simply understand what input (a point spatial dataframe) and output (a Thiessen polygon spatial dataframe) it will provide.</p>
+</div>
+<p>You need to copy over both the function and the code underneath. Copying the function stores this function in your computer’s memory for this R session and means the function itself can be used time and time again within the same session or script.</p>
+<p>The first of the two lines of code below the function then “call” this function on our <code>lonpollutions_points</code> spatial dataframe. The second essentially joins the attribute fields of our <code>lonpollutions_points</code> spatial dataframe to our new Thiessen polygon spatial dataframe and stores this as a new variable.</p>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="co"># function to create Thiessen polygons from point input</span></span>
+<span id="cb309-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-2" aria-hidden="true" tabindex="-1"></a>st_thiessen_point <span class="ot">&lt;-</span> <span class="cf">function</span>(points) {</span>
+<span id="cb309-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># input check</span></span>
+<span id="cb309-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">all</span>(<span class="fu">st_geometry_type</span>(points) <span class="sc">==</span> <span class="st">&quot;POINT&quot;</span>)) {</span>
+<span id="cb309-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;Input not POINT geometries&quot;</span>)</span>
+<span id="cb309-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb309-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb309-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># make multipoint</span></span>
+<span id="cb309-9"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-9" aria-hidden="true" tabindex="-1"></a>  g <span class="ot">&lt;-</span> <span class="fu">st_combine</span>(<span class="fu">st_geometry</span>(points))</span>
+<span id="cb309-10"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb309-11"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create thiessen polygons</span></span>
+<span id="cb309-12"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-12" aria-hidden="true" tabindex="-1"></a>  v <span class="ot">&lt;-</span> <span class="fu">st_voronoi</span>(g)</span>
+<span id="cb309-13"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-13" aria-hidden="true" tabindex="-1"></a>  v <span class="ot">&lt;-</span> <span class="fu">st_collection_extract</span>(v)</span>
+<span id="cb309-14"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb309-15"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return</span></span>
+<span id="cb309-16"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(v[<span class="fu">unlist</span>(<span class="fu">st_intersects</span>(points, v))])</span>
+<span id="cb309-17"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb309-18"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb309-19"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-19" aria-hidden="true" tabindex="-1"></a><span class="co"># call function</span></span>
+<span id="cb309-20"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-20" aria-hidden="true" tabindex="-1"></a>lon_points_voronoi <span class="ot">&lt;-</span> <span class="fu">st_thiessen_point</span>(lonpollution_points)</span>
+<span id="cb309-21"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb309-22"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-22" aria-hidden="true" tabindex="-1"></a><span class="co"># add attribute data</span></span>
+<span id="cb309-23"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-23" aria-hidden="true" tabindex="-1"></a>lonpollution_tv <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(lonpollution_points, lon_points_voronoi)</span>
+<span id="cb309-24"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb309-25"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-25" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb309-26"><a href="rasters-zonal-statistics-and-interpolation.html#cb309-26" aria-hidden="true" tabindex="-1"></a>lonpollution_tv</span></code></pre></div>
+<pre><code>## Simple feature collection with 96 features and 7 fields
+## Geometry type: POLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 460777.5 ymin: 117634.9 xmax: 599276.3 ymax: 244670.2
+## Projected CRS: OSGB36 / British National Grid
+## # A tibble: 96 × 8
+##      no2 NAME  GSS_C…¹ DISTR…² LAGSS…³ HECTA…⁴ NONLD…⁵                  geometry
+##  * &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;             &lt;POLYGON [m]&gt;
+##  1  41.4 Tolw… E05000… Kingst… E09000…    259.       0 ((460777.5 117634.9, 460…
+##  2  33.1 Coom… E05000… Kingst… E09000…    442.       0 ((518160.8 172616.8, 519…
+##  3  57.1 Grove E05000… Kingst… E09000…    192.       0 ((505134.1 163271.3, 518…
+##  4  28.7 Wadd… E05011… Croydon E09000…    392.       0 ((539500.1 117634.9, 529…
+##  5  43.8 Norb… E05011… Croydon E09000…    134.       0 ((528255.9 169332.5, 528…
+##  6  44.4 Fair… E05011… Croydon E09000…    147.       0 ((531058.8 165771.8, 531…
+##  7  24.2 Brom… E05000… Bromley E09000…    372.       0 ((562432.6 117634.9, 543…
+##  8  48.5 East… E05000… Ealing  E09000…    428.       0 ((519222.9 181677.7, 519…
+##  9  26.5 Sout… E05000… Ealing  E09000…    143.       0 ((518394.3 176777, 51679…
+## 10  41.8 Acto… E05000… Ealing  E09000…    177.       0 ((517366.5 178928.5, 519…
+## # … with 86 more rows, and abbreviated variable names ¹​GSS_CODE, ²​DISTRICT,
+## #   ³​LAGSSCODE, ⁴​HECTARES, ⁵​NONLD_AREA</code></pre>
+<p>We can now visualise these Thiessen polygons with their associated NO<sub>2</sub> value:</p>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="co"># visualise thiessen polygons</span></span>
+<span id="cb311-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb311-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(lonpollution_tv) <span class="sc">+</span></span>
+<span id="cb311-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb311-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col =</span> <span class="st">&quot;no2&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Purples&quot;</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-visualise-those-thiessen-pols-1.png" width="672" /></p>
+<p>We can go ahead tidy this up further by clipping our Thiessen polygons to the extent of London:</p>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate London outline through st_union</span></span>
+<span id="cb312-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb312-2" aria-hidden="true" tabindex="-1"></a>london_outline <span class="ot">&lt;-</span> london_ward <span class="sc">%&gt;%</span></span>
+<span id="cb312-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb312-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_union</span>()</span>
+<span id="cb312-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb312-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb312-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb312-5" aria-hidden="true" tabindex="-1"></a><span class="co"># clip our thiessen polygons to our london outline</span></span>
+<span id="cb312-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb312-6" aria-hidden="true" tabindex="-1"></a>lonpollution_tv <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(lonpollution_tv, london_outline)</span></code></pre></div>
+<pre><code>## Warning: attribute variables are assumed to be spatially constant throughout all
+## geometries</code></pre>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="co"># visualise thiessen polygons</span></span>
+<span id="cb314-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb314-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(lonpollution_tv) <span class="sc">+</span></span>
+<span id="cb314-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb314-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col =</span> <span class="st">&quot;no2&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Purples&quot;</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-thiessen-pols-map-after-crop-1.png" width="672" /></p>
+<p>And that’s it! We now have our values interpolated using our Thiessen polygon approach. However, as you can see, our approach is quite coarse. Whilst we, of course, can see areas of high and low pollution, it really does not offer us as much spatial detail as we would like, particularly when we know there are better methods out there to use.</p>
+</div>
+<div id="inverse-distance-weighting" class="section level4 hasAnchor" number="9.5.2.2">
+<h4><span class="header-section-number">9.5.2.2</span> Inverse Distance Weighting<a href="rasters-zonal-statistics-and-interpolation.html#inverse-distance-weighting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A second method to interpolate point data is <strong>Inverse Distance Weighting</strong> (IDW). An IDW is a means of converting point data of numerical values into a continuous surface to visualise how the data may be distributed across space. The technique interpolates point data by using a weighted average of a variable from nearby points to predict the value of that variable for each location. The weighting of the points is determined by their inverse distances drawing on <a href="https://en.wikipedia.org/wiki/Tobler%27s_first_law_of_geography#:~:text=The%20First%20Law%20of%20Geography,specifically%20for%20the%20inverse%20distance">Tobler’s first law of geography</a> that “<em>everything is related to everything else, but near things are more related than distant thing</em>”.</p>
+<p>The distance weighting is done by a power function: the larger the power coefficient, the stronger the weight of nearby point. The output is most commonly represented as a raster surface. We will use the <code>idw()</code> function within the <code>gstat</code> library to conduct an IDW on our <code>lonpollution_points</code> spatial dataframe.</p>
+<p>Before we can run IDW, we must first generate an empty grid within which to store our data. To do so, we can use the <code>spsample()</code> function from the <code>sp</code> library. We will go ahead and create a grid that covers the entirety of our <code>london_outline</code>, which we will transform into the <code>sp</code> format using the <code>as()</code> function. We then run the <code>gstat</code> <code>idw()</code> function on an <code>sp</code> version of our <code>lonpollution_points</code> dataset, specifying the cell size. We then specify that our IDW result is a gridded format that we then coerce into a raster. Once we have our raster, we can reset its CRS and of course utilise other functions from the <code>raster</code> library to process (e.g. the <code>mask</code> function) and then visualise our dat aset within <code>tmap</code>.</p>
+<div class="note">
+<p><strong>Note</strong> <br />
+Some of the following code will unfortunately not work as intended for some of you due to changes in underlying libraries. If the <code>gsat</code> below does not work for you, you can try to conduct the interpolation using the<code>spatstat</code> library instead.</p>
+</div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convert our lonpollution_points into the sp format</span></span>
+<span id="cb315-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-2" aria-hidden="true" tabindex="-1"></a>lonpollution_pointsSP <span class="ot">&lt;-</span> lonpollution_points <span class="sc">%&gt;%</span></span>
+<span id="cb315-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as</span>(., <span class="st">&quot;Spatial&quot;</span>)</span>
+<span id="cb315-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb315-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-5" aria-hidden="true" tabindex="-1"></a><span class="co"># convert our london_outline into the sp format</span></span>
+<span id="cb315-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-6" aria-hidden="true" tabindex="-1"></a>london_outlineSP <span class="ot">&lt;-</span> london_outline <span class="sc">%&gt;%</span></span>
+<span id="cb315-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as</span>(., <span class="st">&quot;Spatial&quot;</span>)</span>
+<span id="cb315-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb315-9"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-9" aria-hidden="true" tabindex="-1"></a><span class="co"># create an empty raster grid the size for our london_outline over which to</span></span>
+<span id="cb315-10"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-10" aria-hidden="true" tabindex="-1"></a><span class="co"># interpolate the pollution values</span></span>
+<span id="cb315-11"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-11" aria-hidden="true" tabindex="-1"></a>grid <span class="ot">&lt;-</span> <span class="fu">spsample</span>(lonpollution_pointsSP, <span class="at">type =</span> <span class="st">&quot;regular&quot;</span>, <span class="at">cellsize =</span> <span class="dv">450</span>, <span class="at">bb =</span> <span class="fu">bbox</span>(london_outlineSP))</span>
+<span id="cb315-12"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb315-13"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-13" aria-hidden="true" tabindex="-1"></a><span class="co"># run an IDW for the NO2 value with a power value of 2</span></span>
+<span id="cb315-14"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-14" aria-hidden="true" tabindex="-1"></a>idw <span class="ot">&lt;-</span> gstat<span class="sc">::</span><span class="fu">idw</span>(lonpollution_pointsSP<span class="sc">$</span>no2 <span class="sc">~</span> <span class="dv">1</span>, lonpollution_pointsSP, <span class="at">newdata =</span> grid,</span>
+<span id="cb315-15"><a href="rasters-zonal-statistics-and-interpolation.html#cb315-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">idp =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [inverse distance weighted interpolation]</code></pre>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-1" aria-hidden="true" tabindex="-1"></a><span class="co"># specify idw spatial data as being gridded</span></span>
+<span id="cb317-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gridded</span>(idw) <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb317-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb317-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-4" aria-hidden="true" tabindex="-1"></a><span class="co"># coerce to our gridded idw to the raster format</span></span>
+<span id="cb317-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-5" aria-hidden="true" tabindex="-1"></a>lon_poll_raster_idw <span class="ot">&lt;-</span> <span class="fu">raster</span>(idw)</span>
+<span id="cb317-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb317-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-7" aria-hidden="true" tabindex="-1"></a><span class="co"># set our raster CRS to BNG</span></span>
+<span id="cb317-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-8" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(lon_poll_raster_idw) <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:27700&quot;</span>)</span>
+<span id="cb317-9"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb317-10"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-10" aria-hidden="true" tabindex="-1"></a><span class="co"># mask our raster to only the london outline</span></span>
+<span id="cb317-11"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-11" aria-hidden="true" tabindex="-1"></a>lon_idw_gstat <span class="ot">&lt;-</span> <span class="fu">rasterize</span>(london_ward, lon_poll_raster_idw, <span class="at">mask =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb317-12"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb317-13"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-13" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the resulting raster</span></span>
+<span id="cb317-14"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lon_idw_gstat)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-inverse-distance-weights-1.png" width="672" /></p>
+<p>Great. Ff this code has worked for you and you have generated an IDW raster, you can move onto the next task which is to create a proper map of our resulting IDW.</p>
+</div>
+<div id="alternative-idw-with-spatstat-optional" class="section level4 hasAnchor" number="9.5.2.3">
+<h4><span class="header-section-number">9.5.2.3</span> Alternative: IDW with spatstat [Optional]<a href="rasters-zonal-statistics-and-interpolation.html#alternative-idw-with-spatstat-optional" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For those of you that cannot run the code above, we can look to <code>spatstat</code> as an alternative option although it just brings with it its few complications in terms of converting our datasets into our <code>ppp</code> object: we will first have to convert our data to the <code>ppp</code> object type and then use this within the <code>idw()</code> function <code>spatstat</code> offers.</p>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set our window of observation to London</span></span>
+<span id="cb318-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-2" aria-hidden="true" tabindex="-1"></a>window <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(london_outline)</span>
+<span id="cb318-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb318-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-4" aria-hidden="true" tabindex="-1"></a><span class="co"># extract the coordinates of our pollution points sdf</span></span>
+<span id="cb318-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-5" aria-hidden="true" tabindex="-1"></a>points_xy <span class="ot">&lt;-</span> lonpollution_points <span class="sc">%&gt;%</span></span>
+<span id="cb318-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_coordinates</span>()</span>
+<span id="cb318-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb318-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-8" aria-hidden="true" tabindex="-1"></a><span class="co"># create a ppp object, setting x and y equal to the respective columns in our</span></span>
+<span id="cb318-9"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-9" aria-hidden="true" tabindex="-1"></a><span class="co"># matrix set the window equal to our window variable set our &#39;marks&#39; equal to</span></span>
+<span id="cb318-10"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-10" aria-hidden="true" tabindex="-1"></a><span class="co"># the NO2 column in our points</span></span>
+<span id="cb318-11"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-11" aria-hidden="true" tabindex="-1"></a>pollution_ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> points_xy[, <span class="dv">1</span>], <span class="at">y =</span> points_xy[, <span class="dv">2</span>], <span class="at">marks =</span> lonpollution_points<span class="sc">$</span>no2,</span>
+<span id="cb318-12"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">window =</span> window)</span>
+<span id="cb318-13"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb318-14"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-14" aria-hidden="true" tabindex="-1"></a><span class="co"># run the IDW</span></span>
+<span id="cb318-15"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-15" aria-hidden="true" tabindex="-1"></a>ss_idw <span class="ot">&lt;-</span> spatstat.core<span class="sc">::</span><span class="fu">idw</span>(pollution_ppp, <span class="at">power =</span> <span class="dv">2</span>, <span class="at">at =</span> <span class="st">&quot;pixels&quot;</span>)</span>
+<span id="cb318-16"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb318-17"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-17" aria-hidden="true" tabindex="-1"></a><span class="co"># coerce our im output to raster</span></span>
+<span id="cb318-18"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-18" aria-hidden="true" tabindex="-1"></a>lon_idw_sp <span class="ot">&lt;-</span> <span class="fu">raster</span>(ss_idw)</span>
+<span id="cb318-19"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb318-20"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-20" aria-hidden="true" tabindex="-1"></a><span class="co"># set our raster CRS to BNG</span></span>
+<span id="cb318-21"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-21" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(lon_idw_sp) <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:27700&quot;</span>)</span>
+<span id="cb318-22"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb318-23"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-23" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the resulting raster</span></span>
+<span id="cb318-24"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-24" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lon_idw_sp)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-inverse-distance-weights-spatstat-1.png" width="672" /></p>
+<p>You should see we actually get a similar result to the IDW of the <code>gstat</code> library. This is because our cell sizes resolutions are similar in both cases. We set our cell resolution as 450 x 450m above and we can check the cell size of our <code>spatstat</code> IDW raster using a very simple command: <code>res(lon_idw)</code>. You will see that the IDW <code>spatstat</code> auto-generated a 456m cell size.</p>
+<div id="mapping-the-idw-raster" class="section level5 hasAnchor" number="9.5.2.3.1">
+<h5><span class="header-section-number">9.5.2.3.1</span> Mapping the IDW raster<a href="rasters-zonal-statistics-and-interpolation.html#mapping-the-idw-raster" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>We now have our final predicted raster surface. To map it, we can again use the <code>tm_raster()</code> as we have done previously. For our raster, the name of the layer we need to provide is <code>var1.pred</code> for those using the <code>gstat</code> result and simply <code>layer</code> for those using the <code>spatstat</code> result.</p>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb319-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the gstat raster</span></span>
+<span id="cb319-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb319-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(lon_idw_gstat) <span class="sc">+</span></span>
+<span id="cb319-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb319-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_raster</span>(<span class="st">&quot;var1.pred&quot;</span>,</span>
+<span id="cb319-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb319-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">n =</span> <span class="dv">100</span>, <span class="at">palette =</span> <span class="st">&quot;Reds&quot;</span>,</span>
+<span id="cb319-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb319-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.show =</span> <span class="cn">FALSE</span></span>
+<span id="cb319-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb319-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb319-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb319-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(london_ward) <span class="sc">+</span></span>
+<span id="cb319-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb319-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;white&quot;</span>, <span class="at">lwd =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>## Warning in CPL_crs_from_input(x): GDAL Message 1: +init=epsg:XXXX syntax is
+## deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></pre>
+<p><img src="GEOG0030_files/figure-html/09-idw-map-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb321-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the spatstat raster</span></span>
+<span id="cb321-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb321-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(lon_idw_sp) <span class="sc">+</span></span>
+<span id="cb321-3"><a href="rasters-zonal-statistics-and-interpolation.html#cb321-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_raster</span>(<span class="st">&quot;layer&quot;</span>,</span>
+<span id="cb321-4"><a href="rasters-zonal-statistics-and-interpolation.html#cb321-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">&quot;quantile&quot;</span>, <span class="at">n =</span> <span class="dv">100</span>, <span class="at">palette =</span> <span class="st">&quot;Reds&quot;</span>,</span>
+<span id="cb321-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb321-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.show =</span> <span class="cn">FALSE</span></span>
+<span id="cb321-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb321-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb321-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb321-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(london_ward) <span class="sc">+</span></span>
+<span id="cb321-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb321-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">&quot;white&quot;</span>, <span class="at">lwd =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<p><img src="GEOG0030_files/figure-html/09-idw-map-1.png" width="672" /></p>
+<p>And that’s it. For those of you able to use the <code>gstat</code> code, it is highly worth playing around with the cell size to look at how it changes the smoothness of our resulting IDW. A smaller cell size will create a smoother IDW output, but it does add uncertainty to these estimates as we do not exactly have a substantial amount of data points to interpolate from.</p>
+<p>To help with minimising this uncertainty, there are two additional steps you can take with your IDW output:</p>
+<ol style="list-style-type: decimal">
+<li><p>Testing and fine-tuning the power function you have used to ensure it is a valid parameter by using something known as the <em>Leave One Out Cross Validation</em>.</p></li>
+<li><p>Generating a 95% confidence interval map of our interpolation mode using cross-validation methods.</p></li>
+</ol>
+<p>This is beyond the scope of this module, but if you would like to explore this you can found details on this in Manuel Gimond’s tutorial on interpolation available here: <a href="https://mgimond.github.io/Spatial/interpolation-in-r.html">Link</a></p>
+<div class="tip">
+<p><strong>Tip</strong> <br/>
+A raster dataset normally only contains one layer, i.e. one variable. Hence when we want to map a raster, we use the <code>tm_raster()</code> and provide the layer name for mapping. In our examples, this has been <code>layer</code> and <code>var1.pred</code>, for example. However, in some circumstances, such as with satellite imagery we will want to use the <code>tm_rgb()</code> function instead. This is because these types of rasters, instead of having a single layer, actually consist of <strong>three</strong> bands: a band with a red value, a band with a green value and a band with a blue value. This is known as <strong>multi-band</strong> imagery.</p>
+<p>To visualise multiband images correctly, we need to use the <code>tm_rgb()</code> function in order to stack our three bands together to create the appropriate visualisation. We can visualise each band independently of one another, however, you would see that you end up with either a nearly all red, green or blue image. This is also out of scope of this module, but if you are interested to learn more about <a href="https://andrewmaclachlan.github.io/CASA0005repo/advanced-raster-analysis.html">using satellite imagery with R</a> this CASA tutorial is good place to start. Alternatively, you can also check Esri’s help information on <a href="https://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/raster-bands.html">Rasters and Raster Bands here</a>.</p>
+<p>Learning how to use satellite imagery can be a really useful skill set, particularly as this type of data is being increasingly used human geography applications - as well as, of course, its more traditional applications in physical and environmental geography.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="assignment-w09-02" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> Assignment 2<a href="rasters-zonal-statistics-and-interpolation.html#assignment-w09-02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For your final assignment this week, we want you to redo the IDW interpolation of the London pollution data for the months of <strong>June</strong> and <strong>December</strong> and see to what extent there are differences between these months. In order to do this you will, at least, need to:</p>
+<ol style="list-style-type: decimal">
+<li>Create monthly averages for the pollution data. This will involve quite some data wrangling. Keep in mind that <a href="https://lmgtfy.app/?q=google+is+your+friend">Google is your friend</a>!</li>
+<li>For both the month of <strong>June</strong> and <strong>December</strong> create a spatial dataframe containing the London monitoring sites and their average NO<sub>2</sub> reading.</li>
+<li>Conduct an Inverse Distance Weighting interpolation for both months of data.</li>
+<li>Execute some map algebra to identify the areas where the results of the interpolation differ.</li>
+</ol>
+</div>
+<div id="byl-w09" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> Before you leave<a href="rasters-zonal-statistics-and-interpolation.html#byl-w09" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This week, we’ve looked at raster datasets and how we use the <code>raster</code> library to manage and process them. Specifically, we looked at using <strong>map algebra</strong> to apply mathematical operations to rasters, using local, global, focal and zonal approaches and how we use map algebra on either an individual or combination of rasters.</p>
+<p>We then looked at how we can use two different interpolation methods to generate raster data from point data. Understanding how to interpolate data correctly is incredibly important. Whilst in most instances you will be working with vector data, especially where government statistics and administrative boundaries are involved, there are also plenty of use cases in which you will need to generate raster data from point data, as we have done today. With that being said: <a href="https://www.youtube.com/watch?v=8iwBM_YB1sE">that is it for our final-to-last week in Geocomputation</a>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analysing-spatial-patterns-iii-point-pattern-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="transport-network-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jtvandijk/GEOG0030/edit/master/09-raster.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["GEOG0030.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

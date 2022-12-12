@@ -95,8 +95,8 @@ library(dodgr)
 
 You will see some information printed to your console but as long as you do not get a message that is similar to `Error: package or namespace load failed for <packagename>` or `Error: package '<packagename' could not be loaded` all should be fine.
 
-:::note
-**Note**<br>
+:::tip
+**Tip**<br>
 Even if you have used R or RStudio Server before and already installed some of the packages in the above list, do re-install all packages to make sure you have the  latest versions. Legacy installations that have not been updated may lay lead to problems when going through the tutorials.
 :::
 
