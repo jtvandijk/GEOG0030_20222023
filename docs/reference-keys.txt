@@ -126,6 +126,8 @@ mapping-crime-data
 styling-crime-data
 exporting-our-crime-data
 assignment-w05
+wm-w05
+git-and-github
 byl-w05
 analysing-spatial-patterns-i-geometric-operations-and-spatial-queries
 reading-w06

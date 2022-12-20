@@ -737,5 +737,9 @@ For your assignment for this week, we want you to create a map for a different m
 
 If you are up for a challenge: now try to create a map in which you incorporate the maps of two different months together in one figure. Google is your friend!
 
+## Want more? [Optional] {#wm-w05}
+### Git and Github
+[Git](https://git-scm.com/) is a version control system, originally developed to help groups of developers work collaboratively on big software projects. One way to think about it is in terms of "Track Changes" used for documents, only this time it is applied to code - and much more powerful. A great resource to help you get started with Git is [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html). Highly recommended.
+
 ## Before you leave {#byl-w05}
 And that is how you use R as a GIS in its most basic form. More RGIS in the coming weeks, but [this concludes the tutorial for this week](https://www.youtube.com/watch?v=Ydg4T2MP7Z8).

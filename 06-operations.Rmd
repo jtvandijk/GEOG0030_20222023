@@ -18,9 +18,7 @@ This week, we will be looking at the use of geometric operations and spatial que
 - Oliver, L., Schuurman, N. and Wall, A. 2007. Comparing circular and network buffers to examine the influence of land use on walking for leisure and errands. *International Journal of Health Geographics* 6: 41. [[Link]](https://doi.org/10.1186/1476-072X-6-41)
 
 ## Map challenge
-Before we start with this week's tutorial, we will start with a small formative assessment: a **45-minute map challenge**. 
-
-During this task you have 45 minutes to create a map using a specific dataset. After 45 minutes you need to stop coding and show the resulting map to the teaching staff who will look at each of your maps individually and provide formative feedback on your code and map layout.
+Before we start with this week's tutorial, we will start with a small formative assessment: a **45-minute map challenge**. During this task you have 45 minutes to create a map using a specific dataset. After 45 minutes you need to stop coding and show the resulting map to the teaching staff who will look at each of your maps individually and provide formative feedback on your code and map layout.
 
 All instructions can be found here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/GEOG0030_MapChallenge.pdf).
 
