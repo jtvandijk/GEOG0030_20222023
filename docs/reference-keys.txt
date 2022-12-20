@@ -127,6 +127,7 @@ assignment-w05
 byl-w05
 analysing-spatial-patterns-i-geometric-operations-and-spatial-queries
 reading-w06
+map-challenge
 bike-theft-w06
 housekeeping-w06
 loading-data-w06
