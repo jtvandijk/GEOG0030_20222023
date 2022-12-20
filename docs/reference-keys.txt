@@ -105,6 +105,8 @@ reading-data-into-r
 inspecting-data-in-r
 assignment-w04
 wm-w04
+data-visualisation
+reproducible-research
 byl-w04
 programming-for-spatial-analysis
 reading-w05

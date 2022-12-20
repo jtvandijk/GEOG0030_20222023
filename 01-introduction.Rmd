@@ -14,6 +14,7 @@ This week’s lecture provided you with a thorough introduction on Geocomputatio
 #### Suggested readings {-}
 - Miller, H. and Goodchild, M. 2015. Data-driven geography. *GeoJournal* 80: 449–461. [[Link]](https://doi.org/10.1007/s10708-014-9602-6)
 - Goodchild, M. 2009. Geographic information systems and science: Today and tomorrow. *Annals of GIS* 15(1): 3-9. [[Link]](https://doi.org/10.1080/19475680903250715)
+- Worobey, M. *et al.* 2022. The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic. *Science* 377(6609): 951-959. [[Link]](https://doi.org/10.1126/science.abp8715)
 
 ## Getting started
 Over the next few weeks, we will be taking a closer look at many of the foundational concepts that will ultimately enable you to confidently and competently analyse spatial data using both programming and GIS software.  You will further learn how to plan, structure and conduct your own spatial analysis using programming – whilst making decisions on how to best present your work, which is a crucial aspect of any type of investigation but of particular relevance to your dissertation.
