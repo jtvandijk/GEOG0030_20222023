@@ -162,6 +162,8 @@ global-morans-i
 local-morans-i
 getis-ord-gi
 assignment-2-w07
+wm-w07
+more-spatial-autocorrelation
 byl-w07
 analysing-spatial-patterns-iii-point-pattern-analysis
 reading-w08

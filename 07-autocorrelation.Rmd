@@ -686,5 +686,9 @@ In order to do this, you have to:
 5. Compare these results to the output of our `y6_obesity_2014` values. Do both variables have clusters? Do we see similar clusters in similar locations? What might this tell us about the relationship between deprivation and obesity in children in London?
 6. Run the analysis using a different neighbour definition. What happens? Do the results change?
 
+## Want more? [Optional] {#wm-w07}
+### More spatial autocorrelation
+If you are interested in moving beyond spatial autocorrelation, for instance how to account for spatial autocorrelation in statistical models (e.g. with Geographically Weighted Regression or Spatial Regression), have a look at the workbook [Mapping and Modelling Geographic Data in R](https://profrichharris.github.io/MandM/themap.html) by Bristol-based Professor [Richard Harris](https://www.bristol.ac.uk/people/person/Richard-Harris-871b21a9-0f5f-4bc8-9a99-8ace550d9903/). Start with [The Spatial Variable](https://profrichharris.github.io/MandM/themap.html) section, move to the [Measuring spatial autocorrelation](https://profrichharris.github.io/MandM/autocorrelation.html) section before looking at the [Geographically Weighted Statistics](https://profrichharris.github.io/MandM/gwstats.html) and [Spatial Regression](https://profrichharris.github.io/MandM/spregress.html) sections.
+
 ## Before you leave {#byl-w07}
 And that is how you can measure spatial dependence in your dataset through different spatial autocorrelation measures. Next week we will focus on the last topic within our set of core spatial analysis methods and techniques, but [this week we have covered enough](https://www.youtube.com/watch?v=fCZVL_8D048)!
