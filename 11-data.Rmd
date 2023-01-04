@@ -13,6 +13,7 @@ The following websites contain Open Data or link to Open Data from several respe
 
 * [AirBnB Data](http://insideairbnb.com/get-the-data.html)
 * [Bike Docking Data (ready for R)](https://docs.ropensci.org/bikedata/)
+* [Bing Maps worldwide road detections](https://github.com/microsoft/RoadDetections)
 * [Camden Air Action](https://camdenairaction.wordpress.com/2017/02/20/schools-monitoring-project-spring-2017/)
 * [Consumer Data Research Centre](https://data.cdrc.ac.uk/)
 * [DEFRA](https://environment.data.gov.uk/)

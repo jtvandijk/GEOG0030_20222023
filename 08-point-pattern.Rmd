@@ -7,7 +7,7 @@ This week, we will be looking at how we can use Point Pattern Analysis (PPA) to 
 ## Reading list {#reading-w08}
 #### Essential readings {-}
 - Cheshire, J. and Longley, P. 2011. Identifying spatial concentrations of surnames. *International Journal of Geographical Information Science* 26(2), pp.309-325. [[Link]](https://doi.org/10.1080/13658816.2011.591291)
-- Longley, P. *et al.* 2015. Geographic Information Science & systems, **Chapter 12**: *Geovisualization*. [[Linkhttps://ucl.rl.talis.com/link?url=https%3A%2F%2Fapp.knovel.com%2Fhotlink%2Ftoc%2Fid%3AkpGISSE001%2Fgeographic-information-science%3Fkpromoter%3Dmarc&sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a)
+- Longley, P. *et al.* 2015. Geographic Information Science & systems, **Chapter 12**: *Geovisualization*. [[Link]]https://ucl.rl.talis.com/link?url=https%3A%2F%2Fapp.knovel.com%2Fhotlink%2Ftoc%2Fid%3AkpGISSE001%2Fgeographic-information-science%3Fkpromoter%3Dmarc&sig=e437927b963cc591dcb65491eccdd3869cc31aef80e1443cb2ba12d8f3bb031a)
 - Yin, P. 2020. *Kernels and density estimation*. The Geographic Information Science & Technology Body of Knowledge. [[Link]](https://doi.org/10.22224/gistbok/2020.1.12)
 - Yuan, Y. *et al.* 2020. *Point Pattern Analysis*. The Geographic Information Science & Technology Body of Knowledge. [[Link]](https://doi.org/10.22224/gistbok/2020.1.13)
 
