@@ -2,7 +2,7 @@
 # Geocomputation: An Introduction
 This week’s lecture provided you with a thorough introduction on Geocomputation, outlining how and why it is different to a traditional GIScience course. We set the scene for the remainder of the module and explained how the foundational concepts that you will learn in the first half of term sit within the overall module. This week we start easy by setting up our work environment and set up the software that we will  need over the coming weeks.
 
-## Lecture slides {#slides-w01} -->
+## Lecture slides {#slides-w01}
 The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w01_geo.pdf).
 
 ## Reading list {#reading-w01}
