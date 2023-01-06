@@ -30,6 +30,7 @@ fig:09-monitoring-in-london
 fig:09-thiessen
 fig:network-graph-picca
 geocomputation-an-introduction
+lecture-slides-slides-w01
 reading-w01
 getting-started
 software
