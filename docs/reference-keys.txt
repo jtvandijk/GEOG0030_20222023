@@ -41,6 +41,7 @@ r-package-installation
 a-note-on-arcgis
 byl-w01
 giscience-and-gis-software
+slides-w02
 reading-w02
 simple-digitisation-of-spatial-features
 population-change-in-london
