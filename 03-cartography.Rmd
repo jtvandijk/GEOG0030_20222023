@@ -249,8 +249,8 @@ In the **bottom part** of the window, you can find a status bar with mouse posit
 
 In the **upper part** of the  window, you can find menus and other toolbars. All print layout tools are available in menus and as icons in a toolbar.
 
-:::note
-**Note** <br/>
+:::tip
+**Tip** <br/>
 Working with maps in the Print Layout is simple but it can be a little fiddly and, to make more complicated maps, requires you to understand how to use certain aspects of Print Layout, such as locking items. If you get stuck, have a look at the [training manual](https://docs.qgis.org/3.22/en/docs/training_manual/map_composer/map_composer.html) or the detailed [documentation](https://docs.qgis.org/3.22/en/docs/user_manual/print_composer/index.html). 
 :::
 
