@@ -2,8 +2,8 @@
 
 This week’s lecture has given you an in-depth introduction into how we can create a successful map, including understanding map projections, cartographic conventions and issues faced with the analysis of aggregated data at areal units. The practical component of the week puts some of these learnings into practice as we analyse crime rates within London at two different scales.
 
-<!-- ## Lecture slides {#slides-w03} -->
-<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w02_geo.pdf). -->
+## Lecture slides {#slides-w03}
+The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w03_geo.pdf).
 
 ## Reading list {#reading-w03}
 #### Essential readings {-}

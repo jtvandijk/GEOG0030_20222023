@@ -61,6 +61,7 @@ exporting-map-for-visual-analysis
 assignment-w02
 byl-w02
 cartography-and-visualisation
+slides-w03
 reading-w03
 crime-in-london-i
 w03-finding
