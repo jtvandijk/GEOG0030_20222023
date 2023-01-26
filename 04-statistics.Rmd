@@ -1,9 +1,8 @@
 # Programming for Data Analysis
 This week’s content introduces you to the foundational concepts associated with Programming for Data Analysis. We will cover some general principles of programming as well how we can use R and RStudio effectively for data analysis by continuing to look at crime in London.
 
-<!-- ## Lecture slides {#slides-w04} -->
-<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w02_geo.pdf). -->
-
+## Lecture slides {#slides-w04}
+The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w02_geo.pdf).
 
 ## Reading list {#reading-w04}
 #### Essential readings {-}

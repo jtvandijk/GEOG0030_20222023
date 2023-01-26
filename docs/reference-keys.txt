@@ -79,6 +79,7 @@ mapping-our-crime-data
 assignment-w03
 byl-w03
 programming-for-data-analysis
+slides-w04
 reading-w04
 programming
 programming-in-r
