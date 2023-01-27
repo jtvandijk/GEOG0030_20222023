@@ -36,6 +36,7 @@ The following websites contain Open Data or link to Open Data from several respe
 * [Office for National Statistics Geoportal](https://geoportal.statistics.gov.uk/)
 * [Office for National Statistics](https://www.ons.gov.uk/)
 * [Open Topography](https://opentopography.org/)
+* [Planetary Computer Data Catalog](https://planetarycomputer.microsoft.com/catalog)
 * [Tesco Store Data (London)](https://www.nature.com/articles/s41597-020-0397-7)
 * [TfL Cycling Data](https://cycling.data.tfl.gov.uk/)
 * [TfL Open Data](https://tfl.gov.uk/info-for/open-data-users/our-open-data?intcmp=3671#on-this-page-2)
