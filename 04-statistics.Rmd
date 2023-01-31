@@ -156,7 +156,7 @@ output
 ### Variables of different data types
 We can also store variables of different data types, not just numbers but text as well. 
 
-Type in `str_variable <- "This is our first string variable"` into the console and execute.
+Type in `str_variable <- "This is our 1st string variable"` into the console and execute.
 
 ```{r 04-var1, warnings=FALSE, message=FALSE, tidy=TRUE}
 # store a variable
