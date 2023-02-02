@@ -113,6 +113,7 @@ data-visualisation
 reproducible-research
 byl-w04
 programming-for-spatial-analysis
+slides-w05
 reading-w05
 crime-in-london-iii
 data-preparation

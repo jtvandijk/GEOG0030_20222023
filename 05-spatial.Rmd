@@ -1,8 +1,8 @@
 # Programming for Spatial Analysis
 This week we are going to look at how to use R and RStudio as a piece of GIS software. Like last week, we will be completing an analysis on our London theft crime dataset. However, rather than solely looking at changing crime rates over time, we will add a spatial component to our analysis: how has crime changed across our wards over the years.
 
-<!-- ## Lecture slides {#slides-w05} -->
-<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w05_geo.pdf). -->
+## Lecture slides {#slides-w05}
+The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w05_geo.pdf).
 
 ## Reading list {#reading-w05}
 #### Essential readings {-}
@@ -17,7 +17,7 @@ This week we are going to look at how to use R and RStudio as a piece of GIS sof
 - Radil, S. 2016. Spatial analysis of crime. *The Handbook of Measurement Issues in Criminology and Criminal Justice* 536-554. [[Link]](https://doi.org/10.1002/9781118868799.ch24)
 
 ## Crime in London III
-To analyse crime by ward over time, we will go through several steps of data preparation ('data wrangling') before joining our data to ward polygons. We will start by taking our `all_theft_df` dataframe and wrangle it to produce a dataframe with a for each ward the number of crimes for each month of data. we then join this dataframe to our `ward_population_2019` shapefile (which should still be sitting in your `output` folder) and then produce a **crime rate** for each month, for each ward. Lastly, we will create a map of the crime rate in London for January 2020 using the `tmap` library.
+To analyse crime by ward over time, we will go through several steps of data preparation ('data wrangling') before joining our data to ward polygons. We will start by taking our `all_theft_df` dataframe and wrangle it to produce a dataframe with for each ward the number of crimes for each month of data. We then join this dataframe to our `ward_population_2019` shapefile (which should still be sitting in your `output` folder) and then produce a **crime rate** for each month, for each ward. Lastly, we will create a map of the crime rate in London for January 2020 using the `tmap` library.
 
 ### Data preparation
 Before we get started, we first need to head back to our script from last week, run our script - and then write our `all_theft_df` to a `csv` file. If you had saved your environment from last week, keeping your variables in  memory, theoretically you would not need to export the data frame as you should have access to this variable within your new script but it would be good practice to write out the data and then load it back in.
@@ -63,7 +63,7 @@ tmap_mode("plot")
 ```
 
 
-You are already familiar with the `tidyverse` library, but now we adding `sf` to read and load our spatial data as well as `tmap` to visualise our spatial data. We are going to load both of the datasets we need today straight away: the `crime_theft_2020_london.csv` we have just exported and the `ward_population_2019.shp` we created in Week 3.
+You have already been introduced to the `tidyverse` library last week, but now we adding `sf` to read and load our spatial data as well as `tmap` to visualise our spatial data. We are going to load both of the datasets we need today straight away: the `crime_theft_2020_london.csv` we have just exported and the `ward_population_2019.shp` we created in Week 3.
 
 First, let's load our `crime_theft_2020_london.csv` into a dataframe called `all_theft_df`. 
 
@@ -87,6 +87,7 @@ Next, let's add our `ward_population_2019.shp`. We will store this as a variable
 # read in our ward_population_2019 shp from our output data folder
 ward_population <- st_read("data/output/ward_population_2019.shp", stringsAsFactors = FALSE)
 ``` 
+
 You should now see the `ward_population` variable appear in your environment window.
 
 ### Interacting with spatial data
@@ -105,12 +106,14 @@ This `plot()` function is not to be used to make maps but can be used as a quick
 :::
 
 We can also find out more information about our `ward_population` data. Let's next check out our class of our data. Again, **in the console** type:
+
 ```{r 05-class-wardpop, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
 # find out the class of our ward_population data
 class(ward_population)
 ``` 
 
 We should see our data is an `sf` dataframe, which is great as it means we can utilise our `tidyverse` libraries with our `ward_population`. We can also use the `attributes()` function we looked at last week to find out a little more about the spatial part of our data frame:
+
 ```{r 05-att-wardpop, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
 # find out the attributes of our ward_population data
 attributes(ward_population)
