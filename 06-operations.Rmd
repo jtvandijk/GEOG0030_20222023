@@ -17,12 +17,10 @@ This week, we will be looking at the use of geometric operations and spatial que
 - Malleson, N. and Andresen, M. 2016. Exploring the impact of ambient population measures on London crime hotspots. *Journal of Criminal Justice* 46: 52-63. [[Link]](https://doi.org/10.1016/j.jcrimjus.2016.03.002)
 - Oliver, L., Schuurman, N. and Wall, A. 2007. Comparing circular and network buffers to examine the influence of land use on walking for leisure and errands. *International Journal of Health Geographics* 6: 41. [[Link]](https://doi.org/10.1186/1476-072X-6-41)
 
-<!--
 ## Map challenge
-Before we start with this week's tutorial, we will start with a small formative assessment: a **45-minute map challenge**. During this task you have 45 minutes to create a map using a specific dataset. After 45 minutes you need to stop coding and show the resulting map to the teaching staff who will look at each of your maps individually and provide formative feedback on your code and map layout.
+Before we start with this week's tutorial, we will start with a small formative assessment: a **45-minute map challenge**. During this task you have 45 minutes to create a map using a specific dataset. After 45 minutes you need to stop coding and submit the map online (see details in the instructions). We will go through the submitted maps and provide general feedback to the entire class on what can be improved and on what has been going well.
 
 All instructions can be found here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/GEOG0030_MapChallenge.pdf).
--->
 
 ## Bike theft in London {#bike-theft-w06}
 This week, we will be investigating bike theft in London in 2019 and look to confirm a very simple hypothesis: *that bike theft primarily occurs near tube and train stations.* We will be investigating its distribution across London using the point data provided within our crime dataset. We will then compare this distribution to the location of train and tube stations using specific geometric operations and spatial queries that can compare the geometry of two (or more) datasets. We will also learn how to download data from OpenStreetMap as well as use an interactive version of `tmap` to explore the distribution of the locations of individual bike theft against the locations of these stations.
