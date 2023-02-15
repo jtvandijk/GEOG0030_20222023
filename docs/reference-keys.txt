@@ -135,6 +135,7 @@ wm-w05
 git-and-github
 byl-w05
 analysing-spatial-patterns-i-geometric-operations-and-spatial-queries
+slides-w06
 reading-w06
 map-challenge
 bike-theft-w06

@@ -3,8 +3,8 @@
 # Analysing Spatial Patterns I: Geometric Operations and Spatial Queries
 This week, we will be looking at the use of geometric operations and spatial queries within spatial data processing and analysis. Geometric operations and spatial queries are not really a theoretical topic per se but rather essential building blocks to overall spatial data processing and analysis such as calculating the area covered by an individual polygon in an areal unit dataset to running **buffer** and **point-in-polygon** calculations.
 
-<!-- ## Lecture slides {#slides-w06} -->
-<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w06_geo.pdf). -->
+## Lecture slides {#slides-w06}
+The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w06_geo.pdf).
 
 ## Reading list {#reading-w06}
 #### Essential readings {-}
