@@ -1,8 +1,8 @@
 # Analysing Spatial Patterns II: Spatial Autocorrelation 
 This week, we will be looking at measuring spatial dependence. Spatial dependence is the idea that the observed value of a variable in one location is  dependent (to some degree) on the observed value of the same value in a nearby location. For spatial analysis, this dependence can be assessed and measured statistically by considering the level of spatial autocorrelation between values of a specific variable, observed in either different locations or between pairs of variables observed at the same location. Spatial autocorrelation occurs when these values are not independent of one another and instead cluster together across geographic space.
 
-<!-- ## Lecture slides {#slides-w07} -->
-<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w07_geo.pdf). -->
+## Lecture slides {#slides-w07}
+The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w07_geo.pdf).
 
 ## Reading list {#reading-w07}
 #### Essential readings {-}

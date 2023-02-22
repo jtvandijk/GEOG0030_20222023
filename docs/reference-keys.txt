@@ -153,6 +153,7 @@ theft-at-train-and-tube-locations
 assignment-w06
 byl-w06
 analysing-spatial-patterns-ii-spatial-autocorrelation
+slides-w07
 reading-w07
 childhood-obesity
 housekeeping-w07
