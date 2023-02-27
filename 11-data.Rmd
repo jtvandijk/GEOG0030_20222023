@@ -11,6 +11,7 @@ You are **not limited** to using these datasets for your coursework assignment o
 ## Open Data
 The following websites contain Open Data or link to Open Data from several respectable data providers:
 
+* [AfricanUrbanNetwork](https://github.com/rafaelprietocuriel/AfricanUrbanNetwork)
 * [AirBnB Data](http://insideairbnb.com/get-the-data.html)
 * [Bike Docking Data (ready for R)](https://docs.ropensci.org/bikedata/)
 * [Bing Maps worldwide road detections](https://github.com/microsoft/RoadDetections)
@@ -24,6 +25,7 @@ The following websites contain Open Data or link to Open Data from several respe
 * [Geofabrik (OSM data)](https://www.geofabrik.de/)
 * [Global Weather Data](https://rp5.ru/Weather_in_the_world)
 * [Google Dataset Search](https://datasetsearch.research.google.com/)
+* [Google Open Buildings](https://sites.research.google/open-buildings/)
 * [Johns Hopkins COVID19 Data](https://github.com/RamiKrispin/coronavirus)
 * [King's College Data on Air Pollution](https://www.londonair.org.uk/LondonAir/Default.aspx)
 * [London Data Store](https://data.london.gov.uk/)
