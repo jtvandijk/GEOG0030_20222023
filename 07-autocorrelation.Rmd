@@ -238,7 +238,7 @@ There is actually a lot more we can do in terms of visualising our data's distri
 :::
 
 ## Assignment 1 {#assignment-1-w07}
-Your first assignment this week is to go ahead and test each of our variables to determine their distribution. Make a note of which ones are normally distributed and which are not (and their skew). Understanding your data's distribution is important if you want to test the relationships between different variables. For example, if you want to conduct a linear regression analysis you have to ensure that your variables are **normally distributed**.
+Your first assignment this week is to go ahead and test each of our variables to determine their distribution. Make a note of which ones are normally distributed and which are not (and their skew). Understanding your data's distribution is important if you want to test the relationships between different variables. 
 
 ## Spatial distributions
 Whilst statistical analysis of distributions focus on tests and charts, when we want to understand the spatial distribution of our phenomena, we have a very simple solution: we make a map. In our case, we are looking at areal unit data and therefore we can use a choropleth map to study our data across the wards: 
