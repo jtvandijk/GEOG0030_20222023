@@ -173,6 +173,7 @@ wm-w07
 more-spatial-autocorrelation
 byl-w07
 analysing-spatial-patterns-iii-point-pattern-analysis
+slides-w08
 reading-w08
 bike-theft-w08
 housekeeping-w08

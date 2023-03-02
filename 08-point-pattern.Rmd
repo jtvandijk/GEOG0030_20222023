@@ -1,8 +1,8 @@
 # Analysing Spatial Patterns III: Point Pattern Analysis
 This week, we will be looking at how we can use Point Pattern Analysis (PPA) to detect and delineate clusters within point data. Within point pattern analysis, we look to detect clusters or patterns across a set of points, including measuring density, dispersion and homogeneity in our point structures. There are several approaches to calculating and detecting these clusters, which are explained in our main lecture. We then deploy several PPA techniques, including Kernel Density Estimation, on our bike theft data to continue our investigation from the week before last.
 
-<!-- ## Lecture slides {#slides-w08} -->
-<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w08_geo.pdf). -->
+## Lecture slides {#slides-w08}
+The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w08_geo.pdf). 
 
 ## Reading list {#reading-w08}
 #### Essential readings {-}
