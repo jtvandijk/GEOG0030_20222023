@@ -3,8 +3,8 @@
 # Rasters, Zonal Statistics and Interpolation
 The majority of our module has focused on the use of vector data and tabular data. This week, we switch it up by focusing primarily on raster data and its analysis using map algebra and zonal statistics.
 
-<!-- ## Lecture slides {#slides-w09} -->
-<!-- The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w09_geo.pdf). -->
+## Lecture slides {#slides-w09}
+The slides for this week's lecture can be downloaded here: [[Link]](https://github.com/jtvandijk/GEOG0030/tree/master/data/ppt/w09_geo.pdf).
 
 ## Reading list {#reading-w09}
 #### Essential readings {-}

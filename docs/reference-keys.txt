@@ -193,6 +193,7 @@ working-with-the-dbscan-output
 mapping-dbscan-clusters
 byl-w08
 rasters-zonal-statistics-and-interpolation
+slides-w09
 reading-w09
 raster-data
 housekeeping-w09
@@ -215,6 +216,7 @@ mapping-the-idw-raster
 assignment-w09-02
 byl-w09
 transport-network-analysis
+slides-w10
 reading-w10
 transport-network-analysis-1
 accessibility-in-portsmouth
