@@ -264,8 +264,8 @@ We have now conducted some basic accessibility analysis, however, there is some 
 2. Why do we have unconnected segments in the extracted transport network? How would you inspect these unconnected segments? Would they need to be connected? If so, how would one do this?
 3. Why you think all Origins and Destinations are mapped onto the closest network points? Is this always the best option? What alternative methods could you think of and how would you implement these?
 
-:::note
-**Note** <br/>
+:::tip
+**Tip** <br/>
 If you really want a deep into accessibility analysis, there is a great resource that got published only recently: [Introduction to urban accessibility: a practical guide in R](https://ipeagit.github.io/intro_access_book/en/index.en.html).
 :::
 
