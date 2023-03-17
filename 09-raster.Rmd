@@ -454,7 +454,7 @@ gridded(idw) <- TRUE
 lon_poll_raster_idw <- raster(idw)
  
 # set our raster CRS to BNG
-crs(lon_poll_raster_idw) <- CRS("+init=epsg:27700")
+crs(lon_poll_raster_idw) <- CRS("epsg:27700")
 
 # mask our raster to only the london outline
 lon_idw_gstat <- rasterize(london_ward, lon_poll_raster_idw, mask=TRUE) 

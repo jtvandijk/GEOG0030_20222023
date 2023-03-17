@@ -897,7 +897,7 @@ Some of the following code will unfortunately not work as intended for some of y
 <span id="cb317-5"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-5" tabindex="-1"></a>lon_poll_raster_idw <span class="ot">&lt;-</span> <span class="fu">raster</span>(idw)</span>
 <span id="cb317-6"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-6" tabindex="-1"></a></span>
 <span id="cb317-7"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-7" tabindex="-1"></a><span class="co"># set our raster CRS to BNG</span></span>
-<span id="cb317-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-8" tabindex="-1"></a><span class="fu">crs</span>(lon_poll_raster_idw) <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:27700&quot;</span>)</span>
+<span id="cb317-8"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-8" tabindex="-1"></a><span class="fu">crs</span>(lon_poll_raster_idw) <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;epsg:27700&quot;</span>)</span>
 <span id="cb317-9"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-9" tabindex="-1"></a></span>
 <span id="cb317-10"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-10" tabindex="-1"></a><span class="co"># mask our raster to only the london outline</span></span>
 <span id="cb317-11"><a href="rasters-zonal-statistics-and-interpolation.html#cb317-11" tabindex="-1"></a>lon_idw_gstat <span class="ot">&lt;-</span> <span class="fu">rasterize</span>(london_ward, lon_poll_raster_idw, <span class="at">mask =</span> <span class="cn">TRUE</span>)</span>
