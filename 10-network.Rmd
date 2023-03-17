@@ -41,7 +41,7 @@ The first dataset we need to download will help with the visualisation of our re
 
 | File                                    | File Type         | Link |
 | :------                                     | :------      | :------ |
-| Major towns and cities boundaries 2015      | `shp`        | [Download](https://github.com/jtvandijk/GEOG0114/tree/master/data/zip/major_towns.zip) |
+| Major towns and cities boundaries 2015      | `shp`        | [Download](https://github.com/jtvandijk/GEOG0030/tree/master/data/zip/major_towns.zip) |
 
 We can now load the required libraries as well as the major towns and cities boundaries `shapefile`.
 
