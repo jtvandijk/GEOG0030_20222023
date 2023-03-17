@@ -74,7 +74,16 @@ osmdata <- opq(bbox = p_bbox ) %>%
 
 :::note
 **Note** <br />
-As before: in some instances the OSM query will return an error, especially when several people from the same location are executing the exact same query. If this happens, you can just read through the instructions and download a prepared copy of the data that contains **all** required OSM Portsmouth data instead: [[Link]](https://github.com/jtvandijk/GEOG0114/tree/master/data/zip/osm_portmouth.zip).
+In some instances the OSM query will return an error, especially when several people from the same location are executing the exact same query. If this happens, you can just read through the instructions and download a prepared copy of the data that contains **all** required OSM Portsmouth data instead: [[Link]](https://github.com/jtvandijk/GEOG0114/tree/master/data/zip/osm_portmouth.zip).
+
+You can load these downloaded data as follows into R:
+```{r load_osm_from_file, warnings=FALSE, message=FALSE, cache=FALSE, eval=FALSE, tidy=TRUE}
+load('../path/to/file/ports_ff.RData')
+load('../path/to/file/ports_roads_edges.RData')
+load('../path/to/file/ports_schools.RData')
+```
+
+After loading your data, you can continue with the analysis in the [Measuring Accessiblity](#osm) section below, starting with the creation of a network graph with the 'foot weighting' profile.
 :::
 
 The `osmdata` object contains the bounding box of your query, a time-stamp of the query, and then the spatial data as `osm_points`, `osm_lines`, `osm_multilines` and `osm_polgyons`. Some of the spatial features maybe empty, depending on what you asked your query to return. Our next step therefore is to extract our spatial data from our `osmdata` object to create our road network data set. This is in fact incredibly easy, using the traditional `$` R approach to access these spatial features from our object. 
@@ -104,7 +113,7 @@ ports_roads_edges$oneway <- "no"
 
 Now we have the network edges, we can turn this into a graph-representation that allows for the calculation of network-based accessibility statistics. 
 
-### Measuring accessibility
+### Measuring accessibility {#osm}
 Before we can construct our full network graph for the purpose of accessibility analysis, we need to also provide our **Origin** and **Destination** points, i.e. the data points we wish to calculate the distances between. According to the `dodgr` documentation, these points need to be in either a vector or matrix format, containing the two coordinates for each point for the origins and for the destinations.
 
 As for our Portsmouth scenario we are interested in calculating the shortest distances between schools and fast-food outlets, we need to try and download these datasets - again we will turn to OpenStreetMap. Following a similar structure to our query above, we will use our knowledge of OpenStreetMap `keys` and `values` to extract the points of Origins (schools) and Destinations (fast-food outlets) we are interested in:
@@ -141,7 +150,7 @@ In this analysis, we are highly reliant on the use of OpenStreetMap to provide d
 With any network analysis, the main data structure is a **graph**, constructed by our nodes and edges. To create a graph for use within `dodgr`, we pass our `ports_roads_edges()` into the `weight_streetnet()` function. The `dodgr` library also contains weighting profiles, that you can customise, for use within your network analysis. These weighting profiles contain weights based on the type of road, determined by the type of transportation the profile aims to model. Here we will use the weighting profile **foot**, as we are looking to model walking accessibility.
 
 ```{r network_graph, warnings=FALSE, message=FALSE, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
-# create network graph  with the foot weighting profile
+# create network graph with the foot weighting profile
 graph <- weight_streetnet(ports_roads_edges, wt_profile = "foot")
 ```
 

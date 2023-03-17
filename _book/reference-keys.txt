@@ -30,6 +30,7 @@ fig:09-monitoring-in-london
 fig:09-thiessen
 fig:network-graph-picca
 geocomputation-an-introduction
+slides-w01
 reading-w01
 getting-started
 software
@@ -40,6 +41,7 @@ r-package-installation
 a-note-on-arcgis
 byl-w01
 giscience-and-gis-software
+slides-w02
 reading-w02
 simple-digitisation-of-spatial-features
 population-change-in-london
@@ -59,6 +61,7 @@ exporting-map-for-visual-analysis
 assignment-w02
 byl-w02
 cartography-and-visualisation
+slides-w03
 reading-w03
 crime-in-london-i
 w03-finding
@@ -76,6 +79,7 @@ mapping-our-crime-data
 assignment-w03
 byl-w03
 programming-for-data-analysis
+slides-w04
 reading-w04
 programming
 programming-in-r
@@ -105,8 +109,11 @@ reading-data-into-r
 inspecting-data-in-r
 assignment-w04
 wm-w04
+data-visualisation
+reproducible-research
 byl-w04
 programming-for-spatial-analysis
+slides-w05
 reading-w05
 crime-in-london-iii
 data-preparation
@@ -124,8 +131,11 @@ mapping-crime-data
 styling-crime-data
 exporting-our-crime-data
 assignment-w05
+wm-w05
+git-and-github
 byl-w05
 analysing-spatial-patterns-i-geometric-operations-and-spatial-queries
+slides-w06
 reading-w06
 map-challenge
 bike-theft-w06
@@ -143,6 +153,7 @@ theft-at-train-and-tube-locations
 assignment-w06
 byl-w06
 analysing-spatial-patterns-ii-spatial-autocorrelation
+slides-w07
 reading-w07
 childhood-obesity
 housekeeping-w07
@@ -158,8 +169,11 @@ global-morans-i
 local-morans-i
 getis-ord-gi
 assignment-2-w07
+wm-w07
+more-spatial-autocorrelation
 byl-w07
 analysing-spatial-patterns-iii-point-pattern-analysis
+slides-w08
 reading-w08
 bike-theft-w08
 housekeeping-w08
@@ -179,6 +193,7 @@ working-with-the-dbscan-output
 mapping-dbscan-clusters
 byl-w08
 rasters-zonal-statistics-and-interpolation
+slides-w09
 reading-w09
 raster-data
 housekeeping-w09
@@ -201,14 +216,16 @@ mapping-the-idw-raster
 assignment-w09-02
 byl-w09
 transport-network-analysis
+slides-w10
 reading-w10
 transport-network-analysis-1
 accessibility-in-portsmouth
 loading-data-w10
-measuring-accessibility
+osm
 task-w10
 wm-w10
 byl-w10
 data-sources
 open-data
 safeguarded-data
+measuring-accessibility

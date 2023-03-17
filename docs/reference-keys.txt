@@ -221,7 +221,7 @@ reading-w10
 transport-network-analysis-1
 accessibility-in-portsmouth
 loading-data-w10
-measuring-accessibility
+osm
 task-w10
 wm-w10
 byl-w10
