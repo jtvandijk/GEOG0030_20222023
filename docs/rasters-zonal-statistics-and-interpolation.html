@@ -704,7 +704,7 @@ Figure 9.4: Locations of the London Air monitoring sites in London. Source: <a h
 <div id="analysing-air-pollution" class="section level3 hasAnchor" number="9.6.2">
 <h3><span class="header-section-number">9.6.2</span> Analysing air pollution<a href="rasters-zonal-statistics-and-interpolation.html#analysing-air-pollution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s take a look at why it’s so large and inspect the first five rows of our dataframe:</p>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb301-1" tabindex="-1"></a><span class="co"># Rreturn first five rows of our pollution dataframe</span></span>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="rasters-zonal-statistics-and-interpolation.html#cb301-1" tabindex="-1"></a><span class="co"># return first five rows of our pollution dataframe</span></span>
 <span id="cb301-2"><a href="rasters-zonal-statistics-and-interpolation.html#cb301-2" tabindex="-1"></a><span class="fu">head</span>(pollution)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 7
 ##   date                  no2 site                   code  latit…¹ longi…² site_…³
@@ -930,7 +930,7 @@ Some of the following code will unfortunately not work as intended for some of y
 <span id="cb318-18"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-18" tabindex="-1"></a>lon_idw_sp <span class="ot">&lt;-</span> <span class="fu">raster</span>(ss_idw)</span>
 <span id="cb318-19"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-19" tabindex="-1"></a></span>
 <span id="cb318-20"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-20" tabindex="-1"></a><span class="co"># set our raster CRS to BNG</span></span>
-<span id="cb318-21"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-21" tabindex="-1"></a><span class="fu">crs</span>(lon_idw_sp) <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:27700&quot;</span>)</span>
+<span id="cb318-21"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-21" tabindex="-1"></a><span class="fu">crs</span>(lon_idw_sp) <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;epsg:27700&quot;</span>)</span>
 <span id="cb318-22"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-22" tabindex="-1"></a></span>
 <span id="cb318-23"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-23" tabindex="-1"></a><span class="co"># plot the resulting raster</span></span>
 <span id="cb318-24"><a href="rasters-zonal-statistics-and-interpolation.html#cb318-24" tabindex="-1"></a><span class="fu">plot</span>(lon_idw_sp)</span></code></pre></div>

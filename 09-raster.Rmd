@@ -283,7 +283,7 @@ Reading in the `csv` might take a little time: we have 1,596,509 observations wi
 Let's take a look at why it's so large and inspect the first five rows of our dataframe:
 
 ```{r 09-inspect-inspect, warnings=FALSE, message=FALSE, cache=TRUE, tidy=TRUE}
-# Rreturn first five rows of our pollution dataframe
+# return first five rows of our pollution dataframe
 head(pollution)
 ```
 
@@ -487,7 +487,7 @@ ss_idw <- spatstat.core::idw(pollution_ppp, power = 2, at="pixels")
 lon_idw_sp <- raster(ss_idw)
  
 # set our raster CRS to BNG
-crs(lon_idw_sp) <- CRS("+init=epsg:27700")
+crs(lon_idw_sp) <- CRS("epsg:27700")
 
 # plot the resulting raster
 plot(lon_idw_sp)
